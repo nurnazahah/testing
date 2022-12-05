@@ -23,3 +23,6 @@
 >To display the line number
 >> :se nu
 
+>to search specific words
+>> /cell 
+
