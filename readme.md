@@ -26,6 +26,9 @@
 >To search specific words
 >> /cell 
 
+>To scan the specific words. Example: cell 
+>> :g//
+
 Identifying the structure of the cell
 
 ![day2lab1b](https://user-images.githubusercontent.com/118953917/205856602-25f0e698-b1ff-461d-8e89-dd00fb638a84.JPG)
