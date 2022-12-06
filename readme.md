@@ -69,7 +69,7 @@ There are 2^5 = 32 possible inputs combinations of the design
 >Open vim 
 >> vim multiple_modules.v
 
-![day2lab1g](https://user-images.githubusercontent.com/118953917/205941897-fca61d6b-b0cd-47a8-a305-1dc03964d7ba.JPG)
+![day2lab2a](https://user-images.githubusercontent.com/118953917/205945324-55bd0326-f8a5-4d03-a9ae-35fecba4d087.JPG)
 
 >Invoke yosys
 >> yosys
@@ -78,9 +78,13 @@ There are 2^5 = 32 possible inputs combinations of the design
 >> synth -top multiple_modules 
 >> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 >> show multiple_modules 
+>> write_verilog multiple_modules_hier.v 
+
+![day2lab2b](https://user-images.githubusercontent.com/118953917/205945334-4caede00-299d-491c-a7e0-39375bbe0cf0.JPG)
+
+![day2lab2c](https://user-images.githubusercontent.com/118953917/205945612-b4ceba1a-0815-4e29-bfee-4997429f1674.JPG)
+
+>Open and write netlist
 >> 
-
-![day2lab1h](https://user-images.githubusercontent.com/118953917/205941772-0facd6c6-5197-44fc-97af-18b25c223eaf.JPG)
-
 
 
