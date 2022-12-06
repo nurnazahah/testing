@@ -23,6 +23,19 @@
 >To display the line number
 >> :se nu
 
->to search specific words
+>To search specific words
 >> /cell 
+
+Identifying the structure of the cell
+
+![day2lab1b](https://user-images.githubusercontent.com/118953917/205856602-25f0e698-b1ff-461d-8e89-dd00fb638a84.JPG)
+
+>To split two vims vertically 
+>> :vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v
+
+There are 2^5 = 32 possible inputs combinations of the design 
+
+![day2lab1c](https://user-images.githubusercontent.com/118953917/205851243-69ac4217-411a-461d-9aa3-87f6c007d624.JPG)
+
+![day2lab1e](https://user-images.githubusercontent.com/118953917/205851248-cd83e815-056a-4328-86f3-b9c3aa96fe52.JPG)
 
