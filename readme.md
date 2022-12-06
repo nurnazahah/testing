@@ -42,5 +42,7 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 ![day2lab1c](https://user-images.githubusercontent.com/118953917/205851243-69ac4217-411a-461d-9aa3-87f6c007d624.JPG)
 
-![day2lab1d](https://user-images.githubusercontent.com/118953917/205857898-0ed82dd4-df45-4b96-86b2-bdea996089bd.JPG)
+![day2lab1d](https://user-images.githubusercontent.com/118953917/205868197-77344994-1aa4-49fc-af46-181b7f65ad07.JPG)
+
+![day2lab1e](https://user-images.githubusercontent.com/118953917/205868209-f02cb6ea-2b6b-4b25-99b7-f24515c4ea34.JPG)
 
