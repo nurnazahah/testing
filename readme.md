@@ -35,7 +35,9 @@ Identifying the structure of the cell
 
 There are 2^5 = 32 possible inputs combinations of the design 
 
+**Detailed nformation in vim**
+
 ![day2lab1c](https://user-images.githubusercontent.com/118953917/205851243-69ac4217-411a-461d-9aa3-87f6c007d624.JPG)
 
-![day2lab1e](https://user-images.githubusercontent.com/118953917/205851248-cd83e815-056a-4328-86f3-b9c3aa96fe52.JPG)
+![day2lab1d](https://user-images.githubusercontent.com/118953917/205857898-0ed82dd4-df45-4b96-86b2-bdea996089bd.JPG)
 
