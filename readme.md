@@ -66,3 +66,21 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 **Lab 2 Hierarchical vs Flat Synthesis**
 
+>Open vim 
+>> vim multiple_modules.v
+
+![day2lab1g](https://user-images.githubusercontent.com/118953917/205941897-fca61d6b-b0cd-47a8-a305-1dc03964d7ba.JPG)
+
+>Invoke yosys
+>> yosys
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+>> read_verilog multiple_modules.v
+>> synth -top multiple_modules 
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+>> show multiple_modules 
+>> 
+
+![day2lab1h](https://user-images.githubusercontent.com/118953917/205941772-0facd6c6-5197-44fc-97af-18b25c223eaf.JPG)
+
+
+
