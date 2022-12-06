@@ -71,20 +71,29 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 ![day2lab2a](https://user-images.githubusercontent.com/118953917/205945324-55bd0326-f8a5-4d03-a9ae-35fecba4d087.JPG)
 
->Invoke yosys
+>Invoke yosys, import liberty files, generate verilog file, synthesize module, convert RTL to gate design
+
 >> yosys
+
 >> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
 >> read_verilog multiple_modules.v
+
 >> synth -top multiple_modules 
+
 >> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
 >> show multiple_modules 
->> write_verilog multiple_modules_hier.v 
+
 
 ![day2lab2b](https://user-images.githubusercontent.com/118953917/205945334-4caede00-299d-491c-a7e0-39375bbe0cf0.JPG)
 
 ![day2lab2c](https://user-images.githubusercontent.com/118953917/205945612-b4ceba1a-0815-4e29-bfee-4997429f1674.JPG)
 
 >Open and write netlist
->> 
+>> write_verilog multiple_modules_hier.v 
+
+>> !vim multiple_modules_hier.v 
+
 
 
