@@ -46,3 +46,23 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 ![day2lab1e](https://user-images.githubusercontent.com/118953917/205868209-f02cb6ea-2b6b-4b25-99b7-f24515c4ea34.JPG)
 
+>To search specific words
+>> /cell .*and
+
+>Split vertically to make comparisons
+>> :vsp ../my_lib/verilog_model/sky130_fd_sc_hd.v
+
+>Search for different types of flavours and inputs in the same cell
+>> /and2_0
+>> /and2_2
+>> /and2_2
+
+* The wider the cell, the greater the area, the larger the leakage power, resulting in less delay. Since it has small delay, it can operates faster.
+* Contrarily, the narrower the cell, the smaller the area, the smaller the leakage power, resulting in more delay. Since it has small area, it only needs less power consumption.
+
+![day2lab1f](https://user-images.githubusercontent.com/118953917/205929860-c9e146e9-d910-4abc-a65a-cbd8a59505f7.JPG)
+
+
+
+**Lab 2 Hierarchical vs Flat Synthesis**
+
