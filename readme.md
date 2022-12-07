@@ -136,7 +136,7 @@ for it that make it as good at delivering output current as a standard inverter,
 
 Why sub module synth is used?
 * When we have multiple instances of the same module.
-* To divide in 4 corners. When the design is using a massive design, it is not doing a good job.
+* To divide in corners. When the design is using a massive design, it is not doing a good job.
 
 ![day2lab2h](https://user-images.githubusercontent.com/118953917/206114375-27aaf964-105f-4116-b772-2f50f3cf9008.JPG)
 
