@@ -128,7 +128,7 @@ for it that make it as good at delivering output current as a standard inverter,
 
 ![day2lab2f](https://user-images.githubusercontent.com/118953917/206108677-5b6fd1ba-c0e2-45c1-9d65-5ae30b4a4159.JPG)
 
-**Graphical circuit output 
+**Graphical circuit output**
 
 ![day2lab2g](https://user-images.githubusercontent.com/118953917/206109393-2adda35f-075f-4eb1-84f7-92358aa00aca.JPG)
 
@@ -143,7 +143,7 @@ Why sub module synth is used?
 
 **Lab 3 Various Flop Coding Styles and optimization**
 
-**Comparison of asynchronous-synchronous, asynchronous, synchronous set, and synchronous
+**Comparison of asynchronous-synchronous, asynchronous, synchronous set, and synchronous**
 
 ![day2lab3a](https://user-images.githubusercontent.com/118953917/206135645-d49bb437-a3cc-48a0-ab14-ecece5af6573.JPG)
 
@@ -153,15 +153,78 @@ Why sub module synth is used?
 
 >> gtkwave tb_dff_asyncres.vcd
 
-* Asynchronous output
+**Asynchronous output**
+
+* Reset went low much before the clock. D is waiting for the clock to become "1" before it goes to "1" while output Q changes upon clock edge. Q is changing because of D. 
+* The moment reset came from low to high, it was not waiting for the subsequent clock edge. The output Q will immediately went low. 
+* Asynchronous behaviour is not awaiting for clock edge.
 
 ![day2lab3b-async](https://user-images.githubusercontent.com/118953917/206151237-1f37231a-32b4-4bcb-a267-84efd08eb881.JPG)
 
-* Asynchronous_set output
+**Asynchronous_set output**
+
+* The changes in the D pin trigger the output Q pin upon the changes of the clock edge. 
+* When set is high, the output Q will immediately went high irrespective to the clock edge. Q will remain high until set is toggle back to low.
 
 ![day2lab3b-asyncset](https://user-images.githubusercontent.com/118953917/206151248-4668c9dc-8af2-4eaf-a109-ad690b0acd98.JPG)
 
-* Synchronous output
+**Synchronous output**
+
+* When reset is high, the output Q will go low subsequently upon the clock edge toggling. Q will remain low until reset is toggle back to low.
+The output(q) will get trigger for each of the posedge clock
 
 ![day2lab3b-sync](https://user-images.githubusercontent.com/118953917/206151253-9bab416c-b665-410b-9f45-001837a711ea.JPG)
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog dff_asyncres.v 
+
+>> synth -top dff_asyncres 
+
+>> dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+![day2lab3c](https://user-images.githubusercontent.com/118953917/206190275-be479c10-3040-4011-b9b8-ff17cc2e7661.JPG)
+
+**Asynchronous output**
+
+![day2lab3d-async](https://user-images.githubusercontent.com/118953917/206196175-28336cc0-8a31-4097-a0ca-3486cf849db2.JPG)
+
+**Asynchronous_set output**
+
+![day2lab3d-asyncset](https://user-images.githubusercontent.com/118953917/206196162-2ef4b434-8731-4138-8b8f-062878151528.JPG)
+
+**Synchronous output**
+
+![day2lab3d-sync](https://user-images.githubusercontent.com/118953917/206196172-869cfea8-cf91-4d28-9ea7-12d6f051ca2a.JPG)
+
+*Notes: why there is no set/reset pin in flip flop
+
+![day2lab3e](https://user-images.githubusercontent.com/118953917/206197685-b429be30-5e18-4473-8cc0-6c6be62521a7.JPG)
+
+>> vim mult_*.v -o 
+
+or
+
+>> cat mult_*.v
+
+![day2lab3f](https://user-images.githubusercontent.com/118953917/206202801-e03a746e-0e99-4391-baee-b6916a2e4a57.JPG)
+
+>> yosys
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog mult_2.v
+
+>> synth -top mul2
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> show
+
+![day2lab3g](https://user-images.githubusercontent.com/118953917/206206370-5364de09-32a3-4296-bb50-3d51f15fd47b.JPG)
+
+![day2lab3h](https://user-images.githubusercontent.com/118953917/206206375-5e37d68a-078c-488c-b4a2-79801a68fd44.JPG)
+
 
