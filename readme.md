@@ -54,10 +54,13 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 >Search for different types of flavours and inputs in the same cell
 >> /and2_0
+
 >> /and2_2
+
 >> /and2_2
 
 * The wider the cell, the greater the area, the larger the leakage power, resulting in less delay. Since it has small delay, it can operates faster.
+
 * Contrarily, the narrower the cell, the smaller the area, the smaller the leakage power, resulting in more delay. Since it has small area, it only needs less power consumption.
 
 ![day2lab1f](https://user-images.githubusercontent.com/118953917/205929860-c9e146e9-d910-4abc-a65a-cbd8a59505f7.JPG)
@@ -98,13 +101,17 @@ There are 2^5 = 32 possible inputs combinations of the design
 >> !vim multiple_modules_hier.v 
 
 *Notes: Scripting from instructor's video.
+
 ![day2lab2d](https://user-images.githubusercontent.com/118953917/206104807-8c01887a-463d-421c-8f15-a85f20bf1bf6.JPG)
 
-*scripting at my end
+*Notes: Scripting at my end
+
 ![day2lab2d1](https://user-images.githubusercontent.com/118953917/206105858-04b38d3a-5ddf-4936-b9ae-6f2c59e24ea1.JPG)
 
 Why 2 inverter and NAND gates are constructed instead of OR gate? 
+
 * Stacking PMOS of NAND gate is always bad since it has poor mobility.
+
 * To improve the bad cell, the wider cell must be constructed to make a good logical effort. To compute the logical effort of a logic gate, pick transistor sizes
 for it that make it as good at delivering output current as a standard inverter, and then tally up the input capacitance of each input signal.
 
@@ -124,6 +131,7 @@ for it that make it as good at delivering output current as a standard inverter,
 >> show
 
 * In hierarchy module, sub module 1 and sub module 2 is preserved.
+
 * Whereas, in flattened module, it is a single netlist, we cannot see them. It has been flattened out. 
 
 ![day2lab2f](https://user-images.githubusercontent.com/118953917/206108677-5b6fd1ba-c0e2-45c1-9d65-5ae30b4a4159.JPG)
@@ -136,6 +144,7 @@ for it that make it as good at delivering output current as a standard inverter,
 
 Why sub module synth is used?
 * When we have multiple instances of the same module.
+
 * To divide in corners. When the design is using a massive design, it is not doing a good job.
 
 ![day2lab2h](https://user-images.githubusercontent.com/118953917/206114375-27aaf964-105f-4116-b772-2f50f3cf9008.JPG)
@@ -156,14 +165,17 @@ Why sub module synth is used?
 **Asynchronous output**
 
 * Reset went low much before the clock. D is waiting for the clock to become "1" before it goes to "1" while output Q changes upon clock edge. Q is changing because of D. 
+
 * The moment reset came from low to high, it was not waiting for the subsequent clock edge. The output Q will immediately went low. 
+
 * Asynchronous behaviour is not awaiting for clock edge.
 
 ![day2lab3b-async](https://user-images.githubusercontent.com/118953917/206151237-1f37231a-32b4-4bcb-a267-84efd08eb881.JPG)
 
 **Asynchronous_set output**
 
-* The changes in the D pin trigger the output Q pin upon the changes of the clock edge. 
+* The changes in the D pin trigger the output Q pin upon the changes of the clock edge.
+ 
 * When set is high, the output Q will immediately went high irrespective to the clock edge. Q will remain high until set is toggle back to low.
 
 ![day2lab3b-asyncset](https://user-images.githubusercontent.com/118953917/206151248-4668c9dc-8af2-4eaf-a109-ad690b0acd98.JPG)
@@ -225,6 +237,35 @@ or
 
 ![day2lab3g](https://user-images.githubusercontent.com/118953917/206206370-5364de09-32a3-4296-bb50-3d51f15fd47b.JPG)
 
+*Notes: the figure at the left is taken from the instructor's video.
+
 ![day2lab3h](https://user-images.githubusercontent.com/118953917/206206375-5e37d68a-078c-488c-b4a2-79801a68fd44.JPG)
+
+**Special case**
+
+>> yosys
+
+>> yosys> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog mult_8.v 
+
+>> synth -top mult8
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> show
+
+>> write_verilog -noattr mult8_net.v 
+
+* Requires no hardware for special case since we can just rewiring the signal. 
+
+* Any standard cell is not required to acquire the logic functionality.
+
+*Notes: the figure at the top is taken from the instructor's video.
+
+![day2lab3i](https://user-images.githubusercontent.com/118953917/206213266-f33aa64a-7ad8-4d5c-a2f0-f22816f1445a.JPG)
+
+
+
 
 
