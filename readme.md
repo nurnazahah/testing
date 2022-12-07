@@ -93,7 +93,8 @@ There are 2^5 = 32 possible inputs combinations of the design
 >Open and write netlist
 >> write_verilog multiple_modules_hier.v 
 
->> !vim multiple_modules_hier.v 
+>> write_verilog -noattr multiple_modules_hier.v 
 
+>> !vim multiple_modules_hier.v 
 
 
