@@ -97,4 +97,14 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 >> !vim multiple_modules_hier.v 
 
+##Result vim##
+
+Why 2 inverter and NAND gates are constructed instead of OR gate? 
+* Stacking PMOS of NAND gate is always bad since it has poor mobility.
+* To improve the bad cell, the wider cell must be constructed to make a good logical effort. To compute the logical effort of a logic gate, pick transistor sizes
+for it that make it as good at delivering output current as a standard inverter, and then tally up the input capacitance of each input signal.
+
+
+
+
 
