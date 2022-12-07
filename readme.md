@@ -97,14 +97,47 @@ There are 2^5 = 32 possible inputs combinations of the design
 
 >> !vim multiple_modules_hier.v 
 
-##Result vim##
+*Notes: Scripting from instructor's video.
+![day2lab2d](https://user-images.githubusercontent.com/118953917/206104807-8c01887a-463d-421c-8f15-a85f20bf1bf6.JPG)
+
+*scripting at my end
+![day2lab2d1](https://user-images.githubusercontent.com/118953917/206105858-04b38d3a-5ddf-4936-b9ae-6f2c59e24ea1.JPG)
 
 Why 2 inverter and NAND gates are constructed instead of OR gate? 
 * Stacking PMOS of NAND gate is always bad since it has poor mobility.
 * To improve the bad cell, the wider cell must be constructed to make a good logical effort. To compute the logical effort of a logic gate, pick transistor sizes
 for it that make it as good at delivering output current as a standard inverter, and then tally up the input capacitance of each input signal.
 
+![day2lab2e](https://user-images.githubusercontent.com/118953917/206087867-bfef5fef-2adf-47f2-a3c7-e9387a64525a.JPG)
 
+>To flatten the design
+>> flatten
 
+>> write_verilog multiple_modules_flat.v 
+
+>> write_verilog -noattr multiple_modules_flat.v 
+
+>> !vim multiple_modules_flat.v 
+
+>> :vsp multiple_modules_hier.v
+
+>> show
+
+* In hierarchy module, sub module 1 and sub module 2 is preserved.
+* Whereas, in flattened module, it is a single netlist, we cannot see them. It has been flattened out. 
+
+![day2lab2f](https://user-images.githubusercontent.com/118953917/206108677-5b6fd1ba-c0e2-45c1-9d65-5ae30b4a4159.JPG)
+
+**Graphical circuit output 
+
+![day2lab2g](https://user-images.githubusercontent.com/118953917/206109393-2adda35f-075f-4eb1-84f7-92358aa00aca.JPG)
+
+>> synth -top sub_module1
+
+Why sub module synth is used?
+* When we have multiple instances of the same module.
+* To divide in 4 corners. When the design is using a massive design, it is not doing a good job.
+
+![day2lab2h](https://user-images.githubusercontent.com/118953917/206114375-27aaf964-105f-4116-b772-2f50f3cf9008.JPG)
 
 
