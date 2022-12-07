@@ -141,3 +141,18 @@ Why sub module synth is used?
 ![day2lab2h](https://user-images.githubusercontent.com/118953917/206114375-27aaf964-105f-4116-b772-2f50f3cf9008.JPG)
 
 
+**Lab 3 Various Flop Coding Styles and optimization**
+
+**Comparison of asynchronous-synchronous, asynchronous, synchronous set, and synchronous
+
+![day2lab3a](https://user-images.githubusercontent.com/118953917/206135645-d49bb437-a3cc-48a0-ab14-ecece5af6573.JPG)
+
+>> iverilog dff_asyncres.v tb_dff_asyncres.v
+
+>> ./a.out
+
+>> gtkwave tb_dff_asyncres.vcd
+
+
+
+
