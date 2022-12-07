@@ -153,6 +153,15 @@ Why sub module synth is used?
 
 >> gtkwave tb_dff_asyncres.vcd
 
+* Asynchronous output
 
+![day2lab3b-async](https://user-images.githubusercontent.com/118953917/206151237-1f37231a-32b4-4bcb-a267-84efd08eb881.JPG)
 
+* Asynchronous_set output
+
+![day2lab3b-asyncset](https://user-images.githubusercontent.com/118953917/206151248-4668c9dc-8af2-4eaf-a109-ad690b0acd98.JPG)
+
+* Synchronous output
+
+![day2lab3b-sync](https://user-images.githubusercontent.com/118953917/206151253-9bab416c-b665-410b-9f45-001837a711ea.JPG)
 
