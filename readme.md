@@ -3,7 +3,7 @@
 
 ###############################################################################################
 
-#### Lab 1 Introduction to optimisations
+#### Introduction to optimisations
 
 Combinational logic optimisation
 * To squeeze the logic to get the most optimised design in terms of Area and Power saving.
@@ -46,6 +46,8 @@ State optimisation, retiming, and sequential logic cloning
 
 ![day3lab1e](https://user-images.githubusercontent.com/118953917/206386303-6b5a0417-de0c-4f40-afca-cb20ed45878d.JPG)
 
+#### Lab 1: Combinational Logic Optimisations
+
 >> ls *opt_check* 
 
 >> !gvim opt_check.v
@@ -58,11 +60,6 @@ State optimisation, retiming, and sequential logic cloning
 
 gambar
 
-
-
-
-
-
 >> yosys
 
 >> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -71,7 +68,15 @@ gambar
 
 >> synth -top opt_check
 
+>> opt_clean -purge
+
 >> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 
+![day3lab1g](https://user-images.githubusercontent.com/118953917/206456146-a2f707e4-1af4-42ab-bb70-91ba7aacd8ee.JPG)
 
+>> show
+
+![day3lab1h](https://user-images.githubusercontent.com/118953917/206459637-5b71b4bf-14df-469e-9ff4-c83eac82515f.JPG)
+
+#### Lab 2: Sequential Logic Optimisations
 
