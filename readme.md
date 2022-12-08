@@ -33,7 +33,7 @@ Sequential constant
 * Q can be both value 0 and 1 depending on the set situation.
 * Cannot simply assume Q = set because Q will toggle for the next clock period cycle. For example, when set is going from '1' to '0', the output Q will wait for the next positive clock cycle to be '1' before toggling from '1' to '0'. Q is waiting for the clock to become '0' in Q.
 
-*Notes: 
+*Notes: This is example of not sequential constant.
 * This flop cannot be optimised, it must be retained. The sequential logic cannot be propagated and should be retained.
 * To make the flop be sequential, the output Q will be always be a constant value whether rst or clock or any other thing are applied.
 
