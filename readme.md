@@ -58,7 +58,7 @@ State optimisation, retiming, and sequential logic cloning
 
 >> !gvim opt_check4.v
 
-gambar
+![day3lab1f](https://user-images.githubusercontent.com/118953917/206479526-391ae3fe-5bc5-447f-9290-4d2e670be9de.JPG)
 
 >> yosys
 
@@ -77,6 +77,19 @@ gambar
 >> show
 
 ![day3lab1h](https://user-images.githubusercontent.com/118953917/206459637-5b71b4bf-14df-469e-9ff4-c83eac82515f.JPG)
+![day3lab1i](https://user-images.githubusercontent.com/118953917/206479602-5b84f7c9-b0b7-40c4-b0d7-078fed6f9e08.JPG)
+
 
 #### Lab 2: Sequential Logic Optimisations
+
+>> gvim dff_const1.v -o dff_const2.v
+
+![day3lab2a](https://user-images.githubusercontent.com/118953917/206494320-917050c2-08b2-46e4-93f0-3ca71dd9145b.JPG)
+
+>> iverilog dff_const1.v tb_dff_const1.v
+
+>> ./a.out
+
+>> gtkwave tb_dff_const1.vcd
+
 
