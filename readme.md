@@ -10,6 +10,8 @@ Combinational logic optimisation
 * Constant propagation technique used: Direct optimisation.
 * Boolean logic optimisation technique: K-map and Quine McKluskey.
 
+*Notes: Circuit diagram is taken from instructor's video.
+
 ![day3lab1a](https://user-images.githubusercontent.com/118953917/206355330-fdaec931-c9f2-49f2-9cb8-3e87eb3a6b01.JPG)
 
 ![day3lab1b](https://user-images.githubusercontent.com/118953917/206356348-7c897af2-e544-4eb7-946f-67271949fb23.JPG)
