@@ -39,5 +39,24 @@ Sequential constant
 
 ![day3lab1d](https://user-images.githubusercontent.com/118953917/206372423-7917ac79-ada9-4885-be3e-530dd1d6faee.JPG)
 
+State optimisation, retiming, and sequential logic cloning
+* State optimisation: Optimisation of unused state.
+* Cloning (Physical aware): clock-gate (a special gate in the clock tree that switches of the clock signal to a number of flip-flops to save power when they are not needed) is duplicated so that one clock-gate driving, for example, 40 flip-flops can be "cloned" to become 2 clock-gates driving 20 flip-flops each.
+* Retiming: a technique for optimizing sequential circuits. It repositions the registers in a circuit leaving the combinational portion of circuitry untouched. The objective of retiming is to find a circuit with the minimum number of registers for a specified clock period.
+
+![day3lab1e](https://user-images.githubusercontent.com/118953917/206386303-6b5a0417-de0c-4f40-afca-cb20ed45878d.JPG)
+
+>> ls *opt_check* 
+
+>> yosys
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog opt_check.v
+
+>> synth -top opt_check
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
 
 
