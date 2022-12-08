@@ -108,4 +108,6 @@ State optimisation, retiming, and sequential logic cloning
 
 >> show
 
+![day3lab2c](https://user-images.githubusercontent.com/118953917/206499671-15d3b757-4b66-42f5-b05f-3fad2c2afb2f.JPG)
+
 
