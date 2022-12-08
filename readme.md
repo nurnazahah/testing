@@ -92,4 +92,20 @@ State optimisation, retiming, and sequential logic cloning
 
 >> gtkwave tb_dff_const1.vcd
 
+![day3lab2b](https://user-images.githubusercontent.com/118953917/206495551-ca56a6ab-4045-478c-bb95-5e0d5cdd7214.JPG)
+
+>> yosys
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog dff_const1.v
+
+>> synth -top dff_const1
+
+>> dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> show
+
 
