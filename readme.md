@@ -48,6 +48,21 @@ State optimisation, retiming, and sequential logic cloning
 
 >> ls *opt_check* 
 
+>> !gvim opt_check.v
+
+>> !gvim opt_check2.v
+
+>> !gvim opt_check3.v
+
+>> !gvim opt_check4.v
+
+gambar
+
+
+
+
+
+
 >> yosys
 
 >> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
