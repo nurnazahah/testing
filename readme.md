@@ -94,6 +94,12 @@ State optimisation, retiming, and sequential logic cloning
 
 ![day3lab2b](https://user-images.githubusercontent.com/118953917/206495551-ca56a6ab-4045-478c-bb95-5e0d5cdd7214.JPG)
 
+![day3lab2e](https://user-images.githubusercontent.com/118953917/206611412-0acdc45a-ee64-48f3-9d8c-466446f1ad34.JPG)
+
+![day3lab2f](https://user-images.githubusercontent.com/118953917/206614858-48e7f4ba-fba1-4616-af6f-99ea8f1f3c5c.JPG)
+
+![day3lab2g](https://user-images.githubusercontent.com/118953917/206616365-d347d151-0931-4272-9f38-53430eb1e69a.JPG)
+
 >> yosys
 
 >> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -110,4 +116,7 @@ State optimisation, retiming, and sequential logic cloning
 
 ![day3lab2c](https://user-images.githubusercontent.com/118953917/206499671-15d3b757-4b66-42f5-b05f-3fad2c2afb2f.JPG)
 
+For dff_const1, it does inferred DFF, while for dff_const2, it does not inferred anything. 
+
+![day3lab2d](https://user-images.githubusercontent.com/118953917/206605673-f9608abc-3ce2-4ba6-b6f8-0aca142799ed.JPG)
 
