@@ -143,9 +143,9 @@ Unused output optimisation
 
 >> show
 
-![day3lab3b](https://user-images.githubusercontent.com/118953917/206633997-8e29b57b-536c-44a3-8359-9e4807365693.JPG)
-
 ![day3lab3a](https://user-images.githubusercontent.com/118953917/206634003-09270394-1a2b-4734-9f6a-6f0b4b8ae743.JPG)
+
+![day3lab3b](https://user-images.githubusercontent.com/118953917/206633997-8e29b57b-536c-44a3-8359-9e4807365693.JPG)
 
 >> cp counter_opt.v counter_opt2.v
 
@@ -157,5 +157,6 @@ Unused output optimisation
 
 >> synth -top counter_opt
 
+![day3lab3c](https://user-images.githubusercontent.com/118953917/206652215-e90e344e-65db-4936-8977-0e0b92fc1075.JPG)
 
 
