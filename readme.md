@@ -78,6 +78,7 @@ State optimisation, retiming, and sequential logic cloning
 ![day3lab1i](https://user-images.githubusercontent.com/118953917/206479602-5b84f7c9-b0b7-40c4-b0d7-078fed6f9e08.JPG)
 
 
+
 #### Lab 2: Sequential Logic Optimisations
 
 >> gvim dff_const1.v -o dff_const2.v
