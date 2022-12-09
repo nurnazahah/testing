@@ -98,7 +98,7 @@ State optimisation, retiming, and sequential logic cloning
 
 ![day3lab2f](https://user-images.githubusercontent.com/118953917/206614858-48e7f4ba-fba1-4616-af6f-99ea8f1f3c5c.JPG)
 
-
+![day3lab2h](https://user-images.githubusercontent.com/118953917/206616872-327adf53-23ee-4675-9abe-983595097cae.JPG)
 
 >> yosys
 
