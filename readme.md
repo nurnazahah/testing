@@ -98,7 +98,11 @@ State optimisation, retiming, and sequential logic cloning
 
 >> show
 
+multiple_module_opt
+
 ![day3lab2l](https://user-images.githubusercontent.com/118953917/206708545-ce9576d2-fe97-4b98-818d-67cb921dd5f7.JPG)
+
+multiple_module_opt2
 
 ![day3lab2m](https://user-images.githubusercontent.com/118953917/206708534-e7a7330b-fa5c-4cac-bf1f-f2bcb32e8c72.JPG)
 
