@@ -127,3 +127,5 @@ For dff_const1, it does inferred DFF, while for dff_const2, it does not inferred
 
 #### Lab 3: Sequential optimzations for unused outputs
 
+Unused output optimisation
+
