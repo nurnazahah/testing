@@ -78,6 +78,31 @@ State optimisation, retiming, and sequential logic cloning
 ![day3lab1i](https://user-images.githubusercontent.com/118953917/206479602-5b84f7c9-b0b7-40c4-b0d7-078fed6f9e08.JPG)
 
 
+>> ls *multiple_module_opt*
+
+>> gvim multiple_module_opt.v
+
+
+
+>> yosys
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog multiple_module_opt.v
+
+>> synth -top multiple_module_opt
+
+>> flatten
+
+>> opt_clean -purge
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> show
+
+
+
+
 
 #### Lab 2: Sequential Logic Optimisations
 
@@ -124,6 +149,7 @@ For dff_const1, it does inferred DFF, while for dff_const2, it does not inferred
 ![day3lab2j](https://user-images.githubusercontent.com/118953917/206619992-7b4a6e69-7769-43b6-a1c3-c986c1d346a0.JPG)
 
 ![day3lab2k](https://user-images.githubusercontent.com/118953917/206620000-8254049a-3fdf-497d-a026-d3d04a3899da.JPG)
+
 
 
 #### Lab 3: Sequential optimzations for unused outputs
