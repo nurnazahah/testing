@@ -151,7 +151,7 @@ Unused output optimisation
 
 >> gvim counter_opt2.v -> write Q value inside gvim
 
->> :wa! to save work
+>> :wa! or :wq to save work
 
 > open yosys and do the same steps as before
 
