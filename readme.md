@@ -1,8 +1,6 @@
 
 ### Topic: Timing libs (QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
 
-###############################################################################################
-
 #### Introduction to optimisations
 
 Combinational logic optimisation
@@ -126,4 +124,6 @@ For dff_const1, it does inferred DFF, while for dff_const2, it does not inferred
 
 ![day3lab2k](https://user-images.githubusercontent.com/118953917/206620000-8254049a-3fdf-497d-a026-d3d04a3899da.JPG)
 
+
+#### Lab 3: Sequential optimzations for unused outputs
 
