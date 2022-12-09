@@ -129,3 +129,33 @@ For dff_const1, it does inferred DFF, while for dff_const2, it does not inferred
 
 Unused output optimisation
 
+>> yosys
+
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog counter_opt.v
+
+>> synth -top counter_opt
+
+>> dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> show
+
+![day3lab3b](https://user-images.githubusercontent.com/118953917/206633997-8e29b57b-536c-44a3-8359-9e4807365693.JPG)
+
+![day3lab3a](https://user-images.githubusercontent.com/118953917/206634003-09270394-1a2b-4734-9f6a-6f0b4b8ae743.JPG)
+
+>> cp counter_opt.v counter_opt2.v
+
+>> gvim counter_opt2.v -> write Q value inside gvim
+
+>> :wa! to save work
+
+> open yosys and do the same steps as before
+
+>> synth -top counter_opt
+
+
+
