@@ -1,8 +1,8 @@
 # Day 4
 
-### Topic: Timing libs (QTMs/ETMs), hierarchical vs flat synthesis and efficient flop coding styles
+### Topic: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
 
-#### Introduction to optimisations
+#### Introduction to GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
 
 What is Gate Level Simulation (GLS)?
 
@@ -14,10 +14,54 @@ Why GLS?
 * Verify the logical correctness of design after synthesis.
 * Ensuring the timing of the design is met - for this GLS needs to be run with delay annotation.
 
-
 GLS using iverilog
 
 *Notes: Mindmap is taken from instructor's video.
 
 ![day4labintroa](https://user-images.githubusercontent.com/118953917/206889766-5e90e4dc-1a2a-48ba-82c0-440d9c2a13cf.JPG)
+
+*Notes: Example is taken from instructor's video.
+
+![day4labintroB](https://user-images.githubusercontent.com/118953917/206892298-58e8e0c8-fa62-4660-9bf0-0f271a3f96d6.JPG)
+
+Synthesis simulation mismatch
+
+* Missing sensitivity list.
+* Blocking vs non-blocking assignments.
+* Non standard verilog coding.
+
+Simulator works based on activity where output will change based upon the changes in input. If there is no activity, output will not change at all. 
+
+*Notes: Example is taken from instructor's video.
+
+![day4labintroc](https://user-images.githubusercontent.com/118953917/206892758-644b9471-48c3-4361-b180-21d130ba5648.JPG)
+
+Blocking and non-blocking statements in verilog
+
+**Inside always block**
+
+= : Bocking
+
+* Executes the statements in the order it is written.
+* So, the first statement is evaluated before the second statement.
+
+<= : Non-blocking
+
+* Executes all the Right Hand Side (RHS) when always block is entered and assigns to Left Hand Side (LHS).
+* Parallel evaluation. 
+
+Caveats with blocking statements
+
+*Notes: Example is taken from instructor's video.
+
+![day4labintrod](https://user-images.githubusercontent.com/118953917/206893381-678189a6-58fc-46ec-883c-68ef1c17a8c1.JPG)
+
+![image](https://user-images.githubusercontent.com/118953917/206893664-71237e2d-2ae5-414d-94a5-7aa8a10e6673.png)
+
+
+###############################################################################################
+
+#### Lab Result
+
+#### Lab 1: GLS Synth Sim Mismatch
 
