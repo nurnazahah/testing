@@ -36,7 +36,7 @@ Simulator works based on activity where output will change based upon the change
 
 ![day4labintroc](https://user-images.githubusercontent.com/118953917/206893907-72c992b3-22a9-4916-b429-c9877f3d4aa1.JPG)
 
-Blocking and non-blocking statements in verilog
+**Blocking and non-blocking statements in verilog**
 
 **Inside always block**
 
