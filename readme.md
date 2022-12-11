@@ -34,7 +34,7 @@ Simulator works based on activity where output will change based upon the change
 
 *Notes: Example is taken from instructor's video.
 
-![day4labintroc](https://user-images.githubusercontent.com/118953917/206892758-644b9471-48c3-4361-b180-21d130ba5648.JPG)
+![day4labintroc](https://user-images.githubusercontent.com/118953917/206893907-72c992b3-22a9-4916-b429-c9877f3d4aa1.JPG)
 
 Blocking and non-blocking statements in verilog
 
@@ -56,7 +56,7 @@ Caveats with blocking statements
 
 ![day4labintrod](https://user-images.githubusercontent.com/118953917/206893381-678189a6-58fc-46ec-883c-68ef1c17a8c1.JPG)
 
-![image](https://user-images.githubusercontent.com/118953917/206893664-71237e2d-2ae5-414d-94a5-7aa8a10e6673.png)
+![day4labintroe](https://user-images.githubusercontent.com/118953917/206893870-a8421413-8d09-4017-9738-c667fd4a17c4.JPG)
 
 
 ###############################################################################################
