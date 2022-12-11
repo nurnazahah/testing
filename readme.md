@@ -67,9 +67,11 @@ Caveats with blocking statements
 
 >> gvim ternary_operator_mux.v -o bad_mux.v -o good_mux.v 
 
-Ternary operator
+**Ternary operator**
 
 Example: assign y = sel?i1:i0
+
+lab1a gambar 
   
 >> iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
   
@@ -79,8 +81,8 @@ Example: assign y = sel?i1:i0
 
 When sel = 0, the output Y follows input i0. Whereas, when sel = 1, Y follows input i0.
 
-![day4lab1a](https://user-images.githubusercontent.com/118953917/206895248-9961f9aa-ebce-4abe-bd43-b09b6ead39eb.JPG)
-  
+lab1b gambar
+
 >> yosys
 
 >> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -94,3 +96,28 @@ When sel = 0, the output Y follows input i0. Whereas, when sel = 1, Y follows in
 >> write_verilog -noattr ternary_operator_mux_net.v 
 
 >> show 
+
+gambar result
+
+>> iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+
+>> ./a.out
+
+>> gtkwave tb_ternary_operator_mux.vcd 
+
+gambar ternary operator mux
+
+**Bad mux**
+
+>> iverilog bad_mux.v tb_bad_mux.v 
+
+>> ./a.out
+
+>> gtkwave tb_bad_mux.vcd
+
+When there is activity on select, the inputs and output is toggling because it is depending on select.
+
+gambar bad mux
+
+
+
