@@ -71,17 +71,17 @@ Caveats with blocking statements
 
 Example: assign y = sel?i1:i0
 
-lab1a gambar 
-  
+![day4lab1a](https://user-images.githubusercontent.com/118953917/206908420-a951d8ff-4fd9-4750-8d92-7550b705e0fe.JPG)
+
 >> iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
-  
+
 >> ./a.out
 
 >> gtkwave tb_ternary_operator_mux.vcd
 
 When sel = 0, the output Y follows input i0. Whereas, when sel = 1, Y follows input i0.
 
-lab1b gambar
+![day4lab1b](https://user-images.githubusercontent.com/118953917/206908435-e8004b40-240e-47c9-a44d-8f6eaa9e6739.JPG)
 
 >> yosys
 
@@ -97,7 +97,7 @@ lab1b gambar
 
 >> show 
 
-gambar result
+![day4lab1c](https://user-images.githubusercontent.com/118953917/206908445-2fb1e440-75ad-4d4c-80fc-f65a0c855d0a.JPG)
 
 >> iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
 
@@ -105,7 +105,7 @@ gambar result
 
 >> gtkwave tb_ternary_operator_mux.vcd 
 
-gambar ternary operator mux
+![day4lab1d](https://user-images.githubusercontent.com/118953917/206908455-ee27b998-7872-43be-afa5-a3e78081f96d.JPG)
 
 **Bad mux**
 
@@ -136,11 +136,7 @@ The output Y is following both inputs i0 and i1 depending on select.
 * When select is low, the output is following i0.
 * Whereas when select is high, the output is following i1.
 
-
-
-
-
-
+![day4lab1e](https://user-images.githubusercontent.com/118953917/206908470-50e59616-13df-4a22-9865-d16bce93badf.JPG)
 
 >> read_verilog bad_mux.v
 
@@ -149,3 +145,41 @@ The output Y is following both inputs i0 and i1 depending on select.
 >> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 
 >> write_verilog -noattr bad_mux_net.v 
+
+>> show
+
+![day4lab1f](https://user-images.githubusercontent.com/118953917/206908481-a16c2c0f-c359-4482-bc26-667c1d6dac7e.JPG)
+
+
+#### Lab 2: Synth sim mismatch blocking statement
+
+>> gvim blocking_caveat.v
+
+>> iverilog blocking_caveat.v tb_blocking_caveat.v
+
+>> ./a.out
+
+>> gtkwave tb_blocking_caveat.vcd 
+
+![day4lab2a](https://user-images.githubusercontent.com/118953917/206908531-668b8cf0-131a-40b7-a450-7d2217e154f2.JPG)
+
+>> read_verilog blocking_caveat.v
+
+>> synth -top blocking_caveat
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> write_verilog -noattr blocking_caveat_net.v
+
+>> show
+
+![day4lab2b](https://user-images.githubusercontent.com/118953917/206908538-b6def2eb-dbc3-4b9a-9e71-77935769ccd2.JPG)
+
+>> iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+
+>> ./a.out
+
+>> gtkwave tb_blocking_caveat.vcd 
+
+![day4lab2c](https://user-images.githubusercontent.com/118953917/206908549-ffe180e3-22e8-4088-a58e-79ac7255f582.JPG)
+
