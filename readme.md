@@ -69,8 +69,6 @@ Caveats with blocking statements
 
 Ternary operator
 
-<condition>?<True>:<False>
-  
 Example: assign y = sel?i1:i0
   
 >> iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
@@ -79,6 +77,20 @@ Example: assign y = sel?i1:i0
 
 >> gtkwave tb_ternary_operator_mux.vcd
 
+When sel = 0, the output Y follows input i0. Whereas, when sel = 1, Y follows input i0.
+
 ![day4lab1a](https://user-images.githubusercontent.com/118953917/206895248-9961f9aa-ebce-4abe-bd43-b09b6ead39eb.JPG)
   
+>> yosys
 
+>> read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> read_verilog ternary_operator_mux.v
+
+>> synth -top ternary_operator_mux
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> write_verilog -noattr ternary_operator_mux_net.v 
+
+>> show 
