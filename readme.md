@@ -115,9 +115,37 @@ gambar ternary operator mux
 
 >> gtkwave tb_bad_mux.vcd
 
+**Synthesis simulation mismatch**
+
+>> iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+
+>> ./a.out
+
+>> gtkwave tb_bad_mux.vcd 
+
+**Bad mux**
+
 When there is activity on select, the inputs and output is toggling because it is depending on select.
+* When select is low, i0 should be high based on the actual behavior of multiplexer. But, in this case, i0 is low because select is low (there is no activity in select).
+* Whereas, when select is high, there is activity on select. Theoretically, i1 should be high and i0 should be low. But in bad mux, both inputs i0 and i1 is high since there is activity on select.
+* Only when select is changing, the output Y is also changing based upon the select.
 
-gambar bad mux
+**Synthesis simulation mismatch**
+
+The output Y is following both inputs i0 and i1 depending on select.
+* When select is low, the output is following i0.
+* Whereas when select is high, the output is following i1.
 
 
 
+
+
+
+
+>> read_verilog bad_mux.v
+
+>> synth -top bad_mux
+
+>> abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+>> write_verilog -noattr bad_mux_net.v 
