@@ -65,3 +65,20 @@ Caveats with blocking statements
 
 #### Lab 1: GLS Synth Sim Mismatch
 
+>> gvim ternary_operator_mux.v -o bad_mux.v -o good_mux.v 
+
+Ternary operator
+
+<condition>?<True>:<False>
+  
+Example: assign y = sel?i1:i0
+  
+>> iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+  
+>> ./a.out
+
+>> gtkwave tb_ternary_operator_mux.vcd
+
+![day4lab1a](https://user-images.githubusercontent.com/118953917/206895248-9961f9aa-ebce-4abe-bd43-b09b6ead39eb.JPG)
+  
+
