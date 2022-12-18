@@ -141,7 +141,9 @@ gambar 76
  
 
 ### Lab 1: Invoking DC basic setup
-  
->  /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+
+> git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+> cd sky130RTLDesignAndSynthesisWorkshop/
+> /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
 > dc_shell
 > 
