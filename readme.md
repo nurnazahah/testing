@@ -142,8 +142,39 @@ gambar 76
 
 ### Lab 1: Invoking DC basic setup
 
+>> Invoke DC setup
 > git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 > cd sky130RTLDesignAndSynthesisWorkshop/
 > /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+
+
+gambar 77/78
+
+.lib file location
+gambar 78
+
+> gvim sky130_fd_sc_hd__tt_025C_1v80.lib
+> :syn off
+
+gambar 79
+  
+> csh
 > dc_shell
-> 
+
+gambar 79
+  
+> echo $target_library
+> echo $link_library
+
+gambar 79 bawah
+
+>> exit dc_shell and open gvim
+> gvim DC_WORKSHOP/verilog_files/lab1_flop_with_en.v
+
+gambar 80
+  
+>> Invoke dc_shell 
+> read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v
+
+  gambar 81
+  
