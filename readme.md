@@ -133,5 +133,12 @@ Steps in converting RTL to the physical database (GDS format).
   
 DC Synthesis Flow
 gambar 76
+ 
+</details>
   
+<details>
+  <summary>Lab 1: Invoking DC basic setup</summary>
+ 
 
+### Lab 1: Invoking DC basic setup
+  
