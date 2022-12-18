@@ -98,6 +98,40 @@ How to decide for the correct implementation of the design?
  
 
 ### Introduction to Design Compiler (DC)
+
+**What is DC?**
+* Design Compiler (DC): Synthesis tool targeted for ASIC design flow from Synopsys.
+* Features of DC: 
+  -> Established as a premium synthesis tool across semiconductor industry.
+  
+  -> Interoperability with various backend tools from Synopsys.
+  
+  -> Has the ability to perform DFT Scan stitch.
+  
+  -> Can handle huge designs with extreme complexity and provide very good Quality of Results (QoR).
+  
+  
+**Common Terminologies associated with DC**
+* Synopsis Design Constraints (SDC): Industry standard that is used across Electronic Design Automation (EDA) implementation tools. These are the design constraints which are supplied to DC to enable appropriate optimization suitable for achieving the best implementation.
+* .Lib: Design library whicb contains the standard cells.
+*DB: Same as .lib but in a different format. DC understands libraries in .db format.
+* DDC: Synopsys proprietary format for storing the design information. DC can write out and read in DDC.
+* DESIGN: RTL files which has the behavioral model of the design.
+  
+**Synopsys Design Constraints (SDC) format**
+* Design intent in terms of timing, power and area constraints.
+* Supported by different EDA tools across semiconductor industry.
+* SDC is based on Tool Command Language (TCL).
+  
+**DC Setup**
+gambar 75
+  
+**Implementation flow of ASIC**
+Steps in converting RTL to the physical database (GDS format).
+
+  GAMBAR 76
+  
+DC Synthesis Flow
+gambar 76
   
 
-  
