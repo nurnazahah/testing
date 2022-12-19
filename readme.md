@@ -269,3 +269,53 @@ gambar 89 bawah
 
 ### TCL Quick Refresher
 
+Advanced synthesis and STA using DC - TCL quick refresher
+  
+**TCL: Quick refresher**
+  
+* set 
+  
+  -> Used for creating/assigning values and storing information in variables
+  
+  -> Example: set a 5 --> a = 5
+  
+  -> set a [expr $a + $b] --> a = a + b
+  
+Note: square brackets [] are used for nesting the commands in TCL 
+  
+Notes: Example is taken from instructor's video
+  
+gambar 90
+  
+**While loop**
+
+Notes: Example is taken from instructor's video
+  
+gambar 91
+  
+**For loop**
+
+Notes: Example is taken from instructor's video
+  
+gambar 92 
+
+**Foreach in TCL**
+  
+Notes: Example is taken from instructor's video
+  
+gambar 93
+  
+**DC specific**
+  
+Notes: Example is taken from instructor's video
+  
+gambar 94
+  
+</details>
+  
+<details>
+  <summary>Lab 4:  TCL scripting</summary>
+ 
+
+### Lab 4:  TCL scripting
+  
