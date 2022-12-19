@@ -175,6 +175,25 @@ gambar 80
   
 >> Invoke dc_shell 
 > read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v
+> write -f verilog -out lab1_net.v
+> sh gvim lab1_net.v
 
   gambar 81
+  
+> read_db DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+> write -f verilog -out lab1_net.v
+> sh gvim lab1_net.v
+
+gambar 82
+  
+> echo $link_library
+> echo $target_library
+> set target_library /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+> set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db}
+> link
+> compile
+> write -f verilog -out lab1_net.v
+> sh gvim lab1_net.v
+  
+gambar 83 all
   
