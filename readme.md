@@ -137,9 +137,9 @@ gambar 75
 Steps in converting RTL to the physical database (GDS format).
 
   GAMBAR 76
-  ![day6lab1i](https://user-images.githubusercontent.com/118953917/208398832-78661556-8597-4b62-b6f8-a4d3486f8f4c.jpg)
-  
-DC Synthesis Flow
+  ![day6lab1i](https://user-images.githubusercontent.com/118953917/208401949-378ad2bf-7629-4ffd-b903-a63c67810002.jpg)
+
+  DC Synthesis Flow
 gambar 76
   ![day6lab1j](https://user-images.githubusercontent.com/118953917/208399163-243a0652-8480-4e7f-b20b-e83201befc67.jpg)
  
