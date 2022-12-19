@@ -31,7 +31,7 @@
 * Digital logic: including switching function, and automation and decision making
 * Behavioral model of the design written in HDL: using VHDL and verilog
   
-gambar 68 & 69
+
 ![day6lab1a](https://user-images.githubusercontent.com/118953917/208397228-54fb7390-6628-48b6-a0cb-cb1261a9d4c7.jpg)
 ![day6lab1b](https://user-images.githubusercontent.com/118953917/208397248-154bc6cb-def8-438f-abe3-aa0a65d91014.jpg)
 
@@ -46,14 +46,14 @@ gambar 68 & 69
 * Includes basic logic gates like AND, OR, NOT, etc.
 * Different flavors of the same gate
   
-gambar 70
+
   ![day6lab1c](https://user-images.githubusercontent.com/118953917/208397598-1439cc60-2aba-4b9f-bbad-657a1d1dc4da.jpg)
   
 Why different flavours of gate is needed?
 * Combinational delay in logic path determines the maximum speed of operation of digital logic circuit
 * So, we need cells that work faster to make Tcombi small
 
-gambar 71
+
   ![day6lab1d](https://user-images.githubusercontent.com/118953917/208397629-eb571fb2-3cab-4509-8fb6-dfd46b1be8a0.jpg)
   
 Why we need slow cells?
@@ -61,7 +61,7 @@ Why we need slow cells?
 * Hence, we need cells that work fast to meet the required performance and we need cells that work slow to meet HOLD
 * The collection forms the .lib
   
-gambar 72
+
   ![day6lab1e](https://user-images.githubusercontent.com/118953917/208397662-fc00fd56-8b85-4cee-808d-f8d9ad62d630.jpg)
   
 **Selection of Cells**
