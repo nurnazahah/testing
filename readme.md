@@ -196,4 +196,12 @@ gambar 82
 > sh gvim lab1_net.v
   
 gambar 83 all
+
+</details>
+  
+<details>
+  <summary>Lab 2: Introduction to DDC GUI with design_vision</summary>
+ 
+
+### Lab 2: Introduction to DDC GUI with design_vision
   
