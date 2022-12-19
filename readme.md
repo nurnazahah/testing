@@ -204,4 +204,23 @@ gambar 83 all
  
 
 ### Lab 2: Introduction to DDC GUI with design_vision
+
+>> Invoke GUI format of DC
+> csh
+> design_vision
+
+  gambar 84
   
+> write -f ddc -out lab1.ddc
+  
+gambar 85 atas 
+  
+> design_vision > read_ddc lab1.ddc (loaded in one terminal)
+  
+> design_vision> read_verilog DC_WORKSHOP/verilog_files/lab1_flop_with_en.v (open in another terminal)
+  
+gambar 86
+  
+Schematic design output
+  
+gambar 87
