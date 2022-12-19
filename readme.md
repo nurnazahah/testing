@@ -224,3 +224,48 @@ gambar 86
 Schematic design output
   
 gambar 87
+</details>
+  
+<details>
+  <summary>Lab 3: DC synopsys DC setup</summary>
+ 
+
+### Lab 3: DC synopsys DC setup
+  
+>> Steps to invoke dc_shell everytime we need to reopen dc_shell
+> cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop/
+> /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+> csh
+> dc_shell
+> set target_library /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+> set link_library {* target_library}
+> echo $target_library
+> echo $link_library
+
+  gambar 88
+  
+>> Preconfigure at home directory and file name is .synopsys_dc.setup
+> pwd -> to ensure it is at the home directory
+> gvim .synopsys_dc.setup -> ensure the file name is as stated
+>> Insert the contents inside gvim
+> set target_library /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop/DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.db
+> set link_library {* target_library}
+>> Save and exit gvim
+> :wq
+
+gambar 89 atas
+  
+>> Open dc_shell and display the output
+> echo $target_library
+> echo $link_library
+  
+gambar 89 bawah
+  
+</details>
+  
+<details>
+  <summary>TCL Quick Refresher</summary>
+ 
+
+### TCL Quick Refresher
+
