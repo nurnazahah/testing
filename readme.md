@@ -319,3 +319,21 @@ gambar 94
 
 ### Lab 4:  TCL scripting
   
+>> Invoke dc_shell and try simple command in tcl scripting
+> set i 0
+> echo $i
+> incr i
+> echo $i 
+
+**For loop**
+  
+gambar 95
+  
+**While loop**
+  
+gambar 96
+  
+**Foreach loop**
+  
+gambar 97
+  
