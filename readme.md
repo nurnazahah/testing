@@ -14,7 +14,7 @@
 
 **Maximum and Minimum Delay Constraints**
 
-gambar 102
+![day7lab1a](https://user-images.githubusercontent.com/118953917/208686000-7da7df59-66a1-4852-acc1-82e3861dcb40.jpg)
 
 **Why delay?**
 
@@ -24,25 +24,25 @@ Scenario 1: $\textcolor{red}{\text{Different}}$ amount of water inflow with the 
 
 Notes: Example figure is taken from instructor's video
 
-gambar 103
-
+![day7lab1b](https://user-images.githubusercontent.com/118953917/208686086-048909a3-e0e7-4cbb-8b19-9bc6e7ad78a1.jpg)
+  
 Scenario 1: $\textcolor{red}{\text{Same}}$ amount of water inflow with $\textcolor{red}{\text{different}}$ size of bucket.
 
 Notes: Example figure is taken from instructor's video
 
-gambar 104
-
+  ![day7lab1c](https://user-images.githubusercontent.com/118953917/208686124-9c07015e-83ea-4a0b-a1b3-562532e1b507.jpg)
+  
 **Is delay of a cell constant?**
 * Delay of a cell will be a function of input Transition which is the water inflow. 
 * Delay of a cell will be a function of output load which is the size of the bucket.
   
-gambar 105
-  
+  ![day7lab1d](https://user-images.githubusercontent.com/118953917/208686187-fbb5da82-515c-4658-b124-29a47fd8fec1.jpg)
+
 **Timing arcs**
 * Combinational cell -> Delay information from every input pin to every output pin which it can control.
   
-gambar 106
-  
+  ![day7lab1e](https://user-images.githubusercontent.com/118953917/208686221-a37ade29-097b-44a7-b3df-158ac8a6b66b.jpg)
+
 * Sequential cell -> can be DFF/D-latch
   
   -> Delay from clock to Q for D-flip flop
@@ -51,7 +51,7 @@ gambar 106
   
   -> Setup and hold time 
   
-gambar 107
+![day7lab1f](https://user-images.githubusercontent.com/118953917/208686254-dcc45d95-460d-48bd-8b88-e4e39df82387.jpg)
   
  </details> 
 
@@ -63,13 +63,15 @@ gambar 107
   
 **Timing paths**
   
-gambar 108
+![day7lab2a](https://user-images.githubusercontent.com/118953917/208686303-80ff2d78-65b0-4d05-b50d-565adfd34e57.jpg)
+
   
 **Constraining the design**
   
 Why constraints?
   
-GAMBAR 109
+![day7lab2b](https://user-images.githubusercontent.com/118953917/208686332-9eaaf8bc-e010-4dc6-a0fa-26399c4ca734.jpg)
+
   
 **Timing paths**
   
@@ -95,13 +97,34 @@ GAMBAR 109
   
   -> Input to output (IO timing path that ideally shouldn't be present)
   
-gambar 110
+![day7lab2c](https://user-images.githubusercontent.com/118953917/208686404-63146af9-cffe-4acf-85db-a03ef948f9dc.jpg)
+
   
 * Reg-to-reg: constrained by clock -> Tclk >= Tcq + Tcombi + Tsetup
   
-* Reg-to-output: constrained by output external delay and clock period 
+* Reg-to-output: constrained by output external delay, output load and clock period 
   
-* Input-to-reg: constrained by input external delay and clock period 
+* Input-to-reg: constrained by input external delay, input transition and clock period 
   
-* Collectively the reg-to-output and input-to-reg are called IO paths and the delay modelling referred as IO delay modelling
+* Collectively the reg-to-output and input-to-reg are called IO paths and the delay modelling referred as IO delay modelling -> using standard interface specifications and budgeting based in interactions with other modules
+  
+</details> 
+
+<details>
+  <summary>IO Constraints</summary>
+ 
+
+### Input transfer output load
+  
+Is IO modelling sufficient? 
+  
+![day7lab3a](https://user-images.githubusercontent.com/118953917/208686438-a656e8f2-9a32-4f31-975d-731993703bee.jpg)
+
+  
+Are IO delay and input transition modelling sufficient for IO path?
+  
+Note: IO path should be constrained for both maximum delay (setup) and minimum delay (hold)
+  
+![day7lab3b](https://user-images.githubusercontent.com/118953917/208686468-072ed17d-5645-448d-a3e8-ebc4af5fbf04.jpg)
+
   
