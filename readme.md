@@ -126,5 +126,19 @@ Are IO delay and input transition modelling sufficient for IO path?
 Note: IO path should be constrained for both maximum delay (setup) and minimum delay (hold)
   
 ![day7lab3b](https://user-images.githubusercontent.com/118953917/208686468-072ed17d-5645-448d-a3e8-ebc4af5fbf04.jpg)
+</details> 
 
+<details>
+  <summary>Lab 1: Timing dot libs</summary>
+ 
+
+### Lab 1: Timing .lib
+  
+>> Open .lib file
+  
+> gvim DC_WORKSHOP/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  
+> :syn off
+  
+> 
   
