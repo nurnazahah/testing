@@ -140,34 +140,34 @@ Note: IO path should be constrained for both maximum delay (setup) and minimum d
   
 > :syn off
   
-gambar 113
+  ![day7lab4a](https://user-images.githubusercontent.com/118953917/208875467-f5c0a760-1893-4665-b37e-30d11b7ac78a.jpg)
   
 Understanding in default max transition
   
-gambar 114
+![day7lab4b](https://user-images.githubusercontent.com/118953917/208875522-6492b38c-dc0f-447a-b503-734373bf5d01.jpg)  
   
 Understanding in delay model: table look up
   
-gambar 115
+![day7lab4c](https://user-images.githubusercontent.com/118953917/208875583-9ee8d137-daa6-4305-a6c7-05415a7823e2.jpg)
 
 >> To split gvim side by side
 > :vsp 
   
-gambar 116
+![day7lab4d](https://user-images.githubusercontent.com/118953917/208875621-0885c41f-82fe-4850-b49c-b4583fdc94e7.jpg)
   
 Internal power delay
   
 Note: LHS is and2_2 while RHS is and2_0
   
-gambar 117
+![day7lab4e](https://user-images.githubusercontent.com/118953917/208875652-d5050b54-ea64-411f-b2af-654412a4271e.jpg)
   
 Timing delay
   
-gambar 118
+![day7lab4f](https://user-images.githubusercontent.com/118953917/208875681-a322de6b-1e7a-4d90-8adf-b8555d78d7d2.jpg)
   
 Timing sense and timing type in timing arcs
   
-gambar 119
+![day7lab4g](https://user-images.githubusercontent.com/118953917/208875709-de6c0d32-61f7-44c4-b0b9-977d62781ea6.jpg)
   
 </details> 
 
@@ -179,15 +179,15 @@ gambar 119
 
 Details of pins 
   
-gambar 120 
+![day7lab5a](https://user-images.githubusercontent.com/118953917/208875755-9b9ed68c-cc8e-473b-9b4c-84c87dbae8d9.jpg)
 
 Rising/falling edge of the pins
   
-gambar 121 
+![day7lab5b](https://user-images.githubusercontent.com/118953917/208875786-c5f849db-1204-40e1-93d0-c346f9f901b1.jpg)
 
 Setup time of rising/falling edge of the clock pin
 
-gambar 122
+![day7lab5c](https://user-images.githubusercontent.com/118953917/208875819-39b2acfc-16f9-4a69-be3c-90904c99ba03.jpg)
 
 >> Invoking dc_shell to look for DFF and D-latch name
 
@@ -199,7 +199,7 @@ gambar 122
 
 > get_lib_cells */* -filter "is_sequential==true"
 
-gambar 123
+![day7lab5d](https://user-images.githubusercontent.com/118953917/208875857-88aeb1f8-b78b-4b1d-b713-508548f3cc81.jpg)
 
 </details> 
 
@@ -256,14 +256,12 @@ gambar 123
   
 >> Repeat the same steps for forach_in_collection for and2_b1
   
-gambar 124
+![day7lab6a](https://user-images.githubusercontent.com/118953917/208875892-ed546572-7921-4af7-9b62-8f7f65d7493b.jpg)
   
 > sh gvim my_script.tcl
   
 >> Insert the contents inside gvim, save and source the file 
 > source my_script.tcl
-  
-gambar 125
   
 >> To get the area value of the cell
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2 area
@@ -274,7 +272,7 @@ gambar 125
 >> To get the connection of the pin with the clock
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2/B clock
   
-gambar 125
+![day7lab6b](https://user-images.githubusercontent.com/118953917/208875925-5a719a7c-910c-4d83-a988-25bbb5fcf9fe.jpg)
   
 > get_lib_cells */* -filter "is_sequential == true"
   
@@ -283,6 +281,6 @@ gambar 125
 >> To check whether each component is depending on pins/ports/cell/etc
 > list_attribute -app
   
-gambar 126
+![day7lab6c](https://user-images.githubusercontent.com/118953917/208875968-dc77b926-70df-4884-897a-42ba7fb77df8.jpg)
   
 </details> 
