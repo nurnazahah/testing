@@ -175,4 +175,9 @@ gambar 119
   <summary>Lab 2: Exploring dot libs</summary>
  
 
-### Lab 1: Exploring .lib
+### Lab 2: Exploring .lib
+
+Details of pins 
+  
+gambar 120 
+  
