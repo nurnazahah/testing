@@ -172,12 +172,40 @@ gambar 119
 </details> 
 
 <details>
-  <summary>Lab 2: Exploring dot libs</summary>
+  <summary>Lab 2: Exploring dot libs part 1</summary>
  
 
-### Lab 2: Exploring .lib
+### Lab 2: Exploring .lib part 1
 
 Details of pins 
   
 gambar 120 
+
+Rising/falling edge of the pins
   
+gambar 121 
+
+Setup time of rising/falling edge of the clock pin
+
+gambar 122
+
+>> Invoking dc_shell to look for DFF and D-latch name
+
+> csh
+
+> dc_shell
+
+> echo $target_library
+
+> get_lib_cells */* -filter "is_sequential==true"
+
+gambar 123
+
+</details> 
+
+<details>
+  <summary>Lab 2: Exploring dot libs part 2</summary>
+ 
+
+### Lab 2: Exploring .lib part 2 
+
