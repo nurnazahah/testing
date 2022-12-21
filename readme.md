@@ -140,5 +140,39 @@ Note: IO path should be constrained for both maximum delay (setup) and minimum d
   
 > :syn off
   
-> 
+gambar 113
   
+Understanding in default max transition
+  
+gambar 114
+  
+Understanding in delay model: table look up
+  
+gambar 115
+
+>> To split gvim side by side
+> :vsp 
+  
+gambar 116
+  
+Internal power delay
+  
+Note: LHS is and2_2 while RHS is and2_0
+  
+gambar 117
+  
+Timing delay
+  
+gambar 118
+  
+Timing sense and timing type in timing arcs
+  
+gambar 119
+  
+</details> 
+
+<details>
+  <summary>Lab 2: Exploring dot libs</summary>
+ 
+
+### Lab 1: Exploring .lib
