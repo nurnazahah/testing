@@ -204,8 +204,8 @@ gambar 123
 </details> 
 
 <details>
-  <summary>Lab 2: Exploring dot libs part 2</summary>
+  <summary>Lab 3: Exploring dot libs part 2</summary>
  
 
-### Lab 2: Exploring .lib part 2 
+### Lab 3: Exploring .lib part 2 
 
