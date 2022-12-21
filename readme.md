@@ -209,3 +209,36 @@ gambar 123
 
 ### Lab 3: Exploring .lib part 2 
 
+> list_lib
+  
+> get_lib_cells */*and*
+  
+> foreach_in_collection my_lib_cell [get_lib_cells */*and*] {
+  
+  set my_lib_cell_name [get_object_name $my_lib_cell]; 
+  
+  echo $my_lib_cell_name;  
+  
+  }
+  
+> get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*
+  
+> foreach_in_collection my_pins [get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/*] {
+  
+  set my_pin_name [get_object_name $my_pins];
+  
+  set pin_dir [get_lib_attribute $my_pin_name direction];
+  
+  echo $my_pin_name $pin_dir;
+  
+  }
+  
+> get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A direction
+  
+> get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A is_output
+  
+>get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A input
+  
+> get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/X function
+  
+> 
