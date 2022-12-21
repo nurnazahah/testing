@@ -234,33 +234,42 @@ Setup time of rising/falling edge of the clock pin
   
   }
 
+  
 >> To check the direction of the cell
   
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A direction
+  
 
 >> To check the output pin
   
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A is_output
   
+  
 >> To check the input pin
   
 >get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A input
+  
  
 >> To get the functionality of the cell
   
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/X function
   
+  
 >> Try another gate
+  
   
 >> NAND gate with 4 inputs
   
 > get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4_1/*
+  
 
 >> Repeat the same steps for forach_in_collection for nand4_1
+  
   
 >> AND gate with 2 inputs
   
 > get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2b_1/*
+  
   
 >> Repeat the same steps for forach_in_collection for and2_b1
   
@@ -272,13 +281,16 @@ Setup time of rising/falling edge of the clock pin
   
 > source my_script.tcl
   
+  
 >> To get the area value of the cell
   
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2 area
   
+  
 >> To see the capacitance of B pin
   
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2/B capacitance
+  
   
 >> To get the connection of the pin with the clock
   
@@ -288,7 +300,9 @@ Setup time of rising/falling edge of the clock pin
   
 > get_lib_cells */* -filter "is_sequential == true"
   
+  
 >> Explore D-latch
+  
   
 >> To check whether each component is depending on pins/ports/cell/etc
   
