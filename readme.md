@@ -151,6 +151,7 @@ Understanding in delay model: table look up
 ![day7lab4c](https://user-images.githubusercontent.com/118953917/208875583-9ee8d137-daa6-4305-a6c7-05415a7823e2.jpg)
 
 >> To split gvim side by side
+  
 > :vsp 
   
 ![day7lab4d](https://user-images.githubusercontent.com/118953917/208875621-0885c41f-82fe-4850-b49c-b4583fdc94e7.jpg)
@@ -234,24 +235,31 @@ Setup time of rising/falling edge of the clock pin
   }
 
 >> To check the direction of the cell
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A direction
 
 >> To check the output pin
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A is_output
   
 >> To check the input pin
+  
 >get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/A input
  
 >> To get the functionality of the cell
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2_0/X function
   
 >> Try another gate
+  
 >> NAND gate with 4 inputs
+  
 > get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4_1/*
 
 >> Repeat the same steps for forach_in_collection for nand4_1
   
 >> AND gate with 2 inputs
+  
 > get_lib_pins sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__and2b_1/*
   
 >> Repeat the same steps for forach_in_collection for and2_b1
@@ -261,15 +269,19 @@ Setup time of rising/falling edge of the clock pin
 > sh gvim my_script.tcl
   
 >> Insert the contents inside gvim, save and source the file 
+  
 > source my_script.tcl
   
 >> To get the area value of the cell
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2 area
   
 >> To see the capacitance of B pin
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2/B capacitance
   
 >> To get the connection of the pin with the clock
+  
 > get_lib_attribute sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__nand4b_2/B clock
   
 ![day7lab6b](https://user-images.githubusercontent.com/118953917/208875925-5a719a7c-910c-4d83-a988-25bbb5fcf9fe.jpg)
@@ -279,6 +291,7 @@ Setup time of rising/falling edge of the clock pin
 >> Explore D-latch
   
 >> To check whether each component is depending on pins/ports/cell/etc
+  
 > list_attribute -app
   
 ![day7lab6c](https://user-images.githubusercontent.com/118953917/208875968-dc77b926-70df-4884-897a-42ba7fb77df8.jpg)
