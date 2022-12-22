@@ -77,21 +77,15 @@ gambar 133
 gambar 134
   
 **Commands of getting ports in DC**
-
-> All ports containing clock
-* get_ports clk;
   
-> Collection of ports containing clk
-* get_ports *clk*; 
-  
-> All ports of the design
-* get_ports *;
-  
-> All input ports
-* get_ports * -filter "direction == in";
-  
->All output ports
-* get_ports * -filter "direction == out";
+-	To get the ports
+```
+get_ports clk;                           (All ports containing clock)
+get_ports *clk*;                         (Collection of ports containing clk)
+get_ports *;                             (All ports of the design)
+get_ports * -filter "direction == in";     (All input ports)
+get_ports * -filter "direction == out";    (All output ports)
+```
   
 -> get_ports -> Query the ports in the design
 + For example; 
@@ -102,25 +96,17 @@ gambar 134
 *Note: all of the names are case sensitive 
 
 **Commands of getting clocks in DC**
+  
+-	To get the clocks
+```
+get_clocks *                                        (All clocks in the design)
+get_clocks *clk*                                    (All clocks containg clk)
+get_clocks * -filter "period>10"                    (Filtering the clocks)
+get_attribute [get_clocks_ my_clk] period           (Querying period of the mentioned clock)
+get_attribute [get_clocks my_clk] is_generated      (Checking whether clock mentioned is generated or not)
+report_clocks my_clk                                (Reporting the details of the clock)
+```
 
-> All clocks in the design
-* get_clocks *
-  
-> All clocks containg clk
-* get_clocks *clk*
-  
-> Filtering the clocks 
-* get_clocks * -filter "period>10"
-  
-> Querying period of the mentioned clock
-* get_attribute [get_clocks_ my_clk] period
-  
-> Checking whether clock mentioned is generated or not
-* get_attribute [get_clocks_ my_clk] is_generated
-  
-> Reporting the details of the clock 
-* report_clocks my_clk
-  
 **Querying the cells in the design**
   
 gambar 135 
