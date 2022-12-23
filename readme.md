@@ -144,7 +144,7 @@ gambar 140
   
 </details>
 <details>
-  <summary>SDC Part2Lab 1: Loading design</summary>
+  <summary>Lab 1: Loading design</summary>
  
 
 ### Lab 1: Loading design get_cells, get_ports, get_nets
@@ -217,7 +217,28 @@ csh
 design_vision
 read_ddc DC_WORKSHOP/verilog_files/lab8_circuit.ddc
 get_nets *
+all_connected N1
+all_connected n5
 
+foreach_in_collection my_pin [all_connected n5] {                   (Listing the driver of the net)
+set pin_name [get_object_name $my_pin];
+set dir [get_attribute [get_pins $pin_name] direction];
+echo $pin_name $dir;
+}
 ```
 gambar 146 
 gambar 147
+
+Note: In digital design, net can only have one driver
+  
+Example: 
+  
+gambar 148
+  
+</details>
+<details>
+  <summary>Lab 2: Loading design</summary>
+ 
+
+### Lab 2: Loading design get_pins, get_clocks, querying_clocks
+  
