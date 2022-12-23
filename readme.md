@@ -242,3 +242,75 @@ gambar 148
 
 ### Lab 2: Loading design get_pins, get_clocks, querying_clocks
   
+> Get pins 
+```
+get_pins *
+
+foreach_in_collection my_pin [get_pins *] {                            (Listing out the pins)
+set pin_name [get_object_name $my_pin];
+echo $pin_name;
+}
+
+get_attribute [get_pins REGC_reg/RESET_B] direction
+get_attribute [get_pins REGC_reg/RESET_B] clock
+get_attribute [get_pins REGC_reg/CLK] clock
+  
+foreach_in_collection my_pin [get_pins *] {
+set pin_name [get_object_name $my_pin];
+set dir [get_attribute [get_pins $pin_name] direction];
+echo $pin_name $dir;
+}
+```
+  
+gambar 149
+  
+> Make use of regexp
+>> 0 if it is not found, 1 if it is matched
+```
+regexp abcd efgh
+regexp abcd abcd
+set a in
+regexp $a in
+regexp $a out
+
+foreach_in_collection my_pin [get_pins *] {                             (Listing input pin name with clock)
+set pin_name [get_object_name $my_pin];                                                                                      
+set dir [get_attribute [get_pins $pin_name] direction];                                                      
+if { [regexp $dir in] } {                                                                                    
+if { [get_attribute [get_pins $pin_name] clock] } {                                          
+echo $pin_name;                                                                                              
+}                                                                                                            
+}                                                                                                            
+}
+```
+
+  gambar 150
+  
+> Scripting in gvim 
+```
+sh gvim query_clock_pin.tcl
+
+foreach_in_collection my_pin [get_pins *] {                              (Listing input pin name with clock - The pin is meant to be a clock pin/not)
+	set my_pin_name [get_object_name $my_pin];
+        set dir [get_attribute [get_pins $my_pin_name] direction];                                                                                              
+	if { [regexp $dir in] } {
+		if { [get_attribute [get_pins $my_pin_name] clock] } {
+		       echo $my_pin_name $clk_name;
+
+		}
+	}
+}	
+```
+   
+> Checking if there is any clock coming in
+```
+get_attribute [get_pins REGA_reg/CLK] clock
+get_attribute [get_pins REGA_reg/CLK] clocks
+```
+
+> Get clock
+```
+get_clocks *
+```
+  
+gambar 151 
