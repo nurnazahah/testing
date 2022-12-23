@@ -113,4 +113,84 @@ gambar 135
 
 **Clock distribution**
   
+gambar 136
+  
+Bringing the practicalities (latency, uncertainty) of clock network
+  
+gambar 137
+  
+**Clocks: Waveform**
+  
+gambar 138
+  
+**Constraining IO paths**
+  
+gambar 139
+  
+gambar 140
+  
+**Summary**
+  
+* create_clock
+* set_clock_latency
+* set_clock_uncertainty 
+  + skew + jitter -> Pre-CTS
+  + only jitter -> Post-CTS
+* set_input_delay
+* set_input_transition
+* set_output_delay
+* set_load
+* get_ports, get_clocks, get_cells
+  
+</details>
+<details>
+  <summary>SDC Part2Lab 1: Loading design</summary>
+ 
+
+### Lab 1: Loading design get_cells, get_ports, get_nets
+  
+> gvim lab8_circuit.v
+  
+gambar 141 
+  
+> Invoke dc_shell
+```
+csh                                                        
+dc_shell                                
+echo $target_library 
+echo $link_library 
+read_verilog DC_WORKSHOP/verilog_files/lab8_circuit.v 
+link
+compile_ultra
+```
+gambar 142
+
+> Get ports
+```
+get_ports
+  
+foreach_in_collection my_port [get_ports *] {
+set my_port_name [get_object_name $my_port];
+echo $my_port_name;
+}
+  
+get_ports rst
+get_attribute [get_ports rst] direction
+
+foreach_in_collection my_port [get_ports *] {
+set my_port_name [get_object_name $my_port];
+set dir [get_attribute [get_ports $my_port_name] direction]; echo $my_port_name $dir;
+}
+```
+
+gambar 143
+
+> Get cells
+```
+get_cells *
+get_attribute [get_cells U9] is_hierarchical
+get_cells * -hier -filter "is_hierarchical == false"
+get_cells * -hier -filter "is_hierarchical == true"
+get_attribute [get_cells REGA_reg] ref_name
+
 
