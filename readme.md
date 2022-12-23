@@ -169,17 +169,18 @@ gambar 142
 ```
 get_ports
   
-foreach_in_collection my_port [get_ports *] {
+foreach_in_collection my_port [get_ports *] {                      (Listing the collection of ports name)
 set my_port_name [get_object_name $my_port];
 echo $my_port_name;
 }
   
 get_ports rst
-get_attribute [get_ports rst] direction
+get_attribute [get_ports rst] direction                           (Display reset port direction)
 
-foreach_in_collection my_port [get_ports *] {
+foreach_in_collection my_port [get_ports *] {                     (Listing the collection of port name and its direction)
 set my_port_name [get_object_name $my_port];
-set dir [get_attribute [get_ports $my_port_name] direction]; echo $my_port_name $dir;
+set dir [get_attribute [get_ports $my_port_name] direction];     
+echo $my_port_name $dir;
 }
 ```
 
@@ -188,9 +189,35 @@ gambar 143
 > Get cells
 ```
 get_cells *
-get_attribute [get_cells U9] is_hierarchical
-get_cells * -hier -filter "is_hierarchical == false"
-get_cells * -hier -filter "is_hierarchical == true"
-get_attribute [get_cells REGA_reg] ref_name
+get_attribute [get_cells U9] is_hierarchical                        (Checking the desired cell is hierarchical/not)
+get_cells * -hier -filter "is_hierarchical == false"                (Listing the false hierarchical cell)
+get_cells * -hier -filter "is_hierarchical == true"                 (Listing the true hierarchical cell)
+```
+  
+gambar 144
+  
+  
+> Get reference name of the cells
+```
+get_attribute [get_cells REGA_reg] ref_name                         (Getting the reference name of the cell)
+  
+foreach_in_collection my_cell [get_cells * -hier] {                 (Listing cell name and its reference name)
+set my_cell_name [get_object_name $my_cell];
+set rname [get_attribute [get_cells $my_cell_name] ref_name];
+echo $my_cell_name $rname;
+} 
+```
 
+gambar 145
 
+> Writing DDC 
+```
+write -f ddc -out lab8_circuit.ddc
+csh
+design_vision
+read_ddc DC_WORKSHOP/verilog_files/lab8_circuit.ddc
+get_nets *
+
+```
+gambar 146 
+gambar 147
