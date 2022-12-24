@@ -561,8 +561,36 @@ gambar 172
  
 
 ### SDC Part3: Generated clock
+
+**Notes**
+gambar 173
 	
+**Generated clocks**
 
-  
+* Generated clocks: always created with respect to master clocks (clocks at clock source i.e. PLL/oscillator or primary IO port)
 
+```
+create_generated_clock -name MY_GEN_CLK -master [get clocks MY_CLK] -source [get_ports CLK] -div 1 [get_ports OUT_CLK]
+```
+
+where;
+* [get clocks MY_CLK] -source [get_ports CLK] 
+	+ wrt what the generated clock is created
+* -div
+	+ Refers to the division value of generated clock (useful for clock dividers)
+* [get_ports OUT_CLK]
+	+ Generated definition point where the generated clock is created 
+* Out_Y need to be constrained wrt the generated clock
+	
+**Constraining the design**
+	
+gambar 174
+gambar 175
+	
+</details>
+<details>
+  <summary>Lab 6</summary>
+ 
+
+### Lab6: Generated clock
 
