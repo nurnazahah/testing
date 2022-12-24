@@ -386,7 +386,52 @@ report_clocks *
 
 gambar 154
 	
+</details>
+<details>
+  <summary>Lab 4: Clock Network Modelling</summary>
+ 
 
+### Lab 4: Clock Network Modelling: Uncertainty & report_timing
+  
+* Clock skew -> clock network due to imbalance delay between the flops
+* Clock jitter -> Random variations in clock edge, coming from the source
+* Clock Tree Synthesis (CTS) -> the tool to minimize the imbalance but it cannot make it zero ("0")
+* Clock_uncertaint
+	+ Skew + jitter (in pre-CTS)
+	+ Jitter alone since the clock network is actualy built (in post-CTS)
+	
+gambar 155 
 
+> Modelling the clock tree attribute
+```
+report_clocks *
+set_clock_latency -source 1 [get_clocks MYCLK]					(Modelling the source latency)
+set_clock_latency 1 [get_clocks MYCLK]						(Modelling the network latency)
+set_clock_uncertainty 0.5 [get_clocks MYCLK]					(Max delay for setup time by default)
+set_clock_uncertainty -hold 0.1 [get_clocks MYCLK]				(Min delay for hold time) 
+```
+	
+gambar 156
+	
+> Clock timing
+```
+remove_clock *
+get_clocks *
+report_timing
+report_timing -to REGC_reg/D							(Got nothing to constraint)
+create_clock -name MYCLK -per 10 [get_ports clk]
+report_timing -to REGC_reg/D
+```
+	
+gambar 157
+	
+> Model clock behavior and report timing
+```
+set_clock_latency -source 2 [get_clocks MYCLK]
+set_clock_latency 1 [get_clocks MYCLK]
+set_clock_uncertainty -setup  0.5 [get_clocks MYCLK]
+set_clock_uncertainty -hold  0.1 [get_clocks MYCLK]
+report_timing -to REGC_reg/D
+```
 
   
