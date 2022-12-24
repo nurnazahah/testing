@@ -361,7 +361,7 @@ get_attribute [get_cells U13] ref_name
 get_attribute [get_cells U14] ref_name
 create_clock -name BAD_CLK -per 10 [get_pins U14/Y]
 get_clocks *
-report_clocks *										(From the report, it's not reaching any clock pin/data path of any flop)
+report_clocks *								(From the report, it's not reaching any clock pin/data path of any flop)
 all_connected U14/Y
 all_connected n3
 ```
