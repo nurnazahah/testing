@@ -436,4 +436,133 @@ report_timing -to REGC_reg/D
 
 gambar 158
 	
+> Hold time
+```
+report_timing -to REGC_reg/D -delay min
+```
+	
+gambar 159
+	
+> Report of all ports
+```
+report_port -verbose
+```
+	
+gambar 160
+	
+	
+</details>
+<details>
+  <summary>Lab 5: IO Delays</summary>
+ 
+
+### Lab 5: IO Delays
+  
+gambar 161
+	
+> IO Constraints
+```
+report_timing -from IN_A
+report_timing
+report_timing -to OUT_Y
+```
+	
+gambar 162
+	
+> Listing all the ports
+```
+report_port -verbose
+```
+	
+gambar 163
+	
+> Modelling the delay
+```
+set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_A]				(Setting input delay)
+set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_B]
+report_port -verbose
+report_timing -from IN_A
+report_timing -from IN_A -trans -net -cap
+report_timing -from IN_A -trans -net -cap -nosplit > a
+sh gvim a
+```
+
+gambar 164
+gambar 165 
+
+> Hold timing
+```
+report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
+```
+	
+gambar 166
+	
+> Modelling the hold time 
+```
+set_input_delay -min 1 -clock [get_clocks MYCLK] [get_ports IN_A]
+set_input_delay -min 1 -clock [get_clocks MYCLK] [get_ports IN_B]
+report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
+```
+	
+gambar 167
+	
+> Setting new maximum value
+```
+set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_A]
+sh gvim a
+```
+	
+gambar 168
+	
+> Setting input transition
+```
+set_input_transition -max 0.3 [get_ports IN_A]
+set_input_transition -max 0.3 [get_ports IN_B]
+set_input_transition -min 0.1 [get_ports IN_B]
+set_input_transition -min 0.1 [get_ports IN_A]
+report_timing -from IN_A -trans  -cap -nosplit > a_trans
+```
+	
+gambar 169
+	
+> Setting output transition
+```
+set_output_delay -max 5 -clock [get_clocks MYCLK] [get_ports OUT_Y]
+set_output_delay -min 1 -clock [get_clocks MYCLK] [get_ports OUT_Y]
+report_timing -to OUT_Y
+report_timing -to OUT_Y -cap -trans
+```
+	
+gambar 170
+	
+> Setting for load
+```
+set_load -max 0.4 [get_ports OUT_Y]
+report_timing -to OUT_Y -cap -trans
+```
+	
+gambar 171
+	
+> Setting minimum delay
+```
+report_timing -to OUT_Y -cap -trans -delay min
+```
+	
+> Setting another load for minimum delay
+```
+report_timing -to OUT_Y -cap -trans -delay min
+```
+	
+gambar 172
+	
+</details>
+<details>
+  <summary>SDC Part3</summary>
+ 
+
+### SDC Part3: Generated clock
+	
+
+  
+
 
