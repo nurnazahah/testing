@@ -589,7 +589,7 @@ gambar 175
 	
 </details>
 <details>
-  <summary>Lab 6</summary>
+  <summary>Lab 6: Generated clock</summary>
  
 
 ### Lab6: Generated clock
