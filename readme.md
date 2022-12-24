@@ -314,3 +314,79 @@ get_clocks *
 ```
   
 gambar 151 
+</details>
+<details>
+  <summary>Lab 3: Clock waveform</summary>
+ 
+
+### Lab 3: Creating clock waveform
+
+> Get the name of top module that is currently working, get ports, create clock and attribute
+```
+current_design										(Display current module)
+get_ports *
+create_clock -name MYCLK -per 10 [get_ports clk]
+get_clocks *
+get_attribute [get_clocks MYCLK] period
+get_attribute [get_clocks MYCLK] is_generated						(If false, it is the master clock)
+get_attribute [get_pins REGA_reg/CLK] clocks
+report_clocks *										(Reviewing clocks report)
+get_attribute [get_pins REGA_reg/CLK] clocks
+get_attribute [get_ports out_clk] clocks
+sh gvim query_clock_pin.tcl
+	
+foreach_in_collection my_pin [get_pins *] {						(Contents inside gvim)
+	set my_pin_name [get_object_name $my_pin];
+        set dir [get_attribute [get_pins $my_pin_name] direction];                                                                                              
+	if { [regexp $dir in] } {
+		if { [get_attribute [get_pins $my_pin_name] clock ] } { 
+			set clk [get_attribute [get_pins $my_pin_name] clocks]; 
+	# set clk_name [get_object_name [get_attribute [get_pins $my_pin_name] clocks]];
+			set clk_name [get_object_name $clk];
+ 			echo $my_pin_name $clk_name;
+
+		}
+	}
+}
+	
+source query_clock_pin.tcl								(Source the gvim)
+```
+
+gambar 152
+	
+> Creating clock and reviewing clock report
+```
+get_cells U13
+get_attribute [get_cells U13] ref_name
+get_attribute [get_cells U14] ref_name
+create_clock -name BAD_CLK -per 10 [get_pins U14/Y]
+get_clocks *
+report_clocks *										(From the report, it's not reaching any clock pin/data path of any flop)
+all_connected U14/Y
+all_connected n3
+```
+	
+gambar 153
+
+> Removing clock and adjusting multiple clock waveforms
+```
+remove_clock BAD_CLK
+get_clocks *
+report_clocks *
+remove_clock MYCLK
+create_clock -name MYCLK -per 10 [get_ports clk] -wave {5 10}				(Rising edge = 5; falling edge = 10)
+report_clocks *
+remove_clock MYCLK
+create_clock -name MYCLK -per 10 [get_ports clk] -wave {0 2.5}				(Order is not important)
+report_clocks *
+remove_clock MYCLK
+create_clock -name MYCLK -per 10 [get_ports clk] -wave {15 20}
+report_clocks *
+```
+
+gambar 154
+	
+
+
+
+  
