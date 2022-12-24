@@ -434,4 +434,6 @@ set_clock_uncertainty -hold  0.1 [get_clocks MYCLK]
 report_timing -to REGC_reg/D
 ```
 
-  
+gambar 158
+	
+
