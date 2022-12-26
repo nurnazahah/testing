@@ -742,11 +742,141 @@ gambar 187
 	
 </details>
 <details>
-  <summary>Lab 7: Part 1</summary>
+  <summary>Lab 7: Set_Max_delay</summary>
  
 
 ### Lab 7: Set_Max_delay
 
-
-
+gambar 188
 	
+> Resetting the design to lab14_circuit.v
+```
+reset_design
+sh gvim DC_WORKSHOP/verilog_files/lab14_circuit.v
+read_verilog DC_WORKSHOP/verilog_files/lab14_circuit.v
+source DC_WORKSHOP/verilog_files/lab8_cons.tcl 
+report_timing								(Report timing in terms of gtech cells)
+```
+	
+gambar 189
+	
+> Linking the design
+```
+link
+compile_ultra
+report_timing
+```
+	
+gambar 190
+	
+> Checking the path whether it is constrained/not
+```
+get_ports *
+report_timing -to OUT_Z
+report_timing -from IN_C
+```
+	
+> Another helpful commands to try on
+```
+all_inputs							(Listing all inputs)
+all_outputs							(Listing all outputs)
+all_clocks 							(Listing all clocks)
+all_registers 							(Listing all registers)
+all_registers -clock MYCLK 					(Listing registers clocked by MYCLK)
+all_fanout -from IN_A 						(Listing all fanouts of desired input)
+all_fanout -flat -endpoints_only -from IN_A
+all_fanin -to REGA_reg/D
+all_fanin -flat -startpoints_only -to REGA_reg/D
+```
+	
+Note: ENDPOINTS of a timing path => D/output pin
+
+> Constraining path to Z
+Note that no path to OUT_Z yet
+```
+set_max_delay 0.1 -from [all_inputs] -to [get_port OUT_Z]
+report_timing -to OUT_Z -sig 4
+```
+	
+Path is not constraint properly, DC do not optimized to meet the path
+	
+gambar 192
+	
+> Optimizing the delay
+	
+```
+compile_ultra
+report_timing -to OUT_Z -sig 4
+```
+	
+The tool is picking up other cells
+	
+gambar 193 
+
+> Invoking design_vision
+```
+write -f ddc -out DC_WORKSHOP/verilog_files/lab14.ddc
+reset_design
+read_ddc DC_WORKSHOP/verilog_files/lab14.ddc
+start_gui
+```
+	
+gambar 194
+	
+</details>
+<details>
+  <summary>Lab 8: VCLK</summary>
+ 
+
+### Lab 8: VCLK
+
+**Virtual clock**
+* Other ways to constraint path from IN_C or IN_D to Z
+* Input delay and output delay with respect to virtual clock
+	
+**While using VCLK**
+* First method: set_max_delay
+* Second method: use virtual clock where a clock is created without a definition point
+	
+> Using VCLK
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/lab14_circuit.v
+link
+source DC_WORKSHOP/verilog_files/lab8_cons.tcl
+compile_ultra
+report_clocks
+report_timing -to OUT_Z
+```
+	
+gambar 195
+	
+```
+create_clock -name MYVCLK -per 10
+report_clocks
+```
+	
+The highlighted one is virtual clock since it has no source
+	
+gambar 196
+	
+> Annotating IO Delays
+```
+set_input_delay -max 5 [get_ports IN_C] -clock [get_clocks MYVCLK]
+set_input_delay -max 5 [get_ports IN_D] -clock [get_clocks MYVCLK]
+set_output_delay -max 4.9 [get_ports OUT_Z] -clock [get_clocks MYVCLK]
+report_timing
+```
+	
+gambar 197
+	
+> Optimizing 
+```
+compile_ultra
+report_timing -to OUT_Z -sig 4
+report_port -verbose
+```
+
+gambar 198
+	
+</details>
