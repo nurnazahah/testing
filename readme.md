@@ -742,7 +742,7 @@ gambar 187
 	
 </details>
 <details>
-  <summary>Lab 7</summary>
+  <summary>Lab 7: Part 1</summary>
  
 
 ### Lab 7: Set_Max_delay
