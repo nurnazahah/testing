@@ -594,3 +594,159 @@ gambar 175
 
 ### Lab6: Generated clock
 
+```
+report_timing -to OUT_Y
+```
+	
+gambar 176
+	
+> Creating generated clock
+```
+create_generated_clock -name MYGEN_CLK -master MYCLK -source [get_ports clk] -div 1 [get_ports out_clk]
+report_clocks
+get_attribute [get_clocks MYGEN_CLK] is_generated								(True if it is generated clk)
+get_attribute [get_clocks MYCLK] is_generated									(False if it is generated clk - master clk)
+```
+	
+> Modelling MYGEN_CLK
+```
+set_clock_latency -max 1 [get_clocks MYGEN_CLK]
+set_output_delay -max 5 [get_ports OUT_Y] -clock [get_clocks MYGEN_CLK]
+set_output_delay -min 1 [get_ports OUT_Y] -clock [get_clocks MYGEN_CLK]
+report_timing -to OUT_Y
+```
+	
+gambar 177
+	
+> Modifying lab8_circuit.v
+```
+sh gvim DC_WORKSHOP/verilog_files/lab8_circuit.v
+:vsp lab8_circuit_modified.v 
+```
+	
+gambar 178
+	
+> Resetting the design
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/lab8_circuit_modified.v
+sh gvim DC_WORKSHOP/verilog_files/lab8_cons.tcl
+link
+source DC_WORKSHOP/verilog_files/lab8_cons.tcl
+report_clocks
+get_generated_clocks
+```
+	
+gambar 179
+	
+> Reporting the ports
+```
+report_port -verbose
+```
+
+The design is completely constrained
+
+gambar 180
+	
+	
+</details>
+<details>
+  <summary>SDC Part4</summary>
+ 
+
+### SDC Part4: vclk, max_latency, rise_fall IO Delays
+
+**Input delay**
+	
+* Positive delay 
+	+ data comes after clk edge
+	+ for max is tightening
+* Negative delay 
+	+ data comes before clk edge
+	+ for max is relaxing
+	
+* min delay 
+	+ Positive is tightening the path
+	+ Negative is relaxing the path
+	
+```
+set_input_delay –max 3 –clock myclk [get_ports IN_A]
+```
+	
+* create_clock_name myclk –per 10 [get_ports clk ]
+* To get available time -> available time = [clock period – uncertainty – input delay] 
+* Positive for max is tightening
+	
+```
+set_input_delay –max -3 –clock myclk [get_ports IN_A]
+```
+	
+* Negative i.e. -3 is the delay where before the rise edge, the data was stable, however, the clock got more delayed compared to the data
+* i.e. 10 -[-3] = 13 ns
+* Negative delay for max is relaxing 
+	
+```
+set_input_delay –min 1  –clock myclk [get_ports IN_A]
+```
+	
+* Positive delay –> the data comes after clock edge
+* 1 ns is the hold time and it helps to meet the hold time
+* Positive delay becomes relax
+	
+```
+set_input_delay –min -1 –clock myclk [get_ports IN_A]
+```
+	
+* Negative i.e. -1 is delay where the data comes after clock edge
+* Note that we need to avoid the hold failures, hence, we need to delay the data
+* Negative for min delay is tightening 
+	
+gambar 181
+	
+**Output delay**
+	
+```
+set_output_delay –max 3 -clock myclk [get_ports IN_A]
+```
+	
+* set clock period to 10 ns 
+* To get avalaibale time -> available time = clock period – external delay 
+
+```
+set_output_delay –max -3 -clock myclk [get_ports IN_A]
+```
+	
+```
+set_output_delay –min 1 -clock myclk [get_ports IN_A]
+```
+	
+* Relaxing the hold time
+* Independent of the clock period 
+	
+```
+set_output_delay –min -1 -clock myclk [get_ports IN_A]
+```
+	
+* Tightening the hold time
+* Independent of the clock period
+* -min delay -> clock relatively getting pushed wrt the data
+	
+**IO constraints re-visited**
+	
+gambar 182
+gambar 183
+gambar 184
+gambar 185
+gambar 186
+gambar 187
+	
+</details>
+<details>
+  <summary>SDC Part4</summary>
+ 
+
+### SDC Part4: vclk, max_latency, rise_fall IO Delays
+
+
+
+	
