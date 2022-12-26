@@ -742,10 +742,10 @@ gambar 187
 	
 </details>
 <details>
-  <summary>SDC Part4</summary>
+  <summary>Lab</summary>
  
 
-### SDC Part4: vclk, max_latency, rise_fall IO Delays
+### Lab : Set_Max_delay
 
 
 
