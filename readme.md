@@ -78,7 +78,7 @@ Jitter: Stochastic variations of clock generation
   
 **Commands of getting ports in DC**
   
--	To get the ports
+> To get the ports
 ```
 get_ports clk;                           (All ports containing clock)
 get_ports *clk*;                         (Collection of ports containing clk)
@@ -97,7 +97,7 @@ get_ports * -filter "direction == out";    (All output ports)
 
 **Commands of getting clocks in DC**
   
--	To get the clocks
+> To get the clocks
 ```
 get_clocks *                                        (All clocks in the design)
 get_clocks *clk*                                    (All clocks containg clk)
@@ -352,8 +352,7 @@ foreach_in_collection my_pin [get_pins *] {						(Contents inside gvim)
 	
 source query_clock_pin.tcl								(Source the gvim)
 ```
-
-gambar 152
+![image](https://user-images.githubusercontent.com/118953917/209548104-723892a1-797e-4f1b-8ed3-201a1d050774.png)
 	
 > Creating clock and reviewing clock report
 ```
@@ -367,7 +366,7 @@ all_connected U14/Y
 all_connected n3
 ```
 	
-gambar 153
+![image](https://user-images.githubusercontent.com/118953917/209548139-c21c44c1-be63-4740-8572-0ec0a9217b13.png)
 
 > Removing clock and adjusting multiple clock waveforms
 ```
@@ -385,7 +384,7 @@ create_clock -name MYCLK -per 10 [get_ports clk] -wave {15 20}
 report_clocks *
 ```
 
-gambar 154
+![image](https://user-images.githubusercontent.com/118953917/209548165-2c4f4c42-a82d-4536-85f6-1cccd533bdca.png)
 	
 </details>
 <details>
@@ -401,7 +400,7 @@ gambar 154
 	+ Skew + jitter (in pre-CTS)
 	+ Jitter alone since the clock network is actualy built (in post-CTS)
 	
-gambar 155 
+![image](https://user-images.githubusercontent.com/118953917/209548189-207a7007-d804-4f4e-9542-815b9198d5f9.png)
 
 > Modelling the clock tree attribute
 ```
@@ -412,7 +411,7 @@ set_clock_uncertainty 0.5 [get_clocks MYCLK]					(Max delay for setup time by de
 set_clock_uncertainty -hold 0.1 [get_clocks MYCLK]				(Min delay for hold time) 
 ```
 	
-gambar 156
+![image](https://user-images.githubusercontent.com/118953917/209548207-0a3e6d53-ce51-4edd-acce-6fec2347b3c7.png)
 	
 > Clock timing
 ```
@@ -424,7 +423,7 @@ create_clock -name MYCLK -per 10 [get_ports clk]
 report_timing -to REGC_reg/D
 ```
 	
-gambar 157
+![image](https://user-images.githubusercontent.com/118953917/209548231-1606e86b-c8a2-4298-b382-5f6fc83e445e.png)
 	
 > Model clock behavior and report timing
 ```
@@ -435,21 +434,21 @@ set_clock_uncertainty -hold  0.1 [get_clocks MYCLK]
 report_timing -to REGC_reg/D
 ```
 
-gambar 158
+![image](https://user-images.githubusercontent.com/118953917/209548245-36cc6d8f-7c3b-4bec-a77c-2e7ad7f874ff.png)
 	
 > Hold time
 ```
 report_timing -to REGC_reg/D -delay min
 ```
 	
-gambar 159
+![image](https://user-images.githubusercontent.com/118953917/209548278-1f83bd69-d551-4b67-975c-1829ea55a905.png)
 	
 > Report of all ports
 ```
 report_port -verbose
 ```
 	
-gambar 160
+![image](https://user-images.githubusercontent.com/118953917/209548295-44b174ce-93c1-4c39-a497-d893337ca2d1.png)
 	
 	
 </details>
@@ -459,7 +458,7 @@ gambar 160
 
 ### Lab 5: IO Delays
   
-gambar 161
+![image](https://user-images.githubusercontent.com/118953917/209548311-f40b3814-2e08-4f5c-a535-26295823dae4.png)
 	
 > IO Constraints
 ```
@@ -468,14 +467,14 @@ report_timing
 report_timing -to OUT_Y
 ```
 	
-gambar 162
+![image](https://user-images.githubusercontent.com/118953917/209548340-884ddc87-b125-4ec9-8727-5d9f0f801533.png)
 	
 > Listing all the ports
 ```
 report_port -verbose
 ```
 	
-gambar 163
+![image](https://user-images.githubusercontent.com/118953917/209548360-7b4f3c30-0bdf-4022-a5e3-84244a1ca94f.png)
 	
 > Modelling the delay
 ```
@@ -488,15 +487,16 @@ report_timing -from IN_A -trans -net -cap -nosplit > a
 sh gvim a
 ```
 
-gambar 164
-gambar 165 
-
+![image](https://user-images.githubusercontent.com/118953917/209548381-41af4143-b650-481e-b370-51f81a2bd7f0.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/209548404-5074afa1-bcab-4430-a26f-192f48fc5525.png)
+	
 > Hold timing
 ```
 report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
 ```
 	
-gambar 166
+![image](https://user-images.githubusercontent.com/118953917/209548431-74172e5c-2cdc-4219-9f26-79819165909a.png)
 	
 > Modelling the hold time 
 ```
@@ -505,7 +505,7 @@ set_input_delay -min 1 -clock [get_clocks MYCLK] [get_ports IN_B]
 report_timing -from IN_A -trans -net -cap -nosplit -delay_type min
 ```
 	
-gambar 167
+![image](https://user-images.githubusercontent.com/118953917/209548454-4fe83460-3285-473d-a79b-c0fabcb05041.png)
 	
 > Setting new maximum value
 ```
@@ -513,7 +513,7 @@ set_input_delay -max 5 -clock [get_clocks MYCLK] [get_ports IN_A]
 sh gvim a
 ```
 	
-gambar 168
+![image](https://user-images.githubusercontent.com/118953917/209548480-9ee82772-2ebc-4000-b595-65cbacfcdfb2.png)
 	
 > Setting input transition
 ```
@@ -524,7 +524,7 @@ set_input_transition -min 0.1 [get_ports IN_A]
 report_timing -from IN_A -trans  -cap -nosplit > a_trans
 ```
 	
-gambar 169
+![image](https://user-images.githubusercontent.com/118953917/209548506-1026575b-c0eb-4a04-ba6a-c46501056e37.png)
 	
 > Setting output transition
 ```
@@ -534,7 +534,7 @@ report_timing -to OUT_Y
 report_timing -to OUT_Y -cap -trans
 ```
 	
-gambar 170
+![image](https://user-images.githubusercontent.com/118953917/209548527-d3feaac2-0f9f-4a68-b55a-87f58884e1d8.png)
 	
 > Setting for load
 ```
@@ -542,7 +542,7 @@ set_load -max 0.4 [get_ports OUT_Y]
 report_timing -to OUT_Y -cap -trans
 ```
 	
-gambar 171
+![image](https://user-images.githubusercontent.com/118953917/209548546-1a570a8c-af03-44ab-b060-2c19c1d0f7a0.png)
 	
 > Setting minimum delay
 ```
@@ -554,7 +554,7 @@ report_timing -to OUT_Y -cap -trans -delay min
 report_timing -to OUT_Y -cap -trans -delay min
 ```
 	
-gambar 172
+![image](https://user-images.githubusercontent.com/118953917/209548567-8982e988-5709-454f-98c9-ae39b498246c.png)
 	
 </details>
 <details>
@@ -564,7 +564,7 @@ gambar 172
 ### SDC Part3: Generated clock
 
 **Notes**
-gambar 173
+![image](https://user-images.githubusercontent.com/118953917/209548593-e87f2035-ef23-4ab2-af7b-cdd647b7aa2c.png)
 	
 **Generated clocks**
 
@@ -585,9 +585,10 @@ where;
 	
 **Constraining the design**
 	
-gambar 174
-gambar 175
-	
+![image](https://user-images.githubusercontent.com/118953917/209548621-38adcc67-bb3e-4d40-b9ea-0dd5ffb097f3.png)
+
+![image](https://user-images.githubusercontent.com/118953917/209548643-4bf30f41-2483-4114-9117-9341fffe2714.png)
+
 </details>
 <details>
   <summary>Lab 6: Generated clock</summary>
@@ -599,7 +600,7 @@ gambar 175
 report_timing -to OUT_Y
 ```
 	
-gambar 176
+![image](https://user-images.githubusercontent.com/118953917/209548658-671239fa-0b0b-422c-a707-1356d6099079.png)
 	
 > Creating generated clock
 ```
@@ -617,7 +618,7 @@ set_output_delay -min 1 [get_ports OUT_Y] -clock [get_clocks MYGEN_CLK]
 report_timing -to OUT_Y
 ```
 	
-gambar 177
+![image](https://user-images.githubusercontent.com/118953917/209548669-bc6ad376-aadc-4dd6-ac1e-ecd9b3046796.png)
 	
 > Modifying lab8_circuit.v
 ```
@@ -625,7 +626,7 @@ sh gvim DC_WORKSHOP/verilog_files/lab8_circuit.v
 :vsp lab8_circuit_modified.v 
 ```
 	
-gambar 178
+![image](https://user-images.githubusercontent.com/118953917/209548680-add03dc2-c565-47a5-8e03-d43640f10a2f.png)
 	
 > Resetting the design
 ```
@@ -638,7 +639,7 @@ report_clocks
 get_generated_clocks
 ```
 	
-gambar 179
+![image](https://user-images.githubusercontent.com/118953917/209548705-eed00ea4-2abd-42cc-8711-e9a5d1207837.png)
 	
 > Reporting the ports
 ```
@@ -647,8 +648,7 @@ report_port -verbose
 
 The design is completely constrained
 
-gambar 180
-	
+![image](https://user-images.githubusercontent.com/118953917/209548729-afb555d7-e69d-49a7-97d7-5e6617abf752.png)	
 	
 </details>
 <details>
@@ -702,7 +702,7 @@ set_input_delay –min -1 –clock myclk [get_ports IN_A]
 * Note that we need to avoid the hold failures, hence, we need to delay the data
 * Negative for min delay is tightening 
 	
-gambar 181
+![image](https://user-images.githubusercontent.com/118953917/209548761-fcc143e7-1433-487f-9197-56b1a2b09142.png)
 	
 **Output delay**
 	
@@ -734,12 +734,11 @@ set_output_delay –min -1 -clock myclk [get_ports IN_A]
 	
 **IO constraints re-visited**
 	
-gambar 182
-gambar 183
-gambar 184
-gambar 185
-gambar 186
-gambar 187
+![image](https://user-images.githubusercontent.com/118953917/209548788-ac62ef3b-3461-4252-9b67-92097a7d0d20.png)
+![image](https://user-images.githubusercontent.com/118953917/209548805-7d50e9ff-d06c-4887-b2e5-b46b8264bcf2.png)
+![image](https://user-images.githubusercontent.com/118953917/209548924-2146da70-dea6-4930-9fcb-7272f39cb89b.png)
+![image](https://user-images.githubusercontent.com/118953917/209548952-5ebe1835-cb2f-486b-b877-b3d5fd4f061b.png)
+![image](https://user-images.githubusercontent.com/118953917/209548981-c09d0a9e-38d1-4a19-bd72-bbad8fee77f6.png)
 	
 </details>
 <details>
@@ -748,7 +747,7 @@ gambar 187
 
 ### Lab 7: Set_Max_delay
 
-gambar 188
+![image](https://user-images.githubusercontent.com/118953917/209549018-a529d492-b5a2-49ef-8650-19939e5d3c99.png)
 	
 > Resetting the design to lab14_circuit.v
 ```
@@ -759,7 +758,7 @@ source DC_WORKSHOP/verilog_files/lab8_cons.tcl
 report_timing								(Report timing in terms of gtech cells)
 ```
 	
-gambar 189
+![image](https://user-images.githubusercontent.com/118953917/209549039-8787ac5c-ef25-40cf-88e4-eb038238b0e6.png)
 	
 > Linking the design
 ```
@@ -768,7 +767,7 @@ compile_ultra
 report_timing
 ```
 	
-gambar 190
+![image](https://user-images.githubusercontent.com/118953917/209549055-e0f23d8c-93e5-4df4-a799-4b91f2c5962c.png)
 	
 > Checking the path whether it is constrained/not
 ```
@@ -776,6 +775,8 @@ get_ports *
 report_timing -to OUT_Z
 report_timing -from IN_C
 ```
+	
+![image](https://user-images.githubusercontent.com/118953917/209549141-08dc3ff6-ceee-4a44-9c6a-2084c9fa69d5.png)
 	
 > Another helpful commands to try on
 ```
@@ -801,7 +802,7 @@ report_timing -to OUT_Z -sig 4
 	
 Path is not constraint properly, DC do not optimized to meet the path
 	
-gambar 192
+![image](https://user-images.githubusercontent.com/118953917/209549166-1979fbc3-9ef8-4b1a-b949-a0dd05be00e7.png)
 	
 > Optimizing the delay
 	
@@ -812,8 +813,8 @@ report_timing -to OUT_Z -sig 4
 	
 The tool is picking up other cells
 	
-gambar 193 
-
+![image](https://user-images.githubusercontent.com/118953917/209549204-d26fe307-a6b3-4c1e-a159-7064fcc4d7f5.png)
+	
 > Invoking design_vision
 ```
 write -f ddc -out DC_WORKSHOP/verilog_files/lab14.ddc
@@ -822,7 +823,7 @@ read_ddc DC_WORKSHOP/verilog_files/lab14.ddc
 start_gui
 ```
 	
-gambar 194
+![image](https://user-images.githubusercontent.com/118953917/209549228-c4c2e809-0499-4bb6-9545-8fc7825e0858.png)
 	
 </details>
 <details>
@@ -850,8 +851,7 @@ report_clocks
 report_timing -to OUT_Z
 ```
 	
-gambar 195
-	
+![image](https://user-images.githubusercontent.com/118953917/209549269-37b2fb49-8308-41b9-801b-fc73199f82f8.png)	
 ```
 create_clock -name MYVCLK -per 10
 report_clocks
@@ -859,7 +859,7 @@ report_clocks
 	
 The highlighted one is virtual clock since it has no source
 	
-gambar 196
+![image](https://user-images.githubusercontent.com/118953917/209549295-c3d2a9ed-3a6e-408b-9340-815a008168f3.png)
 	
 > Annotating IO Delays
 ```
@@ -869,7 +869,7 @@ set_output_delay -max 4.9 [get_ports OUT_Z] -clock [get_clocks MYVCLK]
 report_timing
 ```
 	
-gambar 197
+![image](https://user-images.githubusercontent.com/118953917/209549331-a1547370-569c-42d1-8be8-abc0ffc368ab.png)
 	
 > Optimizing 
 ```
@@ -878,6 +878,6 @@ report_timing -to OUT_Z -sig 4
 report_port -verbose
 ```
 
-gambar 198
+![image](https://user-images.githubusercontent.com/118953917/209549363-fa392726-ada0-455d-8aef-100f65a3c50a.png)
 	
 </details>
