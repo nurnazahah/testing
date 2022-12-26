@@ -742,10 +742,10 @@ gambar 187
 	
 </details>
 <details>
-  <summary>Lab</summary>
+  <summary>Lab 7</summary>
  
 
-### Lab : Set_Max_delay
+### Lab 7: Set_Max_delay
 
 
 
