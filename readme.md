@@ -19,7 +19,7 @@
   
 **What needs to be constrained for clocks?**
 
-gambar 129
+![image](https://user-images.githubusercontent.com/118953917/209547160-3b2465ee-2f28-46e5-a85e-a2682216a05b.png)
 
 **Clock generation**
 
@@ -28,13 +28,13 @@ gambar 129
 * External clock source
 * All of the above clock sources have inherent variations in the clock period due to stochastic effects
 
-gambar 130
+![image](https://user-images.githubusercontent.com/118953917/209547202-64208f1f-39be-4fe0-8874-c95eb0153137.png)
   
 **Clock distribution**
   
 Jitter: Stochastic variations of clock generation
   
-gambar 131
+![image](https://user-images.githubusercontent.com/118953917/209547219-516926a5-bc50-4791-a161-144b45220748.png)
   
 **Clock skew**
   
@@ -44,7 +44,7 @@ gambar 131
   
 * Timing Clean path in synthesis may fail after STA
   
-gambar 132
+![image](https://user-images.githubusercontent.com/118953917/209547244-c618379a-2dab-4259-8188-878a6828ea09.png)
   
 **Clock modelling**
   
@@ -58,7 +58,7 @@ gambar 132
   + Period jitter 
 * Collectively clock skew and jitter are called Clock Uncertainty
   
-gambar 133
+![image](https://user-images.githubusercontent.com/118953917/209547266-2ba5968a-ceb8-4478-b6c4-13be3a956085.png)
   </details>
 <details>
   <summary>SDC Part2</summary>
@@ -74,7 +74,7 @@ gambar 133
   
 * DC takes constraints in the form of SDC 
   
-gambar 134
+![image](https://user-images.githubusercontent.com/118953917/209547347-511c0ac1-87e4-4b06-a646-8b9fe164651d.png)
   
 **Commands of getting ports in DC**
   
@@ -109,26 +109,26 @@ report_clocks my_clk                                (Reporting the details of th
 
 **Querying the cells in the design**
   
-gambar 135 
+![image](https://user-images.githubusercontent.com/118953917/209547377-5a64bd16-da43-4e90-9a7c-0759ef6fcab7.png) 
 
 **Clock distribution**
   
-gambar 136
+![image](https://user-images.githubusercontent.com/118953917/209547415-7c81ece4-d884-4094-b3a9-40de1493552e.png)
   
 Bringing the practicalities (latency, uncertainty) of clock network
   
-gambar 137
+![image](https://user-images.githubusercontent.com/118953917/209547435-6d8c7e48-d746-4d4d-a0d3-053d269570cb.png)
   
 **Clocks: Waveform**
   
-gambar 138
+![image](https://user-images.githubusercontent.com/118953917/209547461-739d2845-a057-4043-bc2f-6179ca3a8546.png)
   
 **Constraining IO paths**
   
-gambar 139
+![image](https://user-images.githubusercontent.com/118953917/209547507-9b73d080-41c5-47a9-b758-07852a0b66f8.png)
   
-gambar 140
-  
+![image](https://user-images.githubusercontent.com/118953917/209547538-bb3e046f-efba-4ef3-b092-2e883f283fc5.png)
+	
 **Summary**
   
 * create_clock
@@ -151,7 +151,7 @@ gambar 140
   
 > gvim lab8_circuit.v
   
-gambar 141 
+![image](https://user-images.githubusercontent.com/118953917/209547591-73c16358-105d-4af2-82de-e596fe948645.png)
   
 > Invoke dc_shell
 ```
@@ -163,7 +163,7 @@ read_verilog DC_WORKSHOP/verilog_files/lab8_circuit.v
 link
 compile_ultra
 ```
-gambar 142
+![image](https://user-images.githubusercontent.com/118953917/209547614-41c9d71a-1fc7-44da-b126-e97d029e81e9.png)
 
 > Get ports
 ```
@@ -184,7 +184,7 @@ echo $my_port_name $dir;
 }
 ```
 
-gambar 143
+![image](https://user-images.githubusercontent.com/118953917/209547642-d79c7ea6-a7d4-4825-85ea-62a03853d159.png)
 
 > Get cells
 ```
@@ -194,7 +194,7 @@ get_cells * -hier -filter "is_hierarchical == false"                (Listing the
 get_cells * -hier -filter "is_hierarchical == true"                 (Listing the true hierarchical cell)
 ```
   
-gambar 144
+![image](https://user-images.githubusercontent.com/118953917/209547666-fe7bb361-e71b-4c7f-a480-b85ed7cf036f.png)
   
   
 > Get reference name of the cells
@@ -208,7 +208,7 @@ echo $my_cell_name $rname;
 } 
 ```
 
-gambar 145
+![image](https://user-images.githubusercontent.com/118953917/209547686-7edde42e-7a39-4bc7-8298-0fe6434ad306.png)
 
 > Writing DDC 
 ```
@@ -226,14 +226,15 @@ set dir [get_attribute [get_pins $pin_name] direction];
 echo $pin_name $dir;
 }
 ```
-gambar 146 
-gambar 147
+![image](https://user-images.githubusercontent.com/118953917/209547714-293a0e43-0d98-452a-a16d-73cc140199f5.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/209547737-d67a4e53-41e9-4858-85bb-21d26ce72a4e.png)
 
 Note: In digital design, net can only have one driver
   
 Example: 
   
-gambar 148
+![image](https://user-images.githubusercontent.com/118953917/209547771-e4aff53d-73bb-4abc-afdb-ddb691ba76c1.png)
   
 </details>
 <details>
@@ -262,7 +263,7 @@ echo $pin_name $dir;
 }
 ```
   
-gambar 149
+![image](https://user-images.githubusercontent.com/118953917/209547817-e39169be-520f-4d0c-b646-29c37fe1b9b6.png)
   
 > Make use of regexp
 >> 0 if it is not found, 1 if it is matched
@@ -284,7 +285,7 @@ echo $pin_name;
 }
 ```
 
-  gambar 150
+![image](https://user-images.githubusercontent.com/118953917/209547853-dfec6797-ed26-4631-a9b8-65ee0dc8ac11.png)
   
 > Scripting in gvim 
 ```
@@ -313,7 +314,7 @@ get_attribute [get_pins REGA_reg/CLK] clocks
 get_clocks *
 ```
   
-gambar 151 
+![image](https://user-images.githubusercontent.com/118953917/209547885-0ea80cfa-1929-4918-bf93-229334f35a54.png)
 </details>
 <details>
   <summary>Lab 3: Clock waveform</summary>
