@@ -39,9 +39,92 @@ gambar 2-6
 	
 **Sequential constant**
 	
-gambar 7
+gambar 7-11
 	
-
+**Controlling sequential optimizations in DC**
+```
+compile_seqmap_propagate_constants 
+compile_delete_unloaded_sequential_cells
+compile_register_replication						(For cloning the registers)
+```
+</details>
 	
+<details>
+  <summary>Lab 1 part 1</summary>
+ 
 
+### Lab 1: Combinational Optimizations
 
+> Setup environment for dc_shell
+```
+/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop
+csh
+dc_shell
+```
+	
+> To view the scripting of all opt_checks
+```
+sh gvim DC_WORKSHOP/verilog_files/opt_check*.v -o
+```
+
+gambar 12-16
+
+> opt_check
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/opt_check.v
+report_timing
+link 
+compile
+report_timing
+get_cells *
+report_timing -to y2
+report_timing -to y1
+write -f ddc -out DC_WORKSHOP/verilog_files/opt_check.ddc
+```
+	
+```
+design_vision
+read_ddc DC_WORKSHOP/verilog_files/opt_check.ddc
+```
+
+gambar 17
+gambar 18 
+	
+> opt_check2
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/opt_check2.v
+link 
+compile
+write -f ddc -out DC_WORKSHOP/verilog_files/opt_check2.ddc
+	
+read_ddc DC_WORKSHOP/verilog_files/opt_check2.ddc				(In design_vision)
+```
+	
+gambar 19
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/opt_check3.v
+link
+compile
+write -f ddc -out DC_WORKSHOP/verilog_files/opt_check3.ddc
+	
+read_ddc DC_WORKSHOP/verilog_files/opt_check3.ddc
+```
+	
+gambar 20
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/opt_check4.v
+link
+compile
+write -f ddc -out DC_WORKSHOP/verilog_files/opt_check4.ddc
+	
+read_ddc DC_WORKSHOP/verilog_files/opt_check4.ddc
+```
+	
+gambar 21
+	
