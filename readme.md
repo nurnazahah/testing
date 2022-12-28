@@ -128,3 +128,33 @@ read_ddc DC_WORKSHOP/verilog_files/opt_check4.ddc
 	
 gambar 21
 	
+```
+report_timing -to y
+set_max_delay .06 -from [all_inputs] -to [get_ports y]
+report_timing
+report_timing -sig 4
+compile_ultra
+report_timing
+get_lib_cells */sky130_fd_sc_hd__xnor2*
+size_cell U3 sky130_fd_sc_hd__tt_025C_1v80/sky130_fd_sc_hd__xnor2_4
+report_timing
+compile_ultra
+```
+	
+gambar 22
+	
+```
+sh gvim DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
+read_verilog DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
+link
+compile_ultra
+write -f ddc -out DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
+	
+reset_design
+read_ddc DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
+```
+	
+gambar 23
+	
+```
+report_area
