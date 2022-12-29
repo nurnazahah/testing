@@ -25,17 +25,23 @@
 	
 gambar 2-6
 	
-**Sequential Logic Optimizations**
+</details>
+	
+<details>
+  <summary>Sequential Logic Optimizations</summary>
+ 
+
+### Sequential Logic Optimizations
 	
 * Basic
-+ Sequential constant propagation
-+ Retiming
-+ Unused flop removal
-+ Clock gating
+	+ Sequential constant propagation
+	+ Retiming
+	+ Unused flop removal
+	+ Clock gating
 	
 * Advanced 
-+ State optimisation
-+ Sequential logic cloning (Floor plan aware synthesis)
+	+ State optimisation
+	+ Sequential logic cloning (Floor plan aware synthesis)
 	
 **Sequential constant**
 	
