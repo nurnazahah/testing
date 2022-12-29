@@ -53,7 +53,7 @@ compile_register_replication						(For cloning the registers)
   <summary>Lab 1 part 1</summary>
  
 
-### Lab 1: Combinational Optimizations
+### Lab 1: Combinational Optimizations part 1
 
 > Setup environment for dc_shell
 ```
@@ -144,7 +144,14 @@ compile_ultra
 ```
 	
 gambar 22
+
+</details>
 	
+<details>
+  <summary>Lab 1 part 2</summary>
+ 
+
+### Lab 1: Combinational Optimizations part 2
 ```
 sh gvim DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
 read_verilog DC_WORKSHOP/verilog_files/resource_sharing_mult_check.v
@@ -195,4 +202,11 @@ report_area
 gambar 28
 gambar 29
 	
+</details>
+	
+<details>
+  <summary>Lab 2: Sequential Optimizations</summary>
+ 
+
+### Lab 2: Sequential Optimizations
 
