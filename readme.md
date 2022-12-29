@@ -205,7 +205,7 @@ gambar 29
 </details>
 	
 <details>
-  <summary>Lab 2: Sequential Optimizations</summary>
+  <summary>Lab 2</summary>
  
 
 ### Lab 2: Sequential Optimizations
