@@ -104,6 +104,7 @@ read_ddc DC_WORKSHOP/verilog_files/opt_check2.ddc				(In design_vision)
 	
 gambar 19
 	
+> opt_check3
 ```
 reset_design
 read_verilog DC_WORKSHOP/verilog_files/opt_check3.v
@@ -116,6 +117,7 @@ read_ddc DC_WORKSHOP/verilog_files/opt_check3.ddc
 	
 gambar 20
 	
+> opt_check4
 ```
 reset_design
 read_verilog DC_WORKSHOP/verilog_files/opt_check4.v
@@ -155,6 +157,37 @@ read_ddc DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
 ```
 	
 gambar 23
+
+> In design_vision
+```
+report_area
+report_timing
+set_max_delay -from [all_inputs] -to [all_outputs] 2.5
+report_timing
+compile_ultra
+report_timing
+```	
+	
+gambar 24
+gambar 25
+	
 	
 ```
 report_area
+set_max_delay -from sel -to [all_outputs] 0.1
+report_timing
+compile_ultra
+report_area
+report_timing
+report_timing -sig 4
+```
+	
+gambar 26
+gambar 27
+	
+```
+set_max_area 800
+compile_ultra
+report_timing
+report_area
+
