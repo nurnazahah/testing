@@ -216,3 +216,49 @@ gambar 29
 
 ### Lab 2: Sequential Optimizations
 
+```
+sh gvim DC_WORKSHOP/verilog_files/dff_cons* -o
+```
+	
+gambar 30-35
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/dff_const1.v
+link
+compile
+get_cells
+
+foreach_in_collection my_cell [get_cells *] {
+set cell_name [get_object_name $my_cell];
+echo $cell_name; 
+}
+	
+foreach_in_collection my_cell [get_cells *] {
+set cell_name [get_object_name $my_cell];
+set rn [get_attribute [get_cells $cell_name] ref_name];  
+echo $cell_name $rn; 
+}
+```
+	
+gambar 36 
+	
+```
+design_vision
+read_verilog DC_WORKSHOP/verilog_files/dff_const1.v
+link
+compile
+```
+
+gambar 37
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/dff_const2.v
+link
+compile
+```
+	
+gambar 38
+	
+```
