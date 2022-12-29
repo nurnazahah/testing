@@ -270,3 +270,34 @@ compile
 	
 gambar 39
 	
+```
+reset_design 
+read_verilog DC_WORKSHOP/verilog_files/dff_const2.v
+set compile_seqmap_propagate_constants false
+link
+compile
+start_gui
+```
+	
+gambar 40
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/dff_const4.v
+link
+set compile_seqmap_propagate_constants true
+compile_ultra
+start_gui
+```
+	
+gambar 41
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/dff_const5.v
+link
+compile
+```
+	
+gambar 42
+	
