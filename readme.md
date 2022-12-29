@@ -190,4 +190,9 @@ set_max_area 800
 compile_ultra
 report_timing
 report_area
+```
+	
+gambar 28
+gambar 29
+	
 
