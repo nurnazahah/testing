@@ -301,3 +301,33 @@ compile
 	
 gambar 42
 	
+</details>
+	
+<details>
+  <summary>Special Optimizations</summary>
+ 
+
+### Special Optimizations
+
+**Register retiming**
+	
+**Why flops were added?**
+* To reduce the number of delay 
+	+ From the figure, each flop has 47 ns slack. So, the combinational logic is divided to some partitions between the flops resulting those slacks of the critical path to be decreased as well as making the freaquency increases.
+	+ This is what we called Register Retiming
+	
+gambar 43
+	
+**Boundary Optimization**
+	
+**How to control boundary optimization?**
+```
+set_boundary_optimization <design><true|false>
+set_boundary_optimization module_sub false
+```
+	
+gambar 44
+	
+**Multi-cycle path**
+	
+
