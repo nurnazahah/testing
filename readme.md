@@ -264,3 +264,9 @@ gambar 38
 ```
 reset_design
 read_verilog DC_WORKSHOP/verilog_files/dff_const3.v
+link
+compile
+```
+	
+gambar 39
+	
