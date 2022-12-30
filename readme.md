@@ -466,3 +466,69 @@ slide 58
 
 ### Lab 5: Isolating Output Ports
 	
+slide 59
+	
+```
+sh gvim DC_WORKSHOP/verilog_files/check_boundary.v
+```
+	
+slide 60
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
+link
+compile_ultra
+start_gui
+```
+	
+gambar 61
+	
+```
+set_isolate_ports -type buffer [all_outputs]
+compile_ultra
+start_gui
+```
+	
+gambar 62
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
+link
+compile_ultra
+create_clock -per 5 -name myclk [get_ports clk]
+set_input_delay -max 2 [all_inputs] -clock myclk
+set_output_delay -max 2 [all_outputs] -clock myclk
+set_load -max 0.3 [all_outputs]
+report_timing -nosplit -inp -cap -trans -sig 4
+report_timing -to val_out_reg[0]/D -inp -trans -nosplit -cap -sig 4		(Viewing report timing before isolating portr -> reg to reg path)
+```
+	
+> Isolating ports of both paths
+```
+set_isolate_ports -type buffer [all_outputs]
+compile_ultra
+report_timing -nosplit -inp -cap -trans -sig 4
+report_timing -from val_out_reg[0]/CLK -to val_out_reg[0]/D -nosplit -inp -cap -trans -sig 4
+```
+	
+gambar 64
+	
+</details>
+	
+<details>
+  <summary>Lab 6</summary>
+ 
+
+### Lab 6: Multi Cycle Path
+	
+```
+sh gvim DC_WORKSHOP/verilog_files/mcp_check.v
+```
+	
+gambar 65
+	
+```
+
+	
