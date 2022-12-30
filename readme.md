@@ -411,5 +411,58 @@ start_gui
 ```
 	
 gambar 53
+</details>
+	
+<details>
+  <summary>Lab 4</summary>
+ 
+
+### Lab 4: Register Retiming
+
+> In design_vision
+```
+reset_design
+sh gvim DC_WORKSHOP/verilog_files/check_reg_retime.v
+```
+	
+gambar 54
 	
 ```
+read_verilog DC_WORKSHOP/verilog_files/check_reg_retime.v
+link
+compile
+start_gui
+```
+
+gambar 55
+	
+```
+report_timing
+sh gvim DC_WORKSHOP/verilog_files/reg_retime_cons.tcl			(Setting the constraints)
+source DC_WORKSHOP/verilog_files/reg_retime_cons.tcl
+report_clocks
+report_timing
+compile_ultra -retime
+start_gui
+```
+	
+gambar 56
+gambar 57
+	
+```
+report_timing
+compile_ultra
+report_timing -from [all_inputs]
+report_timing -from [all_inputs] -trans -cap -nosplit -sig 4
+```
+	
+slide 58
+	
+</details>
+	
+<details>
+  <summary>Lab 5</summary>
+ 
+
+### Lab 5: Isolating Output Ports
+	
