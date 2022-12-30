@@ -330,4 +330,30 @@ gambar 44
 	
 **Multi-cycle path**
 	
+gambar 45
+	
+**False path**
+	
+> Paths that are not valid for STA
+```
+set false_path -from <> -to <>
+set false_path -through <>
+```
+
+gambar 46
+	
+**External load vs internal load**
+	
+gambar 47
+	
+</details>
+	
+<details>
+  <summary>How Paths are timed MCP?</summary>
+ 
+
+### How Paths are timed MCP?
+	
+**How DC/STA tool checks timing?**
+	
 
