@@ -376,3 +376,40 @@ gambar 50
 
 ### Lab 3: Boundary Optimization
 	
+```
+sh gvim DC_WORKSHOP/verilog_files/check_boundary.v
+```
+	
+gambar 51 
+	
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
+link
+compile_ultra
+write -f ddc -out boundary.ddc
+get_cells
+```
+	
+```
+design_vision
+read_ddc DC_WORKSHOP/verilog_files/boundary.ddc
+start_gui
+```
+	
+gambar 52
+
+> In design_vision
+```
+reset_design
+read_verilog DC_WORKSHOP/verilog_files/check_boundary.v
+link
+get_cells							(If command in dc_shell, the tool cannot find the matching objects because the boundary optimization has happened, that's why the hierarchy got dissoved)
+set_boundary_optimization u_im false
+compile_ultra
+start_gui
+```
+	
+gambar 53
+	
+```
