@@ -352,8 +352,27 @@ gambar 47
   <summary>How Paths are timed MCP?</summary>
  
 
-### How Paths are timed MCP?
+### How Paths are timed Multi-Path Cycle?
 	
 **How DC/STA tool checks timing?**
 	
+**Single cycle path**
+	
+gambar 48
+	
+**Half cycle path**
+	
+gambar 49
+	
+**Multi cycle path**
+	
+gambar 50
+	
+</details>
+	
+<details>
+  <summary>Lab 3</summary>
+ 
 
+### Lab 3: Boundary Optimization
+	
