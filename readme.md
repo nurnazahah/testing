@@ -546,6 +546,8 @@ report_timing -nosplit -inp -cap -trans -sig 4
 report_timing -to val_out_reg[0]/D -inp -trans -nosplit -cap -sig 4		(Viewing report timing before isolating portr -> reg to reg path)
 ```
 	
+![image](https://user-images.githubusercontent.com/118953917/210129351-1f7bf903-61fd-462f-91ec-e2481d770d7b.png)
+	
 > Isolating ports of both paths
 ```
 set_isolate_ports -type buffer [all_outputs]
@@ -554,7 +556,7 @@ report_timing -nosplit -inp -cap -trans -sig 4
 report_timing -from val_out_reg[0]/CLK -to val_out_reg[0]/D -nosplit -inp -cap -trans -sig 4
 ```
 	
-gambar 64
+![image](https://user-images.githubusercontent.com/118953917/210129373-869bdbe0-4d4b-4d44-bfa6-914b07dc0e96.png)
 	
 </details>
 	
@@ -568,7 +570,7 @@ gambar 64
 sh gvim DC_WORKSHOP/verilog_files/mcp_check.v
 ```
 	
-gambar 65
+![image](https://user-images.githubusercontent.com/118953917/210129392-455daaa8-f642-46d4-8202-aeb99d83b725.png)
 	
 ```
 read_verilog DC_WORKSHOP/verilog_files/mcp_check.v
@@ -589,8 +591,9 @@ report_clock *
 report_timing -to prod_reg[*]/D -from [all_inputs]
 ```
 
-gambar 66
-gambar 67
+![image](https://user-images.githubusercontent.com/118953917/210129406-797ff33c-38c9-474f-ba42-c519c423e453.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/210129420-225d1ba6-4c80-430f-9e7f-f9c7a04fd62b.png)
 	
 > Hold time
 ```
@@ -608,7 +611,7 @@ report_timing -delay min -to prod_reg[*]/D -from [all_inputs]
 report_timing -nosplit -inp -cap -trans -sig 4
 ```
 
-gambar 68
+![image](https://user-images.githubusercontent.com/118953917/210129437-59b0d647-2391-4ba3-9928-5a834b26e3fc.png)
 	
 </details>
 
