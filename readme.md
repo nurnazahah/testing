@@ -22,8 +22,16 @@
 * To squeeze the logic to get the most optimised design in terms of Area and Power saving
 * Constant propagation technique used: Direct optimisation
 * Boolean logic optimisation technique: K-map and Quine McKluskey
-	
-gambar 2-6
+
+![image](https://user-images.githubusercontent.com/118953917/210128758-35553b5a-2243-4037-9d86-f8b2faea5bb7.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128764-1951205b-1981-4de9-bb02-9a5b572b848c.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128770-64515713-e924-4f06-b958-3f109930e33c.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128777-5bae9223-396a-4970-8517-c759a5a57a44.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128795-953d1979-6e07-414a-a21f-33524fcf9b87.png)
 	
 </details>
 	
@@ -45,8 +53,17 @@ gambar 2-6
 	
 **Sequential constant**
 	
-gambar 7-11
-	
+![image](https://user-images.githubusercontent.com/118953917/210128815-1bca84f4-4a26-427d-81d4-764828eaf89a.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128821-759b7612-292b-494e-a093-e2915692edde.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128828-515c10f8-a263-4d55-a6b8-b2f40fd4f8db.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128832-16e6a103-a4d4-4193-8100-574cb746be72.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128855-b14d51c7-5f77-4554-a0e0-b55ddd245ed6.png)
+
+
 **Controlling sequential optimizations in DC**
 ```
 compile_seqmap_propagate_constants 
@@ -73,7 +90,15 @@ dc_shell
 sh gvim DC_WORKSHOP/verilog_files/opt_check*.v -o
 ```
 
-gambar 12-16
+![image](https://user-images.githubusercontent.com/118953917/210128871-3ea71ff9-a112-4733-a0a8-4649b0f7bab1.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128876-23527a11-f377-4f4e-9ee8-d2ab6cee034e.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128882-6894dc44-8234-47cc-a999-88c5d83ee1d1.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128889-ed74e739-e06a-493c-9d5a-bfb7b3f43fbe.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128896-339c6be9-0b3f-4124-8a07-d43ffe0ff5be.png)
 
 > opt_check
 ```
@@ -94,8 +119,9 @@ design_vision
 read_ddc DC_WORKSHOP/verilog_files/opt_check.ddc
 ```
 
-gambar 17
-gambar 18 
+![image](https://user-images.githubusercontent.com/118953917/210128910-d17033bf-5c43-41d0-874d-77557f1cb14b.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210128922-b3b5c561-2dcc-414b-a0c7-fa18d16fe87d.png)
 	
 > opt_check2
 ```
@@ -108,7 +134,7 @@ write -f ddc -out DC_WORKSHOP/verilog_files/opt_check2.ddc
 read_ddc DC_WORKSHOP/verilog_files/opt_check2.ddc				(In design_vision)
 ```
 	
-gambar 19
+![image](https://user-images.githubusercontent.com/118953917/210128939-b1e06619-f654-4358-a949-bcd49469be18.png)
 	
 > opt_check3
 ```
@@ -121,7 +147,7 @@ write -f ddc -out DC_WORKSHOP/verilog_files/opt_check3.ddc
 read_ddc DC_WORKSHOP/verilog_files/opt_check3.ddc
 ```
 	
-gambar 20
+![image](https://user-images.githubusercontent.com/118953917/210128945-398a1927-f7c0-4677-aea4-78e96e7760ff.png)
 	
 > opt_check4
 ```
@@ -134,7 +160,7 @@ write -f ddc -out DC_WORKSHOP/verilog_files/opt_check4.ddc
 read_ddc DC_WORKSHOP/verilog_files/opt_check4.ddc
 ```
 	
-gambar 21
+![image](https://user-images.githubusercontent.com/118953917/210128956-87cafbcf-13ed-43d3-9644-50e9c5dff9bc.png)
 	
 ```
 report_timing -to y
@@ -149,7 +175,7 @@ report_timing
 compile_ultra
 ```
 	
-gambar 22
+![image](https://user-images.githubusercontent.com/118953917/210128969-28586244-5dd1-4662-b4e0-471da87b2636.png)
 
 </details>
 	
@@ -169,7 +195,7 @@ reset_design
 read_ddc DC_WORKSHOP/verilog_files/resource_sharing_mult_check.ddc
 ```
 	
-gambar 23
+![image](https://user-images.githubusercontent.com/118953917/210128975-b4d48749-8ce0-44f9-adc1-eaacab5a7fdc.png)
 
 > In design_vision
 ```
@@ -181,8 +207,9 @@ compile_ultra
 report_timing
 ```	
 	
-gambar 24
-gambar 25
+![image](https://user-images.githubusercontent.com/118953917/210128981-40dd8c6c-02b4-4893-b8c6-cf875a5c90ab.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/210128989-699fd768-98fe-4319-9d27-4f7828cf332a.png)
 	
 	
 ```
@@ -195,8 +222,9 @@ report_timing
 report_timing -sig 4
 ```
 	
-gambar 26
-gambar 27
+![image](https://user-images.githubusercontent.com/118953917/210128995-dd719518-7b99-4628-a23c-34dda6237bb9.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/210128998-5509f3be-875a-484c-8de8-3a9e3c39c2aa.png)
 	
 ```
 set_max_area 800
@@ -205,8 +233,9 @@ report_timing
 report_area
 ```
 	
-gambar 28
-gambar 29
+![image](https://user-images.githubusercontent.com/118953917/210129008-eddc3233-961e-4cf0-876c-28fc10dcc449.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/210129015-309304f1-5046-4cee-875d-d108c5dda74f.png)
 	
 </details>
 	
@@ -219,8 +248,19 @@ gambar 29
 ```
 sh gvim DC_WORKSHOP/verilog_files/dff_cons* -o
 ```
-	
-gambar 30-35
+
+![image](https://user-images.githubusercontent.com/118953917/210129023-fe573204-17ea-44df-8bd3-5d282c6248cc.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210129031-1ee147c2-b401-4a76-88e7-9e66ae5d41d7.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210129040-a0ccfd74-8332-47f3-bd99-fc71311983dc.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210129045-06351669-d469-4fe0-a912-2386327cfee1.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210129051-bad7474a-e2f7-481e-bf68-7bde38fc2644.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210129054-8a75683b-c0d0-4f2b-8152-049c37eb12c7.png)
+
 	
 ```
 reset_design
@@ -241,7 +281,7 @@ echo $cell_name $rn;
 }
 ```
 	
-gambar 36 
+![image](https://user-images.githubusercontent.com/118953917/210129056-fc0596f3-4410-49fd-9cb1-e9cecb5f0843.png)
 	
 ```
 design_vision
@@ -250,7 +290,7 @@ link
 compile
 ```
 
-gambar 37
+![image](https://user-images.githubusercontent.com/118953917/210129067-a967fa54-9528-4b2a-8f3b-77b2b4ff7d30.png)
 	
 ```
 reset_design
@@ -259,7 +299,7 @@ link
 compile
 ```
 	
-gambar 38
+![image](https://user-images.githubusercontent.com/118953917/210129072-180059aa-3718-4d01-b7a1-df96e859c96c.png)
 	
 ```
 reset_design
@@ -268,7 +308,7 @@ link
 compile
 ```
 	
-gambar 39
+![image](https://user-images.githubusercontent.com/118953917/210129088-aaf3f023-1ed4-485d-b9a1-4c23eabe6a06.png)
 	
 ```
 reset_design 
@@ -279,7 +319,7 @@ compile
 start_gui
 ```
 	
-gambar 40
+![image](https://user-images.githubusercontent.com/118953917/210129098-a09c0313-2c77-451d-b9c7-ca99ead9e6cb.png)
 	
 ```
 reset_design
@@ -289,8 +329,7 @@ set compile_seqmap_propagate_constants true
 compile_ultra
 start_gui
 ```
-	
-gambar 41
+![image](https://user-images.githubusercontent.com/118953917/210129122-5e28bc24-7a91-4731-bcdd-b77b07e70ec6.png)	
 	
 ```
 reset_design
@@ -299,7 +338,7 @@ link
 compile
 ```
 	
-gambar 42
+![image](https://user-images.githubusercontent.com/118953917/210129118-2595f2f6-254e-4b28-a59e-de91cb89104a.png)
 	
 </details>
 	
@@ -316,7 +355,7 @@ gambar 42
 	+ From the figure, each flop has 47 ns slack. So, the combinational logic is divided to some partitions between the flops resulting those slacks of the critical path to be decreased as well as making the freaquency increases.
 	+ This is what we called Register Retiming
 	
-gambar 43
+![image](https://user-images.githubusercontent.com/118953917/210129133-2c7c49be-7238-4275-8fcb-b0e75d12f81d.png)
 	
 **Boundary Optimization**
 	
@@ -326,11 +365,11 @@ set_boundary_optimization <design><true|false>
 set_boundary_optimization module_sub false
 ```
 	
-gambar 44
+![image](https://user-images.githubusercontent.com/118953917/210129139-17283ab1-ac0b-4a49-8444-c204ce7c5178.png)
 	
 **Multi-cycle path**
 	
-gambar 45
+![image](https://user-images.githubusercontent.com/118953917/210129152-c56fe10f-01b2-4632-89b1-16f84fdad647.png)
 	
 **False path**
 	
@@ -340,11 +379,11 @@ set false_path -from <> -to <>
 set false_path -through <>
 ```
 
-gambar 46
+![image](https://user-images.githubusercontent.com/118953917/210129162-9270bdb6-f3ab-4a02-a3f3-6e4224b00cc0.png)
 	
 **External load vs internal load**
 	
-gambar 47
+![image](https://user-images.githubusercontent.com/118953917/210129172-98810ca9-7ba1-4ba3-bdec-71c06e0ab1e9.png)
 	
 </details>
 	
@@ -358,15 +397,15 @@ gambar 47
 	
 **Single cycle path**
 	
-gambar 48
+![image](https://user-images.githubusercontent.com/118953917/210129180-1d16a1d7-6062-4f6a-a048-0c5910aa2d84.png)
 	
 **Half cycle path**
 	
-gambar 49
+![image](https://user-images.githubusercontent.com/118953917/210129190-e88b82dc-4918-4be9-a5e8-071a250d808a.png)
 	
 **Multi cycle path**
 	
-gambar 50
+![image](https://user-images.githubusercontent.com/118953917/210129203-cfb5b40c-d864-4328-99fa-c7fa30157661.png)
 	
 </details>
 	
@@ -380,7 +419,7 @@ gambar 50
 sh gvim DC_WORKSHOP/verilog_files/check_boundary.v
 ```
 	
-gambar 51 
+![image](https://user-images.githubusercontent.com/118953917/210129207-36caf3a2-3403-47ea-a4d6-d315fd9c31c7.png)
 	
 ```
 reset_design
@@ -397,7 +436,7 @@ read_ddc DC_WORKSHOP/verilog_files/boundary.ddc
 start_gui
 ```
 	
-gambar 52
+![image](https://user-images.githubusercontent.com/118953917/210129215-8dac93db-be0e-42aa-968c-97f725fe388b.png)
 
 > In design_vision
 ```
@@ -410,7 +449,8 @@ compile_ultra
 start_gui
 ```
 	
-gambar 53
+![image](https://user-images.githubusercontent.com/118953917/210129224-d3fc3603-2128-4a3e-a2cc-5c4569fe6da4.png)
+	
 </details>
 	
 <details>
@@ -425,7 +465,7 @@ reset_design
 sh gvim DC_WORKSHOP/verilog_files/check_reg_retime.v
 ```
 	
-gambar 54
+![image](https://user-images.githubusercontent.com/118953917/210129235-3bf86683-725f-4489-8f62-8c0f3bb22265.png)
 	
 ```
 read_verilog DC_WORKSHOP/verilog_files/check_reg_retime.v
@@ -434,7 +474,7 @@ compile
 start_gui
 ```
 
-gambar 55
+![image](https://user-images.githubusercontent.com/118953917/210129248-c6cbeef4-dd0c-4b9c-982a-dbf72ffd6918.png)
 	
 ```
 report_timing
@@ -446,8 +486,9 @@ compile_ultra -retime
 start_gui
 ```
 	
-gambar 56
-gambar 57
+![image](https://user-images.githubusercontent.com/118953917/210129252-5c47dbc5-919d-4f9c-82f7-d6e6a00f3071.png)
+	
+![image](https://user-images.githubusercontent.com/118953917/210129264-003c2885-7411-4205-806d-c2b48f2310dd.png)
 	
 ```
 report_timing
@@ -456,7 +497,7 @@ report_timing -from [all_inputs]
 report_timing -from [all_inputs] -trans -cap -nosplit -sig 4
 ```
 	
-slide 58
+![image](https://user-images.githubusercontent.com/118953917/210129279-a1702c7a-c93d-4161-9d6c-e31511294e55.png)
 	
 </details>
 	
@@ -466,13 +507,13 @@ slide 58
 
 ### Lab 5: Isolating Output Ports
 	
-slide 59
+![image](https://user-images.githubusercontent.com/118953917/210129288-4ca80cf2-e625-473c-bc20-cc796da8c3b0.png)
 	
 ```
 sh gvim DC_WORKSHOP/verilog_files/check_boundary.v
 ```
 	
-slide 60
+![image](https://user-images.githubusercontent.com/118953917/210129293-21564a49-bcb3-4ca5-9af0-0de446102049.png)
 	
 ```
 reset_design
@@ -482,7 +523,7 @@ compile_ultra
 start_gui
 ```
 	
-gambar 61
+![image](https://user-images.githubusercontent.com/118953917/210129298-f60dfe27-c494-43da-a705-33332670f6a8.png)
 	
 ```
 set_isolate_ports -type buffer [all_outputs]
@@ -490,7 +531,7 @@ compile_ultra
 start_gui
 ```
 	
-gambar 62
+![image](https://user-images.githubusercontent.com/118953917/210129305-8efa8dbf-2af4-42e1-a7ab-d447b9bbdfc8.png)
 	
 ```
 reset_design
@@ -530,5 +571,46 @@ sh gvim DC_WORKSHOP/verilog_files/mcp_check.v
 gambar 65
 	
 ```
+read_verilog DC_WORKSHOP/verilog_files/mcp_check.v
+link
+compile_ultra
+sh gvim DC_WORKSHOP/verilog_files/mcp_check_cons.tcl
+source DC_WORKSHOP/verilog_files/mcp_check_cons.tcl
+report_timing
+compile_ultra
+report_timing
+set_multicycle_path -setup 2 -to prod_reg[*]/D -from [all_inputs] 	(Must put all_inputs -> valid to prod_reg is a single cycle path. If [all_inputs] didn't there, it will mcp the valid to prod_reg path too. This is a CRIMINAL MISTAKE!)
+report_timing -to prod_reg[*]/D -from valid_reg/CLK
+report_clock *
+```
+
+> Applying MCP
+```
+report_timing -to prod_reg[*]/D -from [all_inputs]
+```
+
+gambar 66
+gambar 67
+	
+> Hold time
+```
+report_timing -delay min
+```
+	
+> Applying MCP for hold time
+```
+set_multicycle_path -hold 1 -from [all_inputs] -to prod_reg[*]/D
+report_timing -delay min -to prod_reg[*]/D -from [all_inputs]
+```
+	
+> Isolating ports in report timing
+```
+report_timing -nosplit -inp -cap -trans -sig 4
+```
+
+gambar 68
+	
+</details>
+
 
 	
