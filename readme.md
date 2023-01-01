@@ -208,3 +208,51 @@ report_timing -inp -nets -cap -trans -sig 4 -nosplit -from en -to y[116]
   
 gambar 20
   
+**Summary**
+
+* check_design 
+  + To ensure the quality of the design is proper, to check if the design is proper/not, or if there are any missing things in the design.
+* check_timing 
+  + To ensure all the proper constraints are in place.
+* report_constraints 
+  + To check what are the constraints we are checking. If there is any violation, it will report it.
+* set_max_capacitance & set_max_transition 
+  + To check if there is any high fanout net (HFN) or broken or is the design is buffered properly, so that there are no transition issues.
+  
+**Summarizing**
+  
+**Important things should be there in synthesis script -> synth.tcl**
+
+* Constraints
+  + clock, genclk (if any)
+  + vclk (if any)
+  + Practicalities of the clock -> uncertainty including skew + jitter for pre CTS latency and jitter only for post CTS & latency
+  + Input delay
+  + Output delay
+  + Input trans/set_driving _cell
+  + Output load
+  + set_max_area
+  + set_max_capacitance
+  + set_max_transition
+
+* Synthesis Knobs
+  + Boundary Optimization
+  + Retiming 
+  + Constant propagation 
+  + Unused flop removal 
+  + Isolate ports 
+
+  
+Note: All of those things must be needed in synthesis or script.tcl
+
+  
+**After sourcing all those contents, the program needs to:**
+
+* read_verilog
+* read_db
+* check_design
+* source constraints
+* check_timing
+* compile_ultra
+* report_constraint (for all_violations)
+* report_area
