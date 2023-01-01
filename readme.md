@@ -22,15 +22,17 @@ report_timing -rise_from DDF_b/clk -delay_type max -nets -cap -trans -sig 4     
   
 **Quick look at propagation delay**
   
-gambar 2
+![image](https://user-images.githubusercontent.com/118953917/210180887-59412998-fb3b-490c-b549-62d996c229d4.png)
   
 **Timing path: Further details**
   
-gambar 3
+![image](https://user-images.githubusercontent.com/118953917/210180898-b0bbe5ce-d730-4b8e-a965-157ba0943587.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210180920-0559790f-4448-430b-b6cc-31954668c8bb.png)
   
 **Max path and Nworst**
   
-gambar 4
+![image](https://user-images.githubusercontent.com/118953917/210180931-0821ae7a-ad8d-493b-b7fc-331908e270da.png)
 </details>
   
 <details>
@@ -44,7 +46,7 @@ sh gvim DC_WORKSHOP/verilog_files/lab8_circuit_modified.v
 :vsp DC_WORKSHOP/verilog_files/lab8_cons_modified.tcl
 ```
   
-gambar 5
+![image](https://user-images.githubusercontent.com/118953917/210180948-ec646819-27fc-46ca-b85f-b26c00d359ee.png)
 
 > Setup check
 ```
@@ -55,7 +57,7 @@ report_timing -sig 4 -nosplit -trans -cap -input_pins -from IN_A > DC_WORKSHOP/v
 sh gvim DC_WORKSHOP/verilog_files/t1.rpt
 ```
   
-gambar 6
+![image](https://user-images.githubusercontent.com/118953917/210180954-dbcf8f10-85e0-44d7-a5ac-ee346fcdc80e.png)
 
 > To check for the worst delay
 ```
@@ -64,7 +66,7 @@ sh gvim DC_WORKSHOP/verilog_files/t2.rpt
 :vsp DC_WORKSHOP/verilog_files/t1.rpt   
 ```
   
-gambar 7
+![image](https://user-images.githubusercontent.com/118953917/210180960-fd1bebc3-7d18-45a4-bd16-02c09da712e9.png)
   
 ```
 report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins -to REGA_reg/D > DC_WORKSHOP/verilog_files/t3.rpt
@@ -72,14 +74,14 @@ sh gvim DC_WORKSHOP/verilog_files/t3.rpt
 :vsp DC_WORKSHOP/verilog_files/t1.rpt  
 ```
   
-gambar 8
+![image](https://user-images.githubusercontent.com/118953917/210180965-03bd4553-ac03-4d80-ac76-cd5f8f0d9d1b.png)
   
 > Hold check
 ```
 report_timing -delay min -from  IN_A
 ```
   
-gambar 9
+![image](https://user-images.githubusercontent.com/118953917/210180973-6788f71b-80af-43eb-897c-a3d013ac8a59.png)
   
 > Report timing through U15/Y
 ```
@@ -87,7 +89,7 @@ report_timing -through U15/Y
 report_timing -delay min -through U15/Y
 ```
   
-gambar 10
+![image](https://user-images.githubusercontent.com/118953917/210180986-1940ea45-413b-4825-a663-4144f291ed58.png)
   
 </details>
   
@@ -109,13 +111,13 @@ check_timing
 report_timing
 ```
   
-gambar 11
+![image](https://user-images.githubusercontent.com/118953917/210180998-26b50d00-6da9-4587-8495-576fd5a4e85d.png)
   
 ```
 report_constraints
 ```
   
-gambar 12
+![image](https://user-images.githubusercontent.com/118953917/210181012-0e482d68-6c20-4cfa-9aeb-8c2bc680a649.png)
   
 ```
 reset_design
@@ -123,7 +125,7 @@ sh gvim DC_WORKSHOP/verilog_files/mux_generate.v
 :vsp DC_WORKSHOP/verilog_files/mux_generate_128_1.v  
 ```
   
-gambar 13
+![image](https://user-images.githubusercontent.com/118953917/210181027-5c7dc379-7e44-4094-b7a7-4fe7ec7b231e.png)
   
 ```
 sh gvim DC_WORKSHOP/verilog_files/mux_generate.v 
@@ -135,7 +137,7 @@ write -f verilog -out DC_WORKSHOP/verilog_files/mux_generate_128_1_net.v
 sh gvim DC_WORKSHOP/verilog_files/mux_generate_128_1_net.v
 ```
 
-gambar 14
+![image](https://user-images.githubusercontent.com/118953917/210181039-b981304d-e119-4610-b567-e1905ed39c88.png)
   
 ```
 get_cells * -hier -filter "is_sequential == true"           (No output since there is no sequential cells)
@@ -150,7 +152,7 @@ set_max_delay -from [all_inputs] -to [all_outputs] 3.5
 report_timing
 ```
   
-gambar 15
+![image](https://user-images.githubusercontent.com/118953917/210181047-56a6044a-b398-4679-a326-c54a48945a59.png)
   
 > Setting max capacitance
 ```
@@ -163,7 +165,7 @@ report_timing
 report_timing -net -cap -sig 4
 ```
   
-gambar 16
+![image](https://user-images.githubusercontent.com/118953917/210181057-4063c805-44b6-46f0-adcd-94246d161e37.png)
   
 > New design
 ```
@@ -180,6 +182,8 @@ report_timing -from en -inp -nets -cap -sig 4
 write -f ddc -out  DC_WORKSHOP/verilog_files/en_128.ddc
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/210181089-08fab177-2e64-47cc-b9dd-5b0570634894.png)
+  
 > Invoking design vision
 ```
 design_vision
@@ -187,7 +191,7 @@ read_ddc DC_WORKSHOP/verilog_files/en_128.ddc
 start_gui
 ```
   
-gambar 18
+![image](https://user-images.githubusercontent.com/118953917/210181102-35c48b12-2ca4-4f07-a0a7-d0284a9f5356.png)
   
 > Setting the max transition 
 ```
@@ -197,7 +201,7 @@ report_constraints
 report_constraint -all_violators
 ```
   
-gambar 19
+![image](https://user-images.githubusercontent.com/118953917/210181113-dd759149-57d8-4a77-939b-fbaa83c7bdc1.png)
   
 ```
 compile_ultra
@@ -206,7 +210,7 @@ report_timing -inp -nets -cap -trans -sig 4 -nosplit
 report_timing -inp -nets -cap -trans -sig 4 -nosplit -from en -to y[116]
 ```
   
-gambar 20
+![image](https://user-images.githubusercontent.com/118953917/210181117-66f60290-dc2f-4cc0-a0df-509477d1d701.png)
   
 **Summary**
 
@@ -311,3 +315,4 @@ In the early stages of the design cycle, if a block does not have a netlist yet,
 * QTM is generated by the command create_qtm_model, followed by save_qtm_model
   
 *Source: http://tech.tdzire.com/what-are-etms-qtms-and-ilms/
+</details>
