@@ -39,3 +39,61 @@ gambar 4
 
 ### Lab 1: Report timing
   
+```
+sh gvim DC_WORKSHOP/verilog_files/lab8_circuit_modified.v
+:vsp DC_WORKSHOP/verilog_files/lab8_cons_modified.tcl
+```
+  
+gambar 5
+
+> Setup check
+```
+read_verilog DC_WORKSHOP/verilog_files/lab8_circuit_modified.v
+link
+source DC_WORKSHOP/verilog_files/lab8_cons_modified.tcl
+report_timing -sig 4 -nosplit -trans -cap -input_pins -from IN_A > DC_WORKSHOP/verilog_files/t1.rpt
+sh gvim DC_WORKSHOP/verilog_files/t1.rpt
+```
+  
+gambar 6
+
+> To check for the worst delay
+```
+report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins > DC_WORKSHOP/verilog_files/t2.rpt
+sh gvim DC_WORKSHOP/verilog_files/t2.rpt
+:vsp DC_WORKSHOP/verilog_files/t1.rpt   
+```
+  
+gambar 7
+  
+```
+report_timing -rise_from IN_A -sig 4 -transition_time -capacitance -input_pins -to REGA_reg/D > DC_WORKSHOP/verilog_files/t3.rpt
+sh gvim DC_WORKSHOP/verilog_files/t3.rpt
+:vsp DC_WORKSHOP/verilog_files/t1.rpt  
+```
+  
+gambar 8
+  
+> Hold check
+```
+report_timing -delay min -from  IN_A
+```
+  
+gambar 9
+  
+> Report timing through U15/Y
+```
+report_timing -through U15/Y
+report_timing -delay min -through U15/Y
+```
+  
+gambar 10
+  
+</details>
+  
+<details>
+  <summary>Lab 2</summary>
+ 
+
+### Lab 2: Lab Check_timing, Check_design, Set_max_capacitance, HFN
+  
