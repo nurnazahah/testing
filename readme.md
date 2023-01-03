@@ -116,3 +116,54 @@
 * So, we got 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there.
 
 *Source: https://github.com/manili/VSDBabySoC#introduction-to-the-vsdbabysoc*
+
+</details>
+
+<details>
+  <summary>Microchips fabrication</summary>
+ 
+
+### How Microchips are made?
+  
+**Introduction to microchips fabrication**
+  
+* All chips started out with a very simple raw material which is sand.
+* Complex chemical and physical processes are required to create out of the sand an pure monocrystalline silicon ingot.
+* The process to manufacture chips from a wafer starts with the layout and design phase where extremely thin wafers are being cut using a special sawing technique.
+* They are fabricated in a range of different diameters, the most common sizes are 150, 200 and 300 mm.
+* Wafers with large diameters offer more space for chips. 
+* Transistors are the smallest control units in microchips. It used to control electric voltages and currents and it is the most important components of electronic circuits.
+  
+*Source: https://www.infineon.com/cms/en/product/promopages/how-a-chip-is-made-video/*
+
+**Fabrication of wafers from transistors**
+  
+1. Highly complex chips are made up of billions of integrated and connected transistors, enabling sophisticated circuits i.e. microcontrollers and crypto chips.
+2. Firstly, the surface of the wafer is oxidized in a high-temperature furnace operating at approximately 1000°C to create a non-conductive layer.
+3. Then, a photo resist material is uniformly distributed on this non-conductive layer.
+4. The wafer is then exposed to light through the photomask in special exposure machines known as steppers.
+5. The exposed layer of oxide is then etched off in the areas that have been developed using wet or plasma etching.
+6. The photoresist is being applied again, the wafer is exposed to light through the mask, and the exposed photoresist is stripped again. 
+  
+**Doping process**
+  
+1. Impurity atoms are introduced into the exposed silicon and ion implanter is used to shoot the impurity atoms into the silicon. This changes the conductivity of the exposed silicon by fractions of a micrometer.
+2. After the photoresist residue has been stripped, another oxide layer is applied. 
+3. The wafer undergoes another cycle of applying photoresist, exposure through the mask and stripping.
+4. Contact holes are etched to provide access to the conductive layers, enabling the contacts and interconnections to be integrated in the wafer. 
+5. Photoresist and mask are applied once again. 
+6. Chemical-mechanical process is used to polish away excess material in order to give the insulation layer above the interconnections the smooth finish.
+7. The steps may be repeated multiple times until the IC is completed.
+  
+**Assembly process (Final stage of the fabrication)**
+  
+1. The individual chips are placed in a package and terminals are attached.
+2. The result is a finished semiconductor device, which can be mounted on circuit boards using different types of terminals. 
+3. Over a thousand connection contacts can be realized. 
+  * The high levels of precision and quality are essential at every stage of the workflow which is from the production of silicon boules - cleanroom fabrication - quality control.
+  
+**Overall fabrication process illustration**
+  
+*Source: https://link.springer.com/article/10.1557/s43577-020-00001-3**
+  
+![image](https://user-images.githubusercontent.com/118953917/210314860-b1ad8f93-f8ad-43ab-8298-2f5a27d878cf.png)
