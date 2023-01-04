@@ -1,173 +1,140 @@
 ## Day-11
 
-### Topic: Introduction to the BabySoC
+### Topic: BabySoC Modelling
 
 <details>
-  <summary>SoC</summary>
+  <summary>Theory</summary>
  
+### Lab: Theory
 
-### Introduction to BabySoC
+**What is modelling?**
 
-**What is System on Chip (SoC)?**
+* Modelling and simulation (M&S) is the use of a physical/logical representation of a given system to generate data and help determine decisions/make predictions about the system.
+* M&S is widely used in the VLSI domain.
 
-* SoC is a single-die chip that has some different IP cores on it. These IPs could vary from microprocessors which are completely digital to 5G Broadband modems which are completely analog. 
-* The structural design of SoC usually includes a central processing unit, memory, ports for inputs and outputs, secondary storage devices, and peripheral interfaces i.e. timers and etc.
+**Purpose of modelling**
 
-**Why SoC is used?**
+System models are specifically developed to support analysis, specification, design, verification and validation of a system, as well as to communicate certain information.
 
-* Depending upon the requirement, it can also consists of a digital/analog signal processing system or a floating-point unit.
-* SoC with equivalent functionality will have increased performance and reduced power consumption as well as a smaller semiconductor die area.
+**What are we modelling? (VSDBabySoC)**
 
-**Typical structure of MediaTek Dimensity 9000 Processor**
+* Some initial input signals will be fed into vsdbabysoc module
+* PLL will start generating the proper CLK for the circuit
+* Clock signal will make the rvmyth to execute instructions and some values are generated, these values are used by DAC core to provide the final output signal named OUT
+* There are 3 main elements (IP cores) and a wrapper as SoC and also a testbench module
 
-* This processor is made using TSMC’s 4nm semiconductor chip fabrication process, and it is said to be more power-efficient compared to Samsung’s 4nm process which is used to make the Exynos 2200 and the Qualcomm Snapdragon 8 Gen 1. 
-* The precessor has a 1+3+4 CPU core configuration with one ARM Cortex-X2 CPU core clocked at 3.05GHz, three ARM Cortex-A710 CPU cores clocked at 2.85GHz, and four ARM Cortex-A510 CPU cores clocked at 1.8GHz.
+**RVMYTH - Risc-V based MYTH**
 
-*Source: https://onsitego.com/blog/mediatek-dimensity-9000-smartphones-list/#:~:text=The%20MediaTek%20Dimensity%209000%20processor%20is%20made%20using%20TSMC's%204nm,3%2B4%20CPU%20core%20configuration.*
+* RISC: Reduced instruction set computer
+* RISC-V (“risk-five”): a base integer ISA, which must be presented in any implementation, plus optional extensions to the base ISA
+* Each base integer instruction set is characterized by the width of the integer registers and the corresponding size of the address space and by the number of integer registers. There are two primary base integer variants, RV32I and RV64I
 
-![image](https://user-images.githubusercontent.com/118953917/210308234-d3128bbf-0ed6-4ceb-b4e4-895c0737b607.png)
+**Waterfall flow diagram for a pipelined Risc-v processor**
 
-**Types of SoC**
+*Source: https://www.vlsisystemdesign.com/risc-v-waterfall-diagram-and-hazards/*
 
-* SoCs built around a microcontroller (board).
-* SoCs built around a microprocessor (chip), where it is often found in cell phones.
-* Specialized application-specific integrated circuit SoCs designed for specific applications that do not fit into the above two categories.
+![image](https://user-images.githubusercontent.com/118953917/210520422-1b72c586-3ba4-4fbd-bca4-3fa881778c78.png)
 
-**SoC Structure**
+*Phase Locked Loop (PLL)**
 
-* SoC consists of hardware functional units, including microprocessors that run software code, as well as communication subsystems to connect, control, direct and interface between these functional modules. 
-* **Functional components**: processor cores, memory, interfaces, digital signal processor (DSP), others.
-* Intermodule communication**: bus-based communication, network on a chip.
+* Electronic circuit with a voltage or voltage-driven oscillator that constantlyadjusts to match the frequency of an input signal
+* Purposes: to generate, stabilize, modulate, demodulate etc
 
-**SoC design flow**
+**Why off-chip clocks can’t be used all the time?**
 
-![image](https://user-images.githubusercontent.com/118953917/210308326-272eefdc-d3bd-4238-8e1e-d7bb9acadefc.png)
+* Clock will be a supply for a lot of blocks on the chip, it will have delays due to long wires (if used only one clock source) - i.e. clock jitter
+* Some blocks might need 200 MHz and some might need 100 MHz -> different frequencies just on one small chip
+* Concept of ppm (clock accuracy) comes in, whenever quartz is acquired, it comes with x ppm error
 
-</details>
+**PLL used on SoC**
 
-<details>
-  <summary>BabySoc</summary>
- 
+Main components:
+* Phase detector
+* Loop filter
+* Voltage controlled oscillator
+* Frequency divider 
 
-### Introduction to BabySoc
+*Source: https://onedrive.live.com/?authkey=%21AOwVpzXkVogukuk&cid=E0E9B5EEF85B162E&id=E0E9B5EEF85B162E%2199346&parId=E0E9B5EEF85B162E%2197363&o=OneUp*
 
-* BabySoc is a small yet powerful RISCV-based SoC. 
-* The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it. 
-* BabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
+![image](https://user-images.githubusercontent.com/118953917/210522255-2b1931b5-f254-47b7-b980-2388358680ec.png)
 
-*Source: https://github.com/manili/VSDBabySoC#introduction-to-the-vsdbabysoc*
+**Digital-to-Analog Converter (DAC)**
 
-![image](https://user-images.githubusercontent.com/118953917/210308374-b36bf404-f021-4415-a0fc-2ac8b37852f7.png)
-
-* SoC is an IC that integrates multiple components of a system onto a single chip.
-* MPSoC addresses performance requirements. 
-
-*Source: https://www.ecb.torontomu.ca/~courses/coe838/lectures/Intro-SoC.pdf*
-
-![image](https://user-images.githubusercontent.com/118953917/210308411-01184a7b-44da-48d3-95c9-40e4ca249e67.png)
-
-**Baby SoC components**
-
-* RVMYTH: RVMYTH core is a simple RISCV-based CPU, introduced in a workshop by RedwoodEDA and VSD.
-* Phase-locked loop (PLL): a control system that generates an output signal whose phase is related to the phase of an input signal. PLLs are widely used for synchronization purposes, including clock generation and distribution.
-* Digital-to-analog converter (DAC): a system that converts a digital signal into an analog signal. DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals.
-
-*Source: https://github.com/manili/VSDBabySoC#problem-statement*
-
-**Phase-locked loop (PLL)**
-
-* PLL is a closed loop feedback circuit comprises of four main blocks.
-* PLL mainly consists of four components: 
-  + Charge pump (CP)
-  + Phase Frequency Detector (PFD)
-  + Voltage Controlled Oscillator (VCO)
-  + Loop Filter
-  + Frequency Divider (FD)
-* These blocks are connected to form a closed loop feedback network so as to synchronize the output with the input in both phase and frequency. 
-* This loop continues to run until PLL locked condition is achieved.
-* As technology scales down, PLL with wide tuning range, low jitter, and PLL operating at high frequencies are preferred.
-
-*Source: https://github.com/bharath19-gs/avsdpll28nm/#PLL-introduction*
-
-![image](https://user-images.githubusercontent.com/118953917/210308453-089b2d25-3e34-4570-b945-cc8794c3c25c.png)
-
-**Digital-to-analog converter (DAC)**
-
-* DAC converts a digital input signal into an analog output signal. 
-* The digital signal is represented with a binary code, which is a combination of bits 0 and 1. DAC consists of a number of binary inputs and a single output. 
-* There are two types of DACs:
+* Converts a digital input signal into an analog output signal
+* Digital signal is represented with a binary code, which is a combination of bits 0 and 1. DAC consists of a number of binary inputs and a single output
+* 2 types of DAC
   + Weighted Resistor DAC
   + R-2R Ladder DAC
   
-*Source: https://github.com/Devipriya1921/avsddac28nm#introduction*
+**Tips on modelling the design**
+
+* Avoid race Conditions -> can use VCS race detection tool
+* Use an optimized Testbench for debugging the design
+* Creating models that simulate faster
+* Follows case statement behaviour
+
+**DVE (Normal mode)**
+
+* DVE provides a graphical user interface (GUI) to debug the design
+* Steps to open GUI with normal mode:
+  + Run the design with a valid testbench
+  + Compile them
+  + Cross check .vcd file 
+  + Invoking DVE tool
+  
+**DVE (Interactive mode)**
+
+* Debugging the design in interactive mode or in post-processing mode with a valid testbench
+* Steps to open GUI with interactive mode:
+  + Run the design with a valid testbench
+  + Get the code dump file (.vcd)
+  + This should open the tool automatically and we can fully run our test bench or debug it step by step
+
+**RVMYTH modelling**
+
+* RISC-V CPU core has been written in Verilog and already written testbench code for the same
+* Entire C program will be converted into a hex format and will be loaded into memory
+* CPU will then read the contents of the memory, process it and display the output result of sum numbers from 1 to n
+
 
 </details>
 
 <details>
-  <summary>BabySoC Modeling</summary>
+  <summary>Lab</summary>
  
 
-### Introduction to Modelling
+### Lab: Modelling
 
-* BabySoC modelling is simulated using ```iverilog``` as well as ```gtkwave``` tool  to display the result.
-* Some initial input signals will be fed into BabySoC module making the PLL to start generating the proper ```CLK``` for the circuit.
-* The clock signal will make the ```rvmyth``` to execute instructions in its ```imem```. As a result, the register ```r17``` will be filled with some values cycle-by-cycle.
-* These values are used by DAC core to provide the final output signal named ```OUT```.
-* So, we got 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there.
+> Differences of interactive modes
 
-*Source: https://github.com/manili/VSDBabySoC#introduction-to-the-vsdbabysoc*
+> RVMYTH (RISC-V) modelling
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
+git clone https://github.com/kunalg123/rvmyth/
+cd rvmyth
+/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+csh
+vcs mythcore_test.v tb_mythcore_test.v                                                    (Got 1 error -> need to refer both files and fix that)
+```
 
-</details>
+gambar 1
 
-<details>
-  <summary>Microchips fabrication</summary>
- 
+gambar 2
 
-### How Microchips are made?
-  
-**Introduction to microchips fabrication**
-  
-* All chips started out with a very simple raw material which is sand.
-* Complex chemical and physical processes are required to create out of the sand an pure monocrystalline silicon ingot.
-* The process to manufacture chips from a wafer starts with the layout and design phase where extremely thin wafers are being cut using a special sawing technique.
-* They are fabricated in a range of different diameters, the most common sizes are 150, 200 and 300 mm.
-* Wafers with large diameters offer more space for chips. 
-* Transistors are the smallest control units in microchips. It used to control electric voltages and currents and it is the most important components of electronic circuits.
-  
-*Source: https://www.infineon.com/cms/en/product/promopages/how-a-chip-is-made-video/*
+```
+./simv
+dve &                         (Error -> should state how many bits to display in the command)
+dve -full64                   (Error fixed)
+```
 
-**Fabrication of wafers from transistors**
-  
-1. Highly complex chips are made up of billions of integrated and connected transistors, enabling sophisticated circuits i.e. microcontrollers and crypto chips.
-2. Firstly, the surface of the wafer is oxidized in a high-temperature furnace operating at approximately 1000°C to create a non-conductive layer.
-3. Then, a photo resist material is uniformly distributed on this non-conductive layer.
-4. The wafer is then exposed to light through the photomask in special exposure machines known as steppers.
-5. The exposed layer of oxide is then etched off in the areas that have been developed using wet or plasma etching.
-6. The photoresist is being applied again, the wafer is exposed to light through the mask, and the exposed photoresist is stripped again. 
-  
-**Doping process**
-  
-1. Impurity atoms are introduced into the exposed silicon and ion implanter is used to shoot the impurity atoms into the silicon. This changes the conductivity of the exposed silicon by fractions of a micrometer.
-2. After the photoresist residue has been stripped, another oxide layer is applied. 
-3. The wafer undergoes another cycle of applying photoresist, exposure through the mask and stripping.
-4. Contact holes are etched to provide access to the conductive layers, enabling the contacts and interconnections to be integrated in the wafer. 
-5. Photoresist and mask are applied once again. 
-6. Chemical-mechanical process is used to polish away excess material in order to give the insulation layer above the interconnections the smooth finish.
-7. The steps may be repeated multiple times until the IC is completed.
-  
-**Assembly process (Final stage of the fabrication)**
-  
-1. The individual chips are placed in a package and terminals are attached.
-2. The result is a finished semiconductor device, which can be mounted on circuit boards using different types of terminals. 
-3. Over a thousand connection contacts can be realized. 
-  * The high levels of precision and quality are essential at every stage of the workflow which is from the production of silicon boules - cleanroom fabrication - quality control.
-  
-*Source: https://www.infineon.com/cms/en/product/promopages/how-a-chip-is-made-video/*
-  
-**Overall fabrication process illustration**
-  
-*Source: https://link.springer.com/article/10.1557/s43577-020-00001-3*
-  
-![image](https://user-images.githubusercontent.com/118953917/210314860-b1ad8f93-f8ad-43ab-8298-2f5a27d878cf.png)
+gambar 3
 
- </details>
+> DAC modelling
+```
+/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/dac
+git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
+csh
+cp -r rvmyth_avsddac_interface /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
+vcs rvmyth_avsddac_interface/iverilog/Pre-synthesis/avsddac.v rvmyth_avsddac_interface/iverilog/Pre-synthesis/avsddac_tb_test.v
+
+
