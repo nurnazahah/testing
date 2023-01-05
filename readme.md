@@ -117,9 +117,9 @@ csh
 vcs mythcore_test.v tb_mythcore_test.v                                                    (Got 1 error -> need to refer both files and fix that)
 ```
 
-gambar 1
-
-gambar 2
+![image](https://user-images.githubusercontent.com/118953917/210686222-acdb0f86-e0d9-4352-9bc5-f6c1ae18a32e.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/210686260-b0f35375-e60e-4764-9569-e95783155564.png)
 
 ```
 ./simv
