@@ -131,10 +131,81 @@ gambar 3
 
 > DAC modelling
 ```
-/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/dac
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/dac
 git clone https://github.com/vsdip/rvmyth_avsddac_interface.git
 csh
 cp -r rvmyth_avsddac_interface /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
-vcs rvmyth_avsddac_interface/iverilog/Pre-synthesis/avsddac.v rvmyth_avsddac_interface/iverilog/Pre-synthesis/avsddac_tb_test.v
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsddac_interface/iverilog/Pre-synthesis
+vcs avsddac.v avsddac_tb_test.v
+```
+  
+gambar 8
+  
+```
+vcs -sverilog avsddac.v avsddac_tb_test.v           (To notice the system to support system verilog)
+./simv
+dve -full64  
+```
+  
+gambar 9
+  
+> Simulating in interactive mode (debug mode)
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth
+csh
+vcs -lca -debug_access+all -full64 mythcore_test.v tb_mythcore_test.v
+./simv -gui &
+```
+  
+gambar 11
+  
+gambar 12
+  
+>> Interfacing blocks together
+> risc_v and pll 
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
+git clone https://github.com/vsdip/rvmyth_avsdpll_interface
+cp -r rvmyth_avsdpll_interface /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsdpll_interface/verilog
+csh
+vcs rvmyth_pll.v rvmyth_pll_tb.v
+```
+  
+gambar 6
+  
+```
+./simv
+dve -full64 
+```
+  
+gambar 7 
+  
+> DAC 
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsdpll_interface/verilog
+csh
+vcs rvmyth_avsddac.v rvmyth_avsddac_TB.v
+```
 
+gambar 13
+  
+gambar 14
+  
+```
+vcs -sverilog rvmyth_avsddac2.v rvmyth_avsddac_TB2.v
+./simv
+dve -full64 
+```
+  
+gambar 15
+  
+> Simulating and modeling all three IP’s together
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/
+git clone https://github.com/manili/VSDBabySoC
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/VSDBabySoC/src/module
+csh
 
+vcs -lca -debug_access+all -full64 vsdbabysoc.v testbench.v
+./simv -gui &
