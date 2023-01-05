@@ -209,3 +209,16 @@ csh
 
 vcs -lca -debug_access+all -full64 vsdbabysoc.v testbench.v
 ./simv -gui &
+----->>>>>>>>>>>>>>>>>>>>>>>>>>        kiv
+```
+  
+gambar 16, 17, 18
+  
+</details>
+
+<details>
+  <summary>Task</summary>
+ 
+
+### Lab: Task to do
+  
