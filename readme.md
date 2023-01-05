@@ -105,8 +105,6 @@ Main components:
 
 ### Lab: Modelling
 
-> Differences of interactive modes
-
 > RVMYTH (RISC-V) modelling
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
@@ -116,8 +114,12 @@ cd rvmyth
 csh
 vcs mythcore_test.v tb_mythcore_test.v                                                    (Got 1 error -> need to refer both files and fix that)
 ```
+  
+**Error compiling**
 
 ![image](https://user-images.githubusercontent.com/118953917/210686222-acdb0f86-e0d9-4352-9bc5-f6c1ae18a32e.png)
+  
+**Error debugging**
   
 ![image](https://user-images.githubusercontent.com/118953917/210686260-b0f35375-e60e-4764-9569-e95783155564.png)
 
@@ -127,6 +129,8 @@ dve &                         (Error -> should state how many bits to display in
 dve -full64                   (Error fixed)
 ```
 
+**Error debugging and output waveform**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210829380-5709b5fb-bfbc-45c1-815f-a132491061da.png)
 
 > DAC modelling
@@ -138,6 +142,8 @@ cp -r rvmyth_avsddac_interface /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsddac_interface/iverilog/Pre-synthesis
 vcs avsddac.v avsddac_tb_test.v
 ```
+
+**Error** 
   
 ![image](https://user-images.githubusercontent.com/118953917/210829629-061ef761-6b84-4546-b762-b450005d89f1.png)
   
@@ -147,7 +153,13 @@ vcs -sverilog avsddac.v avsddac_tb_test.v           (To notice the system to sup
 dve -full64  
 ```
   
+**Error fixing**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210829699-97193411-e76c-4a35-93ec-146c18c27dab.png)
+  
+**Output waveform**
+  
+![image](https://user-images.githubusercontent.com/118953917/210833554-cd023f66-a179-4853-9cff-23c444ccdea3.png)
   
 > PLL modelling 
 ```
@@ -158,7 +170,11 @@ vcs avsd_pll_1v8.v pll_tb.v
 dve -full64 
 ```
   
+**Scripting**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210829788-20be3b5d-6607-4669-a8a3-70e865becf26.png)
+  
+**Output waveform**
 
 ![image](https://user-images.githubusercontent.com/118953917/210829879-f03f9769-21ae-43b9-a307-22ed03ca1cd7.png)
   
@@ -170,11 +186,16 @@ vcs -lca -debug_access+all -full64 mythcore_test.v tb_mythcore_test.v
 ./simv -gui &
 ```
   
+**Debuging line-by-line coding**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210829938-b59a4a6b-025a-4def-a5bc-f9c8cac94da4.png)
+  
+**Output waveform**
   
 ![image](https://user-images.githubusercontent.com/118953917/210829980-683feb81-ba33-4f16-9c46-0448d6b6c0e1.png)
   
 >> Interfacing blocks together
+  
 > risc_v and pll 
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc
@@ -185,12 +206,16 @@ csh
 vcs rvmyth_pll.v rvmyth_pll_tb.v
 ```
   
+**Fixing errors**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210830075-142ceaae-d603-43e2-b27f-d6210a2e2280.png)
   
 ```
 ./simv
 dve -full64 
 ```
+  
+**Output waveform**
   
 ![image](https://user-images.githubusercontent.com/118953917/210830186-d91efcb5-769a-4c19-9880-fe5cbf311dbe.png)
   
@@ -201,7 +226,11 @@ csh
 vcs rvmyth_avsddac.v rvmyth_avsddac_TB.v
 ```
 
+**Error compiling**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210830252-352144b5-3113-472b-8f7d-576dcbb6a9b2.png)
+  
+**Error fixing**
   
 ![image](https://user-images.githubusercontent.com/118953917/210830312-41b01106-2b8e-457d-85a0-c2f087d29c34.png)
   
@@ -210,12 +239,10 @@ vcs -sverilog rvmyth_avsddac2.v rvmyth_avsddac_TB2.v
 ./simv
 dve -full64 
 ```
+
+**Output waveform**
   
 ![image](https://user-images.githubusercontent.com/118953917/210830355-0a3cec67-4fde-4b67-b127-6bf3f420c1a6.png)
-  
-
-
-
   
 </details>
 
@@ -238,11 +265,15 @@ vcs upcntr.v tb_upcntr.v
 dve -full64 
 ```
   
+**Fixing error**
+  
 ![image](https://user-images.githubusercontent.com/118953917/210831067-ad8d9cd5-15de-432b-bcb8-08574be2f5ba.png)
   
 **Block diagram of upcounter**
   
 ![image](https://user-images.githubusercontent.com/118953917/210831238-90c5c31c-35fd-4f46-bdb8-5c2ebfbaae03.png)
+  
+**Output waveform of upcounter**
 
 ![image](https://user-images.githubusercontent.com/118953917/210831372-6e9e77e3-d9fe-4470-b080-3ed5f5159c26.png)
 
