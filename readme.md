@@ -127,7 +127,7 @@ dve &                         (Error -> should state how many bits to display in
 dve -full64                   (Error fixed)
 ```
 
-gambar 3
+![image](https://user-images.githubusercontent.com/118953917/210829380-5709b5fb-bfbc-45c1-815f-a132491061da.png)
 
 > DAC modelling
 ```
@@ -139,7 +139,7 @@ cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsddac_inte
 vcs avsddac.v avsddac_tb_test.v
 ```
   
-gambar 8
+![image](https://user-images.githubusercontent.com/118953917/210829629-061ef761-6b84-4546-b762-b450005d89f1.png)
   
 ```
 vcs -sverilog avsddac.v avsddac_tb_test.v           (To notice the system to support system verilog)
@@ -147,7 +147,20 @@ vcs -sverilog avsddac.v avsddac_tb_test.v           (To notice the system to sup
 dve -full64  
 ```
   
-gambar 9
+![image](https://user-images.githubusercontent.com/118953917/210829699-97193411-e76c-4a35-93ec-146c18c27dab.png)
+  
+> PLL modelling 
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsdpll_interface/verilog
+csh
+vcs avsd_pll_1v8.v pll_tb.v
+./simv
+dve -full64 
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/210829788-20be3b5d-6607-4669-a8a3-70e865becf26.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210829879-f03f9769-21ae-43b9-a307-22ed03ca1cd7.png)
   
 > Simulating in interactive mode (debug mode)
 ```
@@ -157,9 +170,9 @@ vcs -lca -debug_access+all -full64 mythcore_test.v tb_mythcore_test.v
 ./simv -gui &
 ```
   
-gambar 11
+![image](https://user-images.githubusercontent.com/118953917/210829938-b59a4a6b-025a-4def-a5bc-f9c8cac94da4.png)
   
-gambar 12
+![image](https://user-images.githubusercontent.com/118953917/210829980-683feb81-ba33-4f16-9c46-0448d6b6c0e1.png)
   
 >> Interfacing blocks together
 > risc_v and pll 
@@ -172,25 +185,25 @@ csh
 vcs rvmyth_pll.v rvmyth_pll_tb.v
 ```
   
-gambar 6
+![image](https://user-images.githubusercontent.com/118953917/210830075-142ceaae-d603-43e2-b27f-d6210a2e2280.png)
   
 ```
 ./simv
 dve -full64 
 ```
   
-gambar 7 
+![image](https://user-images.githubusercontent.com/118953917/210830186-d91efcb5-769a-4c19-9880-fe5cbf311dbe.png)
   
-> DAC 
+> DAC and RVMYTH
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/rvmyth_avsdpll_interface/verilog
 csh
 vcs rvmyth_avsddac.v rvmyth_avsddac_TB.v
 ```
 
-gambar 13
+![image](https://user-images.githubusercontent.com/118953917/210830252-352144b5-3113-472b-8f7d-576dcbb6a9b2.png)
   
-gambar 14
+![image](https://user-images.githubusercontent.com/118953917/210830312-41b01106-2b8e-457d-85a0-c2f087d29c34.png)
   
 ```
 vcs -sverilog rvmyth_avsddac2.v rvmyth_avsddac_TB2.v
@@ -198,21 +211,11 @@ vcs -sverilog rvmyth_avsddac2.v rvmyth_avsddac_TB2.v
 dve -full64 
 ```
   
-gambar 15
+![image](https://user-images.githubusercontent.com/118953917/210830355-0a3cec67-4fde-4b67-b127-6bf3f420c1a6.png)
   
-> Simulating and modeling all three IP’s together
-```
-cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/
-git clone https://github.com/manili/VSDBabySoC
-cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/VSDBabySoC/src/module
-csh
 
-vcs -lca -debug_access+all -full64 vsdbabysoc.v testbench.v
-./simv -gui &
------>>>>>>>>>>>>>>>>>>>>>>>>>>        kiv
-```
-  
-gambar 16, 17, 18
+
+
   
 </details>
 
@@ -222,3 +225,24 @@ gambar 16, 17, 18
 
 ### Lab: Task to do
   
+**Differences of the modes in interactive mode**
+  
+![image](https://user-images.githubusercontent.com/118953917/210830922-aa9a5a54-68e8-43d2-8e8e-d41836431916.png)
+  
+> Design chosen: up counter
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/babysoc/
+csh 
+vcs upcntr.v tb_upcntr.v
+./simv
+dve -full64 
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/210831067-ad8d9cd5-15de-432b-bcb8-08574be2f5ba.png)
+  
+**Block diagram of upcounter**
+  
+![image](https://user-images.githubusercontent.com/118953917/210831238-90c5c31c-35fd-4f46-bdb8-5c2ebfbaae03.png)
+
+![image](https://user-images.githubusercontent.com/118953917/210831372-6e9e77e3-d9fe-4470-b080-3ed5f5159c26.png)
+
