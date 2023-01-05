@@ -35,7 +35,7 @@ System models are specifically developed to support analysis, specification, des
 
 ![image](https://user-images.githubusercontent.com/118953917/210520422-1b72c586-3ba4-4fbd-bca4-3fa881778c78.png)
 
-*Phase Locked Loop (PLL)**
+**Phase Locked Loop (PLL)**
 
 * Electronic circuit with a voltage or voltage-driven oscillator that constantlyadjusts to match the frequency of an input signal
 * Purposes: to generate, stabilize, modulate, demodulate etc
