@@ -54,3 +54,6 @@ Modelling and simulating IP cores in VSDBabySoC (for checking its functionality)
   
 > rvmyth_avsddac.v
 ```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop
+/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+csh
