@@ -35,11 +35,22 @@ Modelling and simulating IP cores in VSDBabySoC (for checking its functionality)
   
 * Using synopsys’s DC shell (Design Compiler)
 * DC RTL synthesis solution enables users to meet today's design challenges with concurrent optimization of timing, area, power and test
+  
+**Why post-synthesis simulation is needed?**
+  
+* To ensure each and every gate delays are taken into account
+* Pre-synthesis in VCS and DVE that has done from the previous labs would be compared 
+* To observe the output generated
+* Note that post-simulation output should be matched with pre-simulation output
 
 </details>
 
 <details>
   <summary>Lab</summary>
  
-### Lab
+### Task
 
+>> Picking one file 
+  
+> rvmyth_avsddac.v
+```
