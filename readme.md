@@ -162,6 +162,26 @@ write -f verilog -out avsddac_net.v
  
 ![image](https://user-images.githubusercontent.com/118953917/211334130-9929b441-7e68-4842-bb0a-fbd22e5c326d.png)
   
+> DAC modelling
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files
+vcs avsddac_net.v avsddac_tb_test.v
+```
+  
+**avsddac_net.v & avsddac_tb_test.v error debugging**
+  
+![image](https://user-images.githubusercontent.com/118953917/211337707-fb49726a-eecc-496e-90ec-af8083e38070.png)
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 **avsdpll.lib**
   
