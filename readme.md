@@ -52,7 +52,7 @@ Modelling and simulating IP cores in VSDBabySoC (for checking its functionality)
 
 >> Picking one file 
   
-> rvmyth_avsddac.v
+**avsddac.lib**
 
 > Change directory to the desired path
 ```
@@ -74,6 +74,8 @@ lc_shell
 cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib
 read_lib avsddac_ori.lib                                                                                  (Error reading .lib file -> need to do modification)
 ```
+
+**avsddac.lib error debugging**
   
 gambar 2
 
@@ -85,21 +87,82 @@ exit                                                                            
 tkdiff avsddac_ori.lib avsddac.lib                                                                                  (Looking the differences for before and after modification) 
 ```
   
+**Modification of avsddac.lib**
+  
 gambar 3/4
   
-> Moving converted .db file from cheetah environment to png site 
-```
-
-  
-> Move the converted .db files to the training path (png site)
+> Moving converted .db file from cheetah environment (santa clara zsc11) to png site 
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files                 (Penang site)
 rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib/avsddac.db .    ("." stands for current directory)
 ```
+
+**avsdpll.lib**
   
 ```
-cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/
+/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/VSDBabySoC/src/lib
+lc_shell
+read_lib avsdpll.lib          
+```
+  
+**avsdpll.lib error debugging**
+  
+gambar 5 eerror
+  
+**Modification of avsdpll.lib**
+  
+gambar 6 modified
+  
+```
+read_lib avsdpll.lib 
+write_lib avsdpll -format db -output avsdpll.db
+exit    
+tkdiff avsdpll_ori.lib avsdpll.lib 
+```
+  
+> Move the converted .db files to the training path (png site)
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files                 (Penang site)
+rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/VSDBabySoC/src/lib/avsdpll.db .  
+```
+
+### Synthesizing the code
+  
+**avsddac.lib**
+  
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop
 /p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
 csh
 dc_shell
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/dac/rvmyth_avsddac_interface/iverilog/Pre-synthesis
+
+sh gvim .synopsys_dc.setup
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
+set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
+
+read_verilog avsddac.v
+write -f verilog -out avsddac_net.v
+read_db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db
+compile
+write -f verilog -out avsddac_net.v
+```
+
+**avsddac.lib error debugging**
+  
+gambar 7
+  
+**Modification of avsddac.lib**
+  
+gambar 8
+  
+gambar 9
+  
+**avsdpll.lib**
+  
+```
+
+  
+  
+  
 
