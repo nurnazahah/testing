@@ -77,7 +77,7 @@ read_lib avsddac_ori.lib                                                        
 
 **avsddac.lib error debugging**
   
-gambar 2
+![image](https://user-images.githubusercontent.com/118953917/211332488-46a6a719-600d-46bb-b5a8-9d38105b4c57.png)
 
 ```
 cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib    (Modify the .lib file)
@@ -89,7 +89,7 @@ tkdiff avsddac_ori.lib avsddac.lib                                              
   
 **Modification of avsddac.lib**
   
-gambar 3/4
+![image](https://user-images.githubusercontent.com/118953917/211332631-8b55d664-693d-469f-bec2-dd93b687507e.png)
   
 > Moving converted .db file from cheetah environment (santa clara zsc11) to png site 
 ```
@@ -107,11 +107,11 @@ read_lib avsdpll.lib
   
 **avsdpll.lib error debugging**
   
-gambar 5 eerror
+![image](https://user-images.githubusercontent.com/118953917/211332719-f4e6fa28-f94e-4307-812d-e1daae9472c9.png)
   
 **Modification of avsdpll.lib**
   
-gambar 6 modified
+![image](https://user-images.githubusercontent.com/118953917/211332887-2b569f6f-b19a-4c8a-900f-e1e593be1ce7.png)
   
 ```
 read_lib avsdpll.lib 
@@ -148,21 +148,36 @@ compile
 write -f verilog -out avsddac_net.v
 ```
 
-**avsddac.lib error debugging**
+**avsddac.v error debugging**
   
-gambar 7
+![image](https://user-images.githubusercontent.com/118953917/211333113-9aea82b7-6a63-470b-8de2-59f51b8168c5.png)
   
-**Modification of avsddac.lib**
+**Modification of avsddac.v**
   
-gambar 8
+![image](https://user-images.githubusercontent.com/118953917/211333191-3acccfef-1795-43ff-8637-7f0eb7c146b3.png)
   
-gambar 9
+![image](https://user-images.githubusercontent.com/118953917/211333284-76799ede-283a-40c9-814e-5a1aef1456c2.png)
+  
   
 **avsdpll.lib**
   
 ```
+/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/
 
+sh gvim .synopsys_dc.setup
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
+set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
   
+read_verilog avsdpll.v
+write -f verilog -out avsdpll_net.v
+read_db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db
+compile
+write -f verilog -out avsdpll_net.v
+```
   
+**avsdpll.v error debugging**
   
+![image](https://user-images.githubusercontent.com/118953917/211333391-eba38513-9600-4d2c-8e76-e0e56c8d6b32.png)
+  
+**Modification of avsdpll.v**
 
