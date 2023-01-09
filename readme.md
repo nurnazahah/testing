@@ -95,4 +95,11 @@ gambar 3/4
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files                 (Penang site)
 rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib/avsddac.db .    ("." stands for current directory)
+```
+  
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/
+/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+csh
+dc_shell
 
