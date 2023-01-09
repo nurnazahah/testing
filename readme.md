@@ -158,6 +158,10 @@ write -f verilog -out avsddac_net.v
   
 ![image](https://user-images.githubusercontent.com/118953917/211333284-76799ede-283a-40c9-814e-5a1aef1456c2.png)
   
+**avsddac_net.v**
+ 
+![image](https://user-images.githubusercontent.com/118953917/211334130-9929b441-7e68-4842-bb0a-fbd22e5c326d.png)
+  
   
 **avsdpll.lib**
   
