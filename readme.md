@@ -53,7 +53,44 @@ Modelling and simulating IP cores in VSDBabySoC (for checking its functionality)
 >> Picking one file 
   
 > rvmyth_avsddac.v
+
+> Change directory to the desired path
 ```
-cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop
-/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
-csh
+cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training
+```
+
+> Entering cheetah environment and invoking lc_shell
+```
+set block = ddrphy
+setenv block ddrphy
+#source /nfs/site/disks/zsc11_mip_xmphy_0002/proj_root_ulc/setup/setup_pv.csh $block
+/p/hdk/bin/cth_psetup -proj ip/2209sp3 -cfg IP78P3H180O12_22WW47 -cfg_ov /nfs/site/disks/ipg_da_00001/da/cth_overrides/sde_2209sp3_converged.cth -ward $PWD -verbose -x '$SETUP_R2G -force'
+  
+lc_shell
+```
+
+> Read and write .lib files
+```
+cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib
+read_lib avsddac_ori.lib                                                                                  (Error reading .lib file -> need to do modification)
+```
+  
+gambar 2
+
+```
+cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib    (Modify the .lib file)
+read_lib avsddac.lib        
+write_lib avsddac -format db -output avsddac.db
+exit                                                                                                                (Exit lc_shell)     
+tkdiff avsddac_ori.lib avsddac.lib                                                                                  (Looking the differences for before and after modification) 
+```
+  
+gambar 3/4
+  
+> Moving converted .db file from cheetah environment to png site 
+```
+
+  
+> Move the converted .db files to the training path (png site)
+```
+rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/sky130RTLDesignAndSynthesisWorkshop/lib/avsdpll.db
