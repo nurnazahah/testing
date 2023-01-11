@@ -46,9 +46,9 @@ Modelling and simulating IP cores in VSDBabySoC (for checking its functionality)
 </details>
 
 <details>
-  <summary>Lab</summary>
+  <summary>Lab: Convert .lib to .db using lc_shell</summary>
  
-### Task
+### Converting .lib file to .db file
 
 >> Picking one file 
   
@@ -125,7 +125,11 @@ tkdiff avsdpll_ori.lib avsdpll.lib
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files                 (Penang site)
 rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/VSDBabySoC/src/lib/avsdpll.db .  
 ```
+</details>
 
+<details>
+  <summary>Lab: Synthesize</summary>
+ 
 ### Synthesizing the code
   
 **using avsddac.db**
@@ -223,7 +227,11 @@ write -f verilog -out avsd_pll_1v8_net.v
   
 </details>
 
-
+<details>
+  <summary>Lab: Synthesize</summary>
+ 
+### Synthesizing the code
+  
   
   
   
