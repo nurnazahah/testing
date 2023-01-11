@@ -238,9 +238,8 @@ write -f verilog -out avsd_pll_1v8_net.v
 vcs mod_rvmyth_avsddac_net.v rvmyth_avsddac_TB.v
   
 ```
-  
-  
 </details> 
+
 ## Day-14
 
 ### Topic: Synopsys DC and Timing Analysis
