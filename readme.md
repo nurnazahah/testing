@@ -240,4 +240,85 @@ vcs mod_rvmyth_avsddac_net.v rvmyth_avsddac_TB.v
   
   
   
+</details> 
+## Day-14
+
+### Topic: Synopsys DC and Timing Analysis
+
+<details>
+  <summary>Theory</summary>
+ 
+### Recap 
+  
+**What is synthesis?**
+  
+* RTL to gate level translation
+* The design is converted into gates and the connections are made between the gates
+* This is given out as a file called netlist
+  
+**What is .lib?**
+  
+* Collection of logical modules
+* Includes basic logic gates like AND, OR, NOT, etc.
+* Different flavors of the same gate
+  
+**Why different flavours of gate is needed?**
+  
+* Combinational delay in logic path determines the maximum speed of operation of digital logic circuit
+* So, we need cells that work faster to make Tcombi small
+  
+**What to achieve in logic synthesis?**
+  
+Working digital logic circuit is:
+
+* Logically correct
+* Electrically correct
+* Timing met
+  
+*Note: To give more delay to the circuit to meet setup/hold time, we need to add buffers. However, additional buffers to meet hold, will add additional area.*
+  
+**How to decide for the correct implementation of the design?**
+  
+By using constraints
+  + Constraints are the guide to the synthesizer to pick the correct library cells which is most appropriate for the design
+  + The illustrations are picked based on the needs
+  
+**What is CTS?**
+  
+* Clock Tree Synthesis: a technique for distributing the clock equally among all sequential parts of VLSI design
+* Purpose: to reduce skew and delay. CTS provide the placement data as well as the clock tree limitations as input.
+  
+*Source: https://www.google.com/search?q=cts+in+vlsi&rlz=1C1GCEA_enMY1023MY1023&oq=cts+in+vlsi&aqs=chrome..69i57j0i512j0i22i30l8.2308j0j7&sourceid=chrome&ie=UTF-8*
+  
+**PVT stands for?**
+  
+* Process, Voltage, Temperature
+  
+**Corners of PVT**
+  
+* Integrated circuits are designed in such a way that they can function in a wide variety of temperatures and voltages, rather than a single temperature and voltage
+* In order to make our chip to work after fabrication in all possible conditions, we simulate it at different corners of process, voltage, and temperature
+* These conditions are called corners. All these three parameters directly affect the cell delay
+
+**Understanding PVT**
+  
+* **Process** -> there are millions of transistors on a single chip as we are going to lower nodes and all the transistors in a chip cannot have the same properties. Process variation is the deviation in parameters of the transistor during the fabrication
+* **Voltage** -> as we are going to lower nodes, the supply voltage for a chip is also going to less. If the chip is operating at 1.2V, there are chances that at certain instances of time this voltage may vary
+* **Temperature** -> when a chip is operating, the temperature can vary throughout the chip. This is due to the power dissipation in the MOS-transistors
+  
+**PVT Graphs**
+  
+*Source: https://onedrive.live.com/?authkey=%21APiDwU9SDyOxl5w&cid=E0E9B5EEF85B162E&id=E0E9B5EEF85B162E%2199590&parId=E0E9B5EEF85B162E%2197363&o=OneUp*
+  
+![image](https://user-images.githubusercontent.com/118953917/211721237-90fa20cc-d0ce-4e88-bf63-46a673c4e1ed.png)
+
+  
+</details> 
+
+<details>
+  <summary>Task and labs</summary>
+ 
+### Task
+  
+**Steps to read PVT corners of each timing libs provided**
   
