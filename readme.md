@@ -128,7 +128,7 @@ rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazah
 
 ### Synthesizing the code
   
-**avsddac.lib**
+**using avsddac.db**
   
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/sky130RTLDesignAndSynthesisWorkshop
@@ -140,7 +140,96 @@ cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/dac/rvmyth_avsddac_interfac
 sh gvim .synopsys_dc.setup
 set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
 set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
+```
+  
+**rvmyth_avsddac.v**
+  
+```
+read_verilog rvmyth_avsddac.v
+```
 
+**rvmyth_avsddac.v Error debugging**
+  
+gambar 15
+  
+**Modification of rvmyth_avsddac.v**
+  
+gambar 16
+  
+```
+echo $target_library
+echo $link_library
+read_file {mod_rvmyth_avsddac.v mod_avsddac.v mod_mythcore_test.v clk_gate.v} -autoread -format verilog -top rvmyth_avsddac 
+compile
+write -f verilog -out mod_rvmyth_avsddac_net.v
+```
+
+gambar 17
+  
+**Netlist of rvmyth_avsddac**
+  
+gambar 18
+  
+
+> Checking the design 
+```
+current_design
+check_design
+check_timing
+report_constraint
+report_timing
+```
+  
+gambar 19
+  
+
+**using avsdpll.db**
+  
+```
+sh gvim .synopsys_dc.setup
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
+set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
+```
+
+**avsd_pll_lv8.v**
+  
+```
+echo $target_library
+echo $link_library
+read_verilog rvmyth_avsdpll.v
+``` 
+
+**avsd_pll_lv8.v Error debugging**
+
+gambar 20
+  
+**Modification of avsd_pll_lv8.v**
+  
+gambar 21
+  
+```
+echo $target_library
+echo $link_library
+read_file {mod_avsd_pll_1v8.v mod_mythcore_test.v clk_gate.v mod_rvmyth_pll.v } -autoread -format verilog -top rvmyth_pll_interface
+compile
+write -f verilog -out avsd_pll_1v8_net.v
+```
+
+gambar 22
+  
+**Netlist of avsd_pll_lv8.v**
+  
+gambar 23
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 read_verilog avsddac.v
 write -f verilog -out avsddac_net.v
 read_db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db
@@ -173,6 +262,12 @@ vcs avsddac_net.v avsddac_tb_test.v
 ![image](https://user-images.githubusercontent.com/118953917/211337707-fb49726a-eecc-496e-90ec-af8083e38070.png)
 
 
+  
+  
+
+  
+  
+  
   
   
   
