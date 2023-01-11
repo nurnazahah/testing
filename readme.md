@@ -320,4 +320,44 @@ By using constraints
 ### Task
   
 **Steps to read PVT corners of each timing libs provided**
+ 
+### Converting .lib to .db using lc_shell
   
+```
+cd /nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training
+git clone https://github.com/Geetima2021/vsdpcvrd.git
+/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/vsdpcvrd/resources/timing_libs
+lc_shell
+read_lib sky130_fd_sc_hd__ff_100C_1v65.lib > 100C_1v65.rpt                         (Error reading lib file -> remove the line in lib with those errors)
+```
+  
+**Error debugging -> grepping errors from .rpt file**
+  
+![image](https://user-images.githubusercontent.com/118953917/211825198-f8a621b1-d89e-49c7-9ddb-ca2610a95d4b.png)
+
+**Modification of .lib file**
+  
+![image](https://user-images.githubusercontent.com/118953917/211825404-41ac67e1-fd19-48be-8488-3c676300ca5b.png)
+
+```
+read_lib sky130_fd_sc_hd__ff_100C_1v65.lib
+write_lib sky130_fd_sc_hd__ff_100C_1v65 -format db -output sky130_fd_sc_hd__ff_100C_1v65.db
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/211831483-dcf4b51a-3a58-4ada-a452-7ad59b264736.png)
+
+> Moving converted .db file from cheetah environment (santa clara zsc11) to png site 
+```
+/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs                (Penang site)
+rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazahah/partition/training/vsdpcvrd/resources/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db .    ("." stands for current directory)
+```
+  
+### Synthesizing and optimizing
+  
+```
+echo $target_library
+echo $link_library
+read_verilog 
+compile
+write -f verilog -out avsd_pll_1v8_net.v
+```
