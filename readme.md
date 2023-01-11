@@ -150,11 +150,11 @@ read_verilog rvmyth_avsddac.v
 
 **rvmyth_avsddac.v Error debugging**
   
-gambar 15
+![image](https://user-images.githubusercontent.com/118953917/211706699-6cf5e5b5-fdf0-4afc-96c1-46c63a2bfeba.png)
   
 **Modification of rvmyth_avsddac.v**
   
-gambar 16
+![image](https://user-images.githubusercontent.com/118953917/211706748-ff43e106-22da-4235-9131-28da491d21c1.png)
   
 ```
 echo $target_library
@@ -164,11 +164,11 @@ compile
 write -f verilog -out mod_rvmyth_avsddac_net.v
 ```
 
-gambar 17
+![image](https://user-images.githubusercontent.com/118953917/211706800-c6baa5f9-1108-4c87-a4df-759d4f9f6704.png)
   
 **Netlist of rvmyth_avsddac**
   
-gambar 18
+![image](https://user-images.githubusercontent.com/118953917/211706853-85f2f560-8021-4f5e-94f8-0d337bc430a9.png)
   
 
 > Checking the design 
@@ -180,7 +180,7 @@ report_constraint
 report_timing
 ```
   
-gambar 19
+![image](https://user-images.githubusercontent.com/118953917/211706893-82f070cd-87ad-4179-9672-f925523f76df.png)
   
 
 **using avsdpll.db**
@@ -201,11 +201,11 @@ read_verilog rvmyth_avsdpll.v
 
 **avsd_pll_lv8.v Error debugging**
 
-gambar 20
+![image](https://user-images.githubusercontent.com/118953917/211706945-3c9a2fc7-8879-4996-b2d6-c9dff6286477.png)
   
 **Modification of avsd_pll_lv8.v**
   
-gambar 21
+![image](https://user-images.githubusercontent.com/118953917/211707005-4cf034bd-75da-414e-8b76-446435867f5b.png)
   
 ```
 echo $target_library
@@ -215,11 +215,11 @@ compile
 write -f verilog -out avsd_pll_1v8_net.v
 ```
 
-gambar 22
+![image](https://user-images.githubusercontent.com/118953917/211707052-5eea3774-75f6-4f1a-9a59-2e0e7d6d1c33.png)
   
 **Netlist of avsd_pll_lv8.v**
   
-gambar 23
+![image](https://user-images.githubusercontent.com/118953917/211707102-80af24c0-0e64-4ad3-b929-781e3ccb2e43.png)
   
 </details>
 
