@@ -221,82 +221,14 @@ gambar 22
   
 gambar 23
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-read_verilog avsddac.v
-write -f verilog -out avsddac_net.v
-read_db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db
-compile
-write -f verilog -out avsddac_net.v
-```
-
-**avsddac.v error debugging**
-  
-![image](https://user-images.githubusercontent.com/118953917/211333113-9aea82b7-6a63-470b-8de2-59f51b8168c5.png)
-  
-**Modification of avsddac.v**
-  
-![image](https://user-images.githubusercontent.com/118953917/211333191-3acccfef-1795-43ff-8637-7f0eb7c146b3.png)
-  
-![image](https://user-images.githubusercontent.com/118953917/211333284-76799ede-283a-40c9-814e-5a1aef1456c2.png)
-  
-**avsddac_net.v**
- 
-![image](https://user-images.githubusercontent.com/118953917/211334130-9929b441-7e68-4842-bb0a-fbd22e5c326d.png)
-  
-> DAC modelling
-```
-cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files
-vcs avsddac_net.v avsddac_tb_test.v
-```
-  
-**avsddac_net.v & avsddac_tb_test.v error debugging**
-  
-![image](https://user-images.githubusercontent.com/118953917/211337707-fb49726a-eecc-496e-90ec-af8083e38070.png)
+</details>
 
 
   
   
-
   
   
   
   
   
   
-  
-  
-  
-  
-  
-  
-  
-**avsdpll.lib**
-  
-```
-/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/
-
-sh gvim .synopsys_dc.setup
-set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
-set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db}
-  
-read_verilog avsdpll.v
-write -f verilog -out avsdpll_net.v
-read_db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db
-compile
-write -f verilog -out avsdpll_net.v
-```
-  
-**avsdpll.v error debugging**
-  
-![image](https://user-images.githubusercontent.com/118953917/211333391-eba38513-9600-4d2c-8e76-e0e56c8d6b32.png)
-  
-**Modification of avsdpll.v**
-
