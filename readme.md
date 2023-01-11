@@ -355,9 +355,16 @@ rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazah
 ### Synthesizing and optimizing
   
 ```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs
+cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.synth.v .
+cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.sdc .
+dc_shell
 echo $target_library
 echo $link_library
-read_verilog 
-compile
-write -f verilog -out avsd_pll_1v8_net.v
+read_verilog SD.synth.v
+link
+read_sdc SD.sdc
+compile_ultra
+report_qor
 ```
+
