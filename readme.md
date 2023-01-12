@@ -39,3 +39,33 @@ It is the material that contains semiconductor device attached with a die using 
 * Foundry IPs: cell with more specific functionality and the design was patent/owned by a company, as well as having a higher value compared to macros and cannot be found online
 * Macros: protocol to transfer data using simple functionality and can be found online
 
+</details>
+    
+<details>
+  <summary>Introduction to RISC-V</summary>
+ 
+### Introduction to RISC-V
+  
+**RISC-V Instruction Set Architecture (ISA)**
+  
+**Process of converting RISC-V architecture to layout**
+  
+* The C codes will be compiled in RIS-V assembly language program
+* The assembly language will be converted to machine language which is binary language containing logic 0 and logic 1 that is understood by the computer/hardware
+The converted binary language will be sketched in a layout by the computer program and we will get the required output
+* However, there is another interface that should be presented between architecture and layout of RISC-V which is **Hardware Description Language (HDL)** where it used RTL implementing the specifications of RISC-V
+  
+*Source: https://www.vlsisystemdesign.com/*
+*Credit to: Kunal Gosh*
+  
+![image](https://user-images.githubusercontent.com/118953917/212091056-24dde7f6-fc24-46cd-9510-09f3237cf2c8.png)
+
+</details>
+    
+<details>
+  <summary>From Software Applications to Hardware</summary>
+ 
+### Communication of Software and Hardware
+  
+
+  
