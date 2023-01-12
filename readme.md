@@ -225,6 +225,30 @@ write -f verilog -out avsd_pll_1v8_net.v
   
 ![image](https://user-images.githubusercontent.com/118953917/211707102-80af24c0-0e64-4ad3-b929-781e3ccb2e43.png)
   
+  
+  
+### VSDBabySoC
+  
+```
+sh gvim .synopsys_dc.setup
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
+set link_library {* nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/sky130_fd_sc_hd__tt_025C_1v80.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db}
+```
+  
+```
+echo $target_library
+echo $link_library
+read_file {mod_mythcore_test.v mod_avsd_pll_1v8.v mod_avsddac.v clk_gate.v mod_vsdbabysoc.v} -autoread -format verilog -top vsdbabysoc
+compile
+write -f verilog -out vsdbabysoc_net1.v
+``` 
+  
+![image](https://user-images.githubusercontent.com/118953917/211965920-d89fad34-d839-436e-b114-35a916b7c300.png)
+
+**Netlist of VSDBabySoC**
+  
+![image](https://user-images.githubusercontent.com/118953917/211966018-18e67c13-b0ba-48db-9f4c-dce2e935e507.png)
+  
 </details>
 
 <details>
@@ -358,6 +382,13 @@ rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazah
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs
 cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.synth.v .
 cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.sdc .
+```
+  
+**Setting the constraints**
+  
+gambar 6
+
+```
 dc_shell
 echo $target_library
 echo $link_library
