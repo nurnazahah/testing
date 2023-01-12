@@ -128,7 +128,7 @@ rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazah
 </details>
 
 <details>
-  <summary>Lab: Synthesize</summary>
+  <summary>Lab: Synthesis</summary>
  
 ### Synthesizing the code
   
@@ -252,9 +252,9 @@ write -f verilog -out vsdbabysoc_net1.v
 </details>
 
 <details>
-  <summary>Lab: Post-synthesize</summary>
+  <summary>Lab: Post-synthesize and comparisons</summary>
  
-### Post-synthesizing simulations
+### Post-synthesizing simulations 
   
 **rvmyth_avsddac.v**
   
