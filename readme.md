@@ -380,21 +380,30 @@ rsync -rv rsync.zsc11.intel.com:/nfs/site/disks/zsc11_mip_xmphy_0021/users/nazah
   
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs
-cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.synth.v .
-cp /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/vsdpcvrd/resources/Simple_design/scripts/SD.sdc .
+sh gvim cons.sdc
 ```
   
 **Setting the constraints**
   
 gambar 6
+  
+```
+sh gvim .synopsys_dc.setup
+ 
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db}
+set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} 
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/211971204-3eb09759-db4b-4f5e-9594-f0179be48d4e.png)
+
 
 ```
 dc_shell
 echo $target_library
 echo $link_library
-read_verilog SD.synth.v
+read_file {mod_mythcore_test.v mod_avsd_pll_1v8.v mod_avsddac.v clk_gate.v mod_vsdbabysoc.v} -autoread -format verilog -top vsdbabysoc
 link
-read_sdc SD.sdc
+read_sdc cons.sdc
 compile_ultra
 report_qor
 ```
