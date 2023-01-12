@@ -390,8 +390,8 @@ gambar 6
 ```
 sh gvim .synopsys_dc.setup
  
-set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db}
-set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} >>>> betulkan
+set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db}
+set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} 
 ```
   
 gambar 7
@@ -408,6 +408,9 @@ report_qor
 ```
 
 gambar 8
+  
+*Note: Change the synopsis setup and repeat the same steps for all PVT corners files*
+*Don't forget to source new edited .synopsys_dc.setup*
   
 **Short discussions regarding PVT corners**
   
