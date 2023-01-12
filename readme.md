@@ -385,7 +385,7 @@ sh gvim cons.sdc
   
 **Setting the constraints**
   
-gambar 6
+![image](https://user-images.githubusercontent.com/118953917/212027191-97e051b3-1d26-431d-be55-d5b558625ae0.png)
   
 ```
 sh gvim .synopsys_dc.setup
@@ -394,8 +394,8 @@ set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/a
 set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsdpll.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/db_files/avsddac.db /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} 
 ```
   
-gambar 7
-
+![image](https://user-images.githubusercontent.com/118953917/212027266-f27dc504-4949-4892-aa64-c916e2982384.png)
+  
 ```
 dc_shell
 echo $target_library
@@ -407,7 +407,7 @@ compile_ultra
 report_qor
 ```
 
-gambar 8
+![image](https://user-images.githubusercontent.com/118953917/212027341-33ed43df-6a54-4e8c-b802-3b9fe5eefb12.png)
   
 *Note: Change the synopsis setup and repeat the same steps for all PVT corners files*
 *Don't forget to source new edited .synopsys_dc.setup*
@@ -429,4 +429,4 @@ gambar 8
   
 **Summary of all PVT corners provided**
   
-gambar 9
+![image](https://user-images.githubusercontent.com/118953917/212031365-7279d9cc-b689-42d5-9dcb-c22d24204deb.png)
