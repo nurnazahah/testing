@@ -391,11 +391,10 @@ gambar 6
 sh gvim .synopsys_dc.setup
  
 set target_library {/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db}
-set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} 
+set link_library {* /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d14/timing_libs/sky130_fd_sc_hd__ff_100C_1v65.db} >>>> betulkan
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/211971204-3eb09759-db4b-4f5e-9594-f0179be48d4e.png)
-
+gambar 7
 
 ```
 dc_shell
@@ -408,3 +407,23 @@ compile_ultra
 report_qor
 ```
 
+gambar 8
+  
+**Short discussions regarding PVT corners**
+  
+* WNS (Worst Negative Slack) -> slack for the timing path with worst timing failure 
+  + If WNS is positive, the path has passed. Else, it failed. 
+  + Applicable to setup time
+  
+* WHS (Worst Hole Slack) -> slack for hold path with worst timing failure
+  
+* TNS (Total Negative Slack) -> sum of the total negative path slacks, or the sum of all WNS
+  + If TNS = 0, the design meets timing. Else, if it is positive, there is negative slack in the design (hence the design fails). 
+  + TNS cannot be negative
+  
+* THS (Total Hold Slack) ->  sum of the total negative hold slack paths, or the sum of all WHS
+  + If THS = 0, the design passed. Else, if it is positive, the design failed.
+  
+**Summary of all PVT corners provided**
+  
+gambar 9
