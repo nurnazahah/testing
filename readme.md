@@ -114,11 +114,9 @@ The converted binary language will be sketched in a layout by the computer progr
   
 **Open source digital ASIC design**
   
-*Source: SoC design using OpenLANE by Mohamed Shalan, efabless, the American University in Cairo*
+*Source: the image has been taken from instructor's video*
   
 ![image](https://user-images.githubusercontent.com/118953917/212222308-d4607e49-a968-45c1-b69c-54b25f369950.png)
-
-However, do we have any open source for PDK? Let's go deeper about this.
   
 **Getting to know PDK**
   
@@ -169,5 +167,54 @@ However, do we have any open source for PDK? Let's go deeper about this.
   
 **Simplified RTL to GDSII flow**
   
+* major implementations of ASIC flow:
+  + Synthesis 
+  + Floor/power planning
+  + Placement 
+  + Clock tree Synthesis
+  + Routing
+  + Sign-off
+  
 ![image](https://user-images.githubusercontent.com/118953917/212224976-4eef3690-43ec-4240-a466-7065c5eb7865.png)
 
+**Synthesis**
+  
+* The process of converting RTL to a circuit out of components from the standard cell library (SCL)
+* The result of the circuit is described in HDL and usually refered to as gate level netlist, also it is functional equivalent to RTL
+
+* "Standard Cells" have regular layout and each cell has different views/models:
+  + Electrical, HDL, SPICE
+  + Layout (Abstract and detailed)
+
+*Source: http://vlsitechnology.org/*
+  
+![image](https://user-images.githubusercontent.com/118953917/212226980-4c5645c4-1086-4456-b1a0-9acc4f9fd039.png)
+
+**Floor and Power Planning**
+  
+* Chip Floor Planning: partition the chip die between different system building blocks and place the IO pads
+  
+*Source: the image has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212227502-cc0232d6-b93b-439d-85e4-f17d608ca454.png)
+  
+* Macro Floor Planning: dimensions, pin locations, rows and definition
+* Power Planning: the power is provided  to the every macros, standard cells, and all other cells are present in the design. Typically, the power distribution network using upper metal layers since they are thicker than lower metal layers
+  
+*Source: the image has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212228282-a5655967-278a-4123-a2a3-8ac4059a86fc.png)
+
+**Placement**
+  
+* The process of placing the cells on the floor plan rows, aligned with the sites
+* Macros would place the gate level netlist cells on the rows and the cells should be placed very close to each other to reduce an interconnect delays and enable successful routing 
+* Usually done in two steps: 
+  + Global: finding the 
+  + Detailed 
+  
+*Source: the image has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212229348-d78afab6-bb60-452a-a4b5-91c171ae389b.png)
+
+![image](https://user-images.githubusercontent.com/118953917/212229384-2435bef0-9e0d-44e5-be2a-484b8cc5fe5e.png)
