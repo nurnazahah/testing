@@ -470,3 +470,32 @@ ls -ltr
  
 ### Lab 2: Design Preparation Step
 
+> Invoking openlane
+```
+cd work/tools/openlane_working_dir/openlane
+make mount
+pwd
+ls -ltr
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+```
+  
+gambar 25 kiv
+  
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+vim config.tcl
+vim sky130A_sky130_fd_sc_hd_config.tcl
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212340670-bda528ca-97db-4dc3-9fa1-196f9388d432.png)
+
+</details>
+    
+<details>
+  <summary> Lab 3: Reviewing Files</summary>
+ 
+### Lab 3: Review files after design prep and run synthesis
+  
+```
