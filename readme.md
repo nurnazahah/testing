@@ -430,7 +430,10 @@ The converted binary language will be sketched in a layout by the computer progr
 </details>
     
 <details>
-  <summary> Getting familiar to open source EDA tools</summary>
+  <summary> Lab: Getting familiar to open source EDA tools</summary>
  
 ### OpenLANE Directory structure in detail
+  
+* OpenLANE is not a tool but a flow that is comprises to many EDA tools i.e. Yosys, etc.
+* Objective of using OpenLANE: to convert RTL scripting to GDSII scripting
   
