@@ -167,7 +167,7 @@ The converted binary language will be sketched in a layout by the computer progr
   
 **Simplified RTL to GDSII flow**
   
-* major implementations of ASIC flow:
+* Major implementations of ASIC flow:
   + Synthesis 
   + Floor/power planning
   + Placement 
