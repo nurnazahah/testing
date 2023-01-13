@@ -106,3 +106,68 @@ The converted binary language will be sketched in a layout by the computer progr
  
 ### Introduction to all components of open-source digital ASIC design
   
+* Designing ASIC flow in an automated way requires several elements:
+  
+  + Hardware Description Language (HDL) which Register Transfer Level (RTL) model of the function we want to implement including RTL's IP
+  + Tool used for automation i.e. EDA tools
+  + Process Design Kit (PDK) data
+  
+**Open source digital ASIC design**
+  
+*Source: SoC design using OpenLANE by Mohamed Shalan, efabless, the American University in Cairo*
+  
+![image](https://user-images.githubusercontent.com/118953917/212222308-d4607e49-a968-45c1-b69c-54b25f369950.png)
+
+However, do we have any open source for PDK? Let's go deeper about this.
+  
+**Getting to know PDK**
+  
+* PDK: the interface between the fabrications and the designers
+* PDK -> stands for Process Design Kit
+
+* Collection of files used to model a fabrication process for EDA tools used to design an IC
+  + Process Design Rules: DRC, LVS, PEX
+  + Device models
+  + Digital Standard Cell Libraries
+  + I/O libraries
+  
+**List of EDA tools available**
+  
+* HDL simulation
+* Floor planning
+* Detail placement
+* HDL design entry
+* IR drop analysis
+* DRC
+* Logic equivalence checking
+* Fill insertion
+* LVS
+* DFM
+* RC extraction
+* DFT
+* Power planning
+* STA
+* Global placement
+* Logic synthesis
+* RTL synthesis
+* Global routing
+* Detailed routing
+* Static code analysis
+* CTS
+  
+</details>
+    
+<details>
+  <summary>Simplified RTL2GDS flow</summary>
+ 
+### Simplified RTL to GDS flow
+  
+**ASIC Design Flow**
+
+* Flow objective: RTL to GDSII
+  + Also called Automated PnR and/or Physical Implementation
+  
+**Simplified RTL to GDSII flow**
+  
+![image](https://user-images.githubusercontent.com/118953917/212224976-4eef3690-43ec-4240-a466-7065c5eb7865.png)
+
