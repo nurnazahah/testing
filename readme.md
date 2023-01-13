@@ -207,14 +207,56 @@ The converted binary language will be sketched in a layout by the computer progr
 
 **Placement**
   
-* The process of placing the cells on the floor plan rows, aligned with the sites
+* The process of placing the cells on the floor plan rows, aligned with the sites. Also, the process of finding a suitable physical location for each cell in the block.
 * Macros would place the gate level netlist cells on the rows and the cells should be placed very close to each other to reduce an interconnect delays and enable successful routing 
 * Usually done in two steps: 
-  + Global: finding the 
-  + Detailed 
+  + Global: a very first stage of the placement where cells are placed inside the core area for the first time looking at the timing and congestion, it aims at generating a rough placement solution that may violate some placement constraints while maintaining a global view of the whole netlist
+  + Detailed: the position obtained from global placements are minimally altered 
   
 *Source: the image has been taken from instructor's video*
   
 ![image](https://user-images.githubusercontent.com/118953917/212229348-d78afab6-bb60-452a-a4b5-91c171ae389b.png)
 
 ![image](https://user-images.githubusercontent.com/118953917/212229384-2435bef0-9e0d-44e5-be2a-484b8cc5fe5e.png)
+  
+**Clock tree synthesis (CTS)**
+  
+* The process of routing the clock by creating the clock before entering major routing process 
+  
+* Create clock distribution network
+  + To deliver the clock to all sequential elements i.e. Flip Flop
+  + With minimum skew (zero is hard to achieve) 
+  + Achieve a good shape
+  + Usually in a Tree (H, X, ...)
+  
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212230550-fbdd1ced-de40-4b0f-bfd5-2d6d5a7ac1f2.png)
+
+**Routing**
+  
+* The process of implementing the interconnect using the available metal layers
+* Metal is tracks from a routing grid
+* As the routing grid is huge, it used divide and conquere approach:
+  + Global Routing: generating routing guides
+  + Detailed Routing: using routing guides to implement the actual wiring
+
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212230891-49472921-52c4-4e88-a8a6-63a5ef42cedd.png)
+
+**Sign-off**
+  
+* Final layout which undergoes verifications 
+* Physical verifications
+  + Design Rule Checking (DRC) -> ensuring the final layout obeys all the design rules
+  + Layout vs Schematic (LVS) -> ensuring the final layout matches the gate level netlist of the design
+* Timing verification
+  + Static Timing Analysis (STA) -> ensuring all the timing constraints are met and the circuit will run at designated clock frequencies
+  
+</details>
+    
+<details>
+  <summary>Introduction to OpenLANE and Strive chipsets</summary>
+ 
+### Introduction to OpenLANE and Strive chipsets
