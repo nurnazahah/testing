@@ -260,3 +260,56 @@ The converted binary language will be sketched in a layout by the computer progr
   <summary>Introduction to OpenLANE and Strive chipsets</summary>
  
 ### Introduction to OpenLANE and Strive chipsets
+
+**Open Source ASIC Flow**
+  
+* The problem is tougher when using open source EDA
+  + Tools qualification
+  + Tools calibration
+  + Missing tools 
+  
+**What is OpenLANE?**
+  
+* Started as an Open-Surce Flow for a True Open Source Tape-Out Experiment
+* striVe is a family of open everything SoCs i.e. Open PDK, Open EDA, Open RTL
+
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212237000-a7dd821a-7868-4ada-8a6a-9e6eef95de73.png)
+
+![image](https://user-images.githubusercontent.com/118953917/212237209-e8c58106-c544-4606-bd26-da2d61eae4e1.png)
+
+**OpenLANE ASIC Flow**
+  
+* Main goal: to produce a clean GDSII with no human intervention (no-human-in-the-loop)
+
+* Clean means: 
+  + No LVS violations
+  + No DRC violations
+  + No timing violations 
+  
+* Tuned for SkyWater 130 nm Open PDK, also supports XFAB180 and GF130G 
+  
+* Containerized 
+  + Functional out of the box
+  + Instructions to build and run natively will follow 
+  
+* Can be used to harden Macros and Chips
+  
+* Two modes of operation:
+  + Autonomous
+  + Interactive 
+  
+* Design Space Exploration feature
+  + Finding the best set of flow configurations 
+  
+* Comes with large number of design examples
+  + 43 designs with their best configurations
+  
+</details>
+    
+<details>
+  <summary> Detailed ASIC design flow</summary>
+ 
+### Introduction to OpenLANE:  Detailed ASIC design flow
+  
