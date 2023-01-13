@@ -482,7 +482,8 @@ prep -design picorv32a
 ```
   
 gambar 25 kiv
-  
+ 
+> In terminal
 ```
 cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
 vim config.tcl
@@ -498,4 +499,20 @@ vim sky130A_sky130_fd_sc_hd_config.tcl
  
 ### Lab 3: Review files after design prep and run synthesis
   
+> In terminal
 ```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+ls
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/tmp
+ls -ltr
+vim merged.lef
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09
+vim config.tcl
+vim cmds.log
+```
+  
+gambar 27
+  
+> In openlane
+```
+run_synthesis
