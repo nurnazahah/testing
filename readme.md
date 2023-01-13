@@ -348,4 +348,5 @@ The converted binary language will be sketched in a layout by the computer progr
   
 *Source: the example has been taken from instructor's video*
 
-![image](https://user-images.githubusercontent.com/118953917/212256145-5cf47fb2-0d4d-4c97-aa83-22ce744abbc7.png)
+![image](https://user-images.githubusercontent.com/118953917/212256446-92fb2798-7668-4a38-b0d5-b50dfd798464.png)
+
