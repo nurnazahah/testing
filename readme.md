@@ -3,9 +3,9 @@
 ### Topic: Inception of EDA and PDK
 
 <details>
-  <summary>How to talk to computers</summary>
+  <summary>QFN-48 Package, chip, pads, core, die and IPs</summary>
  
-### How to talk to computers?
+### Introduction to QFN-48 Package, chip, pads, core, die and IPs
   
 **What is package?**
   
@@ -64,9 +64,45 @@ The converted binary language will be sketched in a layout by the computer progr
 </details>
     
 <details>
-  <summary>From Software Applications to Hardware</summary>
+  <summary>How to talk to computers?</summary>
  
 ### Communication of Software and Hardware
   
+* The tool will undergo synthesis process which is converting software’s instructions in HLL to machine language in binary format
+  
+**Flow of the the synthesis process**
+* Software (HLL) -> System software (assembly language) -> Hardware (machine language)
+* Basically, the application software would enter the clock of the system software and the system software would convert the application program into the binary language
+* One of the major operation in system software is Operating System (OS) would take the particular applications and convert it into respective assembly language program and binary program, so that the program will be understood by the hardware
+* The converted binary language/machine language will fed into the hardware and it will generate the output
+  
+**Major layer/components of system software**
+ 
+* Operating System (OS)
+  + Handle IO operations
+  + Allocate memory
+  + Low level system functions
 
+* Compiler
+  + Converting the programming language into the respective intructions 
+  + The syntax of the instruction is depending upon what kind of the hardware is, i.e. if the hardware belongs to RISc-V format, the syntax would have the syntax of RISc-V file format instructions
+
+* Assembler
+  + Take particular instructions and convert it into the respective binary number which is machine language program
+  + Consisting of logic 1 and logic 0 where the computer/hardware understands the language
+
+**Process flow and its example**
+  
+*Source: https://www.vlsisystemdesign.com/*
+  
+![image](https://user-images.githubusercontent.com/118953917/212218492-1e0bc3d1-bbe5-4574-a8dc-4bd8517e652d.png)
+
+![image](https://user-images.githubusercontent.com/118953917/212219102-4e6d41fc-2de0-41fd-b04c-b02675886d0e.png)
+
+</details>
+    
+<details>
+  <summary>Introduction to ASIC design</summary>
+ 
+### Introduction to all components of open-source digital ASIC design
   
