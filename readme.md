@@ -350,3 +350,79 @@ The converted binary language will be sketched in a layout by the computer progr
 
 ![image](https://user-images.githubusercontent.com/118953917/212256602-e0f693b0-514f-4442-b98f-d2f23273d6e8.png)
 
+**DFT**
+  
+* After synthesis, DFT is ready to be testing before fabrication (optional step) using open source project which is Fault
+
+* Performing several steps including:
+  + Scan Insertion 
+  + Automatic Test Pattern Generation (ATPG)
+  + Test Patterns Compaction 
+  + Fault Coverage
+  + Fault Simulation
+  
+*Source: the example has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212257599-bd8ef164-1a26-46cb-8698-a5700975d5c3.png)
+
+**Physical implementation**
+  
+* Also called automated PnR (Place and Route)
+  
+* Using OpenRoad open source to perform the implementation
+  
+* Involves several steps including
+  + Floor/Power Planning
+  + End Decoupling Capacitors and Tap cells insertion
+  + Placement: Global and Detailed
+  + Post placement optimization
+  + Clock Tree Synthesis (CTS)
+  + Routing: Global and Detailed
+
+**Logic Equivalent Check (LEC)**
+  
+* Everytime the netlist is modified, verifications must be performed
+  + CTS modifies the netlist
+  + Post Placement optimization modifies the netlist
+  
+* LEC is used to formally confirm that the function did not change after modifying the netlist
+  
+* Open source application used: Yosys
+  
+**Dealing with Antenna Rules Violations**
+  
+* A special step during physical implementation is called Antenna Diodes Insertion
+  
+* This step is required for antenna worst violations
+  
+* When a metal wire segment is fabricated and it is long enough, it can act as antenna
+  + Reactive ion etching causes charge to accumulate on the wire
+  + Transistor gates can be damaged during fabrication 
+  
+* Solutions
+  + Bridging attaches a higher layer intermediary (Requires router awareness)
+  + Add antenna diode cell to leak away charges (Antenna diodes are provided by SCL)
+  
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212262857-87f12d22-c825-4e27-9181-7e26057f17af.png)
+
+* With OpenLANE, we took preventive approach by:
+  + Adding a fake antenna diode next to every cell input after placement
+  + Run the antenna checker (Magic) on the routed layout
+  + If the checker reports violations on the cell input pin, replace the fake diode cell by a real one
+  
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212266874-48585c47-61ec-479f-b5ec-3e89ca62004f.png)
+
+**Static Timing Analysis (STA)**
+  
+* RC Extraction: DEF2SPEF
+* STA: OpenSTA (using OpenROAD) 
+* Involving timing reports to check violations in timing paths 
+  
+**Physical verification DRC & LVS**
+  
+* Magic is used for Design Rule Checking and SPICE Extraction from Layout
+* Magic and Netgen are used for LVS where extracted SPICE by Magic vs verilog netlist are used 
