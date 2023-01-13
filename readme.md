@@ -102,7 +102,7 @@ The converted binary language will be sketched in a layout by the computer progr
 </details>
     
 <details>
-  <summary>Introduction to ASIC design</summary>
+  <summary>SoC design and OpenLANE</summary>
  
 ### Introduction to all components of open-source digital ASIC design
   
@@ -426,3 +426,11 @@ The converted binary language will be sketched in a layout by the computer progr
   
 * Magic is used for Design Rule Checking and SPICE Extraction from Layout
 * Magic and Netgen are used for LVS where extracted SPICE by Magic vs verilog netlist are used 
+
+</details>
+    
+<details>
+  <summary> Getting familiar to open source EDA tools</summary>
+ 
+### OpenLANE Directory structure in detail
+  
