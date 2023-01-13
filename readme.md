@@ -3,7 +3,7 @@
 ### Topic: Inception of EDA and PDK
 
 <details>
-  <summary>QFN-48 Package, chip, pads, core, die and IPs</summary>
+  <summary>What is a package?</summary>
  
 ### Introduction to QFN-48 Package, chip, pads, core, die and IPs
   
