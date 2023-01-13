@@ -529,7 +529,7 @@ run_synthesis
  
 ### Lab 4: OpenLANE Project Git Link Description
   
-*Visit https://github.com/efabless/OpenLane to know more about OpenLANE*
+*Visit and browse through the link https://github.com/efabless/OpenLane to know more about OpenLANE*
   
 </details>
     
