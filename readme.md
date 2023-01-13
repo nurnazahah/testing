@@ -313,3 +313,39 @@ The converted binary language will be sketched in a layout by the computer progr
  
 ### Introduction to OpenLANE:  Detailed ASIC design flow
   
+**OpenLANE ASIC Flow (Detailed design flow)**
+  
+* The steps flow is much more detailed than the one that has been presented before
+  
+* The flow started from RTL design and ended with final layout in GDSII format by using the function of PDK
+  
+* OpenLANE is based on several open source project i.e. OpenROAD, KLayout, Yosys, QFlow, ABC, Magic VLSI Layout Tool, Fault, and etc.
+
+*Source: the image has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212254333-481efbdf-884b-47b5-bc1d-be4712e886bc.png)
+  
+* The step starts with RTL synthesis where RTL is fed into Yosys with the design constraints. Yosys will translate the RTL into logic circuits and be optimized
+  
+* The optimized circuit will be mapped into cells from the cell library using abc where abc has to be guided during the optimization. OpenLANE comes with several abc scripts 
+  
+**Synthesis exploration**
+  
+* Synthesis exploration utility is used to generate report that shows the design delay and area 
+* From the exploration, we can pick the best strategy to proceed with
+* Also, synthesis exploration utility can be used to sweep the design configurations and generate reports
+* The report is observed and ensuring the number of violations generated after generating the final layout 
+* The best configurations can be picked from the design
+  
+*Source: the example has been taken from instructor's video*
+  
+![image](https://user-images.githubusercontent.com/118953917/212255397-97292c9c-e1ea-4fb7-8f5a-b7f292cfffc5.png)
+
+**OpenLANE Regression Testing**
+  
+* The design exploration utility is also used for regression testing (CI)
+* Running OpenLANE in several +-70 designs and compare the results to the best known ones
+  
+*Source: the example has been taken from instructor's video*
+
+![image](https://user-images.githubusercontent.com/118953917/212256145-5cf47fb2-0d4d-4c97-aa83-22ce744abbc7.png)
