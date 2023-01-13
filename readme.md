@@ -470,6 +470,8 @@ ls -ltr
  
 ### Lab 2: Design Preparation Step
 
+*Source: https://github.com/nickson-jose/openlane_build_script*
+  
 > Invoking openlane
 ```
 cd work/tools/openlane_working_dir/openlane
@@ -481,8 +483,8 @@ package require openlane 0.9
 prep -design picorv32a
 ```
   
-gambar 25 kiv
- 
+![image](https://user-images.githubusercontent.com/118953917/212351992-e9d2f493-0dbb-4546-80de-90d6fe2ea405.png)
+  
 > In terminal
 ```
 cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
@@ -511,8 +513,48 @@ vim config.tcl
 vim cmds.log
 ```
   
-gambar 27
+![image](https://user-images.githubusercontent.com/118953917/212351814-5235de8b-e06e-4bd4-ab74-e5bde99d900f.png)
   
 > In openlane
 ```
 run_synthesis
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212352881-d5807bd7-621d-4c50-a4a1-7e5a3f93b538.png)
+
+</details>
+    
+<details>
+  <summary> Lab 4: OpenLANE Project Git Link Description</summary>
+ 
+### Lab 4: OpenLANE Project Git Link Description
+  
+*Visit https://github.com/efabless/OpenLane to know more about OpenLANE*
+  
+</details>
+    
+<details>
+  <summary> Lab 5: Characterizing synthesis results</summary>
+ 
+### Lab 5: Steps to characterize synthesis results
+  
+From the previous lab session, after synthesizing and get the results;
+  
+Flop ratio = 10.84%
+  
+Flop ratio of the design is calculated as below:
+  
+![image](https://user-images.githubusercontent.com/118953917/212362794-40f9b972-08c0-48ec-8a8b-15bd53a4ba2b.png)
+
+> In terminal
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis
+vim picorv32a.synthesis.v
+cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/reports/synthesis
+vim 1-yosys_4.stat.rpt
+vim 2-opensta.rpt
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212367232-4077a988-4c4c-46dc-a6a5-0ec6da2503b1.png)
+
+</details>
