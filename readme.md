@@ -60,7 +60,7 @@ Assume the same for flip flop
 </details>
 
 <details>
-  <summary>Lecture 1: Concept of pre-placed cells</summary>
+  <summary>Lecture 2: Concept of pre-placed cells</summary>
  
 ### Concept of pre-placed cells
   
