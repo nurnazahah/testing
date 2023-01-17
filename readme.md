@@ -55,7 +55,14 @@ Assume the same for flip flop
 * This 100% utilization is usually as an ideal scenario, but in practical scenario, we only utilized up until 50% to 60% utilization
 * Whenever the aspect ratio = 1, it signifies that the chip is in square-shaped, else if aspect ratio is the other number except 1, it signifies that the chip is in rectangular-shaped
 
-![image](https://user-images.githubusercontent.com/118953917/212593627-1cd1e73b-836a-47f9-bbb7-c98e3dd51bfb.png)
+![image](https://user-images.githubusercontent.com/118953917/212791884-9a22ef2f-b4a5-4c4d-b1c3-3e88cc81c307.png)
+  
+* Let say the dimentions of the die and core is wider;
+  
+* As we can see from the example below, the core is 50% utilized by the logic and another remaining space/area can be used for any additional cells 
+* Defining the utilization factor and aspect ratio are significant especially when we're doing floor planning
+  
+![image](https://user-images.githubusercontent.com/118953917/212794558-13c1047d-392d-4edd-a79e-36f832cbb1c2.png)
   
 </details>
 
@@ -64,5 +71,56 @@ Assume the same for flip flop
  
 ### Concept of pre-placed cells
   
+**Continue on defining width and height of the core and die**
+  
+* Let say the core and die is bigger with the same height and width;
+  
+* Referring to the example below, the core has been utilized with 25% of the combinational logic and it has another 75% space/area which can be used for any additional cells
+* Also, the free space can be used for more additional layers of routing
+* Since aspect ratio = 1, it signifies the square-shaped
+  
+![image](https://user-images.githubusercontent.com/118953917/212796719-e8d0b937-3c9d-4a2e-a61e-3f7619ee81ed.png)
+  
 **Defining the location of the pre-placed cells**
+  
+![image](https://user-images.githubusercontent.com/118953917/212799249-0a383654-bdd4-4f3c-aa17-863867a8e727.png)
+
+**What are the pre-placed cells?**
+  
+* Combinational logic basically does some functionalities i.e. memory, mux, any complex clock divider or etc.
+* Combinational logic does a huge task and produced some huge output circuits
+* Therefore, we need to extract it out and divide that huge output circuits into multiple blocks and then separate them out into different blocks 
+* Referring to the separated blocks below, block 1 and block 2 will be implemented separately 
+  
+![image](https://user-images.githubusercontent.com/118953917/212802067-76e7d27c-f106-4305-84ab-f6afa1276c23.png)
+
+* Block 1 contains the input of the pins while block 2 contains the output of the pins
+* We then need to extend those IO pins of the two blocks and detached those blocks with the black boxes
+* Those two blocks will then be invisible for the side that is looking from the top/main netlist
+* Since those sections of the boxes are now invisible to the top netlist that we're implemented, we will now separate the black boxes as two different IP's or modules
+* The advantages of separating those blocks are it is more convenient to use them for multiple times when needed with different users where they will be implemented separately based upon their functionalities. Also, those blocks can be reused separately for each block for multiple times when needed.
+  
+![image](https://user-images.githubusercontent.com/118953917/212806088-5256765d-6e0c-4b12-bce6-e37f80f5bd87.png)
+
+* Similarly, there are any other IP's that are available, i.e.;
+  + Memory
+  + Clock-gating cell
+  + Comparator
+  + Mux
+* All of them can be implemented once and can be instantiated multiple times onto a netlist
+* However, this is no need to be implemented for multiple times because this is a part of top-level netlist where they perform some functions, where they receive some inputs signals, they deliver some output signals, but the functionality of the particular cells will be implemented only once
+* This is what we called as pre-placed cells since the cells are being just placed once in a chip where we have to define the locations/arrangements of the particular cells and it has to be done before the routing
+* The placement and arrangements of the cells on top-level chip will be fixed and they will not being moved even by automated tools
+* Since they are being placed before the routing, they are called pre-placed cells 
+  
+* The arrangement of these IP’s in a chip is referred as Floorplanning
+* These IP’s/blocks have user-defined locations, and hence are placed in chip  before automated placement-and-routing and are called as pre-placed cells.
+* Automated placement and routing tools places the remaining logical cells in the design onto chip
+
+</detail>
+  
+<details>
+  <summary>Lecture 3: De-coupling capacitors</summary>
+ 
+### De-coupling capacitors
   
