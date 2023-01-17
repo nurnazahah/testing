@@ -267,7 +267,7 @@ cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
 vim config.tcl
 ```
   
----->>>>> kiv config.tcl no vertical/horizontal metal layer
+![image](https://user-images.githubusercontent.com/118953917/212937440-c3afd92a-87d8-4ffb-8144-d98212cb3f76.png)
   
 > In OpenLANE terminal
 ```
@@ -288,9 +288,28 @@ cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13
 vim 4-ioPlacer.log
 ```
   
------------------------>>>> kiv gambar 
+![image](https://user-images.githubusercontent.com/118953917/212937620-16ef4520-7e0c-48b9-b428-ef5b3ddc7dff.png)
   
 ```
-cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32aruns/13-01_14-09/
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/
 vim config.tcl
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/212937722-d220fefa-48ec-4f46-bc95-954d11ae697b.png)
+  
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/floorplan
+vim picorv32a.floorplan.def
+```
+
+![image](https://user-images.githubusercontent.com/118953917/212937842-402075ea-8ab9-4028-b6dd-f76e3c6e4e80.png)
+
+</details>
+
+<details>
+<summary>Lab 3: Review floorplan layout in Magic</summary>
+
+### Review floorplan layout in Magic
+  
+```
+Review floorplan layout in Magic
