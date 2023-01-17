@@ -173,7 +173,7 @@ Assume the same for flip flop
   
 ![image](https://user-images.githubusercontent.com/118953917/212817283-9d6cda09-9700-4ed4-a70c-6b0527215c25.png)
   
-* Overview of pre-placed cells on a netlist across the decoupling capacitors and the blocks
+* Overview of pre-placed cells on a top-level netlist across the decoupling capacitors and the blocks
   
 ![image](https://user-images.githubusercontent.com/118953917/212817436-6134ebd8-14bc-4e5f-970b-bcce194cc73a.png)
 
@@ -183,9 +183,27 @@ Assume the same for flip flop
 <summary>Lecture 4: Power planning</summary>
 
 ### Power planning
+  
+* From previous example, let's take the circuit and converted into a black box and denoted it as a macro/block
+  
+*Source: https://www.vlsisystemdesign.com/*
+  
+![image](https://user-images.githubusercontent.com/118953917/212826749-fba0ba9b-69fb-4669-a7d7-2bb77b0f8a49.png)
 
+* Let say there are 4 different macros/blocks containing driver, load, and etc that are usually available in a complete chip with different functionalities
+* The voltage source was supplied for 4 blocks. Hence, the supply from the source will be not stable where it is impossible to put all the decoupling capacitors.
+* Let's assume the orange line was 16 bit bus
+* Logic 1 indicates that the capacitor is being charged to Vdd while logic 0 will be discharged to the Ground
+* This 16 bit bus is connected with the inverter, so the output will be inverted from the input. Logic 1 will be discharged and while logic 0 will be charged.
+* All the capacitors that were charged to volts will be discharged to 0 volt through single Ground tap point. This will cause a bounce in Ground tap point.
+* If this bounce exceeds the noise margin level, it will reaches undefined state, where during that stage, the voltage might be changed from logic 1 to logic 0 and it is unpredictable 
+* All capacitors which were '0' volt will have to charge to 'V' volts through single Vdd tap point. This will cause lowering of voltage at Vdd tap point
+* The level of Ground Bounce and Voltage Droop will be increased due to the multiple process of tap points happened at the same time. 
+* If this voltage droop is within the noise margin level, it will be enough but if it exceeded undefined region in the noise margin level, we will in danger zone
 
+*Source: https://www.vlsisystemdesign.com/*
 
+![image](https://user-images.githubusercontent.com/118953917/212834088-97e65ccf-00db-4b79-8b59-68e105fb198e.png)
 
   
   
