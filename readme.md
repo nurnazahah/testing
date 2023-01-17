@@ -343,6 +343,14 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
 * The arrangements in the floorplan is decided by taking into considerations of the connections of the physical cells i.e. where is the nearest locations between inputs and outputs and etc.
 * During placement stage, we must ensure that the area used for the black boxes and decap cells do not have any cells inserted that can cause overlapping. The placement needs to be timing conscious as well to not make the routing long.
   
+![image](https://user-images.githubusercontent.com/118953917/212945356-a4f1298a-b3d0-4b57-94b0-5bd0ef70acd1.png)
+
+</details>
+
+<details>
+  <summary>Lecture 2:  Optimize placement using estimated wire-length and capacitance</summary>
+ 
+###  Optimize placement using estimated wire-length and capacitance
 
 
 
