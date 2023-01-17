@@ -119,7 +119,7 @@ Assume the same for flip flop
 * These IP’s/blocks have user-defined locations, and hence are placed in chip  before automated placement-and-routing and are called as pre-placed cells.
 * Automated placement and routing tools places the remaining logical cells in the design onto chip
 
-</detail>
+</details>
   
 <details>
   <summary>Lecture 3: De-coupling capacitors</summary>
