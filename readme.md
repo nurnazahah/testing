@@ -41,6 +41,8 @@ Assume the same for flip flop
 * Core: the section of the chip where the fundamental logic of the design is placed
 * Die: consists of core (encapsulate the core), it is a small semiconductor material specimen on which the fundamental circuit is fabricated
   
+*Source: the illustration has been taken from instructor's video*
+  
 ![image](https://user-images.githubusercontent.com/118953917/212591511-3af66b9e-e24a-4fed-9ef9-9192b0693289.png)
   
 * How to arrive on its dimensions?
@@ -123,4 +125,52 @@ Assume the same for flip flop
   <summary>Lecture 3: De-coupling capacitors</summary>
  
 ### De-coupling capacitors
+  
+**Defining on pre-placed cells**
+  
+* For example, consider there are three pre-placed cell blocks including block A, block B, and block C where we implemented memories for once and they will be reused for multiple times in the circuit
+* Most of the blocks are communicating with input pins. Hence, the blocks will be usually being placed near the input side depending on the scenario/design background
+* Once the location has been set to place the blocks, the location can't be moved. Therefore, the location needs to be very well defined
+
+![image](https://user-images.githubusercontent.com/118953917/212816258-75cdada2-e5d4-4f22-9b46-43e7e60aca6f.png)
+  
+**Surrounding the pre-placed cells with Decoupling Capacitors**
+  
+* Consider the amount of the switching current required for a complex circuit something like below
+  
+* Referring to the diagram below;
+  
+1.	Consider capacitance to be zero for the discussion. Rdd, Rss, Ldd and Lss are  well defined values.
+2.	During switching  operation, the circuit demands switching current i.e. peak current (Ipeak).
+3.	Now, due to the presence of Rdd and Ldd, there will be a voltage drop across them and the voltage at Node 'A' would be Vdd' instead of Vdd.
+4.	If Vdd' goes below the noise margin, due to Rdd and Ldd, the logic '1' at the output of circuit won't be detected as logic '1' at the input of the circuit following this circuit.
+  
+*Source: https://www.vlsisystemdesign.com/*
+
+![image](https://user-images.githubusercontent.com/118953917/212812045-c46db167-d66c-4a81-8d90-73e4f1246306.png)
+
+**Noise margin summary**
+  
+* Anything that lies between Vol and Vll will be considered as logic 0 
+* Any voltage that lies between Vll and Vih will be considered as undefined region 
+* Undefined region -> the logic can either moved from logic 1 to logic 0 or from the interception point of (b) to logic 0. Undefined region is a danger case 
+* Whenever the voltage lies between Vih and Voh, it will always being treated as 1V or logic 1
+* Therefore, we have to ensure that the voltage didn't enter in undefined region since it cannot be identified whether the voltage might be in logic 1 or not
+* That is the problem when we are having a large physical distance from the main power supply to the circuit
+  
+*Source: https://www.vlsisystemdesign.com/*
+  
+![image](https://user-images.githubusercontent.com/118953917/212813997-d1f1a5c0-dc8e-4356-b175-c692c4ec5c4c.png)
+
+  
+* To solve this issue, we have to add decopuling capacitors 
+* Consider the decoupling capacitor is a huge capacitor which is completely be filled with the charge and the equivalent voltage across the decoupling capacitor is similar to what we have in the power supply
+* Add the decoupling capacitor in parallel with the circuit
+* Decoupling capacitor would decouples the circuit from the main supply 
+* Everytime the circuit switches, it draws current from Cd. Whereas, the RL network is used to replenish the charge into Cd
+  
+*Source: https://www.vlsisystemdesign.com/*
+  
+
+  
   
