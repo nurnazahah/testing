@@ -245,7 +245,52 @@ Assume the same for flip flop
 </details>
 
 <details>
-<summary>Lecture 6: Steps to run floorplan using OpenLANE</summary>
+<summary>Lab 1: Steps to run floorplan using OpenLANE</summary>
 
 ### Steps to run floorplan using OpenLANE
   
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/configuration
+vim README.md
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212850404-c5806032-162e-46fd-afbf-ac313433a657.png)
+
+```
+vim floorplan.tcl
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212851351-44319a52-c656-4d87-931a-aa8079ccdf0a.png)
+
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a
+vim config.tcl
+```
+  
+---->>>>> kiv config.tcl no vertical/horizontal metal layer
+  
+> In OpenLANE terminal
+```
+run_floorplan
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212854551-c8c84876-318a-496b-947f-6c28f2d0de0a.png)
+
+</details>
+
+<details>
+<summary>Lab 2: Review floorplan files and steps to view floorplan</summary>
+
+### Review floorplan files and steps to view floorplan
+  
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/logs/floorplan
+vim 4-ioPlacer.log
+```
+  
+----------------------->>>> kiv gambar 
+  
+```
+cd ../Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32aruns/13-01_14-09/
+vim config.tcl
+```
