@@ -205,5 +205,47 @@ Assume the same for flip flop
 
 ![image](https://user-images.githubusercontent.com/118953917/212834088-97e65ccf-00db-4b79-8b59-68e105fb198e.png)
 
+
+* To fix this issue, we need to use multiple power supply (i.e. multiple  Vdd and Vss) instead of using 1 power supply only
+* Multiple power supply will be sourced to the nearest block and it will prevent the block from being missed to get the power supply
+* Therefore, all the logics will take the nearest power supply
+* The driver and the load also can be brought closed to each other in 'L' sense
+
+*Source: https://www.vlsisystemdesign.com/*
   
+![image](https://user-images.githubusercontent.com/118953917/212835786-e010e5f5-4576-407f-a43e-b08ed5e6aea3.png)
+  
+</details>
+
+<details>
+<summary>Lecture 5: Pin placement and logical cell placement blockage</summary>
+
+### Pin placement and logical cell placement blockage
+
+* Let's take several designs as examples that need to be implemented
+* Along with the circuit, there are some pre-placed blocks as well that is being connected to the input circuit and being clocked out 
+* There are 4 designs in total with different connections to be looking through in this section
+* By merging all of the four designs, it will be a complete design 
+
+![image](https://user-images.githubusercontent.com/118953917/212839899-2651497a-b8bf-4d8d-9f5d-c45188a2f13d.png)
+
+**Pin placement of the complete design**
+  
+* For the design plan, the input port is set to be on the LHS while the output port is set to be on the RHS
+* Input ports and output ports are placed randomly since it is depending on our the design planning
+* The pins are placed depending on the blocks
+* No cells/flip flops can be placed on the block a, block b and block c area
+* Clock ports which are CLK1, CLK2 and Clkout are bigger in size as compared to data ports since the clock is the ports that are driving all the cells and sending the signals to all flip flops
+* Bigger the size, least the resistance. Therefore, clock ports need to be bigger in size to avoid resistance during signal transmission since clock plays an important role in sending the signals
+  
+*Source: https://www.vlsisystemdesign.com/*
+  
+![image](https://user-images.githubusercontent.com/118953917/212844989-78948f55-f883-4eb1-bd09-7e6a4fc9cf35.png)
+
+</details>
+
+<details>
+<summary>Lecture 6: Steps to run floorplan using OpenLANE</summary>
+
+### Steps to run floorplan using OpenLANE
   
