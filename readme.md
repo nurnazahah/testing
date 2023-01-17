@@ -312,4 +312,30 @@ vim picorv32a.floorplan.def
 ### Review floorplan layout in Magic
   
 ```
-Review floorplan layout in Magic
+magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/212940392-d04ac41d-6046-48f9-abe5-68e09b5191ad.png)
+
+![image](https://user-images.githubusercontent.com/118953917/212940467-0a27b8ff-effe-467e-b011-8b85684b9dda.png)
+
+</details>
+
+### Library Binding and Placement
+<details>
+  <summary>Lecture 1: Netlist binding and initial place design</summary>
+ 
+### Netlist binding and initial place design
+
+* Usually, the combinational logic gate will have its standard shape like AND gate, inverter and etc.
+* But, in reality, the combinational logic gate will be converted to the box. The physical gate will be changed to the physical dimension.
+* Therefore, all the gates will be removed and changed as in the figure
+* Library: the place where we can find all the boxes and it has timing information of the delay of each gate
+* Library also can be separated into sub library i.e. the first library consisting of the shape and size while the second library only consists of delay information.
+* Library offers several options of library in same cell depending on its timing conditions and its available spaces in the floorplan. The bigger the cell size, the lesser the resistance 
+* Hence, we have different flavours of library and we can pick up the desired library based upon the requirements
+  
+![image](https://user-images.githubusercontent.com/118953917/212942911-f3f8c138-8b65-4be0-917d-d591f6e443ca.png)
+
+
+  
