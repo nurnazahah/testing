@@ -171,6 +171,21 @@ Assume the same for flip flop
   
 *Source: https://www.vlsisystemdesign.com/*
   
+![image](https://user-images.githubusercontent.com/118953917/212817283-9d6cda09-9700-4ed4-a70c-6b0527215c25.png)
+  
+* Overview of pre-placed cells on a netlist across the decoupling capacitors and the blocks
+  
+![image](https://user-images.githubusercontent.com/118953917/212817436-6134ebd8-14bc-4e5f-970b-bcce194cc73a.png)
+
+</details>
+
+<details>
+<summary>Lecture 4: Power planning</summary>
+
+### Power planning
+
+
+
 
   
   
