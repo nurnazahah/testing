@@ -337,5 +337,13 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
   
 ![image](https://user-images.githubusercontent.com/118953917/212942911-f3f8c138-8b65-4be0-917d-d591f6e443ca.png)
 
+* The physical view of logic gates will be placed into the floorplan 
+* We need to bind the netlist of the physical cells where the cells will have a real view of a box with a specific width and height
+* These boxes will be available in the library, which will be having the width and height of the cells, as well as other details such as delay or required information, as well as the flavor of the cells.
+* The arrangements in the floorplan is decided by taking into considerations of the connections of the physical cells i.e. where is the nearest locations between inputs and outputs and etc.
+* During placement stage, we must ensure that the area used for the black boxes and decap cells do not have any cells inserted that can cause overlapping. The placement needs to be timing conscious as well to not make the routing long.
+  
+
+
 
   
