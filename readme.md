@@ -445,7 +445,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 **Cell design flow**
   
-![image](https://user-images.githubusercontent.com/118953917/213095830-bba2556c-74f9-4d0c-8bb1-d12362931b35.png)
+![image](https://user-images.githubusercontent.com/118953917/213101525-135764db-db69-42f9-ab02-a49d2d282666.png)
   
 ![image](https://user-images.githubusercontent.com/118953917/213084248-7061eaf8-bf49-41e9-bd60-ac8d2601e6e8.png)
 
@@ -488,6 +488,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 </details>
 
 <details>
-  <summary>Lecture 3:  Layout design step</summary>
+  <summary>Lecture 4:  Typical characterization flow</summary>
  
-###  Layout design step
+###  Typical characterization flow
+
