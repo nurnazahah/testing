@@ -402,3 +402,16 @@ Steps in mcharacterizing and modelling
   <summary>Lab 1:  Congestion aware placement using RePlAce</summary>
  
 ###  Congestion aware placement using RePlAce
+
+* Global placement: assigns general locations to movable objects. It used to reduce wire length
+* Detailed placement: refines object locations to legal cell sites and enforces non-overlapping constraints 
+* The detailed locations enable more accurate estimations of the circuit delay for the purpose of timing optimization
+* Legalization is an essential step where the overlaps between gates/macros must be removed
+
+> In openLANE
+```
+run_placement
+```
+  
+* Half Parameter Wire Length (HPWL) is applied to reduce wire length
+  
