@@ -515,12 +515,31 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Timing characterization
   
-* Slew low rise define the lowest state of the power supply which 0 volts.Typical value is about 20% from bottom power supply ​
+* Slew low rise: defines the lowest state (0V) of the power supply which is closer to zero. Typical value is about 20% from bottom power supply. But this is not enough to calculate the slew, we need the slew high rise threshold as well.
+* Slew high rise: typical value is about 20% from the top of power supply. To calculate the amount of slew, take the timing difference among those 2 variables
   
-  Slew  high rise ​
+![image](https://user-images.githubusercontent.com/118953917/213112154-13441ad3-95ca-48d0-b8f2-90150fa96b32.png)
 
-To calculate take the 20% from bottom and top and we can get the slew​
+* Similar definition applies for the falling waveform
+* We also have thresholds for the delays 
+* In rise threshold: refers to the best defined point to calculate the delay.
+* Out rise threshold: at 50% mark, if we want to calculate the delay of the cell, we need to take the time period between the 2 points.
+* Similarly, for the fall waveform, the definition applies the same as rise waveform but in the form of fall waveform
+  
+![image](https://user-images.githubusercontent.com/118953917/213123100-b828d238-5216-456a-abf5-34570b8a32c7.png)
 
-​
+</details>
+
+<details>
+  <summary>Lecture 2: Propagation delay and transition time</summary>
+ 
+### Propagation delay and transition time
+
+**Formula to calculate propagation delay**
   
+* The propagation delay should be a positive value, it should not be a negative value 
+* Therefore, the threshold point need to be set properly 
   
+![image](https://user-images.githubusercontent.com/118953917/213126123-23f1bc34-6798-4721-b3e6-5dcddcbc998b.png)
+
+
