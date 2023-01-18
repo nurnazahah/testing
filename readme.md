@@ -445,8 +445,8 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 **Cell design flow**
   
-![image](https://user-images.githubusercontent.com/118953917/213084219-4aeb9e8c-2dc0-46ce-91d4-aa3a7c557d9f.png)
-
+![image](https://user-images.githubusercontent.com/118953917/213095830-bba2556c-74f9-4d0c-8bb1-d12362931b35.png)
+  
 ![image](https://user-images.githubusercontent.com/118953917/213084248-7061eaf8-bf49-41e9-bd60-ac8d2601e6e8.png)
 
 </details>
@@ -459,6 +459,19 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 **Cont. Inputs for cell design flow**
   
 * Low the drive strength makes it very difficult to drive the huge/long wire
-* Library developer will design different flavour of cells based on the supply voltage that is being provided by the top-level as well as taking care of its noise margin 
 * Drive strength would decides the cell rate while the cell height decides the separation among the power and ground grid
-* Library developer 
+* Library developer will design different flavour of cells based on the supply voltage that is being provided by the top-level as well as taking care of its noise margin 
+  
+![image](https://user-images.githubusercontent.com/118953917/213095296-0c4638b8-aeeb-43f5-9936-c784db2f222a.png)
+  
+**Circuit design step**
+
+![image](https://user-images.githubusercontent.com/118953917/213097102-e5c1145c-7fbe-4851-8b07-25170cf06a0b.png)
+
+</details>
+
+<details>
+  <summary>Lecture 3:  Layout design step</summary>
+ 
+###  Layout design step
+
