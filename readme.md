@@ -433,5 +433,30 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ###  Inputs for cell design flow
   
-
+* Combinational logics are referred as standard cells and those standard cells will be designed, characterized and modelled in a library
+* Library is the place where we keep all the standard cells or any other collaterals
   
+![image](https://user-images.githubusercontent.com/118953917/213081403-f3240e5f-44bb-4861-beb6-e1d8dde3e15f.png)
+
+* A library got different functionalities with different sizes and flavours 
+* It also contains standard cells with different threshold voltage
+  
+![image](https://user-images.githubusercontent.com/118953917/213081939-12bcef17-4c98-437d-ba93-dd44d7202990.png)
+
+**Cell design flow**
+  
+![image](https://user-images.githubusercontent.com/118953917/213084219-4aeb9e8c-2dc0-46ce-91d4-aa3a7c557d9f.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213084248-7061eaf8-bf49-41e9-bd60-ac8d2601e6e8.png)
+
+</details>
+
+<details>
+  <summary>Lecture 2:  Circuit design step</summary>
+ 
+###  Circuit design step
+
+**Cont. Inputs for cell design flow**
+  
+* Low the drive strength makes it very difficult to drive the huge wire
+* Library developer will design different flavour of cells based on the supply voltage that is being provided by the top-level as well as taking care of its noise margin 
