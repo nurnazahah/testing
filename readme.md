@@ -354,15 +354,11 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
   
 **Optimizing placement**
   
-* Optimizing is done by some estimations, let's take FF1 to Din2 in the figure as example. 
+* Optimizing is done by some estimations, let's take Din2 to FF1 in the figure as example. 
+* As we can see, the route across Din2 to FF1 would make the data slew (long distance) where higher capacitance makes the amount needed to charge the capacitance becomes high, resulting in worst slew (transition).
 * Before routing, we estimate the wire length and capacitance where based on that, the repeaters are inserted.
-* In this case, the buffer is added and will act as repeaters that recondition the signals and making new signals or replicate the signal. Basically, more repeaters making it to lose the data. 
-* Buffers are added due to its signal transmission length. For example, the length between FF1 and Din4 is to high, so we need the repeaters to recondition the signal and send it to FF1.
-* From FF1 to 1, the length is good enough but since we will going across the other FF and buffer, therefore we need to make it on separated layer. 
-* From 1 to 2 is a huge gap. Hence, we consider to put the buffer.
-* The more the gate and FF closed to each other, the lower delay.
-* Moreover, we need to do timing checking to see whether our placement acceptable/not.
-  
+* In this case, the buffer is added (to lower the capacitance) and will act as repeaters that recondition the signals and making new signals or replicate the signal woth no distortion. However, more repeaters would results in loosing some data. 
+
 ![image](https://user-images.githubusercontent.com/118953917/213071175-5785104a-479a-4e24-955f-14a7c9a89c61.png)
 
 </details>
@@ -372,4 +368,18 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
  
 ###  Final placement optimization
 
+* Buffers are added due to its signal transmission length. For example, the length between FF1 and Din4 is to high, so we need the repeaters to recondition the signal and send it to FF1.
+* From FF1 to 1, the length is good enough but since we will going across the other FF and buffer, therefore we need to make it on separated layer. 
+* From 1 to 2 is a huge gap. Hence, we consider to put the buffer.
+* The more the gate and FF closed to each other, the lower delay.
+* Moreover, we need to do timing setup checking to see whether our placement acceptable/not as well as identifying the specifications have been met/not.
+
+![image](https://user-images.githubusercontent.com/118953917/213074569-4be5098a-798d-438d-b07a-de873c8d3c1c.png)
+
+</details>
+
+<details>
+  <summary>Lecture 4:  Need for libraries and characterization</summary>
+ 
+###  Need for libraries and characterization
 
