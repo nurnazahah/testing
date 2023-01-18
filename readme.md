@@ -535,7 +535,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Propagation delay and transition time
 
-**Formula to calculate propagation delay**
+**Propagation delay**
   
 * The propagation delay should be a positive value, it should not be a negative value 
 * Therefore, the threshold point need to be set properly 
@@ -544,9 +544,13 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 * Another example if by chance the threshold point moves, and the output comes before the input, the delay will become a negative value, which should not be seen, and would be a result of poor choice of threshold point.
 * Referring to the example below, the wire delay seems to be high for the input, resulting in huge slew (red line). This might be because the two inverters are being placed far apart from each other
-* Eventhough the threshold points have been selected properly, but the cell is not designed properly which resulting in a huge delay causing a negative delay
+* Eventhough the threshold points have been selected properly, it still gives a negative delay, so the design of the circuit is also very important
   
 ![image](https://user-images.githubusercontent.com/118953917/213128155-72855135-df84-49a6-8c34-26c26604ef8d.png)
 
+**Transition time**
+  
+![image](https://user-images.githubusercontent.com/118953917/213130139-157ef571-d597-47bd-abae-66ff4739a7dc.png)
 
+  </details>
 
