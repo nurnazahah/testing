@@ -458,5 +458,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 **Cont. Inputs for cell design flow**
   
-* Low the drive strength makes it very difficult to drive the huge wire
+* Low the drive strength makes it very difficult to drive the huge/long wire
 * Library developer will design different flavour of cells based on the supply voltage that is being provided by the top-level as well as taking care of its noise margin 
+* Drive strength would decides the cell rate while the cell height decides the separation among the power and ground grid
+* Library developer 
