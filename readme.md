@@ -315,10 +315,10 @@ vim picorv32a.floorplan.def
 magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/212940392-d04ac41d-6046-48f9-abe5-68e09b5191ad.png)
-
-![image](https://user-images.githubusercontent.com/118953917/212940467-0a27b8ff-effe-467e-b011-8b85684b9dda.png)
-
+![image](https://user-images.githubusercontent.com/118953917/213065626-ef4a7930-e0ba-45e2-a747-005fcb1677f4.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/213065684-9726f790-fd91-44d4-b1b3-96d2167c6e5c.png)
+  
 </details>
 
 ### Library Binding and Placement
