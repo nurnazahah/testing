@@ -475,3 +475,19 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ###  Layout design step
 
+* After getting pmos and nmos network graphy diagram, we need to obtain Euler's path where it is a path that is being traced only once
+* Once Euler's path has been obtained, we need to draw a stick diagram of it 
+* The drawn stick diagram is then needs to be converted into a proper layout based upon the rules mentioned in pdks and design characterization in previous stages
+* The completed layout design will then be inserted into the tool (i.e. magic open source tool) 
+* The next step of the design flow is to extract the parasitic (resistance & capacitance of the element) of the layout and characterize them in terms of timing 
+* The output of the design would be in terms of GDSII, LEF, and extracted spice netlist
+* The final step is we need to characterize the design to get the timing noise, power .libs and its function
+  
+![image](https://user-images.githubusercontent.com/118953917/213101299-d937018e-178f-4bfc-92b3-de199c3baf55.png)
+
+</details>
+
+<details>
+  <summary>Lecture 3:  Layout design step</summary>
+ 
+###  Layout design step
