@@ -413,11 +413,15 @@ Steps in mcharacterizing and modelling
 run_placement
 ```
   
+* Half Parameter Wire Length (HPWL) is applied to reduce wire length
+  
+![image](https://user-images.githubusercontent.com/118953917/213079569-86f77657-1e09-4c97-ba7d-c29b88533f67.png)
+  
 > In terminal
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/placement
 magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
   
-* Half Parameter Wire Length (HPWL) is applied to reduce wire length
+
   
