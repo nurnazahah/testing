@@ -381,5 +381,24 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
 <details>
   <summary>Lecture 4:  Need for libraries and characterization</summary>
  
-###  Need for libraries and characterization
+###  Libraries characterization and modelling
 
+**Part 1: Concepts and theory - NLDM, CCS timing, power and noise characterization**
+  
+Steps in mcharacterizing and modelling 
+  
+![image](https://user-images.githubusercontent.com/118953917/213076122-994fd13f-0d90-4e4c-9913-cbaa9ea1e5df.png)
+
+* Common thing across all stages "GATES or Cells"
+* Those things in the library must be categorized as library and making sure that the tools will understand what are the gates/cells are 
+* To make the tool understands, we have to design, chategorize and model each gate/cell in such a way that the tool understand using EDA tool
+  
+![image](https://user-images.githubusercontent.com/118953917/213076726-0596bace-b53c-449b-a4b7-20c8dc8a2fac.png)
+
+  
+</details>
+
+<details>
+  <summary>Lab 1:  Congestion aware placement using RePlAce</summary>
+ 
+###  Congestion aware placement using RePlAce
