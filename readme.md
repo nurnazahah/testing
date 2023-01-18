@@ -312,7 +312,7 @@ vim picorv32a.floorplan.def
 ### Review floorplan layout in Magic
   
 ```
-magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/213065626-ef4a7930-e0ba-45e2-a747-005fcb1677f4.png)
@@ -411,6 +411,12 @@ Steps in mcharacterizing and modelling
 > In openLANE
 ```
 run_placement
+```
+  
+> In terminal
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/placement
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
   
 * Half Parameter Wire Length (HPWL) is applied to reduce wire length
