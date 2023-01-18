@@ -351,7 +351,25 @@ magic -T openlane_working_dir/pdks/sky130A/libs.tech lef read ../../tmp/merged.l
   <summary>Lecture 2:  Optimize placement using estimated wire-length and capacitance</summary>
  
 ###  Optimize placement using estimated wire-length and capacitance
-
-
-
   
+**Optimizing placement**
+  
+* Optimizing is done by some estimations, let's take FF1 to Din2 in the figure as example. 
+* Before routing, we estimate the wire length and capacitance where based on that, the repeaters are inserted.
+* In this case, the buffer is added and will act as repeaters that recondition the signals and making new signals or replicate the signal. Basically, more repeaters making it to lose the data. 
+* Buffers are added due to its signal transmission length. For example, the length between FF1 and Din4 is to high, so we need the repeaters to recondition the signal and send it to FF1.
+* From FF1 to 1, the length is good enough but since we will going across the other FF and buffer, therefore we need to make it on separated layer. 
+* From 1 to 2 is a huge gap. Hence, we consider to put the buffer.
+* The more the gate and FF closed to each other, the lower delay.
+* Moreover, we need to do timing checking to see whether our placement acceptable/not.
+  
+![image](https://user-images.githubusercontent.com/118953917/213071175-5785104a-479a-4e24-955f-14a7c9a89c61.png)
+
+</details>
+
+<details>
+  <summary>Lecture 3:  Final placement optimization</summary>
+ 
+###  Final placement optimization
+
+
