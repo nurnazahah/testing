@@ -542,4 +542,11 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   
 ![image](https://user-images.githubusercontent.com/118953917/213126123-23f1bc34-6798-4721-b3e6-5dcddcbc998b.png)
 
+* Another example if by chance the threshold point moves, and the output comes before the input, the delay will become a negative value, which should not be seen, and would be a result of poor choice of threshold point.
+* Referring to the example below, the wire delay seems to be high for the input, resulting in huge slew (red line). This might be because the two inverters are being placed far apart from each other
+* Eventhough the threshold points have been selected properly, but the cell is not designed properly which resulting in a huge delay causing a negative delay
+  
+![image](https://user-images.githubusercontent.com/118953917/213128155-72855135-df84-49a6-8c34-26c26604ef8d.png)
+
+
 
