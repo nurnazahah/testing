@@ -513,8 +513,14 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 <details>
   <summary>Lecture 1: Timing threshold definitions</summary>
  
-### Timing threshold definitions
+### Timing characterization
   
+* Slew low rise define the lowest state of the power supply which 0 volts.Typical value is about 20% from bottom power supply ​
+  
+  Slew  high rise ​
 
+To calculate take the 20% from bottom and top and we can get the slew​
+
+​
   
   
