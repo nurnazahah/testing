@@ -102,8 +102,8 @@ Assume the same for flip flop
 * Since those sections of the boxes are now invisible to the top netlist that we're implemented, we will now separate the black boxes as two different IP's or modules
 * The advantages of separating those blocks are it is more convenient to use them for multiple times when needed with different users where they will be implemented separately based upon their functionalities. Also, those blocks can be reused separately for each block for multiple times when needed.
   
-![image](https://user-images.githubusercontent.com/118953917/212806088-5256765d-6e0c-4b12-bce6-e37f80f5bd87.png)
-
+![image](https://user-images.githubusercontent.com/118953917/213130615-55d6489f-e256-4c62-8a24-4d77c20eb3c5.png)
+  
 * Similarly, there are any other IP's that are available, i.e.;
   + Memory
   + Clock-gating cell
