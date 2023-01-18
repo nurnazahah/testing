@@ -423,5 +423,15 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-
 magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/213080197-b9144a7c-4ab5-4c3e-bc8c-76165896c4b5.png)
+
+</details>
+
+### Cell design and characterization flows
+<details>
+  <summary>Lecture 1:  Inputs for cell design flow</summary>
+ 
+###  Inputs for cell design flow
+  
 
   
