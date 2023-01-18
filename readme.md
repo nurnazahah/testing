@@ -492,3 +492,29 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ###  Typical characterization flow
 
+**Steps in characterizing the design**
+  
+1. Review model file
+2. Review extracted SPICE netlist 
+3. Define the behavior of the buffers
+4. Review sub-circuit of inverters
+5. Attach necessary power sources
+6. Apply the stimulus
+7. Provide necessary output capacitance
+8. Provide necessary command (using trans/dc simulations)
+
+* All the steps will be set as one configuration file to a characterization software called GUNA and it will generate the desired timing, noise, power .libs and function 
+  
+![image](https://user-images.githubusercontent.com/118953917/213107389-c4a98043-adda-44d7-ad9a-7798396dee3c.png)
+
+</details>
+
+### General timing characterization parameters
+<details>
+  <summary>Lecture 1: Timing threshold definitions</summary>
+ 
+### Timing threshold definitions
+  
+
+  
+  
