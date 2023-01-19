@@ -68,9 +68,36 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 **Steps in executing the circuit**
   
-1. Change directory to the desired path
-2. Source the circuit 
-3. Execute the circuit
-4. Set the plot and choose plot that is currently presenting in the design (dc1)
-5. Display the voltages 
-6. Plot the graph and observe the waveform (out vs in)
+1. Change directory to the desired path, source the circuit, and execute the circuit
+2. Set the plot and choose plot that is currently presenting in the design (dc1)
+3. Display the voltages 
+4. Plot the graph and observe the waveform (out vs in)
+
+![image](https://user-images.githubusercontent.com/118953917/213486523-2280c11c-2426-4e06-ac90-303f6b833351.png)
+
+**Output waveform obtained**
+  
+* Voltage transfer characteristic
+* The waveform is kind of shifted towards the left 
+  
+![image](https://user-images.githubusercontent.com/118953917/213487543-8db2eebc-b3a9-4e46-bd25-683595dcbc7b.png)
+
+**Shifting the value of nmos width and ratio of pmos transistor**
+  
+* The width of pmos has increased for about 2.5 times
+  
+![image](https://user-images.githubusercontent.com/118953917/213490254-cf4ee7d1-996f-466c-abe6-0feab9f451f1.png)
+
+**Generated output waveform**
+  
+* The output is located at the middle
+  
+![image](https://user-images.githubusercontent.com/118953917/213490384-71909e03-0399-45d7-833e-10d79eb7f7e1.png)
+
+</details>
+
+<details>
+  <summary>Theory 3:  Switching Threshold Vm</summary>
+ 
+### Switching Threshold Vm
+  
