@@ -58,6 +58,6 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   
 ![image](https://user-images.githubusercontent.com/118953917/213475389-6c5d85a3-e150-4348-9bd8-9a51b57c3208.png)
 
-![image](https://user-images.githubusercontent.com/118953917/213475487-c69031e6-aed9-4d66-afd2-e210005b88ca.png)
-
+![image](https://user-images.githubusercontent.com/118953917/213478031-3d6ccaa9-58ac-4260-93e0-2393110019db.png)
+  
 ![image](https://user-images.githubusercontent.com/118953917/213477736-bb9326c4-96f7-403d-be5c-df0412e91974.png)
