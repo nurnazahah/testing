@@ -43,3 +43,21 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 * Identifying the nodes
 * Naming the nodes
   
+![image](https://user-images.githubusercontent.com/118953917/213471549-629a7714-ffd7-4440-b422-43a05f5b131a.png)
+  
+**Writing SPICE deck**
+  
+![image](https://user-images.githubusercontent.com/118953917/213471621-710c2e2b-e994-43b0-a095-4547f54bfc17.png)
+
+</details>
+
+<details>
+  <summary>Theory 2:  SPICE simulation lab for CMOS inverter</summary>
+ 
+### SPICE simulation lab for CMOS inverter
+  
+![image](https://user-images.githubusercontent.com/118953917/213475389-6c5d85a3-e150-4348-9bd8-9a51b57c3208.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213475487-c69031e6-aed9-4d66-afd2-e210005b88ca.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213477736-bb9326c4-96f7-403d-be5c-df0412e91974.png)
