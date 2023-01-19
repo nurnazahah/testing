@@ -61,3 +61,16 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 ![image](https://user-images.githubusercontent.com/118953917/213478263-a4d6c4eb-8289-426e-a046-653c4c728d08.png)
   
 ![image](https://user-images.githubusercontent.com/118953917/213477736-bb9326c4-96f7-403d-be5c-df0412e91974.png)
+
+**Overview of the model file**
+  
+![image](https://user-images.githubusercontent.com/118953917/213483508-dfe6602e-9d46-4b16-964b-2d06064a9b6e.png)
+
+**Steps in executing the circuit**
+  
+1. Change directory to the desired path
+2. Source the circuit 
+3. Execute the circuit
+4. Set the plot and choose plot that is currently presenting in the design (dc1)
+5. Display the voltages 
+6. Plot the graph and observe the waveform (out vs in)
