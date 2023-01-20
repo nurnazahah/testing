@@ -179,6 +179,10 @@ magic -T sky130A.tech sky130_inv.mag
 2. Creating active region for transistors
 3. N-well and P-well formation
 4. Formation of gate
+5. Lightly doped drain (LDD) formation
+6. Source and drain formation
+7. Local interconnect formation
+8. Higher level metal formation
   
 **Selecting a substrate**
   
@@ -287,6 +291,40 @@ magic -T sky130A.tech sky130_inv.mag
 1. Control and maintain the doping concentrations of the substrate by adding Mask4 
 2. The rest of the process is still the same as discussed before. Hence, it will be repeated steps for the rest of the process.
   * Doping process using Boron with low energy required which is only around 60eV where it is not high enough since we only need the surface 
+  * Similar process needs to be done fro pmos too
   
+![image](https://user-images.githubusercontent.com/118953917/213704270-986aa838-8a7c-4d58-929d-ba8efa764a1d.png)
 
-minit 2:50 gambar 33
+3. Add Mask5 on P-well and repeat the same steps for pmos. We also need to control the threshold voltage of pmos and undergo the rest of the process for pmos
+4. Arsenic/Phosphorus can be used in diffusing into the substrate with maintaining the low energy 
+  
+![image](https://user-images.githubusercontent.com/118953917/213706127-010c6cc9-687d-4e86-bbea-1092aea41b19.png)
+
+5. Fix the oxide since there is a lot of damages from implantation process. Fixing process can be undergo by removing the oxide using hydrofluoric (HF) acid
+  * Once we fixed that, the oxide will re-grown and giving a high quality oxide to the substrate
+6. Deposit a polysilicon layer using deposition technique and it will grow a thick polysilicon where the gate area is supposed to have a low resistance
+7. Since the gate has a low resistance, we need to dope it with some more impurities i.e. Phosphorus & Arsenic and diffuse it on a complete polysilicon layer to have a low sheet resistance, as well as low gate resistance
+8. Use Mask6 as a gate of polysilicon mask 
+  
+![image](https://user-images.githubusercontent.com/118953917/213713052-5491a8d7-9385-4fda-b7ff-780df015fcef.png)
+  
+**Top view of Mask6**
+  
+![image](https://user-images.githubusercontent.com/118953917/213713554-091b184e-3a83-4c7a-86e7-7db2c7af790d.png)
+
+9. Remove Mask6 and the remaining areas of the polysilicon which is outside of the photoresist can be etched out of it
+10. Polysilicon gate is now formed
+  
+![image](https://user-images.githubusercontent.com/118953917/213714902-42fc4015-c534-436e-a4be-dcc2b189f679.png)
+  
+11. Remove the photoresist and gate has been formed
+  
+![image](https://user-images.githubusercontent.com/118953917/213715020-4cda3c87-8341-42dd-be25-35c9b79c5db4.png)
+
+</details>
+
+<details>
+  <summary>Theory 4:  Lightly doped drain (LDD) formation</summary>
+ 
+### Lightly doped drain (LDD) formation
+  
