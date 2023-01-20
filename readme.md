@@ -374,7 +374,7 @@ magic -T sky130A.tech sky130_inv.mag
 * Do the same way as pmos as well
 4. Add Mask10 and do the process og photolithography 
 5. Do ion implantation process using Boron with 50oeV of energy 
-  * * It will obtain P+ P- N
+  * It will obtain P+ P- N
 6. Place into high temperature furnace to penetrate more into N-well and P-well and the process will do the high temperature annealing
   * Source for pmos and nmos are now obtained
 
