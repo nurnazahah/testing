@@ -178,6 +178,7 @@ magic -T sky130A.tech sky130_inv.mag
 1. Selecting a substrate
 2. Creating active region for transistors
 3. N-well and P-well formation
+4. Formation of gate
   
 **Selecting a substrate**
   
@@ -257,3 +258,19 @@ magic -T sky130A.tech sky130_inv.mag
 
 ![image](https://user-images.githubusercontent.com/118953917/213637152-6a4cb8fc-217f-4b0f-8234-5e5d442c3775.png)
 
+5. Once the complete N-well and P-well have been formed, we need to diffuse the well so that it will occupies at least the half of the substrate area. Therefore, we have a clear room available for the pmos and nmos fabrication.
+6. Place the complete substrate with N-well and P-well into a high temperature furnace (Driving furnace) for about 100°C for 4-6 hours
+  * That will form a drive in/diffuse Boron and Phosphorus into the substrate, forming a clear well
+  * N-well creates pmos transistor while P-well creates nmos transistor
+  
+* Explaination above refers to the ways on creating the pockets as mentioned in the previous session
+  
+![image](https://user-images.githubusercontent.com/118953917/213650065-57864b9b-ac52-4849-bc9c-83bc6da3f789.png)
+
+</details>
+
+<details>
+  <summary>Theory 3:  Formation of gate terminal</summary>
+ 
+### Formation of gate terminal
+  
