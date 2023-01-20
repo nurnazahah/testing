@@ -225,3 +225,32 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Formation of N-well and P-well
   
+**N-well and P-well formation steps**
+  
+* N-well will be used for pmos application while P-well will be used for nmos application
+* We need to protect one area while fabricating the other area
+  
+1. Deposit a layer of photoresist and define which layer should we protect
+  * Use Mask2 to protect the desired area while we fabricating the other area
+  
+![image](https://user-images.githubusercontent.com/118953917/213631953-0a866e31-c03b-4a0d-bc9c-ceb91742ef31.png)
+  
+**Overview of Mask 2 (Top view)**
+  
+![image](https://user-images.githubusercontent.com/118953917/213631914-97ed5958-4bc0-4393-8a21-a5a53b76d286.png)
+
+2. The photoresist will be exposed by the UV light, in which only the exposed area will be reacted by the UV light while the protected area would remain the same and did not react to the UV light
+3. The exposed area will then be washed out from the substrate
+  
+![image](https://user-images.githubusercontent.com/118953917/213633496-b1bfc5ca-1ea7-443d-a8b8-33cd3e4bf1cd.png)
+
+4. The mask is then be removed and create a p-well by adding Boron (p-type material) and it will be diffused in the substrate through the oxide layer
+  * This process is using ion implantation process with a very high energy of around 200keV
+  * High energy is needed, so that Boron can pass through the substrate
+  * This will produce P-well 
+  
+![image](https://user-images.githubusercontent.com/118953917/213635240-c5ae2dde-75ba-42c0-add6-ea60e8b7ea73.png)
+
+* The formation of N-well will undergoing the same process as P-well, but N-well uses Phosphorus (n-type material) to implant/diffuse inside the substrate with around 400keV
+* Energy used in Phosphorus is quite high since Phosphorus is heavier than Boron
+* After all steps are done, N-well and P-well have been formed
