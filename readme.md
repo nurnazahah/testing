@@ -275,4 +275,14 @@ magic -T sky130A.tech sky130_inv.mag
 ### Formation of gate terminal
   
 * Formation of gate terminal is quite important since it will control the threshold voltage as well as turning on voltage for transistors
-* 
+
+**Quick refreshing on Circuit design and SPICE simulation**
+  
+* Fabrication is closely related to threshold voltage in which threshold voltage would decides the internal voltage of the gate, as well as deciding the functions of the gate
+  
+![image](https://user-images.githubusercontent.com/118953917/213654491-7b5181cb-ffd6-47d8-ab71-d1c5ba2d75d4.png)
+
+**Formation of gate terminal steps**
+  
+1. Control and maintain the doping concentrations of the substrate by adding Mask4 
+2. The rest of the process is still the same as discussed before. hence, it will be repeated steps for the rest of the process.
