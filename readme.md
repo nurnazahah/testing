@@ -274,3 +274,5 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Formation of gate terminal
   
+* Formation of gate terminal is quite important since it will control the threshold voltage as well as turning on voltage for transistors
+* 
