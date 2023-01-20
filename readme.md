@@ -340,3 +340,27 @@ magic -T sky130A.tech sky130_inv.mag
   
 **Ways to generate LDD structure**
   
+1. Based on the created gate from the previous session, the step started by adding Mask7 to protect the desired area and the rest steps of photolithography is remain the same 
+2. However, to fabricate the nmos at P-well, we need to do the ion implantation process by doping it with Phosphorus (N-type material) 
+  * N- -> lightly doped channel is formed
+  
+![image](https://user-images.githubusercontent.com/118953917/213725083-cd59e33f-ebce-4b90-9e1c-6fdc30af7adf.png)
+
+3. Creating Mask8 and repeat the rest of the steps 
+4. Ion implantation takes place in the next process by doping Boron 
+5. Create some spaces around gate to protect further source and drain formation
+  
+![image](https://user-images.githubusercontent.com/118953917/213726675-d2af85ef-22c8-4712-b01f-2768556b914a.png)
+
+6. Undergo plasma anisotropic etching 
+  * The etching will create a side-wall spacers (green colour at both LHS & RHS of the gate in the figure)
+
+![image](https://user-images.githubusercontent.com/118953917/213728268-5c93239c-ead4-42b3-83f9-68139b844841.png)
+
+</details> 
+
+<details>
+  <summary>Theory 5:  Source and drain formation</summary>
+ 
+### Source and drain formation
+
