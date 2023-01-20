@@ -285,4 +285,7 @@ magic -T sky130A.tech sky130_inv.mag
 **Formation of gate terminal steps**
   
 1. Control and maintain the doping concentrations of the substrate by adding Mask4 
-2. The rest of the process is still the same as discussed before. hence, it will be repeated steps for the rest of the process.
+2. The rest of the process is still the same as discussed before. Hence, it will be repeated steps for the rest of the process.
+  * Doping process using Boron with low energy required which is only around 60eV where it is not high enough since we only need the surface 
+  
+
