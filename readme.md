@@ -175,6 +175,26 @@ magic -T sky130A.tech sky130_inv.mag
   
 **16-mask CMOS process**
   
+1. Selecting a substrate
+2. Creating active region for transistors
+  
 **Selecting a substrate**
   
 * Doping: the process of adding impurities to intrinsic semiconductors to alter their properties
+* Common type of substrate is P-type substrate and it is always be used in smartphone, and etc.
+* The doping level is used to fabricate nmos and pmos as well as it will be maintaining low 
+  
+![image](https://user-images.githubusercontent.com/118953917/213614279-acf4cd99-123b-45de-9b82-55ee21ebe551.png)
+
+**Creating active region for transistors**
+  
+* Creating active region of transistors by creating pockets
+  
+1. Create isolation between each pocket in insulator (by growing the silicon dioxide)
+2. Add in/deposit a layer of silicon nitrate onto a silicon dioxide
+3. Define the region to create the pocket by depositing a layer of photoresist (film to do the process that will define all the regions)
+4. Photoresist process will create a mask in fabrication and masking process will take place, where photoresist process will protect the layout from the chemical reaction if UV light is disposed
+5. The exposed region which is not getting protected from the photoresist will be washed out 
+  
+![image](https://user-images.githubusercontent.com/118953917/213616666-7260dcbe-2125-4fde-9e3a-cb17adb0a3d2.png)
+
