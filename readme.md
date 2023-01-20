@@ -90,7 +90,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 **Generated output waveform**
   
-* The output is located at the middle
+* The output is now has been centred
   
 ![image](https://user-images.githubusercontent.com/118953917/213490384-71909e03-0399-45d7-833e-10d79eb7f7e1.png)
 
@@ -100,4 +100,29 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   <summary>Theory 3:  Switching Threshold Vm</summary>
  
 ### Switching Threshold Vm
+  
+**Comparison of the output waveforms with switching voltages**
+  
+**Static behaviour evaluation**
+  
+* CMOS is a robust design, where the shape of both waveforms are the same eventhough they have different sizes
+* Referring to the output waveform shown below, the graph on the RHS is not shifted when the voltage shifting is applied due to the pmos width which is larger than the design on the LHS where the widths of nmos and pmos are the same
+* This happened is because the cmos circuit constructed is more robust
+* One of the parameters that defines the cmos inverter robustness is the switching threshold, Vm, which is the voltage when Vin = Vout
+  
+![image](https://user-images.githubusercontent.com/118953917/213602461-40136fc9-f951-45a8-8164-9107a541aeaa.png)
+
+* At interception, pmos and nmos are in saturation region (power ON)
+* There is high possibility of having leakage current (power to ground)
+* When the vin = vout, gate voltage = drain voltage, so the vgs will be very little compared to the threshold voltage
+* At the point where vgs = vds, the currens idsn and idsp will be the same, but it's just flowing in the opposite directions
+
+![image](https://user-images.githubusercontent.com/118953917/213603451-2c206e94-81c4-43c9-a4f7-e5a759c4b7c5.png)
+
+</details>
+
+<details>
+  <summary>Theory 4:  Static and dynamic simulation of CMOS inverter</summary>
+ 
+### Static and dynamic simulation of CMOS inverter
   
