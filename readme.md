@@ -328,3 +328,15 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Lightly doped drain (LDD) formation
   
+**Why theere are two dopping profiles?**
+
+* Hot electron effect
+  + Electric field, E=V/d
+  + High energy carriers will break Si-Si bonds (more electron and hole -> cannot control doping profile well)
+  + Crosses 3.2eV barrier between Si conduction band SiO2 conduction band, it will enter oxide layer and may causing a liberty issue
+  
+* Short channel effect
+  + For short channels, drain field will penetrates channel (making the gate difficults to control the current- source and drain)
+  
+**Ways to generate LDD structure**
+  
