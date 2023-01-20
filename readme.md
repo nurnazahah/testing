@@ -177,6 +177,7 @@ magic -T sky130A.tech sky130_inv.mag
   
 1. Selecting a substrate
 2. Creating active region for transistors
+3. N-well and P-well formation
   
 **Selecting a substrate**
   
@@ -198,3 +199,29 @@ magic -T sky130A.tech sky130_inv.mag
   
 ![image](https://user-images.githubusercontent.com/118953917/213616666-7260dcbe-2125-4fde-9e3a-cb17adb0a3d2.png)
 
+6. Mask is then removed and if there is chemical reaction or any kind of deposition/etching process, only the exposed region will be affected
+7. Silicon nitrate will be etched, only the area of underneath the protection layer will be protected while the remaining area will be etched off 
+
+![image](https://user-images.githubusercontent.com/118953917/213619651-496b1f88-1ee2-4bd9-982c-325342d002e0.png)
+  
+8. Photoresist will be removed since the silicon nitrate will act as a protection layer to grow the oxides of the other area
+9. Place the cell into a completely oxidation furnace (containing a very high temperature) to grow the oxides of the other layers 
+* From the figure, the protection layer protects the underneath region to grow while it helps the exposed region to grow in the oxidation furnace
+10. The exposed region has grown while the protected layer remain the same
+  * Grown process is called LOCOS (Local Oxidation of Silicon)
+  * Grown area is called as Bird's beak
+  
+![image](https://user-images.githubusercontent.com/118953917/213619681-a1b89a85-85c9-4b06-b48a-c307d3346fc5.png)
+  
+11. Etched out/remove the Silicon nitrate using phosphoric acid
+  * This is how we get the isolation region and the ways in protecting those two different transistors from communicating to each other 
+  
+![image](https://user-images.githubusercontent.com/118953917/213619715-bfedb329-5afb-4527-a0c0-092872825bb4.png)
+
+</details>
+
+<details>
+  <summary>Theory 2:  Formation of N-well and P-well</summary>
+ 
+### Formation of N-well and P-well
+  
