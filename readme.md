@@ -173,3 +173,8 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Create Active regions
   
+**16-mask CMOS process**
+  
+**Selecting a substrate**
+  
+* Doping: the process of adding impurities to intrinsic semiconductors to alter their properties
