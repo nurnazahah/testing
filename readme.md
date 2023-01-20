@@ -253,4 +253,7 @@ magic -T sky130A.tech sky130_inv.mag
 
 * The formation of N-well will undergoing the same process as P-well, but N-well uses Phosphorus (n-type material) to implant/diffuse inside the substrate with around 400keV
 * Energy used in Phosphorus is quite high since Phosphorus is heavier than Boron
-* After all steps are done, N-well and P-well have been formed
+* After all the steps are done, N-well and P-well have been formed
+
+![image](https://user-images.githubusercontent.com/118953917/213637152-6a4cb8fc-217f-4b0f-8234-5e5d442c3775.png)
+
