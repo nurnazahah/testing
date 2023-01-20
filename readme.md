@@ -151,3 +151,25 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Lab steps to git clone vsdstdcelldesign
 
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+cd vsdstdcelldesign/
+```
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir$ cd pdks/sky130A/libs.tech/magic/
+cp sky130A.tech /home/nur.nazahah.mohd.amri/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+magic -T sky130A.tech sky130_inv.mag
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/213611879-6ee86bc8-385a-47aa-9dd3-c964043f2bcc.png)
+
+</details>
+
+### Inception of Layout & CMOS fabrication process
+<details>
+  <summary>Theory 1:  Create Active regions</summary>
+ 
+### Create Active regions
+  
