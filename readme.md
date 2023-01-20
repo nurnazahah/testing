@@ -70,7 +70,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   
 1. Change directory to the desired path, source the circuit, and execute the circuit
 2. Set the plot and choose plot that is currently presenting in the design (dc1)
-3. Display the voltages 
+3. Display the vectors 
 4. Plot the graph and observe the waveform (out vs in)
 
 ![image](https://user-images.githubusercontent.com/118953917/213486523-2280c11c-2426-4e06-ac90-303f6b833351.png)
@@ -126,3 +126,28 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Static and dynamic simulation of CMOS inverter
   
+* Dynamic simulations usually being used to analyse the rise and fall delay as well as verifying how it varies with the switching threshold
+* To construct a dynamic simulation, pulse wave is inserted as an input and the simulation command will be a transient analysis
+  
+![image](https://user-images.githubusercontent.com/118953917/213609513-3b328a27-183d-4aaa-afec-2b2d73905252.png)
+
+**Setting the pulse wave and transient analysis**
+  
+![image](https://user-images.githubusercontent.com/118953917/213609592-d3faea15-b0cf-4317-890f-e1a7a6088700.png)
+
+* The rise delay calculation is based on the 50% point, the difference in time between when the falling input crosses 50% and the point where rising output crosses 50%
+* Vice versa for the fall delay calculation
+  
+![image](https://user-images.githubusercontent.com/118953917/213609830-9eeebf73-6172-4e3c-9fcd-487897930636.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213609852-06ebcda9-f143-4e29-a6bb-63a537b15e19.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213609871-28bd45bc-ba18-497b-afdc-6da319163b01.png)
+
+</details>
+
+<details>
+  <summary>Lab 2:  Lab steps to git clone vsdstdcelldesign</summary>
+ 
+### Lab steps to git clone vsdstdcelldesign
+
