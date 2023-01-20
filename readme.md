@@ -364,3 +364,27 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Source and drain formation
 
+1. Add a thin layer of screen oxide to avoid channel link entering the substrate 
+2. Add Mask9 and repeat the same steps of photolithography 
+3. Expose the structure with Arsenic with 75keV amount of energy 
+  * It will obtain N+ N- P
+  
+![image](https://user-images.githubusercontent.com/118953917/213731093-b1c96fd3-34dd-4301-b7bc-294b720cb732.png)
+
+* Do the same way as pmos as well
+4. Add Mask10 and do the process og photolithography 
+5. Do ion implantation process using Boron with 50oeV of energy 
+  * * It will obtain P+ P- N
+6. Place into high temperature furnace to penetrate more into N-well and P-well and the process will do the high temperature annealing
+  * Source for pmos and nmos are now obtained
+
+![image](https://user-images.githubusercontent.com/118953917/213733511-9497f7ad-9979-480b-9962-8ffaab50609c.png)
+
+</details>
+
+<details>
+  <summary>Theory 6: Local interconnect formation</summary>
+ 
+###  Local interconnect formation
+  
+
