@@ -289,3 +289,4 @@ magic -T sky130A.tech sky130_inv.mag
   * Doping process using Boron with low energy required which is only around 60eV where it is not high enough since we only need the surface 
   
 
+minit 2:50 gambar 33
