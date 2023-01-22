@@ -424,3 +424,36 @@ magic -T sky130A.tech sky130_inv.mag
 6. Deposit a blanket tungsten layer
   * Add in another layer because it gives good contact from bottom to the top
   
+![image](https://user-images.githubusercontent.com/118953917/213917335-7f889b82-7541-46bf-ae04-a03c812d0173.png)
+
+7. Polish again 
+8. Add Aluminium to allow contact hole to contact higher metal layer
+9. Add Mask13 and do the same lithography process
+10. Etch off the mask and plasma etch the aluminium
+  
+![image](https://user-images.githubusercontent.com/118953917/213917709-fb3548eb-1325-4482-8543-b02fb187d669.png)
+  
+11. Remove photoresist 
+  
+![image](https://user-images.githubusercontent.com/118953917/213917838-9ac5a89b-c5d6-4657-a631-a8405e196756.png)
+
+12. Deposit silicon dioxide and polish again
+13. Add Mask14 and repeat the same process
+14. Deposit titanium nitrate that acts as barrier
+15. Deposit tungsten to make the contacts 
+  
+![image](https://user-images.githubusercontent.com/118953917/213918111-fcf303f1-7c39-43c2-bbb3-d06acc452fe0.png)
+
+16. Add Mask15 as 3rd level interconnect using Aluminium (more thicker)
+17. Give protection layer for the chip
+18. Add Mask16 to contact outside of the chip
+19. Complete 16-mask cmos process 
+  
+![image](https://user-images.githubusercontent.com/118953917/213918441-0e32ff34-85eb-4df1-9683-e01aa4d0efd7.png)
+  
+</details>
+
+<details>
+  <summary>Lab 1: Lab introduction to Sky130 basic layers layout and LEF using inverter</summary>
+ 
+###  Lab introduction to Sky130 basic layers layout and LEF using inverter
