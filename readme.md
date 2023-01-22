@@ -498,3 +498,19 @@ extract all                       (To extract inverter)
 ext2spice cthresh 0 rthresh 0     (To extract parasitic capacitance)
 ext2spice
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/213925997-ec0229b0-19e2-41f2-86e2-7b7b966c4aa9.png)
+  
+```
+vim sky130_inv.spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/213926022-015a6979-c65f-48ee-8326-146e02030af0.png)
+
+</details>
+
+### Design library cell using Magic Layout and ngspice characterization
+<details>
+  <summary>Lab 1:  Lab steps to create final SPICE deck using Sky130 tech
+ 
+### Lab steps to create final SPICE deck using Sky130 tech
