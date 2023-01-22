@@ -411,4 +411,16 @@ magic -T sky130A.tech sky130_inv.mag
  
 ###  Higher level metal formation
   
+1. The surface topography is not suitable for metal contact since it is non-linear
+2. To fix that, thick layer of silicon dioxide with doped phosphorus/boron will be deposited 
+  * Phosphorus will act as a barrier protection against mobile sodium ion while boron will reduce the temperature and polish the surface and get a flat surface
+3. Add Mask12 and repeat the same lithography process
 
+![image](https://user-images.githubusercontent.com/118953917/213916572-41abc40a-3153-41e9-8774-adceee0d1bb2.png)
+
+4. Remove the mask and etch off the silicon dioxide 
+5. Remove the photoresist and deposit a thin layer of titanium nitrate
+  * Why titanium nitrate? -> because it is a good layer for silicon dioxide and a good layer for bottom interconnect and top interconnect
+6. Deposit a blanket tungsten layer
+  * Add in another layer because it gives good contact from bottom to the top
+  
