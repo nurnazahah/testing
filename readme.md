@@ -457,3 +457,28 @@ magic -T sky130A.tech sky130_inv.mag
   <summary>Lab 1: Lab introduction to Sky130 basic layers layout and LEF using inverter</summary>
  
 ###  Lab introduction to Sky130 basic layers layout and LEF using inverter
+
+![image](https://user-images.githubusercontent.com/118953917/213921975-ed37be3f-fffa-435b-a2f9-529c8c6f92d2.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213922647-2445aa12-00d4-490e-a4c7-e96bde258219.png)
+
+![image](https://user-images.githubusercontent.com/118953917/213922670-c4ebe92b-ef71-4f11-a75b-9f3a0e6b4e86.png)
+
+* press "s" three times to check connection
+
+Checking the connection
+  
+![image](https://user-images.githubusercontent.com/118953917/213923053-a281f38b-a8b9-45c6-8283-20ebacc0db87.png)
+
+* LEF only have metal layer, no information on logic path, only provide information on boundary/cell/length to place a cell
+  + Cell LEF: an abstract view of the cell and only gives information about PR boundary, pin position and metal layer information of the cell
+  
+*Note: more infromation on LEF, visit https://github.com/nickson-jose/vsdstdcelldesign#introduction-to-lef*
+  
+</details>
+
+<details>
+  <summary>Lab 2: Lab steps to create std cell layout and extract spice netlist</summary>
+ 
+###  Lab steps to create std cell layout and extract spice netlist
+  
