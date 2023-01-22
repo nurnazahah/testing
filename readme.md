@@ -482,3 +482,19 @@ Checking the connection
  
 ###  Lab steps to create std cell layout and extract spice netlist
   
+**Checking the error**
+  
+* Click DRC tab -> DRC find next error
+* Read the information regarding the violations through tkcon
+* To fix the violations, select the area (left click right click) and click the layer on the right
+* Ensure the final design needs to be DRC clean
+  
+![image](https://user-images.githubusercontent.com/118953917/213925286-6cd67f3d-a251-4fba-9da1-785f3a84942f.png)
+
+> In tkcon
+```
+pwd
+extract all                       (To extract inverter)
+ext2spice cthresh 0 rthresh 0     (To extract parasitic capacitance)
+ext2spice
+```
