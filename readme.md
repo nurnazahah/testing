@@ -387,4 +387,28 @@ magic -T sky130A.tech sky130_inv.mag
  
 ###  Local interconnect formation
   
+* Accessible for the user to control electrical characteristics for pmos and nmos
+  
+1. Remove the thin screen oxide to open up for drain, source and gate region for building contact 
+2. Etch the thin oxide in Hydrofluoric solution
+3. Deposit Titanium/wafer surface using sputtering
+  * Titanium: a metal with low resistivity
+4. Create a contact between Titanium that has been deposited by heating the wafer in Nitrogen ambient
+5. From the heating process, it formed a low resistance Titanium Silicon dioxide that can be used for local interconnect while Titanium nitrate is used for local communication
+  
+![image](https://user-images.githubusercontent.com/118953917/213915682-8bf1f3fc-5b16-475c-aaf0-26b61d8d37a8.png)
+
+6. Add Mask11 and repeat the same lithography process 
+7. Remove Mask11 and etch extra Titanium nitrate for RCA cleaning 
+8. Local Titanium nitrate interconnects were used to contact locally and bring up to top
+  
+![image](https://user-images.githubusercontent.com/118953917/213916144-672834dc-c60d-49c1-bed3-9317ad6ddc7a.png)
+
+</details>
+
+<details>
+  <summary>Theory 7: Higher level metal formation</summary>
+ 
+###  Higher level metal formation
+  
 
