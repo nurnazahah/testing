@@ -511,6 +511,7 @@ vim sky130_inv.spice
 
 ### Design library cell using Magic Layout and ngspice characterization
 <details>
-  <summary>Lab 1:  Lab steps to create final SPICE deck using Sky130 tech<summary>
+  <summary>Lab 1:  Lab steps to create final SPICE deck using Sky130 tech</summary>
  
 ### Lab steps to create final SPICE deck using Sky130 tech
+  
