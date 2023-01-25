@@ -652,7 +652,9 @@ magic -d XR     (To get a better graphic)
 </details>
 
 <details>
-  <summary>Lab 5:  Lab introduction to Sky130 pdk's and steps to download labs</summary>
+  <summary>Lab 5:  Lab introduction to Magic and steps to load Sky130 tech-rules</summary>
  
-### Lab introduction to Sky130 pdk's and steps to download labs<details>
+### Lab introduction to Magic and steps to load Sky130 tech-rules<details>
 
+* Visit https://skywater-pdk.readthedocs.io/en/main/ and https://github.com/google/skywater-pdk for SkyWater Open Source PDK documentation
+* Browse through https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#denmos for details on periphery rules
