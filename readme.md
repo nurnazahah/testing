@@ -666,8 +666,24 @@ drc why             (To cehck the violations on selected object)
 
 ![image](https://user-images.githubusercontent.com/118953917/214503187-7aa9be1b-643b-42d4-879a-d37728791b64.png)
 
-*Note: select any area, click scroller of the mouse, and select m3contact*
+*Note: select any area, click scroller of the mouse, and select m3contact using scroller*
   
+> In tkcon
 ```
-cif see VIA2      (
+cif see VIA2      (To create VIA within m3contact)
+what
+feed clear        (To clear and undo)
+snap int
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/214507834-889807e7-39be-4341-b3ca-bec8a5e2a54f.png)
+
+![image](https://user-images.githubusercontent.com/118953917/214507872-9f97f68a-9e78-4439-ac3b-1e25d0763521.png)
+
+</details>
+
+<details>
+  <summary>Lab 6:  Lab exercise to fix poly.9 error in Sky130 tech-file</summary>
+ 
+### Lab exercise to fix poly.9 error in Sky130 tech-file
+  
