@@ -709,3 +709,22 @@ vim sky130A.tech
   
 ![image](https://user-images.githubusercontent.com/118953917/214514790-6d5515c9-d81c-487b-87eb-f815cb05d4fb.png)
 
+> In tkcon
+```
+tech load sky130A.tech              (To reload tech file)
+drc check                           (To do drc checking)
+drc why                             
+```
+  
+* The spacing for poly has been resolved
+* However, further action for diffusion and tap need to take into consideration
+  
+![image](https://user-images.githubusercontent.com/118953917/214516083-dfdc79e0-1829-4875-8293-52f73835b5d4.png)
+
+</details>
+
+<details>
+  <summary>Lab 7:   Lab exercise to implement poly resistor spacing to diff and tap</summary>
+ 
+###  Lab exercise to implement poly resistor spacing to diff and tap
+  
