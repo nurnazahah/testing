@@ -552,4 +552,27 @@ vim sky130_inv.spice
 ngspice sky130_inv.spice
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/214475263-899099d1-a534-4a74-9a34-1c90bfd96ba0.png)
+
+```
+plot y vs time a
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214477246-bceefee3-dfdc-4cdb-95b1-0d1b31f76c9d.png)
+
+To characterize cell -> Find value of 4 parameters
+
+* Rise transition: time taken for the output waveform to rise from 20% of max value to 80% of max value Vdd
+* Fall transition: time taken for output to fall from 80% to 20%
+* Cell rise/fall delay/propagation delay: the propagation delay where the output is rising/falling (50%)
+
+**Rise transition output (take the red line)**
+  
+* From 20% to 80%
+  
+![image](https://user-images.githubusercontent.com/118953917/214482429-13890da8-34f9-40a9-bca7-fc4b1e3bb7d1.png)
+  
+**Fall transition input (take the blue line)**
+  
+![image](https://user-images.githubusercontent.com/118953917/214482452-3aa42a2d-1bff-4c94-946f-a9d8531ecd93.png)
 
