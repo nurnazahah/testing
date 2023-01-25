@@ -576,3 +576,20 @@ To characterize cell -> Find value of 4 parameters
   
 ![image](https://user-images.githubusercontent.com/118953917/214482452-3aa42a2d-1bff-4c94-946f-a9d8531ecd93.png)
 
+**Cell delay (propagation delay)**
+  
+**Rise delay**
+  
+![image](https://user-images.githubusercontent.com/118953917/214484564-1097bca0-0975-434e-8657-ff44c0b2751b.png)
+
+**Fall delay**
+  
+![image](https://user-images.githubusercontent.com/118953917/214484610-1604f444-4d7c-4c9f-bad3-a5eb191193cb.png)
+
+</details>
+
+<details>
+  <summary>Lab 3:  Lab introduction to Magic tool options and DRC rules</summary>
+ 
+### Lab introduction to Magic tool options and DRC rules
+
