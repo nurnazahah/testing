@@ -754,5 +754,23 @@ vim sky130A.tech
 vim sky130A.tech
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/214525020-362e3eb8-2168-4582-a297-76c2d94bddb8.png)
+![image](https://user-images.githubusercontent.com/118953917/214581933-eabbf7ce-abf3-4013-a01a-d5edc5891073.png)
 
+> In tkcon
+```
+load nwell.mag
+```
+  
+* Look through nwell.6
+* Deep nwell yellow stripes and nwell green dot pattern
+* The point of the rule is the edge of the dnwell needs to be covered with overlap all the way around by a ring of regular n-well 
+* The outside distance rule could be implemented by a simple surround of drc rule, but the inside distance cannot be captured with a simple edge type rule
+  
+![image](https://user-images.githubusercontent.com/118953917/214584329-1bf76471-dd0e-4abd-a8a4-f3e4615aacfd.png)
+
+> In tkcon
+```
+cif ostyle drc
+cif see dnwell_shrink
+cif see nwell_missing
+```
