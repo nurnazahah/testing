@@ -767,10 +767,22 @@ load nwell.mag
 * The outside distance rule could be implemented by a simple surround of drc rule, but the inside distance cannot be captured with a simple edge type rule
   
 ![image](https://user-images.githubusercontent.com/118953917/214584329-1bf76471-dd0e-4abd-a8a4-f3e4615aacfd.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/214585491-1222bf99-67b1-4c2e-9c3b-b78e09e5910c.png)
 
 > In tkcon
 ```
-cif ostyle drc
-cif see dnwell_shrink
-cif see nwell_missing
+cif ostyle drc              (Can only see layers for the cif layer style that is selected for the output)
+cif see dnwell_shrink       (To see the selected area)
+cif see nwell_missing       (Shows the area which gets flagged with the error)
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/214587247-f24d5af5-ce00-4948-aa1a-43c1a42f69ec.png)
+
+</details>
+
+<details>
+  <summary>Lab 9: Lab challenge to find missing or incorrect rules and fix them</summary>
+ 
+###  Lab challenge to find missing or incorrect rules and fix them
+  
