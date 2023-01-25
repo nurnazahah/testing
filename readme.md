@@ -619,4 +619,40 @@ To characterize cell -> Find value of 4 parameters
  
 ### Lab introduction to Sky130 pdk's and steps to download labs
   
+```
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz             (To import magic layout into the tool)
+tar xfz drc_tests.tgz                                                         (To extract the file)
+cd tar xfz drc_tests.tgz
+ls
+cat .magicrc                                                                  (To find tech file)
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214498051-f4340afb-45ab-4cd3-9319-240ba6bb4b5e.png)
+
+**Start-up script for Magic**
+  
+![image](https://user-images.githubusercontent.com/118953917/214498209-fba5a2b2-d34b-4ce0-ae85-53aebdb503f6.png)
+
+> To start magic
+```
+pwd             (Ensure we are in ~/Desktop/work/tools/drc_tests directory)
+magic -d XR     (To get a better graphic)
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214498854-c7b3bed9-ba52-45c9-ae0e-f2fb450c7874.png)
+
+> Select file --> open --> met3.mag
+  
+![image](https://user-images.githubusercontent.com/118953917/214499548-b49046aa-73be-4d49-b724-866978304776.png)
+
+*Note: select any object, press ";" to auto switch to another terminal 
+  
+![image](https://user-images.githubusercontent.com/118953917/214501193-a6c4752c-5730-48d9-8acf-b09ebb90ef18.png)
+
+</details>
+
+<details>
+  <summary>Lab 5:  Lab introduction to Sky130 pdk's and steps to download labs</summary>
+ 
+### Lab introduction to Sky130 pdk's and steps to download labs<details>
 
