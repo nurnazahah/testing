@@ -548,3 +548,8 @@ vim sky130_inv.spice
  
 ### Lab steps to characterize inverter using sky130 model files
 
+```
+ngspice sky130_inv.spice
+```
+  
+
