@@ -786,3 +786,26 @@ cif see nwell_missing       (Shows the area which gets flagged with the error)
  
 ###  Lab challenge to find missing or incorrect rules and fix them
   
+![image](https://user-images.githubusercontent.com/118953917/214591002-67fe0048-c247-48f0-aae1-d0cc5b69718a.png)
+
+**Modifying tech file**
+  
+```
+vim sky130A.tech
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214593633-ebb38d26-013a-4caa-b1ee-5f56afdc75a9.png)
+
+> In tkcon
+```
+tech load sky130A.tech             
+drc check                          
+drc style drc(full)
+drc check
+```
+  
+* still have error so copy the nwell and place the nsubstratencontact (blue x box) and the error goes away
+  
+![image](https://user-images.githubusercontent.com/118953917/214597158-bbf44c32-8789-464a-8594-080637b58950.png)
+  
+</details>
