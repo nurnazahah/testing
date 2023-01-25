@@ -731,3 +731,17 @@ drc why
 * Copy the resistor to two since there are several types of diffusion and tap
 
 *Note: green --> ndiffusion ; brown --> pdiffusion
+
+</details>
+
+<details>
+  <summary>Lab 8: Lab challenge exercise to describe DRC error as geometrical construct</summary>
+ 
+###  Lab challenge exercise to describe DRC error as geometrical construct
+  
+```
+vim sky130A.tech
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214525020-362e3eb8-2168-4582-a297-76c2d94bddb8.png)
+
