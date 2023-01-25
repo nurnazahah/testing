@@ -786,8 +786,8 @@ cif see nwell_missing       (Shows the area which gets flagged with the error)
  
 ###  Lab challenge to find missing or incorrect rules and fix them
   
-![image](https://user-images.githubusercontent.com/118953917/214591002-67fe0048-c247-48f0-aae1-d0cc5b69718a.png)
-
+![image](https://user-images.githubusercontent.com/118953917/214597510-69ce0860-40a8-4a0d-9d7d-0d8c38a3b23e.png)
+  
 **Modifying tech file**
   
 ```
