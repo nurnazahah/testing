@@ -695,3 +695,17 @@ load poly
 ![image](https://user-images.githubusercontent.com/118953917/214509581-30186a61-139e-4f74-bc3d-6c0bcba8af43.png)
   
 ![image](https://user-images.githubusercontent.com/118953917/214510207-9a3bf47f-aa09-4a21-b77d-30b6208cb590.png)
+
+```
+cd ~/Desktop/work/tools/drc_tests
+vim sky130A.tech
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214511507-ef0ca711-a538-4a32-9f40-3904905fe40d.png)
+
+**Modifying sky130A.tech**
+  
+* Adding in allpolynonfet
+  
+![image](https://user-images.githubusercontent.com/118953917/214514790-6d5515c9-d81c-487b-87eb-f815cb05d4fb.png)
+
