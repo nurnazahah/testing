@@ -593,3 +593,30 @@ To characterize cell -> Find value of 4 parameters
  
 ### Lab introduction to Magic tool options and DRC rules
 
+* Visit http://opencircuitdesign.com/ to explore more about open circuit design
+* Browse through http://opencircuitdesign.com/magic/index.html and http://opencircuitdesign.com/magic/tutorials/tut9.html for some tutorial on Magic/Tech files/DRC
+
+**Introduction to Magic**
+  
+* An interactive system for creating and modifying VLSI circuit layout
+* Magic has built-in knowledge of layout rules, i.e. while editing, it can continuously checking for some rule violations
+* Magic also knows about connectivity and transistors, as well as containing a built-in hierarchical circuit extractor
+  
+**Introduction to DRC**
+  
+* Verifying whether a specific design meets the constraints imposed by the process technology to be used for its manufacturing or not
+* Example of DRCs:
+  + Minimum width and spacing for metal
+  + Minimum area
+  + Different net spacing
+  + Short violation
+  + Less than min edge length
+  
+</details>
+
+<details>
+  <summary>Lab 4:  Lab introduction to Sky130 pdk's and steps to download labs</summary>
+ 
+### Lab introduction to Sky130 pdk's and steps to download labs
+  
+
