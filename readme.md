@@ -730,8 +730,19 @@ drc why
   
 * Copy the resistor to two since there are several types of diffusion and tap
 
-*Note: green --> ndiffusion ; brown --> pdiffusion
+*Note: green --> ndiffusion ; brown --> pdiffusion*
+  
+![image](https://user-images.githubusercontent.com/118953917/214576976-cfa1bea4-4e73-415e-bfa5-b7afa335be7e.png)
 
+**Modifying the tech file**
+  
+```
+vim sky130A.tech
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214579764-c47980a5-65b6-478c-b835-c0ec78e4f2e5.png)
+  
+  
 </details>
 
 <details>
