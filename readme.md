@@ -649,7 +649,7 @@ magic -d XR     (To get a better graphic)
   
 > In tkcon
 ```
-drc why             (To cehck the violations on selected object)
+drc why             (To check the violations on selected object)
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/214501193-a6c4752c-5730-48d9-8acf-b09ebb90ef18.png)
