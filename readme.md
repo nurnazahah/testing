@@ -525,8 +525,8 @@ vim sky130_inv.spice
 
 **Size of the grid**
   
-![image](https://user-images.githubusercontent.com/118953917/214470348-f5b093a1-cf54-4e37-adee-709c50ec57fe.png)
-
+![image](https://user-images.githubusercontent.com/118953917/214473875-0df13534-2784-4194-845b-5b72987a2d63.png)
+  
 **Checking lib file for nmos and pmos**
   
 ![image](https://user-images.githubusercontent.com/118953917/214470609-3dda5fba-504a-452f-8f97-f6753594db1f.png)
