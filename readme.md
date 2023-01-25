@@ -687,3 +687,8 @@ snap int
  
 ### Lab exercise to fix poly.9 error in Sky130 tech-file
   
+> In tkcon
+```
+load poly
+```
+  
