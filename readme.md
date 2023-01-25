@@ -728,3 +728,6 @@ drc why
  
 ###  Lab exercise to implement poly resistor spacing to diff and tap
   
+* Copy the resistor to two since there are several types of diffusion and tap
+
+*Note: green --> ndiffusion ; brown --> pdiffusion
