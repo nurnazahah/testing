@@ -515,3 +515,36 @@ vim sky130_inv.spice
  
 ### Lab steps to create final SPICE deck using Sky130 tech
   
+**Overview of sky130_inv.spice**
+  
+```
+vim sky130_inv.spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214469225-6ec475a4-e994-4463-ae1a-f7c7e15aae37.png)
+
+**Size of the grid**
+  
+![image](https://user-images.githubusercontent.com/118953917/214470348-f5b093a1-cf54-4e37-adee-709c50ec57fe.png)
+
+**Checking lib file for nmos and pmos**
+  
+![image](https://user-images.githubusercontent.com/118953917/214470609-3dda5fba-504a-452f-8f97-f6753594db1f.png)
+
+**Modifying sky130_inv.spice**
+  
+```
+vim sky130_inv.spice
+```
+  
+* Modify the scale to reflect the value in the magic tool
+
+![image](https://user-images.githubusercontent.com/118953917/214473341-ee03f6ae-f326-4d10-b7f2-e32d16649621.png)
+
+</details>
+
+<details>
+  <summary>Lab 2:  Lab steps to characterize inverter using sky130 model files</summary>
+ 
+### Lab steps to characterize inverter using sky130 model files
+
