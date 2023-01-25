@@ -645,7 +645,12 @@ magic -d XR     (To get a better graphic)
   
 ![image](https://user-images.githubusercontent.com/118953917/214499548-b49046aa-73be-4d49-b724-866978304776.png)
 
-*Note: select any object, press ";" to auto switch to another terminal 
+*Note: select any object, press ";" to auto switch to another terminal*
+  
+> In tkcon
+```
+drc why             (To cehck the violations on selected object)
+```
   
 ![image](https://user-images.githubusercontent.com/118953917/214501193-a6c4752c-5730-48d9-8acf-b09ebb90ef18.png)
 
@@ -654,7 +659,15 @@ magic -d XR     (To get a better graphic)
 <details>
   <summary>Lab 5:  Lab introduction to Magic and steps to load Sky130 tech-rules</summary>
  
-### Lab introduction to Magic and steps to load Sky130 tech-rules<details>
+### Lab introduction to Magic and steps to load Sky130 tech-rules
 
 * Visit https://skywater-pdk.readthedocs.io/en/main/ and https://github.com/google/skywater-pdk for SkyWater Open Source PDK documentation
 * Browse through https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html#denmos for details on periphery rules
+
+![image](https://user-images.githubusercontent.com/118953917/214503187-7aa9be1b-643b-42d4-879a-d37728791b64.png)
+
+*Note: select any area, click scroller of the mouse, and select m3contact*
+  
+```
+cif see VIA2      (
+```
