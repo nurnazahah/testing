@@ -398,5 +398,56 @@ report_wns
 ### Lab steps to do basic timing ECO
   
 ```
-report_checks -from _41952_ -through 
+report_checks -from _41952_ -through _41879_
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/214862134-a1d92120-83bf-4517-8953-c1fd454e2c3f.png)
+
+</details>
+
+### Clock tree synthesis TritonCTS and signal integrity
+<details>
+  <summary>Theory 1:  Clock tree routing and buffering using H-Tree algorithm</summary>
+ 
+### Clock tree routing and buffering using H-Tree algorithm
+  
+
+  
+  
+  
+  
+</details>
+
+<details>
+  <summary>Theory 2:  Crosstalk and clock net shielding</summary>
+ 
+### Crosstalk and clock net shielding
+  
+
+  
+  
+  
+  
+</details>
+
+<details>
+  <summary>Lab 1: Lab steps to run CTS using TritonCTS</summary>
+ 
+### Lab steps to run CTS using TritonCTS
+  
+  
+  
+  
+  
+</details>
+
+<details>
+  <summary>Lab 2: Lab steps to verify CTS runs</summary>
+ 
+### Lab steps to verify CTS runs
+  
+  
+  
+  
+  
+</details>
