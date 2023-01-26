@@ -120,3 +120,25 @@ vim config.tcl
   
 ![image](https://user-images.githubusercontent.com/118953917/214758920-88489361-6f99-4a0f-8e41-ffa089a16269.png)
 
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+make mount
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a -tag 13-01_14-09 -overwrite      (Check run date at ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs)
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+```
+  
+Successfully invoke openlane and doing synthesis
+  
+![image](https://user-images.githubusercontent.com/118953917/214760516-fc95cafa-9f17-4f92-8803-9819361bf9a0.png)
+
+</details>
+
+<details>
+  <summary>Lab 4:  Introduction to delay tables</summary>
+ 
+### Introduction to delay tables
+
