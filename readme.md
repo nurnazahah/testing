@@ -269,9 +269,9 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 ![image](https://user-images.githubusercontent.com/118953917/214790612-456f38a4-6cca-4353-a68a-c5135632a6a9.png)
 
-</detail>
+</details>
 
-Timing analysis with ideal clocks using openSTA
+### Timing analysis with ideal clocks using openSTA
 <details>
   <summary>Theory 1: Setup timing analysis and introduction to flip-flop setup time</summary>
  
