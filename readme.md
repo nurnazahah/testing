@@ -296,6 +296,11 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Introduction to clock jitter and uncertainty
   
+**Jitter**
+  
+* Deviation of a clock edge from its ideal location
+* Typically caused by clock generator circuitry, noise, power supply variations, interference from nearby circuitry etc. Jitter is a contributing factor to the design margin specified for timing closure
+  
 * The next practical scenario to take into consideration is jitter. 
 * The clock is expected to reach the clock pin at exactly 0s or at Ts, but in real scenarios, the clock signal may not be able to reach at the exact moment, as the clock source generation may have its own built-in variation. 
 * This is known as jitter, the temporary variation of the clock period. 
@@ -315,5 +320,12 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Lab steps to configure OpenSTA for post-synth timing analysis
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+vim pre_sta.conf
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214798003-4d475ac5-16ca-4bfc-8f62-73e4642a4a27.png)
+
 
   
