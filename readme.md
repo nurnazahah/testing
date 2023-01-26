@@ -469,7 +469,12 @@ vim README.md
  
 ### Lab steps to verify CTS runs
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands
+vim cts.tcl
+```
   
+
   
   
   
