@@ -327,5 +327,15 @@ vim pre_sta.conf
   
 ![image](https://user-images.githubusercontent.com/118953917/214798003-4d475ac5-16ca-4bfc-8f62-73e4642a4a27.png)
 
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+vim my_base.sdc
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/libs
+vim sky130_fd_sc_hd__typical.lib
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214800764-3a700389-9330-4ac7-b43e-6dab567eaa91.png)
+  
+
 
   
