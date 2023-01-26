@@ -491,7 +491,9 @@ echo $::env(LIB_TYPICAL)
 echo $::env(CURRENT_DEF)
 ```
   
-  
+![image](https://user-images.githubusercontent.com/118953917/214881471-990966a2-384a-4054-bfca-7b238bf781ba.png)
+
+
   
   
   
