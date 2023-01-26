@@ -81,8 +81,8 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 ls
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/214750890-3dd7cd6a-5968-4308-8540-b2314e70d628.png)
-
+![Uploading image.png…]()
+  
 ```
 magic -T sky130A.tech sky130_vsdinv.mag
 ```
@@ -187,3 +187,82 @@ Successfully invoke openlane and doing synthesis
  
 ### Lab steps to configure synthesis settings to fix slack and include vsdinv
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+vim README.md
+```
+  
+* SYNTH_STRATEGY: control the area and timing
+* SYNTH_BUFFERING: control if we want to buffer high fanout net 
+* SYNTH_SIZING: control in cell sizing instead of buffering
+* SYNTH_DRIVING_CELL: ensure more drive strength cell to drive input
+  
+![image](https://user-images.githubusercontent.com/118953917/214776677-df33d5a9-66c2-4778-ab7e-b3ea83a6fad6.png)
+
+> In openlane terminal
+```
+echo $::env(SYNTH_STRATEGY)
+set ::env(SYNTH_STRATEGY) "DELAY 0"
+echo $::env(SYNTH_STRATEGY)
+echo $::env(SYNTH_BUFFERING)
+echo $::env(SYNTH_SIZING)
+set ::env(SYNTH_SIZING) 1
+echo $::env(SYNTH_SIZING)
+echo $::env(SYNTH_DRIVING_CELL)
+```
+  
+*Note: refer https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#lab-part-3-day-4---fix-negative-slack for the details*
+  
+* With SYNTH_STRATEGY of Delay 0, the tool will focus more on optimizing/minimizing the delay, index can be 0 to 3 where 3 is the most optimized for timing (sacrificing more area). 
+* SYNTH_BUFFERING of 1 ensures cell buffer will be used on high fanout cells to reduce delay due to high capacitance load. 
+* SYNTH_SIZING of 1 will enable cell sizing where cell will be upsize or downsized as needed to meet timing. 
+* SYNTH_DRIVING_CELL is the cell used to drive the input ports and is vital for cells with a lot of fan-outs since it needs higher drive strength (larger driving cell needed).
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis
+rm -rf picorv32a.synthesis.v
+```
+ 
+> In openlane terminal
+```
+run_synthesis
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214780525-3aa279d5-169d-444a-aefa-c5ff52cad77f.png)
+
+> In openlane 
+```
+run_floorplan
+```
+
+![image](https://user-images.githubusercontent.com/118953917/214782752-dc620279-42e7-4d0c-ae61-7c9572e0e6c0.png)
+  
+* The solution for this error is found. 
+* basic_macro_placement command is failing since EXTRA_LEFS variable inside config.tcl is assumed as a macro which is not. 
+* The temporary solution is to comment call on basic_macro_placement inside the OpenLane/scripts/tcl_commands/floorplan.tcl (this is okay since we are not adding any macro to the design).
+
+* After that run_placement, another error will occur relating to remove_buffers, the solution is to comment the call to remove_buffers_from_nets in OpenLane/scripts/tcl_commands/placement.tcl. 
+* After successfully running placement, runs/[date]/results/placement/picorv32.def will be created.
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/openroad
+vim or_basic_mp.tcl
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands
+vim floorplan.tcl
+```
+  
+**Modification in gvim**
+  
+![image](https://user-images.githubusercontent.com/118953917/214784124-bd01cb53-8308-4b02-8c5e-469da27d04b5.png)
+
+> In openlane
+```
+run_floorplan
+run_placement
+```
+  
+> In terminal
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/placement
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
+```
