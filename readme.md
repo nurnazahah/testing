@@ -380,7 +380,7 @@ run_synthesis
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
 sta pre_sta.conf
 report_net -connections _18242_                           
-replace_cell _41952_ sky130_fd_sc_hd__dfxtp_4             (Pick the highest fanout, cap, slew and replace the worst violations of the cell by increasing drive strength --> from 2 to 4)
+replace_cell _41952_ sky130_fd_sc_hd__dfxtp_4             (Pick the highest fanout, cap, slew and replace the worst violations of the cell by increasing drive strength --> upsize cell from 2 to 4)
 ```
 
 ![image](https://user-images.githubusercontent.com/118953917/214854677-b0c0ca6c-52f5-433c-bf3c-911c1c300a27.png)
