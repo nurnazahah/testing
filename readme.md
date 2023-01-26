@@ -138,7 +138,30 @@ Successfully invoke openlane and doing synthesis
 </details>
 
 <details>
-  <summary>Lab 4:  Introduction to delay tables</summary>
+  <summary>Theory 1:  Introduction to delay tables</summary>
  
 ### Introduction to delay tables
 
+* With the use of gates for clock nets, such as shown in the below figure, which is the method known as clock gating, we can ensure no dynamic switching and short circuit power consumed by the clock tree, during the time the clock gets gated.
+
+![image](https://user-images.githubusercontent.com/118953917/214761577-5e776c52-2f13-4e4d-ba3a-b35145638a68.png)
+
+* We need to look into the timing characteristics of the buffer, in the case where we want to swap out the buffer for a gate. 
+* For each level of buffering, we should have an identical buffer being used, and each node should be driving the same node. 
+* Keep in mind that the load at the output will be varying, and since the load of one buffer is varying, the input transition of the following buffer will also vary. 
+* This means that we will have a variety of delays.
+  
+![image](https://user-images.githubusercontent.com/118953917/214762059-d8079e4f-ab52-48e5-9250-98041e883c2d.png)
+  
+* The delay table is characterized based on varying the input transition and output load of a cell, against the delay of that cell. 
+* Each cell will have its own delay table for different sizes and threshold tables.
+
+![image](https://user-images.githubusercontent.com/118953917/214762237-10ec6a51-a825-4ebf-baf4-52bb7ff85339.png)
+
+</details>
+
+<details>
+  <summary>Theory 2:  Delay table usage</summary>
+ 
+### Delay table usage
+  
