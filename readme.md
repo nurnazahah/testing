@@ -386,7 +386,17 @@ report_tns
 report_wns
 ```
 
-![image](https://user-images.githubusercontent.com/118953917/214854677-b0c0ca6c-52f5-433c-bf3c-911c1c300a27.png)
+![image](https://user-images.githubusercontent.com/118953917/214859399-c9b6b58f-0584-4c04-a174-ae59bcab8cbc.png)
   
 ![image](https://user-images.githubusercontent.com/118953917/214857863-aac7b3eb-65c4-4582-8cd7-65b96a2b1c46.png)
 
+</details>
+
+<details>
+  <summary>Lab 3: Lab steps to do basic timing ECO</summary>
+ 
+### Lab steps to do basic timing ECO
+  
+```
+report_checks -from _41952_ -through 
+```
