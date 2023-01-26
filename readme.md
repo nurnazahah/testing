@@ -107,3 +107,16 @@ vim sky130_vsdinv.lef
  
 ### Introduction to timing libs and steps to include new cell in synthesis
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+cp sky130A_vsdinv.lef /home/nur.nazahah.mohd.amri/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/libs
+cp sky130_fd_sc_hd__* /home/nur.nazahah.mohd.amri/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/
+vim config.tcl
+```
+  
+**Modifying config.tcl file**
+  
+![image](https://user-images.githubusercontent.com/118953917/214758920-88489361-6f99-4a0f-8e41-ffa089a16269.png)
+
