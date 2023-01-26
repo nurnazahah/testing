@@ -455,11 +455,12 @@ run_placement
 run_cts
 ```
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+vim README.md
+```
   
-  
-  
-  
-  
+![image](https://user-images.githubusercontent.com/118953917/214873411-922a5676-c00a-4d34-98d2-395b3118ee7f.png)
   
 </details>
 
