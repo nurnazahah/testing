@@ -381,8 +381,12 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane
 sta pre_sta.conf
 report_net -connections _18242_                           
 replace_cell _41952_ sky130_fd_sc_hd__dfxtp_4             (Pick the highest fanout, cap, slew and replace the worst violations of the cell by increasing drive strength --> upsize cell from 2 to 4)
+report_checks -fields {net cap dlew input pins} -digits 4
+report_tns
+report_wns
 ```
 
 ![image](https://user-images.githubusercontent.com/118953917/214854677-b0c0ca6c-52f5-433c-bf3c-911c1c300a27.png)
   
+![image](https://user-images.githubusercontent.com/118953917/214857863-aac7b3eb-65c4-4582-8cd7-65b96a2b1c46.png)
 
