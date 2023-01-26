@@ -418,7 +418,9 @@ report_checks -from _41952_ -through _41879_
   
 ![image](https://user-images.githubusercontent.com/118953917/214889414-ef867688-41ee-4fce-b9ba-53c150a740f6.png)
 
-
+* The next step is to perform clock tree buffering. 
+* The wires for the clock routes each will have resistances and huge number of capacitances, and with the long routing, there will be signal integrity issues.
+* Thus, to maintain the signal integrity, we need buffering on these nets.
   
   
   
