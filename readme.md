@@ -322,7 +322,7 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
-vim pre_sta.conf
+vim pre_sta.conf                                          (For pre-layout timing analysis)
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/214798003-4d475ac5-16ca-4bfc-8f62-73e4642a4a27.png)
@@ -336,6 +336,18 @@ vim sky130_fd_sc_hd__typical.lib
   
 ![image](https://user-images.githubusercontent.com/118953917/214800764-3a700389-9330-4ac7-b43e-6dab567eaa91.png)
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+sta pre_sta.conf
+```
 
+![image](https://user-images.githubusercontent.com/118953917/214802161-4bcb8008-5413-47af-b401-ec2ac29a9b8e.png)
 
+</details>
+
+<details>
+  <summary>Lab 2: Lab steps to optimize synthesis to reduce setup violations</summary>
+ 
+### Lab steps to optimize synthesis to reduce setup violations
   
+
