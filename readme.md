@@ -81,7 +81,7 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 ls
 ```
   
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/118953917/214787867-9cf85de0-99f3-4db2-89fd-eec1c064ed29.png)
   
 ```
 magic -T sky130A.tech sky130_vsdinv.mag
