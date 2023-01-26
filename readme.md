@@ -266,3 +266,16 @@ run_placement
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/placement
 magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/214790612-456f38a4-6cca-4353-a68a-c5135632a6a9.png)
+
+</detail>
+
+Timing analysis with ideal clocks using openSTA
+<details>
+  <summary>Theory 1: Setup timing analysis and introduction to flip-flop setup time</summary>
+ 
+### Setup timing analysis and introduction to flip-flop setup time
+  
+
+  
