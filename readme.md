@@ -350,4 +350,19 @@ sta pre_sta.conf
  
 ### Lab steps to optimize synthesis to reduce setup violations
   
+![image](https://user-images.githubusercontent.com/118953917/214803801-892a4879-34ea-4753-ab7e-c76dc102c622.png)
 
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+vim README.md
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214804887-e1a8a2e7-fd97-4bdf-acd2-dd09fbd2f31b.png)
+
+> In sta pre_sta.conf
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+echo $::env(SYNTH_MAX_FANOUT)
+set ::env(SYNTH_MAX_FANOUT) 4
+run_synthesis
+  
