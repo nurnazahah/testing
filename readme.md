@@ -474,7 +474,24 @@ cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands
 vim cts.tcl
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/214878521-602486db-c598-459f-8784-92ccae05609c.png)
 
+* Each stage has its own .tcl file, except synthesis since it is not in openroad
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/scripts/openroad
+vim or_cts.tcl
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214880364-358aa10a-deb0-4f48-b44b-e8aebf74942b.png)
+
+> In openlane
+```
+echo $::env(LIB_TYPICAL)
+echo $::env(CURRENT_DEF)
+```
+  
+  
   
   
   
