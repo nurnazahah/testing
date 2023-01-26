@@ -52,8 +52,21 @@ magic -T sky130A.tech sky130_inv.mag
  
 ### Lab steps to convert magic layout to std cell LEF
   
+* We need to only define layers, not ports in layout
+* Ports definitions are required when we want to extract LEF file
+  + Ports will be defined as pins of a macro
   
+**How to define ports?**
+
+* Select port --> edit --> Text --> fill those required information 
   
+*Note: For A; Y in locali while for VPWR, VGND in metal1*
+
+gambar
+  
+* Then, define classes of ports 
+  
+
   
   
   
