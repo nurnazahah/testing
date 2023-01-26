@@ -358,11 +358,31 @@ vim README.md
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/214804887-e1a8a2e7-fd97-4bdf-acd2-dd09fbd2f31b.png)
-
-> In sta pre_sta.conf
+  
+> In openlane
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane
 echo $::env(SYNTH_MAX_FANOUT)
 set ::env(SYNTH_MAX_FANOUT) 4
-run_synthesis
+```
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis
+rm -rf picorv32a.synthesis.v
+```
+
+> In openlane
+```
+run_synthesis
+```
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
+sta pre_sta.conf
+report_net -connections _18242_                           
+replace_cell _41952_ sky130_fd_sc_hd__dfxtp_4             (Pick the highest fanout, cap, slew and replace the worst violations of the cell by increasing drive strength --> from 2 to 4)
+```
+
+![image](https://user-images.githubusercontent.com/118953917/214854677-b0c0ca6c-52f5-433c-bf3c-911c1c300a27.png)
+  
+
