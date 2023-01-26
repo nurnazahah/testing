@@ -494,10 +494,6 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 echo $::env(CTS_ROOT_BUFFER)
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/214881471-990966a2-384a-4054-bfca-7b238bf781ba.png)
-
-
-  
-  
+![image](https://user-images.githubusercontent.com/118953917/214886956-73377f5a-213e-403a-a3e5-6ef4934996c4.png)
   
 </details>
