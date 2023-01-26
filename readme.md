@@ -25,6 +25,11 @@
 vim tracks.info
 ```
   
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+magic -T sky130A.tech sky130_inv.mag
+```
+  
 * Track information (using during routing stage) routes can go over the track/layer (metal traces)
   
 ![image](https://user-images.githubusercontent.com/118953917/214740911-da449828-590d-499e-8e84-5dbe2c0ac156.png)
@@ -40,15 +45,17 @@ vim tracks.info
   
 ![image](https://user-images.githubusercontent.com/118953917/214741494-d1a5f5e6-5295-45ff-ba2e-ad8eac2fe210.png)
 
+</details>
 
+<details>
+  <summary>Lab 2:  Lab steps to convert magic layout to std cell LEF</summary>
+ 
+### Lab steps to convert magic layout to std cell LEF
   
   
   
   
   
   
-```
-cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
-magic -T sky130A.tech sky130_inv.mag
-```
+
   
