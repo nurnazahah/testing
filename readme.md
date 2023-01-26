@@ -401,8 +401,8 @@ report_wns
 report_checks -from _41952_ -through _41879_
 ```
 
-![image](https://user-images.githubusercontent.com/118953917/214862134-a1d92120-83bf-4517-8953-c1fd454e2c3f.png)
-
+![image](https://user-images.githubusercontent.com/118953917/214876198-94a45f68-c0ba-49cd-b69f-397ed034a604.png)
+  
 </details>
 
 ### Clock tree synthesis TritonCTS and signal integrity
