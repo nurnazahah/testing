@@ -165,3 +165,25 @@ Successfully invoke openlane and doing synthesis
  
 ### Delay table usage
   
+* Each type of cell will be having its own individual delay table, as the internal pmos and nmos width/length ratio gets varied, the resistance changes, then RC constant gets varied as well, meaning the delay of each cell gets varied. 
+* The values of delay which are not available in the table are extrapolated based on the given data.
+  
+![image](https://user-images.githubusercontent.com/118953917/214764494-ef258ff7-6660-4281-85ff-5f8a2652140d.png)
+
+* Similarly, the ways on how we have a delay table, we will also have a characterization table for input transition.
+* The latency at the endpoints will be the sum of the delays of each individual cell in that path. 
+* The total skew value between two endpoints will be non-zero if the output load driven for a cell is varied, meaning different delay numbers are seen between endpoints, this is why it is preferred to have the nodes at each level driving the same load. 
+* Another case in which we can retain the skew to be zero in the presence of varied load, is by using a different buffer size at the same level that can achieve the same level of delay as the other buffer in same level based on its delay table.
+* These are factors which should be looked into in the early stages of the clock tree design stage. 
+* Now we must look into power aware CTS, where we have to consider endpoints which are only active under certain conditions. 
+* In this case, we do not need to propagate the clock into those cells during the period of inactivity.
+
+![image](https://user-images.githubusercontent.com/118953917/214765256-2979c5c0-b2a9-41ab-b311-9e3cfb33a076.png)
+
+</details>
+
+<details>
+  <summary>Lab 4: Lab steps to configure synthesis settings to fix slack and include vsdinv</summary>
+ 
+### Lab steps to configure synthesis settings to fix slack and include vsdinv
+  
