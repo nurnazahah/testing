@@ -422,7 +422,7 @@ report_checks -from _41952_ -through _41879_
 * The wires for the clock routes each will have resistances and huge number of capacitances, and with the long routing, there will be signal integrity issues.
 * Thus, to maintain the signal integrity, we need buffering on these nets.
   
-  
+![image](https://user-images.githubusercontent.com/118953917/214894137-e02e16bc-0c0f-48db-8336-aa281c437c55.png)
   
 </details>
 
@@ -431,10 +431,15 @@ report_checks -from _41952_ -through _41879_
  
 ### Crosstalk and clock net shielding
   
-
+* Another topic to understand before moving to using real clocks is clock net shielding. 
+* Clock nets are the critical nets in the design, we build the clock tree to ensure there is a minimum skew. 
+* However, if there is any cross talk that happens and affect the clock signals, that will affect the design very badly. 
+* By shielding, we are protecting the clock nets from the outside world, avoiding glitches and delta delays from occurring. 
+* If a glitch occurs on the clock net, incorrect data in the memory will cause inaccurate functionality for the design. 
+* The shield can be connected to ground or to Vdd, as long as there is no switching activity occurring. 
+* Critical data nets are also necessary to be shielded.
   
-  
-  
+![image](https://user-images.githubusercontent.com/118953917/214894595-17db203b-7643-4333-800c-578284702548.png)  
   
 </details>
 
