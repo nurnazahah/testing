@@ -411,8 +411,14 @@ report_checks -from _41952_ -through _41879_
  
 ### Clock tree routing and buffering using H-Tree algorithm
   
-
+* Clock tree synthesis is done to propagate the clock signals to all the clock pins in the design.
+* However, a good clock tree needs to be designed to take into account the skew between the clock pins due to long routing.
+* Through the use of H-tree, which is a smarter implementation for a clock tree design, that is designed based on the distances between the clock pins in the design between the clock port. 
+* This is to give a skew value as close to 0 as possible by having the clock signals reach all the cells at the same time.
   
+![image](https://user-images.githubusercontent.com/118953917/214889414-ef867688-41ee-4fce-b9ba-53c150a740f6.png)
+
+
   
   
   
