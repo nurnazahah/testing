@@ -60,15 +60,50 @@ magic -T sky130A.tech sky130_inv.mag
 
 * Select port --> edit --> Text --> fill those required information 
   
-*Note: For A; Y in locali while for VPWR, VGND in metal1*
+*Note: For A; and Y in locali while for VPWR and VGND in metal1*
 
-gambar
+![image](https://user-images.githubusercontent.com/118953917/214749913-cb884945-e9a5-4c44-b10c-8cb3983560ed.png)
   
 * Then, define classes of ports 
   
+![image](https://user-images.githubusercontent.com/118953917/214756209-3b67c804-59ed-42a8-83f3-eb585339b834.png)
+  
+* Extract the LEF file 
+  
+> In tkcon 
+```
+save sky130A_vsdinv.mag
+```
+  
+> Checking the saved file
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+ls
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214750890-3dd7cd6a-5968-4308-8540-b2314e70d628.png)
 
-  
-  
-  
+```
+magic -T sky130A.tech sky130_vsdinv.mag
+```
 
+> In tkcon
+```
+lef write
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214751397-07e1287d-a91d-49b5-b624-25878e3759c0.png)
+
+```
+vim sky130_vsdinv.lef
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214756411-087a7a3c-a8f0-4f55-86f4-9453d1feb89f.png)
+
+</details>
+
+<details>
+  <summary>Lab 3:  Introduction to timing libs and steps to include new cell in synthesis</summary>
+ 
+### Introduction to timing libs and steps to include new cell in synthesis
   
