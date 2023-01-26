@@ -296,5 +296,24 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Introduction to clock jitter and uncertainty
   
+* The next practical scenario to take into consideration is jitter. 
+* The clock is expected to reach the clock pin at exactly 0s or at Ts, but in real scenarios, the clock signal may not be able to reach at the exact moment, as the clock source generation may have its own built-in variation. 
+* This is known as jitter, the temporary variation of the clock period. 
+* The combinational delay will become more stringent as a result. Thus we change our combinational delay to factor in the uncertainty factor from the jitter.
+  
+![image](https://user-images.githubusercontent.com/118953917/214793401-a1382eea-22d8-4374-ae33-0bd2d36d76c2.png)
+
+* The combinational delay of a path will look as shown above.
+* The next challenge comes in performing timing analysis with multiple ideal clocks.
+  
+![image](https://user-images.githubusercontent.com/118953917/214793711-7f08ec10-1a94-4711-9cf2-f76aae4c3c01.png)
+
+</details>
+
+<details>
+  <summary>Lab 1: Lab steps to configure OpenSTA for post-synth timing analysis</summary>
+ 
+### Lab steps to configure OpenSTA for post-synth timing analysis
+  
 
   
