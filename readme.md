@@ -435,8 +435,29 @@ report_checks -from _41952_ -through _41879_
  
 ### Lab steps to run CTS using TritonCTS
   
+> In sta terminal
 ```
+write_verilog ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis.v
+```
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-01_14-09/results/synthesis
+ls -lrt picorv32a.synthesis.v
+date
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/214867050-6e2e1327-2021-4170-a662-2d7de1940ef4.png)
 
+> In openlane
+```
+run_floorplan
+run_placement
+run_cts
+```
+  
+  
+  
+  
   
   
   
