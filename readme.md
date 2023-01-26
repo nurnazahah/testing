@@ -277,5 +277,24 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
  
 ### Setup timing analysis and introduction to flip-flop setup time
   
+* At the zero time stamp, there is one clock edge that reaches the launch flop. 
+* At T time stamp, the second rising edge reaches the capture flop. Any analysis that needs to be done is between 0 and T. For the combinational circuit to work, the combinational delay needs to be less than the period, T.
+
+![image](https://user-images.githubusercontent.com/118953917/214792086-fb20df82-8122-48da-8694-a780b6d8d977.png)
+
+* Looking at more practical scenarios and how the flop works, there will be a delay within the internal flop circuitry, between mux 1 and mux 2. 
+* These internal delays will restrict the combinational delay requirements.
+* This internal delay is known as the setup time, and this setup time needs to be subtracted away from the complete clock period T. 
+* Now the capture flop has enough time for it to compute the data within the flop and ensure the data is ready at Q by the time the second rise edge of clock reach.
+  
+![image](https://user-images.githubusercontent.com/118953917/214792585-bb290730-1517-41ed-98ff-46ef6c88df66.png)
+
+</details>
+
+<details>
+  <summary>Theory 2: Introduction to clock jitter and uncertainty</summary>
+ 
+### Introduction to clock jitter and uncertainty
+  
 
   
