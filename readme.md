@@ -197,3 +197,36 @@ kiv
  
 ### TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing
   
+* Preprocessed guides should have unit width and must be in the preferred direction of the layer. 
+  
+* Global route is done by fast route, and the output would be the routing guide. 
+  
+* The initial route guides are transformed into the preprocessed guides through splitting, merging, and bridging. 
+  
+* Whenever the tool detected the route guide with non-preferred direction, it divides the route guide into unit widths, and then the route with preferred direction is merged, while the non-preferred direction route is bridged to be a route on another layer, which is the preferred direction for routing. 
+  
+* This way, parallel routing with higher layers are avoided, as well as avoiding parallel plate capacitance.
+  
+![image](https://user-images.githubusercontent.com/118953917/215103703-a8f8b000-0aa2-4edc-b386-b5dd65ff421d.png)
+
+* Each layer or panel will have its own preferred routing direction assigned to it, in which the routes should be formed. 
+  
+* Routing in higher layers will begin only once the routing the bottom layers have been completed.
+
+* Two guides are connected if they are on the same metal layer with touching edges, or if they are on neighbouring metal layers with a non-zero vertically overlapped area.
+  
+![image](https://user-images.githubusercontent.com/118953917/215104070-3025a21a-61ca-441e-855a-0ebcda219df0.png)
+
+* Each unconnected terminal i.e. pin of a standard cell instance, should have its pin shape overlapped by a route guide. 
+  
+* The purple box in the RHS figure below would be the routing guide on the metal 1 layer that would overlap with the unconnected terminal.
+
+![image](https://user-images.githubusercontent.com/118953917/215105174-cb8ca1d4-96ae-4d19-8106-25ed5480d734.png)
+
+</details>
+
+<details>
+  <summary>Theory 3: TritonRoute method to handle connectivity</summary>
+ 
+### TritonRoute method to handle connectivity
+  
