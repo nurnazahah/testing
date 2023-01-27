@@ -14,7 +14,7 @@
 
 * Routing: the process of creating the physical wire connections within the design in which it helps in determining the best way of routing that can be done between two endpoints, the source, and the target, with the shortest distance as well as the least number of zig-zag turns.
 
-* However, we need to take into considerations regarding the blockage 
+* However, the algorithm needs to be aware of any blockages set that hinders any routing to be done in the particular area.
   
 ![image](https://user-images.githubusercontent.com/118953917/215030291-ceea2ccd-d922-4883-8370-97a39a423721.png)
 
@@ -29,5 +29,3 @@
   * However, it did not label the grid under the blockage and at the boundary
   
 
-  
-![Uploading image.png…]()
