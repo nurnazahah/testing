@@ -118,7 +118,7 @@ echo $::env(CURRENT_DEF)    (Ensure current_def is on the CTS stage)
 gen_pdn                     (To generate power distribution network)
 ```
   
-* Error encountered during “gen_pdn” in which the stage cannot move to perform routing as current_def has not changed to floorplan.pdn
+* Error encountered during “gen_pdn” in which the stage cannot perform routing as current_def has not changed to floorplan.pdn
   
 ![image](https://user-images.githubusercontent.com/118953917/215052338-090fb2b0-91d4-4069-aec0-4c72264fe319.png)
 
