@@ -118,3 +118,6 @@ echo $::env(CURRENT_DEF)    (Ensure current_def is on the CTS stage)
 gen_pdn                     (To generate power distribution network)
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/215051786-c484ea4f-1a9d-4fae-8aa2-b97c72929501.png)
+
+
