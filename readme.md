@@ -54,3 +54,46 @@
  
 ### Design Rule Check
   
+* Design Rule Check (DRC): the rules that should be followed whenever the routing of the design is performed.
+  
+* One of the rules may be the minimal wire width, where the width of the wire should be no less than a specified amount based on the limitations of the fabrication process. 
+  
+* Another rule that is based on the fabrication process of lithography is the wire pitch, where the centre-to-centre distance between 2 wires should be no smaller than a certain distance. 
+  
+* Another rule includes wire spacing rule, where distance between 2 wires should be no smaller than a certain distance. 
+  
+* These are many rules that the tool needs to take into account when performing the routing of the design.
+  
+![image](https://user-images.githubusercontent.com/118953917/215035532-aaae220b-4b3d-446c-8eed-5b697367212c.png)
+
+* One type of DRC violation is a signal short, where two wires that are not intended to be connected becomes in contact on the same layer.
+  
+* This could lead to functional failure, so this needs to be taken care of.
+  
+* To fix this, we need to simply moving one of the wires onto a different metal layer.
+  
+* However, please keep in mind that there are new drc rules that need to be taken into account.
+
+![image](https://user-images.githubusercontent.com/118953917/215036320-f0517b39-378a-4a40-9f0f-eb735c2001b4.png)
+
+**New drc rules after fixing**
+  
+* **Via width** where the width of the via should be no less than a certain value. 
+
+* **Via spacing** where the distance between 2 vias cannot be less than a specific distance. 
+  
+* Most of these DRC rules come from the lithographic process and the limitations that come with the technology.
+  
+![image](https://user-images.githubusercontent.com/118953917/215036993-58407624-384b-4965-a9b1-0519dc5a5670.png)
+
+* Performing parasitic extraction, where the resistances and capacitances of the wires are extracted and will be used for further processes.
+  
+![image](https://user-images.githubusercontent.com/118953917/215037259-747e6a52-c7cd-4a01-ab20-209179aef4fe.png)
+
+</details>
+
+### Power Distribution Network and routing
+<details>
+  <summary>Lab 1: Lab steps to build power distribution network</summary>
+ 
+### Lab steps to build power distribution network
