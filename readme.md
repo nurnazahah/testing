@@ -64,5 +64,18 @@ read_liberty -min $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__f
 set_propagated_clock [all_clocks]
 read_sdc designs/picorv32a/src/my_base.sdc
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
-
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/215005919-ddd073ff-17b8-4fc5-80d8-a7d2f676c794.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215007150-7985c511-e27e-4bbd-bd35-1739d6667df2.png)
+
+</details>
+
+<details>
+  <summary>Lab 2: Lab steps to execute OpenSTA with right timing libraries and CTS assignment</summary>
+ 
+### Lab steps to execute OpenSTA with right timing libraries and CTS assignment
+  
+
+  
