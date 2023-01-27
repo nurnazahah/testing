@@ -112,11 +112,27 @@ echo $::env(CTS_CLK_BUFFER_LIST)                              (To see the list o
   <summary>Lab 3: Lab steps to observe impact of bigger CTS buffers on setup and hold timing</summary>
  
 ### Lab steps to observe impact of bigger CTS buffers on setup and hold timing
-  
+ 
+> In openlane
 ```
 exit 
 echo $::env(CTS_CLK_BUFFER_LIST)
 set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
 echo $::env(CURRENT_DEF)
 set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/placement/picorv32a.placement.def
+run_cts
+```
+  
+```
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/cts/picorv32a.cts.def
+write_db pico_cts1.db
+read_db pico_cts1.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
 ```
