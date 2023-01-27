@@ -134,6 +134,8 @@ gen_pdn                     (To generate power distribution network)
 * If the power and ground rails has a pitch of 2.72, thus the customized inverter cell will have a height of 2.72 or else the power and ground rails will not be able to power up the cell. 
 * As shown below, power and ground flows from power/ground pads --> power/ground ring --> power/ground straps --> power/ground rails.
   
+*Source: https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#timing-analysis-with-real-clocks*
+  
 ![image](https://user-images.githubusercontent.com/118953917/215058376-777e3768-0d83-4b71-9d07-1594bdda4e2b.png)
 
 </details>
