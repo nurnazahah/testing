@@ -113,5 +113,10 @@ echo $::env(CTS_CLK_BUFFER_LIST)                              (To see the list o
  
 ### Lab steps to observe impact of bigger CTS buffers on setup and hold timing
   
-
-  
+```
+exit 
+echo $::env(CTS_CLK_BUFFER_LIST)
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+echo $::env(CURRENT_DEF)
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/placement/picorv32a.placement.def
+```
