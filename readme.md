@@ -97,10 +97,23 @@
   <summary>Lab 1: Lab steps to build power distribution network</summary>
  
 ### Lab steps to build power distribution network
+  
+> If exited from openlane
+```
+cd work/tools/openlane_working_dir/openlane
+make mount
+pwd
+ls -ltr
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a -tag 13-01_14-09
+```
+  
+*Note: If you want to retain the configurations form the last openlane job, you need to use the command “prep -design -tag ”. If you want to create a fresh run with new configurations but without changing the tag name, you need to use the command “prep -design -tag -overwrite”.*
 
 > In openlane
 ```
-echo $::env(CURRENT_DEF)
+echo $::env(CURRENT_DEF)    (Ensure current_def is on the CTS stage)
 gen_pdn                     (To generate power distribution network)
 ```
   
