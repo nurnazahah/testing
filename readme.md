@@ -52,12 +52,15 @@
  
 ### Lab steps to analyze timing with real clocks using OpenSTA
   
+*Note: Refer https://github.com/AngeloJacobo/OpenLANE-Sky130-Physical-Design-Workshop#timing-analysis-with-real-clocks*
+  
 > In openlane
 ```
 openroad                                                                                                       (Invoking openroad)
 read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
 read_def /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/cts/picorv32a.cts.def
 write_db pico_cts.db
+read_db pico_cts.db
 read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
 read_liberty -max $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib
 read_liberty -min $::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib
@@ -66,6 +69,8 @@ read_sdc designs/picorv32a/src/my_base.sdc
 report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ```
 
+* This step is not practical, therefore it violated.
+  
 ![image](https://user-images.githubusercontent.com/118953917/215005919-ddd073ff-17b8-4fc5-80d8-a7d2f676c794.png)
 
 ![image](https://user-images.githubusercontent.com/118953917/215007150-7985c511-e27e-4bbd-bd35-1739d6667df2.png)
@@ -76,6 +81,37 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
   <summary>Lab 2: Lab steps to execute OpenSTA with right timing libraries and CTS assignment</summary>
  
 ### Lab steps to execute OpenSTA with right timing libraries and CTS assignment
+  
+> Continuing from previous lab
+```
+exit        (Exit openroad)
+openroad
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
+echo $::env(CTS_CLK_BUFFER_LIST)                              (To see the list of buffers)
+```
+  
+* Both timing are already met after post CTS
+* The tool picked small cell first to meet the skew and area
+  + skew values are within 10% of the max clock period
+  
+![image](https://user-images.githubusercontent.com/118953917/215010210-b7f01f8d-f0ff-4bc6-ae4d-9bdbcdc3df86.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215010920-912b1639-6412-4db4-a7dc-8a75afbb3d9f.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215011382-00bfd9c5-05cf-4a1d-b14d-c49d2b726ce8.png)
+
+</details>
+
+<details>
+  <summary>Lab 3: Lab steps to observe impact of bigger CTS buffers on setup and hold timing</summary>
+ 
+### Lab steps to observe impact of bigger CTS buffers on setup and hold timing
   
 
   
