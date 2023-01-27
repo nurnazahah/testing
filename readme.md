@@ -97,3 +97,10 @@
   <summary>Lab 1: Lab steps to build power distribution network</summary>
  
 ### Lab steps to build power distribution network
+
+> In openlane
+```
+echo $::env(CURRENT_DEF)
+gen_pdn                     (To generate power distribution network)
+```
+  
