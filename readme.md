@@ -118,6 +118,12 @@ echo $::env(CURRENT_DEF)    (Ensure current_def is on the CTS stage)
 gen_pdn                     (To generate power distribution network)
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/215051786-c484ea4f-1a9d-4fae-8aa2-b97c72929501.png)
+![image](https://user-images.githubusercontent.com/118953917/215052338-090fb2b0-91d4-4069-aec0-4c72264fe319.png)
 
+</details>
 
+<details>
+  <summary>Lab 2: Lab steps from power straps to std cell power</summary>
+ 
+### Lab steps from power straps to std cell power
+  
