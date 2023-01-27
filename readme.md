@@ -230,3 +230,34 @@ kiv
  
 ### TritonRoute method to handle connectivity
   
+* Inputs file needed for TritonRoute are the LEF file, DEF file, and the Preprocessed route guides.
+
+* Outputs from the TritonRoute would be a detailed routing solution with optimized wire-length and via count.
+
+* Constraints needed in TritonRoute are the route guide honouring, connectivity constraints and design rules.
+  
+**TritonRoute method**
+  
+* TritonRoute handles connectivity through 2 ways
+  + Access Point (AP)
+  + Access Point Cluster (APC)
+  
+* **Access point**: on-grid point on the metal layer of the route guide, and is used to connect to lower-layer segments, upper-layer segments, pins or IO ports. 
+  
+* **Access Point Cluster**: a union of all Access Points derived from the same lower-layer segment, upper-layer guide, a pin or an IO port. 
+  
+* Access point refers to the point where the via can be placed to allow connectivity between layers. 
+  
+* The objective of the Mixed Integer Liner Programming (MILP) is to connect one access point to another optimally. 
+  1. Choose one of the access points where the via should be dropped
+  2. Determining how the first access point will be connected to the next access point.
+
+![image](https://user-images.githubusercontent.com/118953917/215107218-454cb310-8936-43c7-90ed-695569d3fef8.png)
+
+</details>
+
+<details>
+  <summary>Lab 1: Routing topology algorithm and final files list post-route</summary>
+ 
+### Routing topology algorithm and final files list post-route
+  
