@@ -146,19 +146,19 @@ gen_pdn                     (To generate power distribution network)
 ### Basics of global and detail routing and configure TritonRoute
   
 ```
-echo $::env(CURRENT_DEF)
+echo $::env(CURRENT_DEF)            (Ensure the def file of pdn has been created)
 echo $::env(ROUTING_STRATEGY)
 run_routing
 ```
-
-
   
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
 vim README.md
 ```
+
+* Assuming power distrivution network has been successfully generated
   
-kiv
+![image](https://user-images.githubusercontent.com/118953917/215116333-683d625f-8206-459f-8ff4-4c1556594dfe.png)
   
 </details> 
 
