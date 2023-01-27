@@ -150,11 +150,21 @@ echo $::env(CURRENT_DEF)
 echo $::env(ROUTING_STRATEGY)
 run_routing
 ```
-  
+
 
   
 ```
 cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
 vim README.md
 ```
+  
+kiv
+  
+</details> 
+
+### TritonRoute Features
+<details>
+  <summary>Theory 1: TritonRoute feature 1 - Honors pre-processed route guides</summary>
+ 
+### TritonRoute feature 1 - Honors pre-processed route guides
   
