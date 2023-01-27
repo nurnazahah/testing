@@ -54,7 +54,7 @@
   
 > In openlane
 ```
-openroad                                                                                                             (Invoking openroad)
+openroad                                                                                                       (Invoking openroad)
 read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
 read_def /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results/cts/picorv32a.cts.def
 write_db pico_cts.db
