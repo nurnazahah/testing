@@ -195,7 +195,7 @@ vim README.md
 <details>
   <summary>Theory 2: TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing</summary>
  
-### TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing
+### TritonRoute Feature 2 & 3 - Inter-guide connectivity and intra- & inter-layer routing
   
 * Preprocessed guides should have unit width and must be in the preferred direction of the layer. 
   
