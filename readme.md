@@ -168,3 +168,32 @@ kiv
  
 ### TritonRoute feature 1 - Honors pre-processed route guides
   
+* OpenLane routing stage consists of two stages:
+  + **Global Routing**: Form routing guides that can route all the nets. The tool used is FastRoute.
+  + **Detailed Routing**: Uses the global routing's guide to connect the pins with the least amount of wire and bends. The tool used is TritonRoute.
+
+**Triton Route**
+  
+* In fast routing, a rough routing draft is created. 
+  
+* Fast routing is the engine which is used for global routing. 
+  
+* During global routing, the region is divided into grid cells, which acts as a route guide for the TritonRoute to be used for the detail routing, where an algorithm is used to find the best connectivity between the points.
+
+* It honours the preprocessed route guides (obtained after fast routes), wherein the tool attempts as much as possible to route within route guides. 
+  
+* The tool assumes route guides for each net satisfies inter-guide connectivity. 
+  
+* Triton route works on proposed MILP (Mixed integer liner programming) based panel routing scheme with intra-layer parallel and inter-layer sequential routing framework, to finds the best way to perform the routing.
+  
+* Intra-layer refers to the routing within a layer, while inter-layer routing refers to routing between layers, through the uses of vias.
+  
+![image](https://user-images.githubusercontent.com/118953917/215102497-8e9c6337-56b7-47b4-a098-8cdd9ba1fe75.png)
+
+</details>
+
+<details>
+  <summary>Theory 2: TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing</summary>
+ 
+### TritonRoute Feature2 & 3 - Inter-guide connectivity and intra- & inter-layer routing
+  
