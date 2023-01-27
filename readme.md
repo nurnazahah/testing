@@ -145,3 +145,16 @@ gen_pdn                     (To generate power distribution network)
  
 ### Basics of global and detail routing and configure TritonRoute
   
+```
+echo $::env(CURRENT_DEF)
+echo $::env(ROUTING_STRATEGY)
+run_routing
+```
+  
+
+  
+```
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+vim README.md
+```
+  
