@@ -123,6 +123,8 @@ set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/13-01_14-09/results
 run_cts
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/215015517-cf77adc1-ce17-4311-986d-50b0b068c66b.png)
+  
 ```
 openroad
 read_lef /openLANE_flow/designs/picorv32a/runs/13-01_14-09/tmp/merged.lef
@@ -136,3 +138,17 @@ read_sdc designs/picorv32a/src/my_base.sdc
 set_propagated_clock [all_clocks]
 report_checks -path_delay min_max -fields {slew trans net cap input pin} -format full_clock_expanded
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/215015562-f0c63e6c-f266-4ec6-9b05-df091dd05c73.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215016452-7329a6e2-d21b-40d7-8c80-a7f873f1a7cb.png)
+
+```
+report_clock_skew -hold
+report_clock_skew -setup
+set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]      (Adding back clkbuf1)
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/215017120-1d9a05f8-f29b-4019-9f4d-34cc5b271d89.png)
+
+</details>
