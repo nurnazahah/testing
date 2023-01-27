@@ -158,7 +158,7 @@ vim README.md
 
 * Assuming power distrivution network has been successfully generated
   
-![image](https://user-images.githubusercontent.com/118953917/215116333-683d625f-8206-459f-8ff4-4c1556594dfe.png)
+![image](https://user-images.githubusercontent.com/118953917/215117743-5048a812-29a0-42cb-9863-a8c497402b80.png)
   
 </details> 
 
@@ -261,3 +261,31 @@ vim README.md
  
 ### Routing topology algorithm and final files list post-route
   
+**Optimization algorithm for routing topology**
+  
+* For each APC, the algorithm needs to find the cost associated with the distance between 2 APCs which are the minimum spanning tree, MST, between the APCs and the costs. 
+  
+* The objective of the algorithm
+  1. To find the minimal and most optimal point between the 2 APCs.
+  
+![image](https://user-images.githubusercontent.com/118953917/215117524-620c7049-f13d-4a3c-80b0-3d650d7ca0b7.png)
+
+* There are 3 violations as shown in the figure below
+
+* TritonRoute strategy = 0 is chosen right now
+  
+* If TritonRoute strategy = 14 is chosen, the violations might be 0 but it might take some time to finish running
+  
+* Therefore, we need to fix the violations manually
+  
+![image](https://user-images.githubusercontent.com/118953917/215118656-b1f2df2a-c34c-4b9d-aa57-1cb22a4f9b9a.png)
+  
+* Referring to the below figure, there are 3 violations on li1 layer that needs to fix manually
+
+![image](https://user-images.githubusercontent.com/118953917/215119749-96387581-8583-496b-9330-fafa6972ac76.png)
+
+* Creating a new spef file that requires merged.lef and picorv32a.def
+
+![image](https://user-images.githubusercontent.com/118953917/215120595-1fd696bd-0a6f-4904-a31b-66c300db50ed.png)
+
+</details>
