@@ -34,4 +34,61 @@
 *Source: slide material provided for Day 20 of training*
   
 ![image](https://user-images.githubusercontent.com/118953917/215411723-547f98c2-d8ac-446c-92b2-19e020ed9f1c.png)
+  
 
+**Main steps in Physical Design Flow**
+  
+* Create a gate-level netlist (after synthesis)
+  1. The netlist is the result of the synthesis process and it is the foundation for physical design. 
+  2. Synthesis translates RTL designs written in VHDL or Verilog HDL into gate-level specifications that can be understood by the next set of tools. 
+  3. The cells employed, their interconnections, the area used, and other parameters are all listed in this netlist.
+  
+* Floorplanning
+  1. Under this step, we calculate the dimensions of all the blocks and place them in appropriate spots on the chip. 
+  2. This step is performed to keep the blocks that are highly connected close to one another. 
+  
+* Partitioning
+  1. The next step of partitioning helps in dividing the chip into separate chunks. 
+  2. This procedure is performed primarily to distinguish between distinct functional blocks and to facilitate placement and routing. When the design engineer separates the overall design into sub-blocks and then proceeds to design each module during the RTL design phase, this is known as partitioning. 
+  
+* Placement
+  1. Placement is the process of placing the standard cells inside the core boundary in an optimal location. 
+  2. The tool tries to place the standard cell in such a way that the design should have minimal congestions and the best timing. 
+  3. Every PnR tool provides various commands/switches so that users can optimize the design in a better way in terms of timing, congestion, area, and power as per their requirements. 
+  4. Based on the preferences set by the user, the tool tray to place and optimize it for better QoR. 
+  5. Placement does not place only the standard cells present in the synthesized netlist but also places many physical only cells and adds buffers/inverters as per the requirement to meet the timings, DRV, and foundry requirements. 
+  6. Here are the basic steps which the tool performs during the placement and optimization stage. 
+  
+* Static Time Analysis  
+  1. Static timing analysis (STA) is a method of validating the timing performance of a design by checking all possible paths for timing violations. 
+  2. STA breaks a design down into timing paths, calculates the signal propagation delay along each path, and checks for violations of timing constraints inside the design and at the input/output interface. 
+  3. Another way to perform timing analysis is to use dynamic simulation, which determines the full behaviour of the circuit for a given set of input stimulus vectors. 
+  4. Compared to dynamic simulation, static timing analysis is much faster because it is not necessary to simulate the logical operation of the circuit. 
+  5. STA is also more thorough because it checks all timing paths, not just the logical conditions that are sensitized by a set of test vectors. 
+  6. However, STA can only check the timing, not the functionality, of a circuit design.
+  
+* Clock Tree Synthesis (CTS)  
+  1. Clock Tree Synthesis(CTS) is one of the crucial steps in VLSI physical design flow. 
+  2. It is used to reduce skew and insertion delay. 
+  3. This step helps distribute the clock evenly among all sequential elements of a design.
+  
+* Routing  
+  1. Routing helps in making the links between the cells and the blocks. 
+  2. There are two types of routing: global routing and detailed routing. 
+  3. Connections are routed through global routing, which assigns routing resources. 
+  4. It also keeps track of a network’s assignment. 
+  5. Whereas, the actual connections are made by detailed routing. 
+  
+* Physical verification 
+  1. Physical verification ensures that the produced layout design is valid. 
+  2. This involves ensuring that the layout is correct and includes all technological prerequisites, density verification, cleaning density etc.  
+  
+![image](https://user-images.githubusercontent.com/118953917/215417780-a60f1787-9a4f-4869-a9b5-994a220a4be7.png)
+
+</details>
+
+<details>
+  <summary>Lab</summary>
+ 
+### Physical Design Flow
+  
