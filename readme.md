@@ -83,6 +83,8 @@
   1. Physical verification ensures that the produced layout design is valid. 
   2. This involves ensuring that the layout is correct and includes all technological prerequisites, density verification, cleaning density etc.  
   
+*Source: slide material provided for Day 20 of training*
+  
 ![image](https://user-images.githubusercontent.com/118953917/215417780-a60f1787-9a4f-4869-a9b5-994a220a4be7.png)
 
 </details>
