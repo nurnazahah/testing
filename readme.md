@@ -85,8 +85,8 @@
   
 *Source: slide material provided for Day 20 of training*
   
-![image](https://user-images.githubusercontent.com/118953917/215417780-a60f1787-9a4f-4869-a9b5-994a220a4be7.png)
-
+![image](https://user-images.githubusercontent.com/118953917/215418212-f6a6c325-c64d-43c9-8628-ef15c05ae168.png)
+  
 </details>
 
 <details>
