@@ -94,3 +94,14 @@
  
 ### Physical Design Flow
   
+Sources
+  1. https://github.com/Devipriya1921/VSDBabySoC_ICC2#getting-started-with-vsdbabysoc
+
+  
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20
+git clone https://github.com/manili/VSDBabySoC.git
+git clone https://github.com/Devipriya1921/VSDBabySoC_ICC2.git
+git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
+```
+  
