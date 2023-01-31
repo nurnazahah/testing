@@ -105,3 +105,19 @@ git clone https://github.com/Devipriya1921/VSDBabySoC_ICC2.git
 git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
 ```
   
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files
+gvim vsdbabysoc.tcl &
+```
+  
+
+  
+```
+/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+csh
+dc_shell
+source vsdbabysoc.tcl
+```
+  
+  
+read_lib /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/sky130_fd_sc_hd__tt_025C_1v80.lib
