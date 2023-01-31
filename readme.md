@@ -108,16 +108,41 @@ git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files
 gvim vsdbabysoc.tcl &
+gvim avsdpll.lib &
 ```
   
-
+![image](https://user-images.githubusercontent.com/118953917/215796002-50d5818d-5c08-49fe-a46e-6e32dfa1c621.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/215796192-f1d9b28e-7839-4bee-8ac6-a674ef63eba9.png)
   
 ```
-/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
-csh
+/p/hdk/bin/cth_psetup -p ipde/rc -cfg 76p31_r08hp71_ipg.cth -ward . -tool ipde_all -quiet -x '$SETUP_IPDE -b ip76p31ddrgen6mod_ddriolvrpgcombo' 
 dc_shell
-source vsdbabysoc.tcl
+source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tcl
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/215796297-d6e947f8-be20-4265-ae4a-4b27677cf596.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215796409-4f6e8041-365d-4515-8579-df04c14fa8ff.png)
   
-read_lib /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/sky130_fd_sc_hd__tt_025C_1v80.lib
+**Reports**
+  
+![image](https://user-images.githubusercontent.com/118953917/215799040-7b0ce34f-6350-42ce-82f8-eda9fe7f102e.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215799120-d36874f4-35e6-40fa-b0c6-cb2221f7bbf5.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215799239-c7a9fb7d-cd46-4517-a377-3914e2e9e7d6.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215799327-10e5de01-9639-4dc7-aa95-4ce9cf4cecb2.png)
+
+**Output schematic**
+  
+![image](https://user-images.githubusercontent.com/118953917/215796550-7b1fb5d7-d587-4361-8ad9-ea115f0df358.png)
+
+**RVMYTH core**
+  
+![image](https://user-images.githubusercontent.com/118953917/215796857-95f2edaf-c448-4d71-87a5-ffb668484fb1.png)
+
+![image](https://user-images.githubusercontent.com/118953917/215796935-207405a4-f321-4b2c-a15a-8776fa9cf4b9.png)
+
+
