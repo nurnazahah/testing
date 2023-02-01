@@ -159,3 +159,11 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tc
 
 ### Performing physical design 
   
+> Invoking icc2_shell
+```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell
+/p/hdk/pu_tu/prd/sams/mig76_wlw/setup/enter_p31 -cfg ip76p31r08hp7rev03 -ov ./
+icc2_shell
+source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/top.tcl
+```
+  
