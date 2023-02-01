@@ -217,3 +217,9 @@ report_timing
 estimate_timing
 report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/violators.rpt
 ```
+
+![image](https://user-images.githubusercontent.com/118953917/216077622-28464c15-a3b2-48e6-bd8c-26737a703dd4.png)
+
+![image](https://user-images.githubusercontent.com/118953917/216077730-4c62f2d6-9c20-42e1-bafb-416ce2dc88f0.png)
+
+</details>
