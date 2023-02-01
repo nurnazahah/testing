@@ -147,7 +147,7 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tc
 
 ![image](https://user-images.githubusercontent.com/118953917/215931057-fcb52a51-7403-4826-b3d4-139b27337cbd.png)
   
-**Output schematic**
+### Output schematic
   
 ![image](https://user-images.githubusercontent.com/118953917/215931319-503a58df-8829-46aa-bd6c-1a472bb0171a.png)
   
@@ -156,3 +156,5 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tc
 ![image](https://user-images.githubusercontent.com/118953917/215931465-2f9ae8f5-93f5-47b3-8eef-b450b5992a3d.png)
 ![image](https://user-images.githubusercontent.com/118953917/215931636-d06c40be-90cc-4970-9bf7-91ff75e03066.png)
 
+### Performing physical design 
+  
