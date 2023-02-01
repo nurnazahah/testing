@@ -113,9 +113,14 @@ gvim avsdpll.lib &
   
 **vsdbabysoc.tcl**
   
+* Modifying the contents to my path, remove -lib in read_lib commands, and replace MYCLK to clk since the clock used in the design is {clk}
+* All of the commands have been inserted in gvim and the tool will run it once at a time
+  
 ![image](https://user-images.githubusercontent.com/118953917/215930668-24e8267c-5265-4406-9c33-b39c6227e8bc.png)
   
 **avsdpll.lib**
+  
+* Remove the unwanted pins 
   
 ![image](https://user-images.githubusercontent.com/118953917/215930725-1f1c96f4-b71b-4fe3-824b-26259c964e5c.png)
   
