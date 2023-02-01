@@ -166,6 +166,20 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tc
 
 ### Performing physical design 
   
+```
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/top.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/icc2_common_setup.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/icc2_dp_setup.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/init_design.read_parasitic_tech_example.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/init_design.mcmm_example.auto_expanded.tcl
+```
+  
+**Modifying files**
+  
+**top.tcl**
+  
+
+  
 > Invoking icc2_shell
 ```
 cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell
