@@ -120,6 +120,7 @@ gvim avsdpll.lib &
 ![image](https://user-images.githubusercontent.com/118953917/215930725-1f1c96f4-b71b-4fe3-824b-26259c964e5c.png)
   
 ```
+cd /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell
 /p/hdk/bin/cth_psetup -p ipde/rc -cfg 76p31_r08hp71_ipg.cth -ward . -tool ipde_all -quiet -x '$SETUP_IPDE -b ip76p31ddrgen6mod_ddriolvrpgcombo' 
 dc_shell
 source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tcl
