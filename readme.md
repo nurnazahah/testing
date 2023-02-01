@@ -111,9 +111,13 @@ gvim vsdbabysoc.tcl &
 gvim avsdpll.lib &
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/215796002-50d5818d-5c08-49fe-a46e-6e32dfa1c621.png)
+**vsdbabysoc.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/215796192-f1d9b28e-7839-4bee-8ac6-a674ef63eba9.png)
+![image](https://user-images.githubusercontent.com/118953917/215930668-24e8267c-5265-4406-9c33-b39c6227e8bc.png)
+  
+**avsdpll.lib**
+  
+![image](https://user-images.githubusercontent.com/118953917/215930725-1f1c96f4-b71b-4fe3-824b-26259c964e5c.png)
   
 ```
 /p/hdk/bin/cth_psetup -p ipde/rc -cfg 76p31_r08hp71_ipg.cth -ward . -tool ipde_all -quiet -x '$SETUP_IPDE -b ip76p31ddrgen6mod_ddriolvrpgcombo' 
@@ -127,22 +131,28 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/vsdbabysoc.tc
   
 **Reports**
   
-![image](https://user-images.githubusercontent.com/118953917/215799040-7b0ce34f-6350-42ce-82f8-eda9fe7f102e.png)
+**Report area**
+  
+![image](https://user-images.githubusercontent.com/118953917/215930931-9978ad14-a2f7-4b64-b995-abb653450e34.png)
+  
+**Report power**
 
-![image](https://user-images.githubusercontent.com/118953917/215799120-d36874f4-35e6-40fa-b0c6-cb2221f7bbf5.png)
+![image](https://user-images.githubusercontent.com/118953917/215930965-ebf8d41f-3169-45f3-929c-83dbef4c7c58.png)
+  
+**Report timing**
 
-![image](https://user-images.githubusercontent.com/118953917/215799239-c7a9fb7d-cd46-4517-a377-3914e2e9e7d6.png)
+![image](https://user-images.githubusercontent.com/118953917/215931015-297d3787-2f87-418c-97d0-a487abc579be.png)
+  
+**Report constraints**
 
-![image](https://user-images.githubusercontent.com/118953917/215799327-10e5de01-9639-4dc7-aa95-4ce9cf4cecb2.png)
-
+![image](https://user-images.githubusercontent.com/118953917/215931057-fcb52a51-7403-4826-b3d4-139b27337cbd.png)
+  
 **Output schematic**
   
-![image](https://user-images.githubusercontent.com/118953917/215796550-7b1fb5d7-d587-4361-8ad9-ea115f0df358.png)
-
+![image](https://user-images.githubusercontent.com/118953917/215931319-503a58df-8829-46aa-bd6c-1a472bb0171a.png)
+  
 **RVMYTH core**
   
-![image](https://user-images.githubusercontent.com/118953917/215796857-95f2edaf-c448-4d71-87a5-ffb668484fb1.png)
-
-![image](https://user-images.githubusercontent.com/118953917/215796935-207405a4-f321-4b2c-a15a-8776fa9cf4b9.png)
-
+![image](https://user-images.githubusercontent.com/118953917/215931465-2f9ae8f5-93f5-47b3-8eef-b450b5992a3d.png)
+![image](https://user-images.githubusercontent.com/118953917/215931636-d06c40be-90cc-4970-9bf7-91ff75e03066.png)
 
