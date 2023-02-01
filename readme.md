@@ -178,7 +178,25 @@ gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/init_design.mcm
   
 **top.tcl**
   
+![image](https://user-images.githubusercontent.com/118953917/216073269-7452cc1e-427a-471d-bdcc-412793983082.png)
 
+**icc2_common_setup.tcl**
+  
+![image](https://user-images.githubusercontent.com/118953917/216073464-594307a1-5f24-49f1-9d71-55e1751074ab.png)
+
+**icc2_dp_setup.tcl**
+  
+![image](https://user-images.githubusercontent.com/118953917/216075587-6b83c35f-f347-4317-a05f-2dd056579fee.png)
+
+**init_design.read_parasitic_tech_example.tcl**
+  
+![image](https://user-images.githubusercontent.com/118953917/216075764-da076212-0cc3-4bd1-bb2c-3f96461efd1c.png)
+
+**init_design.mcmm_example.auto_expanded.tcl**
+  
+![image](https://user-images.githubusercontent.com/118953917/216075940-63fdcb82-38ee-4591-9d00-ab8900ea1d35.png)
+
+**Output Layout**
   
 > Invoking icc2_shell
 ```
@@ -188,3 +206,14 @@ icc2_shell
 source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/top.tcl
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/216076324-7c9103fe-fe49-4f42-a7a3-c4940a46c66c.png)
+![image](https://user-images.githubusercontent.com/118953917/216076368-f9e1855d-f2f7-452b-a6f3-fd38e3644538.png)
+![image](https://user-images.githubusercontent.com/118953917/216076433-e1efdf36-0cbf-4311-b953-1d125edd0c29.png)
+
+> In icc2_shell
+```
+set_propagated_clock [all_clocks]
+report_timing
+estimate_timing
+report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/violators.rpt
+```
