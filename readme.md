@@ -105,6 +105,7 @@ git clone https://github.com/Devipriya1921/VSDBabySoC_ICC2.git
 git clone https://github.com/bharath19-gs/synopsys_ICC2flow_130nm.git
 git clone https://github.com/kunalg123/icc2_workshop_collaterals.git
 git clone https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 ```
   
 ```
