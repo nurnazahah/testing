@@ -212,9 +212,11 @@ icc2_shell
 source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/top.tcl
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/216076324-7c9103fe-fe49-4f42-a7a3-c4940a46c66c.png)
-![image](https://user-images.githubusercontent.com/118953917/216076368-f9e1855d-f2f7-452b-a6f3-fd38e3644538.png)
-![image](https://user-images.githubusercontent.com/118953917/216076433-e1efdf36-0cbf-4311-b953-1d125edd0c29.png)
+![image](https://user-images.githubusercontent.com/118953917/217445180-7f455991-e9fb-4d05-a2a1-8a698d652e4f.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/217445236-1b20ecdd-fc43-4bc2-81af-a0610b9136a1.png)
+![image](https://user-images.githubusercontent.com/118953917/217445278-f91ea81e-7111-4ad9-b58b-531efd60a7fc.png)
+
 
 > In icc2_shell
 ```
