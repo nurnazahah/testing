@@ -236,6 +236,8 @@ icc2_shell> check_clock_tree -clocks my_clk
 **Another useful commands**
   
 ![image](https://user-images.githubusercontent.com/118953917/217419707-46912d99-d641-4234-b994-490871c9442c.png)
+  
+*Source: notes were taken from lecture slides*
 
 </details>
 
