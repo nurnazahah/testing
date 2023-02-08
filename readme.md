@@ -229,7 +229,7 @@ report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs
 
 ![image](https://user-images.githubusercontent.com/118953917/217459536-d2b6a0b9-d6b7-4340-b2b3-9df250cba357.png)
   
-estimate_timing report was not generated since there is no estimate timing rules detected on nets
+* estimate_timing report could not be generated since there is no estimate timing rules detected on nets
   
 ![image](https://user-images.githubusercontent.com/118953917/217459611-95571078-02a6-4dba-a8ba-7154a18f183f.png)
   
