@@ -226,3 +226,115 @@ report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs
 ![image](https://user-images.githubusercontent.com/118953917/216077730-4c62f2d6-9c20-42e1-bafb-416ce2dc88f0.png)
 
 </details>
+
+
+## Day-21
+
+### Topic: Placement and CTS labs
+
+<details>
+  <summary>Theory</summary>
+ 
+### Placement
+  
+* Pre-placement sanity check: floating pins in netlist, unconstrained pins, timing, pin direction mismatch, and etc.
+  
+**What is placement?**
+  
+* Standard cell
+* Placement stages including:
+  + Global placement
+  + Legalization
+  + Detailed placement
+  
+**Placement objectives**
+  
+* Congestion
+* Performance
+* Timing
+* Routability
+* Runtime
+  
+### Clock Tree Synthesis (CTS)
+  
+**Inputs of CTS**
+  
+* Placement DB
+* CTS Spec file
+  
+**CTS Steps**
+  
+1. Clustering
+2. DRV Fixing
+3. Insertion Delay Reduction
+4. Power reduction
+5. Balancing
+6. Post-conditioning
+  
+**CTS Quality Checks**
+  
+* Skew
+* Pulse width
+* Duty cycle
+* Latency
+* Clock tree power
+* Signal integrity and Crosstalk 
+* Timing analysis and fixing
+  
+*Source: notes were taken from lecture slides*
+  
+</details>
+
+<details>
+  <summary>Lab</summary>
+ 
+### Placement
+  
+  
+</details>
+
+
+## Day-22
+
+### Topic: CTS analysis labs
+
+<details>
+  <summary>Theory</summary>
+ 
+### CTS
+  
+**What is CTS?**
+  
+* Clock Tree Synthesis
+* A technique for distributing the clock equally among all sequential parts of VLSI design
+* It will balancing the delays to all clock input pins when the clock is distributed equally
+* The goal of CTS is to minimize skew and insertion delay
+  
+![image](https://user-images.githubusercontent.com/118953917/217413608-7e43ff8e-67b5-4c46-acea-04d2bf6898ec.png)
+
+**Various algo’s used for CTS**
+  
+![image](https://user-images.githubusercontent.com/118953917/217414647-8c241be6-200a-4a4a-b854-337c95911ede.png)
+
+**H-tree algorithm**
+  
+1. Find out all the flops present
+2. Find out the center of all the flops
+3. Trace clock port ot the center point
+4. Divide the core into two parts, trace both the parts and reach to each center
+5. From the center, again, divide the area into two and again trace till center at both the end
+6. Repeat this algo till the time we reach the flop clock pin
+  
+![image](https://user-images.githubusercontent.com/118953917/217415097-2f1675c7-533e-4d1b-858f-524f7a2cbd77.png)
+
+**Various CTS checks**
+  
+* Skew check
+* Pulse width check
+* Duty cycle check
+* Latency check
+* Power check
+* Crosstalk Quality check
+* Delta Delay Quality check
+* Glitch Quality check
+  
