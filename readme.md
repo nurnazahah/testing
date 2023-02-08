@@ -173,29 +173,34 @@ gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/icc2_common_set
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/icc2_dp_setup.tcl
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/init_design.read_parasitic_tech_example.tcl
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/init_design.mcmm_example.auto_expanded.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/pns_example.tcl
 ```
   
 **Modifying files**
   
 **top.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/216073269-7452cc1e-427a-471d-bdcc-412793983082.png)
-
+![image](https://user-images.githubusercontent.com/118953917/217444467-1a0d3e0b-e1b6-41ae-a798-e22174bd48dc.png)
+  
 **icc2_common_setup.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/216073464-594307a1-5f24-49f1-9d71-55e1751074ab.png)
-
+![image](https://user-images.githubusercontent.com/118953917/217444586-51960b86-aa08-4423-871d-425cc5095c59.png)
+  
 **icc2_dp_setup.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/216075587-6b83c35f-f347-4317-a05f-2dd056579fee.png)
-
+![image](https://user-images.githubusercontent.com/118953917/217444639-a9ba7e73-7e04-43a8-bcb1-2be6afa0f382.png)
+  
 **init_design.read_parasitic_tech_example.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/216075764-da076212-0cc3-4bd1-bb2c-3f96461efd1c.png)
-
+![image](https://user-images.githubusercontent.com/118953917/217444705-4a05dc7e-2c6f-468e-a75f-fd8ed3137841.png)
+  
 **init_design.mcmm_example.auto_expanded.tcl**
   
-![image](https://user-images.githubusercontent.com/118953917/216075940-63fdcb82-38ee-4591-9d00-ab8900ea1d35.png)
+![image](https://user-images.githubusercontent.com/118953917/217444754-f035b43a-796f-4bfa-b2b9-8b66d45acf35.png)
+  
+**pns_example.tcl**
+  
+![image](https://user-images.githubusercontent.com/118953917/217444856-7f1901ce-e404-4bc7-8ae7-aa6d971c7051.png)
 
 **Output Layout**
   
