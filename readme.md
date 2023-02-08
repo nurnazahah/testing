@@ -338,3 +338,141 @@ report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs
 * Delta Delay Quality check
 * Glitch Quality check
   
+**Some useful commands**
+  
+* This command checks and reports issues that can lead to bad QoR
+  + Clock tree structure
+  + Constraints
+  + Clock tree exceptions
+  
+```
+check_clock_tree
+```
+  
+* This command checks the design whether the placement done input is perfect or not
+  
+* If it is legal, it is well and good
+  
+```
+check_legality
+```
+  
+* Else, use below command
+  
+```
+legalize_placement
+```
+  
+* There are some default constraints that CTS used, refer table below
+  
+![image](https://user-images.githubusercontent.com/118953917/217416747-e4f7ede4-49ed-4f99-8cc3-d4016d7a99e4.png)
+  
+* To edit those default constraints, use command below
+
+```
+set_clock_tree_options
+```
+  
+* Below are some examples (be careful keeping min and max values in sight)
+  
+```
+-max_capacitance
+-max_transition 
+```
+
+![image](https://user-images.githubusercontent.com/118953917/217417327-52c7cfa3-2d30-44b0-a6f2-3f60eccf0c50.png)
+
+* IC Compiler uses the CTS design rule constraints for all optimization phases, as well as for CTS
+  
+* For information about setting the clock tree synthesis design rule constraint, below are the commands
+  
+![image](https://user-images.githubusercontent.com/118953917/217417626-e74f29f4-7353-42a8-9776-1562647ed9dd.png)
+
+* We can use ICC2 with debug mode by using below command
+  
+*Note: Please refer the ICC2 manual from synopsys*
+  
+```
+-set cts_use_debug_mode true
+```
+  
+* The main command we need to do is as below command
+  
+```
+compile_clock_tree
+```
+  
+**CTS results analysis**
+  
+* We can use the report for the tree that has been built using below command
+  
+```
+report_clock_tree
+-summary 
+-settings 
+```
+
+* Other reports to see
+  + Reports Max global skew
+  + Late/Early insertion delay
+  + Number of levels in clock tree
+  + Number of clock tree references (Buffers)
+  + Clock DRC violations 
+  
+* Also, another report related to clock timing report for paths that are related
+  + Reports actual
+  + Relevant skew
+  + Latency
+  + Interclock latency 
+  
+```
+report_clock_timing
+–type skew
+```
+  
+* After observing the reports, if we see the clock tree could be better, perform CTS and incremental physical optimization as command below
+  
+* This process results in a timing optimized design with fully implemented clock trees
+  
+* The command below does the following:
+  + Performs clock tree power optimization
+  + Synthesizes(Re-Synthesizes) the clock trees
+  + Optimizes the clock trees
+  + Adjusts the I/O timing 
+  + Performs RC extraction of the clock nets and computes accurate clock arrival times
+  + Performs placement and timing optimization
+  
+```
+clock_opt
+```
+  
+* Sometimes, there will be some unrouted clock trees
+  
+* To remove them, perform the command below
+  
+```
+remove_clock_tree
+```
+  
+**After CTS, we do synthesis**
+  
+* Before we synthesize the clock trees, use below command to verify that the clock trees are properly defined
+  
+```
+check_clock_tree 
+icc2_shell> check_clock_tree -clocks my_clk
+```
+  
+**Another useful commands**
+  
+![image](https://user-images.githubusercontent.com/118953917/217419707-46912d99-d641-4234-b994-490871c9442c.png)
+
+</details>
+
+<details>
+  <summary>Lab</summary>
+ 
+### CTS Lab analysis
+  
+  
+</details>
