@@ -216,20 +216,28 @@ source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/top.tcl
   
 ![image](https://user-images.githubusercontent.com/118953917/217445236-1b20ecdd-fc43-4bc2-81af-a0610b9136a1.png)
 ![image](https://user-images.githubusercontent.com/118953917/217445278-f91ea81e-7111-4ad9-b58b-531efd60a7fc.png)
+![image](https://user-images.githubusercontent.com/118953917/217461202-5efeff6b-1bbe-4231-ba40-d0598fd76208.png)
 
 
 > In icc2_shell
 ```
-set_propagated_clock [all_clocks]
+set_propagated_clock [all_clocks]             (Converting clock object from ideal clock to propagated clock)
 report_timing
 estimate_timing
 report_constraints -all_violators -nosplit -verbose -significant_digits 4 > /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/violators.rpt
 ```
 
 ![image](https://user-images.githubusercontent.com/118953917/217459536-d2b6a0b9-d6b7-4340-b2b3-9df250cba357.png)
+  
+estimate_timing report was not generated since there is no estimate timing rules detected on nets
+  
 ![image](https://user-images.githubusercontent.com/118953917/217459611-95571078-02a6-4dba-a8ba-7154a18f183f.png)
   
 **violators.rpt**
+  
+```
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files/violators.rpt        (Reviewing violations report within the design)
+```
 
 ![image](https://user-images.githubusercontent.com/118953917/217459473-278633cb-2677-47ba-80d3-6f789c9d77a2.png)
   
