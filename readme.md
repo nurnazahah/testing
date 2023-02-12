@@ -116,7 +116,13 @@ gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timin
   
 ![image](https://user-images.githubusercontent.com/118953917/218299961-09f62744-36a4-4d49-8749-616a64b94490.png)
 
+**CTS schematic design**
+  
+*Note: before CTS, the clock would be ideal, while after CTS, the clock will be propagated*
+  
+![image](https://user-images.githubusercontent.com/118953917/218315845-f5377f9c-c93c-4be1-8fa1-38723bc24b0c.png)
 
+![image](https://user-images.githubusercontent.com/118953917/218317392-6ae95cc9-a0bd-4dc2-83f8-779f972ba514.png)
 
   
 </details>
