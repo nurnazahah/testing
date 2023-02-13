@@ -64,8 +64,30 @@ The process of making physical connections between signal pins using metal layer
 <details>
   <summary>Lab</summary>
  
-### 
+### Routing 
   
+**Script in routing stage
+  
+*  P/G routing  
+  
+```
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/pns_example.tcl
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218367194-91aef276-5660-4c73-a2da-ad095b4a7898.png)
 
+* Clock and signal routing
+
+```place_opt``` is used to place and optimize the current design
+  
+```clock_opt``` is used to synthesize and route the clocks, and then further optimize the design based on the propagated clock latencies
+  
+```route_auto``` is used to run global routing, trace assignment, and detailed routing at once/automatically
+  
+```
+/nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/top.tcl
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218368079-f5823292-3140-4e87-a14f-32b980267ee6.png)
   
 </details>
