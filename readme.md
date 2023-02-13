@@ -180,5 +180,21 @@ icc2_shell> check_clock_tree -clocks my_clk
  
 ### CTS Lab analysis
   
+> In icc2 terminal
+```
+check_clock_tree      (Checking the issues that can lead to bad QoR)
+check_legality        (Checking the legality of the current placement and report out the violation statistics)
+report_clock_timing -type summary   (Report of actual, relevant skew, latency, interclock latency and etc for related paths)
+report_clock_timing -type skew
+report_clock_timing -type latency
+report_clock_timing -type transition
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218360297-13c3d2ac-623e-437d-a131-63d6a13e9137.png)
+
+![image](https://user-images.githubusercontent.com/118953917/218360360-ccf2afbf-0406-4db2-90fe-cd9f8efaf370.png)
+
+![image](https://user-images.githubusercontent.com/118953917/218360420-4ba1de78-6ba0-4359-a770-8580a131b70b.png)
+![image](https://user-images.githubusercontent.com/118953917/218360450-f00b6e86-6080-431d-822a-001393eb81ef.png)
   
 </details>
