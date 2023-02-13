@@ -192,8 +192,8 @@ report_clock_timing -type transition
   
 ![image](https://user-images.githubusercontent.com/118953917/218360297-13c3d2ac-623e-437d-a131-63d6a13e9137.png)
 
-![image](https://user-images.githubusercontent.com/118953917/218360360-ccf2afbf-0406-4db2-90fe-cd9f8efaf370.png)
-
+![image](https://user-images.githubusercontent.com/118953917/218360583-10a7b5b7-8400-47a7-adea-0a0977709e0e.png)
+  
 ![image](https://user-images.githubusercontent.com/118953917/218360420-4ba1de78-6ba0-4359-a770-8580a131b70b.png)
 ![image](https://user-images.githubusercontent.com/118953917/218360450-f00b6e86-6080-431d-822a-001393eb81ef.png)
   
