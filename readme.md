@@ -66,7 +66,7 @@ The process of making physical connections between signal pins using metal layer
  
 ### Routing 
   
-**Script in routing stage
+**Script in routing stage**
   
 *  P/G routing  
   
