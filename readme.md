@@ -23,9 +23,8 @@
   
 * ECO strategies
   
-  ![image](https://user-images.githubusercontent.com/118953917/218370037-84ab9e61-ebbd-4d25-98ac-e0b938f0cf2a.png)
+![image](https://user-images.githubusercontent.com/118953917/218370188-c5e95462-e61e-4cb5-8637-352703b55461.png)
   
-
 </details>
 
 <details>
