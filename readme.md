@@ -5,7 +5,6 @@
 <details>
   <summary>Theory</summary>
   
-  
 **What have been done till now?**
   
 *Source: notes were taken from lecture slides*
