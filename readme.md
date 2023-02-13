@@ -182,8 +182,8 @@ icc2_shell> check_clock_tree -clocks my_clk
   
 > In icc2 terminal
 ```
-check_clock_tree                    (Checking the issues that can lead to bad QoR)
-check_legality                      (Checking the legality of the current placement and report out the violation statistics)
+check_clock_tree                        (Checking the issues that can lead to bad QoR)
+check_legality                          (Checking the legality of the current placement and report out the violation statistics)
 report_clock_timing -type summary   
 report_clock_timing -type skew
 report_clock_timing -type latency
