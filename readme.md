@@ -103,7 +103,19 @@ report_power
   
 ### Adding in decaps
   
-
+```
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/top.tcl       (Insert decaps command in top.tcl)
+source /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/top.tcl
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/icc2_output.txt
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218705451-28cb9312-ad5d-4651-bc3d-58d95218e9bd.png)
+  
+```
+report_power
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218706390-44178b2b-58a4-4b56-83c9-3fb974ef870e.png)
   
   
 </details>
