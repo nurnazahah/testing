@@ -32,6 +32,21 @@
  
 ### Timing violations and ECO
   
+**Reviewing full report timing**
+  
+```
+gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218626734-e74b6980-5011-43d0-8171-cf3f1c425403.png)
+  
+```
+report_timing -path_type full_clock_expanded -capacitance -nets -physical
+```
+  
+* Need to upsize the cell to improve the timing
+* Upsizing the cell will increase the drive strength of the cell which will help in reducing the delay
+  
 
   
   
