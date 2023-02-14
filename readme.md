@@ -34,6 +34,9 @@
   
 **Reviewing full report timing**
   
+* Estimated report timing before CTS
+* Clock network delay is ideal, hence there is no delay reported and the slack is good
+  
 ```
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
 ```
@@ -43,6 +46,9 @@ gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timin
 ```
 report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -corner estimated_corner -mode [all_modes]
 ```
+  
+* Estimated report timing after CTS
+* Clock network delay is propagated, hence there is some delay which makes the slack is slightly higher than pre-CTS
   
 ![image](https://user-images.githubusercontent.com/118953917/218665665-cf31a551-ce38-4357-bc30-5083d303ab0a.png)
   
