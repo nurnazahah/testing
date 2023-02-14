@@ -34,12 +34,12 @@
   
 **Reviewing full report timing**
   
-* Estimated report timing before CTS
-* Clock network delay is ideal, hence there is no delay reported and the slack is good
-  
 ```
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
 ```
+  
+* Estimated report timing before CTS
+* Clock network delay is ideal, hence there is no delay reported and the slack is good
   
 ![image](https://user-images.githubusercontent.com/118953917/218665586-61ee4256-e9dd-4eb5-9fda-598218330217.png)
   
@@ -58,8 +58,11 @@ report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31
   
 * Need to upsize the cell to improve the timing
 * Upsizing the cell will increase the drive strength of the cell which will help in reducing the delay
+* Upgrading the drive strength depending on the analysis stated in the report timing
   
 ![image](https://user-images.githubusercontent.com/118953917/218665739-6fce88e8-9f72-45c1-9038-0da25907596b.png)
+  
+* Picking some cells to upsize in order to reduce the delay arrival time
   
 > Upsizing the cell
 ```
@@ -71,6 +74,8 @@ size_cell core/U67 sky130_fd_sc_hd__nand2_8
 ```
 report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -path_type full_clock_expanded -capacitance -nets -physical
 ```
+  
+* The slack is still violated, however, the slack has improved after upsizing the cell
   
 ![image](https://user-images.githubusercontent.com/118953917/218665848-c55afe4c-2aa5-4f86-a1c1-64a8cae39968.png)
 
