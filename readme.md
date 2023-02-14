@@ -49,7 +49,13 @@ report_timing -path_type full_clock_expanded -capacitance -nets -physical
   
 ![image](https://user-images.githubusercontent.com/118953917/218628329-99cb8f53-fec0-498b-a9a3-4dcf4ef9dd64.png)
 
+```
+size_cell core/U6 sky130_fd_sc_hd__nand2_4
+size_cell core/U561 sky130_fd_sc_hd__a21oi_4
+size_cell core/U67 sky130_fd_sc_hd__nand2_8
 
+
+```
   
   
   
