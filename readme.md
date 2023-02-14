@@ -115,7 +115,6 @@ gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/icc2_output.txt
 report_power
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/218706390-44178b2b-58a4-4b56-83c9-3fb974ef870e.png)
-  
+![image](https://user-images.githubusercontent.com/118953917/218706906-cc9a14df-48aa-453b-a562-0219043d33b7.png)  
   
 </details>
