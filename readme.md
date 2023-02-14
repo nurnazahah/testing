@@ -47,6 +47,8 @@ report_timing -path_type full_clock_expanded -capacitance -nets -physical
 * Need to upsize the cell to improve the timing
 * Upsizing the cell will increase the drive strength of the cell which will help in reducing the delay
   
+![image](https://user-images.githubusercontent.com/118953917/218628329-99cb8f53-fec0-498b-a9a3-4dcf4ef9dd64.png)
+
 
   
   
