@@ -81,5 +81,11 @@ report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31
 
 
   
+```
+report_qor -corner estimated_corner
+```
+  
+
+  
   
 </details>
