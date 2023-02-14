@@ -78,13 +78,24 @@ report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31
 * The slack is still violated, however, the slack has improved after upsizing the cell
   
 ![image](https://user-images.githubusercontent.com/118953917/218665848-c55afe4c-2aa5-4f86-a1c1-64a8cae39968.png)
-
-
+  
+**Comparison reports before and after ECO**
+  
+* Timing perspective --> the timing has improved
   
 ```
-report_qor -corner estimated_corner
+report_qor
 ```
   
+
+  
+* Area perspective --> the area has increased since the the cell has been upsized
+  
+
+  
+* Power perspective --> total power usage is increased since the area has increased due to upsizing cell
+  
+
 
   
   
