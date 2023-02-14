@@ -38,25 +38,37 @@
 gvim /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/shell/rpts_icc2/timing_estimation/vsdbabysoc.post_estimated_timing.rpt
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/218626734-e74b6980-5011-43d0-8171-cf3f1c425403.png)
+![image](https://user-images.githubusercontent.com/118953917/218665586-61ee4256-e9dd-4eb5-9fda-598218330217.png)
   
 ```
-report_timing -path_type full_clock_expanded -capacitance -nets -physical
+report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -corner estimated_corner -mode [all_modes]
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218665665-cf31a551-ce38-4357-bc30-5083d303ab0a.png)
+  
+```
+report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -path_type full_clock_expanded -capacitance -nets -physical
 ```
   
 * Need to upsize the cell to improve the timing
 * Upsizing the cell will increase the drive strength of the cell which will help in reducing the delay
   
-![image](https://user-images.githubusercontent.com/118953917/218628329-99cb8f53-fec0-498b-a9a3-4dcf4ef9dd64.png)
-
+![image](https://user-images.githubusercontent.com/118953917/218665739-6fce88e8-9f72-45c1-9038-0da25907596b.png)
+  
+> Upsizing the cell
 ```
 size_cell core/U6 sky130_fd_sc_hd__nand2_4
 size_cell core/U561 sky130_fd_sc_hd__a21oi_4
 size_cell core/U67 sky130_fd_sc_hd__nand2_8
-
-
 ```
   
+```
+report_timing -from core/CPU_is_add_a3_reg -to core/CPU_Xreg_value_a4_reg[24][31] -path_type full_clock_expanded -capacitance -nets -physical
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/218665848-c55afe4c-2aa5-4f86-a1c1-64a8cae39968.png)
+
+
   
   
 </details>
