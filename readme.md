@@ -83,6 +83,30 @@ Convert the digital signals to analog signals or vice versa using ADC/DAC
   
 * gdsII and OASIS file --> GDSII is a file format similar to JPEG, DOCX, XLSX etc to enable a layout design to be transferred from one place to another (IP owner handoff to PD team, PD team to foundry for fabrication), to be viewed/used for verifications like Physical verification checks by EDA tools.
   
+*Source: https://teamvlsi.com/2020/08/inputs-for-physical-design-physical-design-input-files.html*
+
+![image](https://user-images.githubusercontent.com/118953917/218978973-19dae4f1-8f5a-4916-acdc-a9cfdf711425.png)
+
+* PnR tool
+
+The tool tries to place the standard cell in such a way that the design should have minimal congestions and the best timing. Every PnR tool provides various commands/switches so that users can optimize the design in a better way in terms of timing, congestion, area, and power as per their requirements.
+  
+* WHAT and WHY TO DO after getting the information?
+  
+This is where we need the following files:
+  
+  1. LEF file
+  2. LIB file
+  3. Tf files (tlu+ file)
+  
+*Source: https://www.slideshare.net/vlsisyst/vlsi-physical-design-flow*
+  
+![image](https://user-images.githubusercontent.com/118953917/218981759-27c9b056-ae06-481c-8ac1-826549041f43.png)
+  
+* Sources of various files
+  
+
+  
 
   
   
