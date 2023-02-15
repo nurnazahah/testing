@@ -57,11 +57,34 @@ Convert the digital signals to analog signals or vice versa using ADC/DAC
   2. More recently, a large number of Mixed-Signal chips where at least part of the chip design needs to measure signals with high precision
   3. These chips have very different Design and Process Technology demands than normal Digital circuits
   
+### AMS: Analog and Mixed Signal (digital and analog)
+  
+**AMS flow**
+  
+![image](https://user-images.githubusercontent.com/118953917/218935017-b6e05d14-a790-4607-8612-a27c89c5b98b.png)
 
+**Block diagram representation for mixed signal design**
+
+![image](https://user-images.githubusercontent.com/118953917/218935237-12b92d40-67b3-4777-aec7-15b6ad7fc9c2.png)
+
+### Exploring the example of VSDBabySoC
+  
+* RVMYTH processor --> digital block
+* PLL --> analog block
+* DAC --> analog block (for digital to analog conversion)
+  
+**Introduction to various files**
+  
+* LEF (Library Exchange Format) file: physical properties such as width, height etc regarding the standard cells
+  + tf (technology file) or tlef (technology lef) --> contains same information
+  + Cell tf
+  
+* LIBerty file --> contains timing information of the cells
+  
+* gdsII and OASIS file --> GDSII is a file format similar to JPEG, DOCX, XLSX etc to enable a layout design to be transferred from one place to another (IP owner handoff to PD team, PD team to foundry for fabrication), to be viewed/used for verifications like Physical verification checks by EDA tools.
   
 
   
-
   
 </details>
 
