@@ -73,7 +73,7 @@ Convert the digital signals to analog signals or vice versa using ADC/DAC
 * PLL --> analog block
 * DAC --> analog block (for digital to analog conversion)
   
-**Introduction to various files**
+### Introduction to various files
   
 * LEF (Library Exchange Format) file: physical properties such as width, height etc regarding the standard cells
   + tf (technology file) or tlef (technology lef) --> contains same information
@@ -93,7 +93,7 @@ The tool tries to place the standard cell in such a way that the design should h
   
 * WHAT and WHY TO DO after getting the information?
   
-This is where we need the following files:
+This is why we need the following files:
   
   1. LEF file
   2. LIB file
@@ -105,10 +105,32 @@ This is where we need the following files:
   
 * Sources of various files
   
-
+*Source: notes are taken from lecture slides*
   
-
+![image](https://user-images.githubusercontent.com/118953917/218983204-5a925e58-9748-4ec4-902d-9c804e265cbd.png)
   
+### Discovering IP cores
+  
+**What are IP cores?**
+  
+* An IP core consists of a block of logic or data that is used in a semiconductor chip.
+  
+* It is usually the intellectual property of a particular person or company. IP cores are used when making a fieldprogrammable gate array (FPGA) or application-specific integrated circuit (ASIC).
+  
+* IP cores are created throughout the design process and can be turned into components for reuse.
+  
+* There are different categories for IP cores including hard IP cores and soft IP cores.
+  
+* The soft IP core , can be customized during the physical design phase and mapped to any process technology.
+ 
+* A hard IP core is one that has the logic implementation and the physical implementation. In other words, the physicallayout of a hard macro-IP is finished and fixed in a particular process technology.
+  
+**How it works in semiconductor industry**
+  
+*Source: notes are taken from lecture slides*
+  
+![image](https://user-images.githubusercontent.com/118953917/218985408-52ba048f-00c0-49bf-b1af-694b6094a823.png)
+
   
 </details>
 
