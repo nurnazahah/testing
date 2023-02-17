@@ -76,5 +76,13 @@
 * The second reason of increasing the crosstalk noise is increase in the lateral capacitance because it is increasing the metal layer.
 
 ![image](https://user-images.githubusercontent.com/118953917/219543759-59aad67d-c6f8-4d67-86ee-1182b9c4804c.png)
+  
+**Why increasing lateral capacitance making metal layer increasing too?**
+  
+* Breaking into several metal layers helps in reducing the resistance where the higher the area, resulting in lower resistance. That's why we are having a wider metal layer.
+  
+* The overlap area between metal 1 and metal 2 as shown in the figure below, is pretty huge, that leads into an increase of lower capacitance. That's why 0.25 um and above process, we say that the interlayer capacitance was dominant. 
+  
+* 
 
 
