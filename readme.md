@@ -5,20 +5,10 @@
 <details>
   <summary>Theory</summary>
   
-### 
-  
-
+### Has been covered in previous topics
   
 </details>
 
-<details>
-  <summary>Lab</summary>
- 
-### 
-  
-
-  
-</details>
 
 ## Day-26
 
@@ -130,15 +120,6 @@ This is why we need the following files:
 *Source: notes are taken from lecture slides*
   
 ![image](https://user-images.githubusercontent.com/118953917/218985408-52ba048f-00c0-49bf-b1af-694b6094a823.png)
-
-  
-</details>
-
-<details>
-  <summary>Lab</summary>
- 
-### 
-  
 
   
 </details>
