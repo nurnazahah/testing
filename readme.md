@@ -112,3 +112,15 @@
   
 **Lower supply voltage leading to lesser noise margin**
   
+* In a basic inverter functioning, if we provide low-level input into an inverter, we will get high-level output and vice versa.
+  
+* Converting the concept into a graphical method, when Vin = low, Vout = high. whereas, when Vin = high, Vout = low.
+  
+* The behaviour of an inverter happens when the half of the voltage (Vdd/2), we will see the behavior of switch is happening.
+  
+* When the input is zero, the output is VDD. Then, we move the input from zero and keep increasing the input towards VDD. As gradually we increase the input voltage, the output voltage will start to decrease. And finally, the output voltage will be completely zero.
+  
+![image](https://user-images.githubusercontent.com/118953917/219574459-115da6cc-ce09-4f19-8e6f-49b9d4a869c5.png)
+
+
+
