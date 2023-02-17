@@ -68,5 +68,12 @@
   
 **Increase in number of metal layers resulting in increase in lateral capacitance**
   
-
+* Basically, there are 2 kinds of capacitance.
+  + Interlayer capacitance: capacitors that is placed between 2 consecutive different layers.
+  + Lateral capacitance: capacitors that is placed between 2 wires at the same level and metal layer.
   
+* The second reason of increasing the crosstalk noise is increase in the lateral capacitance because it is increasing the metal layer.
+
+![image](https://user-images.githubusercontent.com/118953917/219543759-59aad67d-c6f8-4d67-86ee-1182b9c4804c.png)
+
+
