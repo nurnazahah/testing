@@ -39,13 +39,13 @@
   
 * 0.25 um and 0.1 um are the channel/gate length.
 
-* Looking through 0.25 um and above procsess, there are quite some spaces and routes between each other.
+* Looking through 0.25 um and above process, there are quite some spaces and routes between each other.
   
-* Quich way to reduce the size of the MOSFET is to reduce the channel length. When we reduce the channel length, the overall size of the MOSFET shrinks the overall size of the combinational logic, resulting the cells inside shrinks too. That way, we achieved a smaller size of the MOSFET.
+* Quick way to reduce the size of the MOSFET is to reduce the channel length. When we reduce the channel length, the overall size of the MOSFET shrinks the overall size of the combinational logic, resulting the cell inside shrinks too. That way, we achieved a smaller size of the MOSFET.
   
 * If smaller size has been achieved, resulting the cells inside shrank, the complete circuit accomodates in a smaller area. Therefore, we can have multiple instances of the circuits or similar kind of circuits which are getting made to get back into the area.
   
-* For example, the circuit is used for sending and receiving messages. The circuit could have just instantiated it nine times. Some section can be sending and receiving messages, another section can be sending and receiving calls, some can be processing, some can reading other applications and so on. 
+* For example, the circuit is used for sending and receiving messages. The circuit could have just instantiated in nine times. Some section can be sending and receiving messages, another section can be sending and receiving calls, some can be processing, some can reading other applications and so on. 
   
 * As we can see, before reducing the MOSFET size, we only have one or two applications running in the same area, but after reducing the size, now we have nine applications running in the same area of the chip.
   
