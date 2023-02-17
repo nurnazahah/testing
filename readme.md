@@ -122,5 +122,16 @@
   
 ![image](https://user-images.githubusercontent.com/118953917/219574459-115da6cc-ce09-4f19-8e6f-49b9d4a869c5.png)
 
+* The area of the slope (the difference of the output the input) ideally should be infinite.
 
+![image](https://user-images.githubusercontent.com/118953917/219575275-2612b810-8dbf-46af-b571-a1ceffc52874.png)
+  
+* Practically, the curve won't be as smooth as in ideally. It might have some slopes since it has some delays due to capacitances and resistances while travelling from VDD to zero voltage. However, it won't be exactly achieve zero voltage due to practical scenarios of nmos and pmos, but for sure it will be somewhere around zero. 
+  
+* Input low voltage (VIL): the input voltage is from zero to some particular value (VIL), as well as maximum input voltage that will be recognised as a low input logic level.
+  
+* Output high voltage (VOH): Nominal voltage corresponding to a high logic state.
 
+will be will be really tight which is v or at OK
+
+![image](https://user-images.githubusercontent.com/118953917/219576259-b0285638-691e-4e61-bb04-0cea36d1bfe1.png)
