@@ -130,8 +130,18 @@
   
 * Input low voltage (VIL): the input voltage is from zero to some particular value (VIL), as well as maximum input voltage that will be recognised as a low input logic level.
   
-* Output high voltage (VOH): Nominal voltage corresponding to a high logic state.
+* Output high voltage (VOH): the output voltage is from zero to some particular value (VOH), as well as nominal voltage corresponding to a high logic state.
+  
+* Input high voltage (VIH): any voltage at the input level which lies above VIH and VDD, the output is expected to be low/VOL.
 
-will be will be really tight which is v or at OK
+* Output low voltage (VOL): the output at VIH.
 
-![image](https://user-images.githubusercontent.com/118953917/219576259-b0285638-691e-4e61-bb04-0cea36d1bfe1.png)
+![image](https://user-images.githubusercontent.com/118953917/219579883-a91f6c08-72de-45c6-bbfc-483c7ff29838.png)
+  
+</details>
+
+<details>
+  <summary>Noise Margin Voltage Parameters</summary>
+  
+### Crosstalk Noise Reasons and Definition
+  
