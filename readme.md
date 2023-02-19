@@ -168,6 +168,16 @@
   
 ![image](https://user-images.githubusercontent.com/118953917/219953157-00f6b3c5-2728-4346-8112-c546254744ca.png)  
 ![image](https://user-images.githubusercontent.com/118953917/219952384-7bce91e1-b507-41d1-8706-82f6d5ea487c.png)
+    
+* Lower Supply Voltage leading to lesser noise margin.
+
+* When the supply voltage is reduced, the noise margin will also be reduced.
+
+* For example, referring to the figure below, anything below 200 mV on the LHS margin will be considered as low margin while on the RHS, the noise margin will be below 100 mV.
+  
+![image](https://user-images.githubusercontent.com/118953917/219953486-88c0dbd4-6321-4b8c-85f9-2f88e0b85201.png)
+
+</details> 
 
 
   
