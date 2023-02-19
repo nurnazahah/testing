@@ -141,7 +141,35 @@
 </details>
 
 <details>
-  <summary>Noise Margin Voltage Parameters</summary>
+  <summary>Noise Margin Summary</summary>
   
-### Crosstalk Noise Reasons and Definition
+### Noise margin summary
+  
+* Anything that lies between VOL and VIL will be considered as logic 0.
+  
+* Any voltage that lies between VIL and VIH will be considered as undefined region.
+  
+* Undefined region -> the logic can either moved from logic 1 to logic 0 or from the interception point of (b) to logic 0. Undefined region is a danger case.
+  
+* Whenever the voltage lies between VIH and VOH, it will always being treated as 1V or logic 1.
+  
+* Therefore, we have to ensure that the voltage didn't enter in undefined region since it cannot be identified whether the voltage might be in logic 1 or not.
+  
+* That is the problem when we are having a large physical distance from the main power supply to the circuit.
+  
+* Noise margin defines the input voltage range and the output voltage. Basically it varies the input voltage.
+  --> **Noise margin**: Any voltage in between the range of VOH and VIH will be detected as logic 1. It should be put under the inputs/outputs of the circuit.
+
+* Any voltage level in NML range will be detected as logic 0.
+
+* Noise could be easily eliminated or can be ignored at this margin.
+  
+*Source: Udemy learning website*
+  
+![image](https://user-images.githubusercontent.com/118953917/219953157-00f6b3c5-2728-4346-8112-c546254744ca.png)  
+![image](https://user-images.githubusercontent.com/118953917/219952384-7bce91e1-b507-41d1-8706-82f6d5ea487c.png)
+
+
+  
+
   
