@@ -2,7 +2,7 @@
 
 ### Topic: Introduction to crosstalk - glitch and delta delay
 
-### Introduction
+### Introduction to Crosstalk
 <details>
   <summary>Introduction</summary>
   
@@ -179,7 +179,11 @@
 
 </details> 
 
-
+### Introduction to Glitch
+<details>
+  <summary>Basic crosstalk glitch example</summary>
+  
+### Introduction to crosstalk
   
 
   
