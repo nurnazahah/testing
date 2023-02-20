@@ -179,11 +179,108 @@
 
 </details> 
 
-### Introduction to Glitch
+### Introduction to Signal Integrity and Glitch
 <details>
-  <summary>Basic crosstalk glitch example</summary>
+  <summary>Signal Integrity and Glitch</summary>
   
-### Introduction to crosstalk
+### Signal Integrity and Crosstalk
   
+* Signal Integrity and Crosstalk are the Quality checks of the clock routes.
+  
+* **Signal integrity**: the ability of an electrical signal to carry information reliably and resist the effects of high-frequency electromagnetic interference from nearby signals.
+  
+* **Crosstalk**: the undesirable electrical interaction between two or more physically adjacent nets due to capacitive cross-coupling. It is a type of noise signal that corrupts the actual signal while transmission through the communication medium.
+  
+**Aggressor and Victim Nets**
+  
+* A net that receives undesirable cross-coupling effects from a nearby net is called a victim net.
+  
+* A net that causes these effects in a victim net is called an aggressor net.
+  
+### Crosstalk-Glitch
+  
+* When one net is switching, and another net is constant then switching signal may cause spikes on other net because of which coupling capacitance (Cc) occurs between two nets, this is called as crosstalk noise.
+  
+* Types of Glitches --> Rise, Fall, Overshoot, Undershoot
+  
+![image](https://user-images.githubusercontent.com/118953917/220038938-9c354627-8e3e-454a-8ee6-e855a5eaf6da.png)
+  
+</details>
 
+<details>
+  <summary>Performing analysis and report commands</summary>
+
+### Performing Crosstalk Delay Analysis
+  
+* Enable PrimeTime SI --> ```set_app_varsi_enable_analysistrue```
+  
+* Back-annotate the design with cross-coupling capacitance information in a SPEF or GPD file --> ```read_parasitics-keep_capacitive_couplingfile_name.spf```
+
+### Using check_timing
+  
+> Types to check specific to crosstalk analysis
+```
+no_driving_cell
+ideal_clocks
+partial_input_delay
+unexpandable_clocks
+```
+  
+### Timing reports
+  
+```
+report_timing
+-crosstalk_delta
+report_si_bottleneck
+report_delay_calculation –crosstalk
+report_si_double_switching
+report_noise
+report_timing -transition_time-crosstalk_delta \ -input_pins-significant_digits 4   (Viewing the Crosstalk Analysis Report)
+```
+  
+### Bottleneck Reports
+  
+```
+report_si_bottleneck
+report_bottleneck
+delta_delay
+delta_delay_ratio
+total_victim_delay_bump
+delay_bump_per_aggressor
+  
+report_si_bottleneck-cost_typedelta_delay\-slack_lesser_than 2.0    (To get a list of all the victim nets with a delay violation or within 2.0 time units of a violation, listed in order of delta delay)
+
+report_delay_calculation –crosstalk
+size_cell
+set_coupling_separation
+-include_clock_nets
+minimum_active_aggressor
+
+report_si_bottleneck-cost_type delta_delay \ -minimum_active_aggressors 3   (bottleneck command reports nets where three or more active aggressors are affecting the net)
+```
+  
+### Crosstalk Net Delay Calculation
+  
+```
+report_delay_calculation-crosstalk \ -from [get_pinsg1/Z] -to [get_pins g2/A]
+```
+  
+### Reporting Crosstalk Settings
+  
+> To check crosstalk settings
+```
+report_si_delay_analysis
+report_si_noise_analysis
+report_si_aggressor_exclusion
+```
+  
+</details>
+
+### Lab
+<details>
+  <summary>Lab</summary>
+  
+### Lab
+  
+  
   
