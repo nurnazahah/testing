@@ -423,6 +423,10 @@ mkdir mag
 mkdir netgen
 ```
   
+```
+cd xschem
+ln -s 
+
 
   
   
