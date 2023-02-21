@@ -291,8 +291,46 @@ report_si_aggressor_exclusion
 
 ### Introduction to SkyWater SKY130
 <details>
-  <summary>Introduction to SkyWater PDKs and opensource EDA tools</summary>
+  <summary>Theory: Introduction to SkyWater PDKs and opensource EDA tools</summary>
   
 ### Introduction to Skywater PDK
   
+* SkyWater Open Source PDK is a joint project between Google and SkyWater Technology Foundry, where it provides a fully open source Process Design Kit (PDK), and its related resources.
+  
+* SkyWater open PDK public repository contains:
+  + Documentation: https://skywater-pdk.readthedocs.io/en/main/
+  + PDK Library and files: https://github.com/google/skywater-pdk
+  + Community: https://invite.skywater.tools/
+  
+![image](https://user-images.githubusercontent.com/118953917/220237707-8bafcbff-c95a-456b-9fd4-7e666c1b034c.png)
 
+* "130" in SKY130 stands for the feature size, which is the length of smallest transistor that can be manufactured in the process.
+  
+### Open-Source EDA Tools
+  
+* Open_PDKs is a Makefile based installer that takes files from the SkyWater PDKs and reformats them for a number of open source EDA tools.
+  
+* Tools that is supported by open_pdks:
+  1. Magic
+  2. Klayout
+  3. Openlane
+  4. Xschem
+  5. Netgen
+  6. Ngspice
+  7. IVerilog
+  8. qflow
+  9. IRSIM
+  10. xcircuit
+
+</details>
+
+<details>
+  <summary>Lab: Introduction to SkyWater PDKs and opensource EDA tools</summary>
+  
+### Opensource EDA Tools
+  
+**Steps to install SKY130 PDKs**
+  
+```
+
+  
