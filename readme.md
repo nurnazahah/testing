@@ -334,7 +334,7 @@ report_si_aggressor_exclusion
 ```
 git clone https://github.com/RTimothyEdwards/open_pdks
 cd open_pdks
-./configure --enable-sky130-pdk
+./configure --enable-sky130-pdk         (Failed)
 make
   
 ./configure --enable-sky130-pdk=/home/nur.nazahah.mohd.amri/open_pdks/sky130/
