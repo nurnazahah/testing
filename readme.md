@@ -332,5 +332,10 @@ report_si_aggressor_exclusion
 **Steps to install SKY130 PDKs**
   
 ```
+git clone https://github.com/RTimothyEdwards/open_pdks
+cd open_pdks
 
+```
+ 
+  
   
