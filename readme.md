@@ -376,4 +376,43 @@ make
   
 ###  Check Tool Installations
   
+**Magic**
+  
+* Command ```magic``` in the command prompt to invoke magic interface. 
+  
+* A layout window and a console window that is used to run commands for layout and actions will be popped out.
+  
+* Tcl interpreter can be invoked in the terminal instead of seperate console window by using the option ```magic -noconsole```.
+  
+* Magic can also be run without graphics layout window using the option ```magic -dnull - noconsole```, and should be called as such when running from a script. 
+  
+* Command ```magic -dnull -noconsole filename.tcl``` is used to run magic in batch mode.
+  
+**Netgen**
+  
+* Command ```netgen``` in the terminal to invoke Netgen. It is completely command driven and has no graphics interface. The console window is a stock tcl interpreter as in Magic.
+  
+* Tcl interpreter can be invoked in the terminal instead of seperate console window by using the option ```netgen -noconsole```.
+  
+* Command ```netgen -batch source filename.tcl``` is used to run Netgen in batch mode.
+  
+* Netgen provides GUI window written in python that can be accessed using ```usr/local/lib/netgen/pyhton/lvs_manager.py```, though this interface hides many useful options that cannot be accessed with just this window itself.
+  
+**Xschem**
+  
+* Command ```xschem``` in the terminal to invoke Xschem. This should bring up a schematics window.
+  
+* Xschem has no seperate console window and uses native command line terminal for tcl commands, unlike Netgen and Magic.
+  
+* Command ```xschem --tcl filename.tcl -q``` is used to run Xschem in batch mode.
+  
+**Ngspice**
+  
+* Command ```ngspice``` in the terminal to invoke Ngspice in Linux.
+  
+* Ngspice has its own prompt and runs its own set of interpreter commands that aren't based on tcl. 
+  
+* Command ```ngspice -b``` is used to run Ngspice in batch mode.
+  
 
+  
