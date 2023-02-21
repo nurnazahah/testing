@@ -283,4 +283,16 @@ report_si_aggressor_exclusion
 ### Lab
   
   
+</details>
+
+## Day-28
+
+### Topic: Introduction to DRC/LVS 
+
+### Introduction to SkyWater SKY130
+<details>
+  <summary>Introduction to SkyWater PDKs and opensource EDA tools</summary>
   
+### Introduction to Skywater PDK
+  
+
