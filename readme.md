@@ -321,11 +321,37 @@ report_si_aggressor_exclusion
   8. qflow
   9. IRSIM
   10. xcircuit
-
+  
+* The libraries supported by open_pdks are:
+  1. Digital standard cells i.e. sky130_fd_sc_hd
+  2. Primitive devices/analog i.e. sky130_fd_pr
+  3. I/O cells i.e. sky130_fd_io
+  4. 3rd party libraries i.e. sky130_ml_xx_hd
+  
+* Open_PDKs uses a common installed file system structure, where SkyWater PDKs are under ```/usr/share/pdk/sky130A/``` directory.
+  
+* There are 2 subdirectories under the main SKY130 PDK's directory.
+  + ```libs.tech```
+  + ```libs.ref```
+  
+* ```libs.tech``` --> containing all subdirectories for the open source tool setup.
+  
+* ```libs.ref``` --> containing the reference libraries in various formats.
+  
+* ```project_root/``` --> project directory that is containing subdirectories for each tool or flow needed.
+  
+### Physical Verification and Design Flow
+  
+* Physical verification is perfomed to check whether we have a mask layout that matches what we think the circuit should be.
+  
+* There are 2 major steps in physical verification.
+  + **Design Rule Checking (DRC)** --> to ensure that the layout matches all the rules provided by the foundy for the specific process.
+  + **Layout Vs. Schematic (LVS)** --> to ensure that the layout netlist matches the schematic netlist.
+ 
 </details>
 
 <details>
-  <summary>Lab: Introduction to SkyWater PDKs and opensource EDA tools</summary>
+  <summary>Lab: Tool installations and basic DRC/LVS design flow tools</summary>
   
 ### Opensource EDA Tools
   
@@ -334,12 +360,20 @@ report_si_aggressor_exclusion
 ```
 git clone https://github.com/RTimothyEdwards/open_pdks
 cd open_pdks
-./configure --enable-sky130-pdk         (Failed)
-make
+./configure --enable-sky130-pdk           (Failed)
+make                                      (Grabs SKY130 repository and submodules, and a few third party repositories to use in the install. It then builds the libraries from these various repositories.)
   
-./configure --enable-sky130-pdk=/home/nur.nazahah.mohd.amri/open_pdks/sky130/
+./configure --enable-sky130-pdk=/home/nur.nazahah.mohd.amri/open_pdks/sky130/      (Specify the path after failed at the first stage)
 make
 ```
  
   
   
+  
+  
+  
+  
+  
+###  Check Tool Installations
+  
+
