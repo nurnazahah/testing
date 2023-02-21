@@ -414,5 +414,17 @@ make
   
 * Command ```ngspice -b``` is used to run Ngspice in batch mode.
   
+```
+cd /home/nur.nazahah.mohd.amri/Desktop
+mkdir inverter
+cd inverter
+mkdir xschem
+mkdir mag
+mkdir netgen
+```
+  
+
+  
+  
 
   
