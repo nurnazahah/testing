@@ -304,7 +304,6 @@ set link_library [list /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/fil
 read_verilog /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/vsdbabysoc.pt.v
 link_design
 current_design
-read_sdc /nfs/png/disks/png_mip_gen6p9ddr_0032/nazahah/lab/d20/files2/report/vsdbabysoc.sdc
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/220685160-8786848f-2343-4df4-9be1-1fcd8b5c8c47.png)
