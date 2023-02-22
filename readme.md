@@ -549,6 +549,27 @@ magic -d XR
   
 * Import the schematic to the layout in Magic by running the magic, then click on File -> Import SPICE and then select the inverter.spice file from the xschem directory. If done correctly, the following layout has been opened up in magic.
   
+![image](https://user-images.githubusercontent.com/118953917/220548501-d5759edd-b58c-4149-8490-f560e0906740.png)
+![image](https://user-images.githubusercontent.com/118953917/220548959-0d23c844-8ca0-4112-a574-6a7e900f7516.png)
+
+* Referring to the layout generated above, the schematic import does not know how to do analog placing and routing as it is very complicated. Therefore, We must place them in the best positions and wire them up manually. 
+  
+* Firstly, place the pfet device above the nfet and adjust the placement of the input, output and supply pins. Refer below figure.
+  
+![image](https://user-images.githubusercontent.com/118953917/220553775-6486d0f0-3144-48c1-815f-cae9f2dfb513.png)
+
+* Next, set some parameters that are only adjustable in the layout which will make it more convenient to wire the whole layout up. 
+  
+* Set the "Top guard ring via coverage" to 100. This will put a local interconnect to metal1 via ta the top of the guard ring. Next, for "Source via coverage", put +40 and for "Drain via coverage", put -40. This will split the source drain contacts, making it easy to connect them with a wire. 
+  
+* For nfet, set the "Bottom guard ring via coverage" to 100, while the source and drain via coverages are set to +40 and -40, respectively, like the pfet.
+  
+* Start to paint the wires using metal1 layers by connecting the source of the pfet to Vdd and source of the nfet to Vss. Next, connect the drains of both mosfets to the output. Finally, connect the input to all the poly contacts of the gate. 
+  
+
+  
+
+
 
   
 
