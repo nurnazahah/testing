@@ -568,6 +568,17 @@ magic -d XR
   
 * Start to paint the wires using metal1 layers by connecting the source of the pfet to Vdd and source of the nfet to Vss. Next, connect the drains of both mosfets to the output. Finally, connect the input to all the poly contacts of the gate. 
   
+![image](https://user-images.githubusercontent.com/118953917/220634394-2cc70484-4070-42d7-af1d-c534af076da4.png)
+
+* Save the file and select the autowrite option. 
+  
+* Run the following commands in the magic console.
+  
+```
+extract do local
+extract all
+```
+  
 
   
 
