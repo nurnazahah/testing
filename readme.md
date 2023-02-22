@@ -457,7 +457,19 @@ magic -d -OGL   (An OpenGL based graphics package)
   + I key --> to select a device
   + M key --> to move the selected device
 
-* 
+* To edit Devices drop down buttons: Click on Devices 1 -> nmos (MOSFET)
+  
+* Select nmos (MOSFET) under "Devices 1" and set the width to 2 um, length to 0.5 um and fingers to 3.
+  
+![image](https://user-images.githubusercontent.com/118953917/220506020-3aa752a5-9940-49a8-adad-a79f115b651c.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/220509577-9870bcde-5ec6-4b83-9f44-74a042da6952.png)
+
+* Changing the device type to sky130_fd_pr__nfet_g5v0d10v5
+  
+![image](https://user-images.githubusercontent.com/118953917/220510768-6080b79d-b78e-49ac-a7ed-1a9c9aaaec1b.png)
+
+
   
 
 
