@@ -416,7 +416,7 @@ cd ../netgen/
 ln -s /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl setup.tcl
 ```
   
-**xscheme
+**xscheme**
 
 ```
 cd inverter/xschem/
@@ -469,6 +469,8 @@ magic -d -OGL   (An OpenGL based graphics package)
   
 ![image](https://user-images.githubusercontent.com/118953917/220510768-6080b79d-b78e-49ac-a7ed-1a9c9aaaec1b.png)
 
+### Creating Simple Schematic In Xschem
+  
 
   
 
