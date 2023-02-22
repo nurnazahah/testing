@@ -560,6 +560,8 @@ magic -d XR
 
 * Next, set some parameters that are only adjustable in the layout which will make it more convenient to wire the whole layout up. 
   
+* To pop out the parameter editing section, use S key and press I key to select the object, then use CTRL+P to open up the parameter options for the selected device.
+  
 * Set the "Top guard ring via coverage" to 100. This will put a local interconnect to metal1 via ta the top of the guard ring. Next, for "Source via coverage", put +40 and for "Drain via coverage", put -40. This will split the source drain contacts, making it easy to connect them with a wire. 
   
 * For nfet, set the "Bottom guard ring via coverage" to 100, while the source and drain via coverages are set to +40 and -40, respectively, like the pfet.
