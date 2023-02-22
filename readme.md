@@ -540,7 +540,16 @@ plot V(in) V(out)
   
 * Finally, generate a netlist for the schematic by clicking the Netlist button and exit Xschem.
   
+### Importing Schematic To Layout And Inverter Layout Steps
+  
+```
+cd ../mag/
+magic -d XR
+```  
+  
 * Import the schematic to the layout in Magic by running the magic, then click on File -> Import SPICE and then select the inverter.spice file from the xschem directory. If done correctly, the following layout has been opened up in magic.
+  
+
   
 
   
