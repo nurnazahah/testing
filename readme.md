@@ -393,6 +393,8 @@ report_si_aggressor_exclusion
   
 * Command ```ngspice -b``` is used to run Ngspice in batch mode.
   
+### Creating Sky130 Device Layout In Magic
+  
 ```
 cd /home/nur.nazahah.mohd.amri/Desktop
 mkdir inverter
@@ -401,6 +403,8 @@ mkdir xschem
 mkdir mag
 mkdir netgen
 ```
+  
+![image](https://user-images.githubusercontent.com/118953917/220499836-65254833-457d-4234-b894-340f8013d663.png)
   
 ```
 cd xschem
@@ -412,10 +416,51 @@ cd ../netgen/
 ln -s /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl setup.tcl
 ```
   
-```
-cd ../..
+**xscheme
 
 ```
+cd inverter/xschem/
+xschem
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/220499889-19c52a2e-16d2-4bc5-9be5-a3c9e8f272e5.png)
+
+* This brings up a display for xschem with a lot of example schematics, SKY130 devices are shown in xschem as below.
+  
+*Note: Examples can be accessed by clicking the relevant rectangle and pressing the "E" key on the keyboard. We can return to the menu by pressing "CTRL+E". The "F" key resizes the schematic to fit the window.*
+  
+![image](https://user-images.githubusercontent.com/118953917/220499949-67b0a991-0082-4f97-bf3e-77e2a148c0e2.png)
+  
+**magic**
+
+```
+cd ../mag/
+magic
+magic -d XR     (To invoke a cairo graphics package that uses 3D acceleration to get better rendering than the default graphics)
+magic -d -OGL   (An OpenGL based graphics package)
+```
+```
+  
+* This brings up 2 magic windows, with the layout window displaying "Technology: sky130A", along with many colors and icons displaying the available layers in this technology, as shown below.
+  
+![image](https://user-images.githubusercontent.com/118953917/220500607-d3316a91-8339-4df7-9475-3768d9f360cf.png)
+  
+* Useful Magic Shortcuts:
+  + Left and right mouse buttons --> to adjust the cursor box
+  + Shift+Z --> to zoom out
+  + Middle mouse button/P --> to select a layer (also known as painting)
+  + Key E --> to erase whatever is present in the cursor box (can also be done by clicking the middle mouse button on an empty part of the layout)
+  + Key V --> to view the entire layout
+  + CTRL+P --> opens up the parameter options for the selected device
+  + S key --> to select layers
+  + Typing "what" command in the magic console --> gives information on the selected layer
+  + ";" key --> to type commands in the magic console without moving between windows, until the Enter key is pressed
+  + I key --> to select a device
+  + M key --> to move the selected device
+
+* 
+  
+
 
   
   
