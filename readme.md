@@ -353,28 +353,7 @@ report_si_aggressor_exclusion
 <details>
   <summary>Lab: Tool installations and basic DRC/LVS design flow tools</summary>
   
-### Opensource EDA Tools
-  
-**Steps to install SKY130 PDKs**
-  
-```
-git clone https://github.com/RTimothyEdwards/open_pdks
-cd open_pdks
-./configure --enable-sky130-pdk           (Failed)
-make                                      (Grabs SKY130 repository and submodules, and a few third party repositories to use in the install. It then builds the libraries from these various repositories.)
-  
-./configure --enable-sky130-pdk=/home/nur.nazahah.mohd.amri/open_pdks/sky130/      (Specify the path after failed at the first stage)
-make
-```
- 
-  
-  
-  
-  
-  
-  
-  
-###  Check Tool Installations
+### Opensource EDA Tools: Check Tool Installations
   
 **Magic**
   
