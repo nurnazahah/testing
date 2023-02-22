@@ -504,7 +504,33 @@ xschem
   
  * Firstly, create a symbol for the schematic as the schematic will appear as a symbol in the testbench. To do this, click on the Symbol menu and select "Make symbol from schematic". Then, create a testbench schematic using new schematic option and insert the generated symbol from the local directory using the Insert key.
   
-* The testbench will be very simple where we will generate a ramp input and observe the output response after connecting the power supplies. To do this, insert 2 voltage sources from the default xschem library, one for the input and one for the supply. Connect these and add a GND node to the supply connections. Create "opins" for the input and output signals to observe in Ngspice. 
+* Select new schematic in File tab and choose inverter.sch under home directory and paste it on the schematic window.
+  
+* The testbench will be very simple where we will generate a ramp input and observe the output response after connecting the power supplies. To do this, insert 2 voltage sources from the default xschem library, one for the input and one for the supply. Connect these and add a GND node to the supply connections. Create "ipins" and "opins" for the input and output signals to observe in Ngspice. 
+  
+* Supply voltage is set to 1.8 V. For the input voltage, we must set the supply to a piece-wise linear function to get ramp. PWL function has voltage and time values stated that the supply will start at 0v, then start to ramp up from 20 ns till it reaches its final value at 900 ns of 1.8 V. 
+  
+* Next, place two more statements for ngspice, but as these aren't specific to any component, they must be placed in text boxes. To place a text box, select the code_shown.sym component under the xschem library.
+  
+* The first text box will specify the location of the device models used in the device schematic, where it is using a .lib statement that selects a top level file that tells ngspice where to find all the models and also specifying a simulation corner for all the models. The first block specifying the typical corner with ```value = ".lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt"```. 
+  
+* For the second block, it specifies;
+```
+value = ".control
+tran 1n 1u
+plot V(in) V(out)
+.endc"
+```
+  
+* This will tell ngspice to run a transient simulation for 1 ns and monitor voltages for the in and out pins. Therefore, a complete testbench schematic is shown as below, and save this as inverter_tb.sch
+  
+![image](https://user-images.githubusercontent.com/118953917/220539048-6f9c5a5c-10f7-45e0-be88-52af87624eb3.png)
+
+* To generate the netlist, click on the Netlist button, then simulate it in Ngspice by clicking the Simulate button. 
+  
+* The waveform confirms that the schematic behaves as an inverter as shown below.
+  
+
   
 
 
