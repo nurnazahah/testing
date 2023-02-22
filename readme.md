@@ -530,6 +530,18 @@ plot V(in) V(out)
   
 * The waveform confirms that the schematic behaves as an inverter as shown below.
   
+![image](https://user-images.githubusercontent.com/118953917/220541463-5897304d-d91e-4325-99ae-97bd59da2003.png)
+
+* After verified the schematic, create a layout for it. To do this, go back to the inverter schematic. 
+  
+* Firstly, click on the Simulation menu and select "LVS netlist: Top Lvel is a .subckt" option. 
+  
+* Wait a few seconds and go back to the Simulation menu to check whether a tick mark appears beside the aforementioned option. This verifies if we have properly defined a sub circuit for creating a layout cell with pins in the layout. 
+  
+* Finally, generate a netlist for the schematic by clicking the Netlist button and exit Xschem.
+  
+* Import the schematic to the layout in Magic by running the magic, then click on File -> Import SPICE and then select the inverter.spice file from the xschem directory. If done correctly, the following layout has been opened up in magic.
+  
 
   
 
