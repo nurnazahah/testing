@@ -439,7 +439,6 @@ magic
 magic -d XR     (To invoke a cairo graphics package that uses 3D acceleration to get better rendering than the default graphics)
 magic -d -OGL   (An OpenGL based graphics package)
 ```
-```
   
 * This brings up 2 magic windows, with the layout window displaying "Technology: sky130A", along with many colors and icons displaying the available layers in this technology, as shown below.
   
