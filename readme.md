@@ -471,6 +471,53 @@ magic -d -OGL   (An OpenGL based graphics package)
 
 ### Creating Simple Schematic In Xschem
   
+```
+cd ../xschem/
+xschem
+```
+  
+* Press "Insert" key to pop out Choose symbol window. Select the SkyWater library directory path to access SkyWater components and choose the fd_pr library. To create an inverter, a basic nfet and pfet are needed. Therefore, select nfet and pfet device from the insert window and place it anywhere in the schematic.
+  
+![image](https://user-images.githubusercontent.com/118953917/220518340-6c1f52c3-21a1-4bf7-8043-3f5bbba34cb4.png)
+  
+* As pins are not PDK specific, they can be found under the xschem library in the insert window. These are named as ipin.sym, opin.sym and iopin.sym. 
+  
+* Place the pins and use M key to move the components around on the schematic window. Use C key to copy the components and Del key to erase components. Make use of W key to insert wires between components and make connections. 
+  
+* Rename each pin to something sensible using the Q key to bring up the parameter window.
+  
+* Select the components by clicking on them and click Q key to bring up the parameter windows to configure the properties of the devices. 
+  
+* For **nfet**, change the length to 0.18 as the default value of 0.15 is restricted to sram devices only. Set the number of fingers to 3, and the width of each finger to 1.5. 
+  
+* Since we have 3 fingers now, the total width in the parameter window must be set to 3 times of the finger width, which is 4.5. 
+  
+* Similarly, for **pfet**, adjust the parameters to 3 fingers, width of 1 per finger, and a length of 0.18. We must specify the body to be connected to the Vdd pin as it is a 3 pin pfet.
+  
+![image](https://user-images.githubusercontent.com/118953917/220520320-0af30699-82b8-4369-9d89-fb68fa3e0fce.png)
+
+* Save the design by clicking tab File --> save as --> inverter.sch
+  
+### Creating Symbol And Exporting Schematic In Xschem
+  
+* To functionally validate the schematic, testbench that is separated from the schematic must be created. 
+  
+ * Firstly, create a symbol for the schematic as the schematic will appear as a symbol in the testbench. To do this, click on the Symbol menu and select "Make symbol from schematic". Then, create a testbench schematic using new schematic option and insert the generated symbol from the local directory using the Insert key.
+  
+* The testbench will be very simple where we will generate a ramp input and observe the output response after connecting the power supplies. To do this, insert 2 voltage sources from the default xschem library, one for the input and one for the supply. Connect these and add a GND node to the supply connections. Create "opins" for the input and output signals to observe in Ngspice. 
+  
+
+
+
+
+
+  
+
+
+
+  
+
+  
 
   
 
