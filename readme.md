@@ -701,6 +701,12 @@ ngspice inverter_tb.spice
   
 * GDSII format is an industry standard accross foundries for representing IC layouts. 
   
+### Extraction Commands, Styles and Options In Magic
+
+* Extraction process: The layout tool needs to generate a netlist independently by looking at the other than the mask geometry of the layout. 
+  
+* Extraction in Magic has two stage process, wherein magic generates an intermediate netlist format called the .ext, after it is converted to the required netlist format like spice.
+
 
   
 
