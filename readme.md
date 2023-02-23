@@ -665,7 +665,21 @@ kiv
 <details>
   <summary>Theory: Introduction to DRC and LVS</summary>
   
-### Understanding GDS Format
+### Fundamentals of Physical Verification
+  
+* As chip gets denser, the scale of physical verification increases. 
+  
+* Chip designs can be hierarchical, while physical verification cannot. 
+  
+* Two primary aspects of physical verification are: 
+  1. Design Rule Checks (DRC) --> Ensures that the design layout meets all the silicon foundry rules for mask making.
+  2. Layout vs Schematic (LVS) --> Ensures that the design layout electrically matches the design, as implemented in schematic form or any form that electrically describes the design specifications. 
+  
+* Since the chips are designed from a single source (RTL design), the LVS is now checking the design through different flows where:
+  1. Starting at the RTL source and working forwards.
+  2. Starting at the finished layout and working backwards. This way the tools used cross check each other.
+  
+
   
 </details>
 
