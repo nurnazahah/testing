@@ -652,11 +652,14 @@ vim inverter_tb.spice
 ![image](https://user-images.githubusercontent.com/118953917/220838344-940395c3-c800-4330-a236-78ee3ecc8be6.png)
 
 ```
+/usr/share/pdk/bin/cleanup_unref.py -remove .
 cp ../xschem/.spiceinit .
 ngspice inverter_tb.spice
 ```
   
-kiv
+* The result is almost the same as in previous simulation in xschem.
+  
+![image](https://user-images.githubusercontent.com/118953917/220866522-c7d71cdd-8749-42a9-99f4-a9ccf70c3989.png)
   
 </details>
 
@@ -678,6 +681,29 @@ kiv
 * Since the chips are designed from a single source (RTL design), the LVS is now checking the design through different flows where:
   1. Starting at the RTL source and working forwards.
   2. Starting at the finished layout and working backwards. This way the tools used cross check each other.
+  
+![image](https://user-images.githubusercontent.com/118953917/220867039-df1f63fd-aabb-4a69-81c8-9f93353faa72.png)
+
+* Basically, physical verification must check if any manual intervention has broken something. 
+  
+* However, for errors, it is looking for how the tool got it wrong and how we can modify the setups to overcome the problem. 
+  
+* Increasing the number of tools used, increases the robustness of the physical verification process.
+  
+### Understanding GDS Format
+  
+* For some form of standardisation to describe integrated circuits, a standard file format is needed. 
+  
+* Some common file formats are:
+  + Caltech Intermediate form (.cif)
+  + GDSII stream format
+  + Open Artwork System Interchange Standard (OASIS)
+  
+* GDSII format is an industry standard accross foundries for representing IC layouts. 
+  
+
+  
+
   
 
   
