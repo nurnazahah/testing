@@ -835,10 +835,43 @@ port 1 use
 
 ### Abstract Views
   
-
+* For abstraction, we cannot start with a cell in memory. Hence, we need to open a fresh Magic session and read the lef library and load the same and2_1 cell from the Cell Manager.
   
+```
+lef read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+```
+  
+* If we check port information, we can see that port order metadata isn't present in the lef files.
+  
+![image](https://user-images.githubusercontent.com/118953917/220956130-8c847796-afb7-40b2-9d6e-f5eaac5bfd97.png)
 
+* Select one port and perform below command.
+  
+```
+port first
+port 1 name
+port 2 name
+port 3 name
+port 1 use
+port 1 class
+port 4 name
+```
+  
+* Port order metadata isn't present in the lef files.
+  
+![image](https://user-images.githubusercontent.com/118953917/220958273-82f1f7bd-ea60-44ba-bd98-2c1ed6365209.png)
 
+* Run the readspice script as before and load the cell again.
+  
+```
+readspice /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+load test
+getcell sky130_fd_sc_hd__and2_1
+```
+
+* Note: after load cell, make an empty box in empty space in magic. Then, command getcell.
+  
+![image](https://user-images.githubusercontent.com/118953917/220962305-ade24be2-1540-4737-9847-a3d14abdd543.png)
 
 
 
