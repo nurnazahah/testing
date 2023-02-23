@@ -595,17 +595,29 @@ magic -d XR
   
 * Start to paint the wires using metal1 layers by connecting the source of the pfet to Vdd and source of the nfet to Vss. Next, connect the drains of both mosfets to the output. Finally, connect the input to all the poly contacts of the gate. 
   
-![image](https://user-images.githubusercontent.com/118953917/220634394-2cc70484-4070-42d7-af1d-c534af076da4.png)
-
+![image](https://user-images.githubusercontent.com/118953917/220816477-4123d73d-061a-4e48-af4a-aa6cec5991e3.png)
+  
 * Save the file and select the autowrite option. 
   
 * Run the following commands in the magic console.
   
 ```
-extract do local
-extract all
+extract do local    (Ensuring that magic writes all results to the local directory)
+extract all         (Performing the actual extraction)
+ext2spice lvs       (Simulating and setting up the netlist to hierarchical spice output in ngspice format with no parasitic components)
+ext2spice           (Generating the spice netlist)
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/220809923-7dea9fb2-83bb-455e-a11c-641874165cf7.png)
+  
+```
+rm *.ext                                          (Clear any unwanted files -> .ext files are just intermediate results from the extraction)
+/usr/share/pdk/bin/cleanup_unref.py -remove .     (Clean up extra .mag files -> files containing paramaterised cells that were created and saved but not used in the design)
+netgen -batch lvs "../mag/inverter.spice inverter" "../xschem/inverter.spice inverter"    (Run LVS by entering the netgen subdirectory)
+```
+  
+* Remember to always use the layout netlist first and schematic netlist second as then in the side by side result the layout is on the left and the schematic is on the right. Each netlist is represented by a pair of keywords in quotes, where the first is the location of the netlist file and the second is the name of the subcircuit to compare. As we can see from the result below, there was an issue in the wiring and the netlists do not match. This is due to wiring errors in the layout.
+
 
   
 
