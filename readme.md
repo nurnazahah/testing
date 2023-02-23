@@ -707,7 +707,11 @@ ngspice inverter_tb.spice
   
 * Extraction in Magic has two stage process, wherein magic generates an intermediate netlist format called the .ext, after it is converted to the required netlist format like spice.
 
+![image](https://user-images.githubusercontent.com/118953917/220926384-dfe4bbcb-815d-40e0-9bb6-c2358abaeedb.png)
 
+* All devices, instances, connections between cells, subcells, nets, as well as parasitics are present in the netlist. 
+  
+* The netlist can be fed into a simulator such as Ngspice, along with a schematic captured netlist to compare the results of the two.
   
 
   
@@ -720,8 +724,109 @@ ngspice inverter_tb.spice
   
 ### GDS Read
   
+```
+cd /home/nur.nazahah.mohd.amri/Desktop
+mkdir lab2
+cd lab2
+mkdir mag
+cd mag
+cp /usr/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc ./.magicrc
+magic -d XR &
+```
   
+> In tkcon (Magic console)
+```
+cif listall istyle    (To view the possible styles)
+cif list istyle       (To see the current style)
+cif istyle xxx
+gds read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds      (Read the GDS files from the PDK)
+cellname top          (To see the available top level cells)
+```
   
+![image](https://user-images.githubusercontent.com/118953917/220935614-fc72ebd7-659d-4628-a898-d05da6d441a0.png)
+  
+* Since it is a library, the console lists all the subcells.
+  
+* The same thing can be accessed with the menu button Options -> Cell Manager -> sky130_fd_sc_hd__and2_1. We shall load a simple and2_1 cell as shown below.
+
+![image](https://user-images.githubusercontent.com/118953917/220935709-3a014798-5960-41f6-81b2-7c7750fad832.png)
+
+> In magic console
+```
+gds read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+cif istyle()
+```
+  
+* Referring to the below figure, the labels in the layout view are marked yellow, which means they are treated as regular text. 
+  
+```
+cif istyle sky130(vendor)       (Change style)
+gds read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+```
+  
+* The current and2_1 layout will automatically be overwritten. 
+  
+* Here, the labels are colored blue, which means they are treated as ports. This shows that when dealing with vendor files, it is wise to use the vendor style.
+  
+![image](https://user-images.githubusercontent.com/118953917/220938107-ac0a9ccd-7acf-4798-b3e8-229311110327.png)
+  
+> In magic console
+```
+gds noduplicates true   (If don't want to automatically overwrite existing cells when reading from gds)
+gds read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+```
+
+![image](https://user-images.githubusercontent.com/118953917/220940204-9633aa96-edf5-47ae-a4b6-ee978bec1b69.png)
+
+### Ports
+  
+> In magic console
+```
+port index    (To inquire ports on a layout)
+port first    (To find the index of the first port)
+port 1 name
+port 1 class
+port 1 use
+```
+  
+* Select a port and command as above. Note that we can only select one port at a time for this method.
+  
+![image](https://user-images.githubusercontent.com/118953917/220942541-c31db8e6-89cf-4a08-9c3e-d78a38dd6b1d.png)
+
+```
+ls /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/
+cd /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/
+gvim sky130_fd_sc_hd.spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/220945910-98d17bf4-a64e-4123-ab2b-749c3320b5e6.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/220945712-ebf92bca-28ab-403b-8cbe-afa62467bd8d.png)
+
+* While the cell definition shows the first port to be port A, the gds read of the file in magic shows the first port as VPWR. 
+  
+* The port order mentioned in the definition came from the vendor and should be considered correct. However, port numbering is considered metadata and is not included in gds file. 
+  
+* One way to add metadata to the gds file opened in magic is to read its corresponding lef file. 
+  
+```
+lef read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef    (To read the lef file)
+port 1 name
+port 1 class
+port 1 use
+```
+  
+* Here, the port order is not updated where the lef files do not contain port order metadata. However, port class and use information was imported. Unfortunately, port order is only captured in the spice files from a vendor, but magic has no spice read command as these files provide no layout information.
+  
+![image](https://user-images.githubusercontent.com/118953917/220948801-190f8292-7e85-499e-820e-f4cdae2b1aec.png)
+  
+```
+readspice /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice   (To read port order from spice files - use custom .tcl script and call it in the magic console) 
+```
+  
+* Load the cell layout again from the Cell Manager and inquire the same port 1 information to check.
+  
+
   
 
 
