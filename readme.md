@@ -521,8 +521,8 @@ xschem
   
 * Similarly, for **pfet**, adjust the parameters to 3 fingers, width of 1 per finger, and a length of 0.18. We must specify the body to be connected to the Vdd pin as it is a 3 pin pfet.
   
-![image](https://user-images.githubusercontent.com/118953917/220520320-0af30699-82b8-4369-9d89-fb68fa3e0fce.png)
-
+![image](https://user-images.githubusercontent.com/118953917/220823402-5d940050-8723-4ffc-9ddb-5fe593bc2b9c.png)
+  
 * Save the design by clicking tab File --> save as --> inverter.sch
   
 ### Creating Symbol And Exporting Schematic In Xschem
@@ -595,7 +595,7 @@ magic -d XR
   
 * Start to paint the wires using metal1 layers by connecting the source of the pfet to Vdd and source of the nfet to Vss. Next, connect the drains of both mosfets to the output. Finally, connect the input to all the poly contacts of the gate. 
   
-![image](https://user-images.githubusercontent.com/118953917/220816477-4123d73d-061a-4e48-af4a-aa6cec5991e3.png)
+![image](https://user-images.githubusercontent.com/118953917/220818486-c900a932-d619-4b98-a12a-334083f115b4.png)
   
 * Save the file and select the autowrite option. 
   
@@ -608,7 +608,7 @@ ext2spice lvs       (Simulating and setting up the netlist to hierarchical spice
 ext2spice           (Generating the spice netlist)
 ```
   
-![image](https://user-images.githubusercontent.com/118953917/220809923-7dea9fb2-83bb-455e-a11c-641874165cf7.png)
+![image](https://user-images.githubusercontent.com/118953917/220818458-c1c66460-eeb1-4730-8c2b-a3ac764171a0.png)
   
 ```
 rm *.ext                                          (Clear any unwanted files -> .ext files are just intermediate results from the extraction)
@@ -616,7 +616,15 @@ rm *.ext                                          (Clear any unwanted files -> .
 netgen -batch lvs "../mag/inverter.spice inverter" "../xschem/inverter.spice inverter"    (Run LVS by entering the netgen subdirectory)
 ```
   
-* Remember to always use the layout netlist first and schematic netlist second as then in the side by side result the layout is on the left and the schematic is on the right. Each netlist is represented by a pair of keywords in quotes, where the first is the location of the netlist file and the second is the name of the subcircuit to compare. As we can see from the result below, there was an issue in the wiring and the netlists do not match. This is due to wiring errors in the layout.
+* Remember to always use the layout netlist first and schematic netlist second in the netgen command as in side by side, resulting the layout is on the left and the schematic is on the right. 
+  
+* Each netlist is represented by a pair of keywords in quotes, where the first is the location of the netlist file and the second is the name of the subcircuit to compare. 
+  
+* As we can see from the result below, there was an issue in the wiring and the netlists do not match. This is due to wiring errors in the layout.
+  
+![image](https://user-images.githubusercontent.com/118953917/220819365-90a4363d-2c28-4b7c-87a8-a38dc16681f8.png)
+  
+
 
 
   
