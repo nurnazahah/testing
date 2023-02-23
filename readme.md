@@ -624,15 +624,58 @@ netgen -batch lvs "../mag/inverter.spice inverter" "../xschem/inverter.spice inv
   
 ![image](https://user-images.githubusercontent.com/118953917/220819365-90a4363d-2c28-4b7c-87a8-a38dc16681f8.png)
   
-
-
-
+**Debugging errors in netlist, rerun and save layout**
   
+```
+extract do local
+extract all
+ext2spice lvs
+ext2spice cthresh 0     (Tells magic to add all the parasitic capacitances to the spice netlist)
+ext2spice
+```
 
-
-
+* Referring to the netlist file below, there are multiple lines beginning with C, which detail the parasitic capacitances.
   
+```
+vim inverter.spice 
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/220836829-6b35e6a9-19a8-41f0-b85a-1eba2ef39a99.png)
 
+```
+cp ../xschem/inverter_tb.spice .
+vim inverter_tb.spice
+```
+  
+* Modify the test bench netlist file.
+  
+![image](https://user-images.githubusercontent.com/118953917/220838344-940395c3-c800-4330-a236-78ee3ecc8be6.png)
+
+```
+cp ../xschem/.spiceinit .
+ngspice inverter_tb.spice
+```
+  
+kiv
+  
+</details>
+
+
+### DRC/LVS Theory and labs
+<details>
+  <summary>Theory: Introduction to DRC and LVS</summary>
+  
+### Understanding GDS Format
+  
+</details>
+
+<details>
+  <summary>Lab: Labs for GDS read/write, extraction, DRC, LVS and XOR setup</summary>
+  
+### GDS Read
+  
+  
+  
   
 
 
