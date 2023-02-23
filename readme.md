@@ -822,9 +822,18 @@ port 1 use
   
 ```
 readspice /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice   (To read port order from spice files - use custom .tcl script and call it in the magic console) 
+port 1 name
+port 1 class
+port 1 use
 ```
   
 * Load the cell layout again from the Cell Manager and inquire the same port 1 information to check.
+  
+* The port is already updated and the information has updated.
+  
+![image](https://user-images.githubusercontent.com/118953917/220952878-3f48d16d-368a-4778-88dc-33a5e4b2ba20.png)
+
+### Abstract Views
   
 
   
