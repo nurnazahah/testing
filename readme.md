@@ -866,11 +866,6 @@ port 4 name
 ```
 readspice /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice   --> load from cell manager
 load test
-```
-  
-* Select empty space outside the cell and command as below.
-  
-```
 getcell sky130_fd_sc_hd__and2_1
 ```
 
@@ -878,13 +873,15 @@ getcell sky130_fd_sc_hd__and2_1
   
 ![image](https://user-images.githubusercontent.com/118953917/221087159-f0b22c55-70b1-4b17-b769-624595503e4d.png)
   
+* Click an empty space outside the cell, select the cell and command as below.
+  
 ```
 gds write test      (To write lef file to gds file)
 ```
-  
+ 
 ![image](https://user-images.githubusercontent.com/118953917/221087135-119a66cb-2605-4800-83e1-826163867001.png)
 
-  
+
 
 
 
