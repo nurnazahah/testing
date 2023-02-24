@@ -1108,8 +1108,33 @@ save test3
   
 ![image](https://user-images.githubusercontent.com/118953917/221142740-12ae1b8a-a58c-42fa-9047-70c4ad376234.png)
 
+### Setup For LVS
+  
+```
+mkdir netgen
+cd netgen
+cp /usr/share/pdk/sky130A/libs.tech/netgen/sky130A_setup.tcl ./setup.tcl
+cd ../mag/
+magic -d XR sky130_fd_sc_hd__and2_1 &
+```
+  
+```
+ext2spice lvs
+ext2spice 
+quit
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221147630-8593129e-d1aa-4acf-b8d2-65018827920f.png)
+  
+```
+cd ../netgen/
+netgen -batch lvs "../mag/sky130_fd_sc_hd__and2_1.spice sky130_fd_sc_hd__and2_1" "/usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice sky130_fd_sc_hd__and2_1"
+```
 
+![image](https://user-images.githubusercontent.com/118953917/221148331-7984985b-50e4-4983-b9bd-c215163bdd08.png)
 
+### Setup For XOR
+  
 
 
 
