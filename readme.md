@@ -947,9 +947,124 @@ property
 ```
   
 ![image](https://user-images.githubusercontent.com/118953917/221089800-3452c845-5539-4ace-86bd-dd632789b41c.png)
+  
+* Highlight the cell by using key i and select the desired cell. Then, press ">" key and press scroller of the mouse to paint the selected layer using locali. 
 
 ```
 cellname writeable sky130_fd_sc_hd__and2_1 true
+gds write test
+quit
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221118636-c88e4b74-43ce-44ae-a20a-d15ecaa7357d.png)
+
+```
+gds read test
+quit
+```
+```
+gds readonly true
+gds rescale false
+gds read /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+load sky130_fd_sc_hd__and2_1
+property
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221120672-80959213-dca1-4979-9c22-d029bbb8dc65.png)
+![image](https://user-images.githubusercontent.com/118953917/221122008-e5a32ddd-2457-4a9e-8a65-429e45aa40b2.png)
+
+### GDS Reading Option In Magic
+  
+```
+load sky130_fd_sc_hd__and2_1
+extract all
+ext2spice lvs
+ext2spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221124067-48afe37e-e238-425d-a6e2-905378a68710.png)
+
+```
+cd /home/nur.nazahah.mohd.amri/Desktop/lab2/mag
+gvim sky130_fd_sc_hd__and2_1.spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221125269-b8cc7f78-c82c-4b50-a749-e73e8b982d8c.png)
+
+```
+ext2spice cthresh 0     (Include the parasitic capacitances)
+ext2spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221126118-63ab8d90-3859-4bdc-9344-d4e879f5441b.png)
+
+```
+cd /home/nur.nazahah.mohd.amri/Desktop/lab2/mag
+gvim sky130_fd_sc_hd__and2_1.spice
+```
+  
+* Generated netlist containing lines starting with C to denote the parasitic capacitances as shown below.
+  
+![image](https://user-images.githubusercontent.com/118953917/221126438-0c103791-5d49-4eab-a618-2683e32eca59.png)
+
+```
+ext2spice cthresh 0.01
+ext2spice
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221127906-d80cd9b2-8932-4664-b920-066ef3940ad2.png)
+  
+```
+cd /home/nur.nazahah.mohd.amri/Desktop/lab2/mag
+gvim sky130_fd_sc_hd__and2_1.spice
+```
+
+![image](https://user-images.githubusercontent.com/118953917/221128105-c954f806-c614-4b41-8cb0-6d26e39e87cd.png)
+
+* Running a full R-C extraction
+  
+```
+ext2sim labels on
+ext2sim
+extresist tolerance 10
+extresist                 (Must select cell first before run the command)
+```
+  
+* This shows the number of resistor nets found usable, and creates a .res.ext file which holds information to modify the existing .ext file for R parasitics.
+  
+![image](https://user-images.githubusercontent.com/118953917/221130496-2e90681f-c35b-4516-b5a7-54a87bbb8070.png)
+  
+```
+ext2spice lvs
+ext2spice cthresh 0.01
+ext2spice extresist on
+ext2spice
+```
+  
+```
+cd /home/nur.nazahah.mohd.amri/Desktop/lab2/mag
+gvim sky130_fd_sc_hd__and2_1.spice
+```
+  
+* Generated netlist is now containing both R and C parasitic components as shown below.
+  
+* While this method does work, it is extremely time consuming for the large circuits. For large circuits, it is better to let the router conduct this job as it already knows where all the wires are supposed to connect.
+  
+![image](https://user-images.githubusercontent.com/118953917/221132106-a7cf8a37-c920-4785-aa21-4418fa18e8c1.png)
+
+### Setup For DRC
+  
+* To set up standard DRC, use the following commands to call a python script.
+
+```
+
+
+  
+
+  
+  
+  
+</details>
 
 
 
