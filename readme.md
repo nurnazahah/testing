@@ -877,13 +877,42 @@ getcell sky130_fd_sc_hd__and2_1
   
 ```
 gds write test      (To write lef file to gds file)
+quit
 ```
  
 ![image](https://user-images.githubusercontent.com/118953917/221087135-119a66cb-2605-4800-83e1-826163867001.png)
 
+* Reinvoke magic and command as below.
+  
+```
+gds read test     (To read gds file)
+save test
+quit
+```
+
+![image](https://user-images.githubusercontent.com/118953917/221088032-f1780516-1a96-4fa6-8337-487913a40e9c.png)
+  
+```
+load test
+path                (Viewing standard cell contents from the library path)
+gds write test
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221089189-239a4430-ffd3-46f8-8943-4020f283f396.png)
+
+* Select the cell, hit the ">" key and perform command as below.
+  
+```
+property
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221089800-3452c845-5539-4ace-86bd-dd632789b41c.png)
 
 
 
+
+
+  
 
   
 
