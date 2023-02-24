@@ -908,6 +908,8 @@ property
   
 ![image](https://user-images.githubusercontent.com/118953917/221089800-3452c845-5539-4ace-86bd-dd632789b41c.png)
 
+```
+cellname writeable sky130_fd_sc_hd__and2_1 true
 
 
 
