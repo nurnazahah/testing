@@ -1245,7 +1245,37 @@ move w 0.4um
 
 ![image](https://user-images.githubusercontent.com/118953917/221206971-e85b7a15-7a83-4253-832f-58d8291b9951.png)
 
+### Lab For Via Size, Multiple Vias, Via Overlap and Autogenerate Vias
+  
+* Load exercise2.mag and look at exercise 2a. 
+  
+* Run a DRC report, we see it is a simple via size error.
+  
+![image](https://user-images.githubusercontent.com/118953917/221211209-c4aa1cc4-6364-4f0c-be7d-54dd4b89c571.png)
+  
+* We can fix this easily by doing an area select and stretch operation twice. Once horizontally, and once vertically.
 
+![image](https://user-images.githubusercontent.com/118953917/221211898-f742f51a-f251-4724-bb16-e73144de279a.png)
+
+* For example 2b, we have a large via with an array of contact cuts. 
+  
+* We cannot see the contact cuts yet though, as Magic displays them as a single via for viewing ease. 
+  
+* To see the contact cuts, we can run the command ```cif see xxx``` to check the cif layer names.
+  
+![image](https://user-images.githubusercontent.com/118953917/221214193-f974d9cc-604c-40bb-b28d-8681e6bf57f2.png)
+  
+* Now let us explore example 2c. Here, we have an overlap error as shown below.
+
+![image](https://user-images.githubusercontent.com/118953917/221218146-f2291362-ee35-44d8-9145-c0622ad00d83.png)
+
+* To fix this, we can simply select the layer then use the box grow command as shown. Here, the c stands for center, which means grow around center. Next we paint in a layer of metal1 to fix the overlap error.
+  
+![image](https://user-images.githubusercontent.com/118953917/221218331-375be2aa-c1b3-4df4-bf5b-dddd923bff0c.png)
+  
+* To automatically generate a via in Magic without any box manipulation, we can do the following. Let's see example 2d. If we use the wiring tool by cycling through the tools with the space key, we can quickly draw wires. By clicking SHIFT+left MB we can move up a metal layer until we reach the top most metal 5 layer. Similarly, we can move down layers with the SHIFT+right MB until we reach the metal interconnect.
+  
+![image](https://user-images.githubusercontent.com/118953917/221216035-4ab378fd-0d00-4b85-b47e-fc1eeeba6c9a.png)
 
 
   
