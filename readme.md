@@ -1166,15 +1166,26 @@ load xor_test
   
 ![image](https://user-images.githubusercontent.com/118953917/221194185-2bf924f1-5123-4358-bb42-1a58afd3beae.png)
 
-  
-
-
-  
-  
-  
 </details>
 
+### Front-end and back-end DRC
+<details>
+  <summary>Theory: Introduction to DRC rules</summary>
+  
+### Introduction To Basic Silicon Manufacturing Process
+  
 
+
+</details>
+
+<details>
+  <summary>Lab: Labs for all DRC rules</summary>
+  
+### Lab For Width Rule And Spacing Rule
+  
+
+
+</details>
 
 
   
