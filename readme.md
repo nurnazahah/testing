@@ -1221,6 +1221,32 @@ paint m2
 
 ### Lab For Wide Spacing Rule And Notch Rule
   
+* If we select the cursor box over the area and run a DRC report, we can find 2 errors. 
+  
+* The first is a regular spacing error for the smaller rectangle, and the second shows a wide spacing error for the larger rectangle.
+  
+![image](https://user-images.githubusercontent.com/118953917/221204374-91ed856f-b04e-4005-bf06-a2074515b003.png)
+
+* Fix can be done by moving either of the boxes by a distance of 0.4um away, as shown below.
+  
+```
+move w 0.4um
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221204803-0da1d0e5-7470-4bba-b681-6f69b181af33.png)
+
+* If we run a DRC report, it shows up as a spacing error, since notch errors are generally the same as spacing errors for most processes.
+
+![image](https://user-images.githubusercontent.com/118953917/221205173-0905a82d-b5b6-4a24-97b4-9271f67a9cb7.png)
+
+* As this is the same layer, we cannot simply move this around. 
+  
+* To fix this, we put the cursor box over one half of the shape. Next we use the area select or A key to select just the top portion of the shape like shown below.
+
+![image](https://user-images.githubusercontent.com/118953917/221206971-e85b7a15-7a83-4253-832f-58d8291b9951.png)
+
+
+
 
   
 
