@@ -1057,9 +1057,61 @@ gvim sky130_fd_sc_hd__and2_1.spice
 * To set up standard DRC, use the following commands to call a python script.
 
 ```
-
-
+/usr/share/pdk/sky130A/libs.tech/magic/run_standard_drc.py /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/mag/sky130_fd_sc_hd__and2_1.mag
+ls -al *.txt
+```
   
+![image](https://user-images.githubusercontent.com/118953917/221135334-4de470cf-02e6-4569-86ba-9c6988a2d1e2.png)
+
+```
+gvim sky130_fd_sc_hd__and2_1_drc.txt
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221136091-cd39f2cc-fcac-4da3-ba28-19d5907fd030.png)
+
+```
+load sky130_fd_sc_hd__and2_1 
+drc style
+drc listall style
+drc style drc(full)
+drc check               (Select cell first then run command)
+```
+  
+  * There are DRC errors in the vendor .mag file for the and2_1 subcell since the standard cell layouts do not have internal connections to the well and substrate to save room, and the layout depends on tap cells to make those connections.
+
+* The reason we haven't seen these DRC errors earlier in Magic is because the DRC script runs a full DRC check, while the default DRC style in Magic was a fast DRC. This is shown below.
+  
+![image](https://user-images.githubusercontent.com/118953917/221138529-bc1e3827-5586-459a-8536-2ee89b5974ae.png)
+
+```
+drc why
+drc find
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221139526-911925eb-62f2-41c0-b735-421dd91bce82.png)
+
+```
+load test2
+getcell sky130_fd_sc_hd__and2_1
+getcell sky130_fd_sc_hd__tapvpwrvgnd_1      (Select an empty space and run the command)
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221141961-1cbfded9-d476-4d93-a20c-a388648e4bf4.png)
+  
+* Add and align a tap cell in the existing layout, there are no more DRC errors in the top level.
+  
+* Use key I to select all, M to move.
+  
+```
+save test3
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221142740-12ae1b8a-a58c-42fa-9047-70c4ad376234.png)
+
+
+
+
+
 
   
   
