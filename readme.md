@@ -1135,7 +1135,37 @@ netgen -batch lvs "../mag/sky130_fd_sc_hd__and2_1.spice sky130_fd_sc_hd__and2_1"
 
 ### Setup For XOR
   
+```
+cd ../mag/
+magic -d XR &
+load sky130_fd_sc_hd__and2_1
+save altered
+load altered
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221151613-553eb80d-9e0e-40bf-9542-96ab2985dad9.png)
 
+```
+erase li        (Select cell first then run command)
+flatten -nolabels xor_test
+load sky130_fd_sc_hd__and2_1
+xor -nolabels xor_test
+load xor_test
+quit
+```
+
+![image](https://user-images.githubusercontent.com/118953917/221152723-05e15105-903d-467c-b47e-6fb18c87e71d.png)
+
+```
+magic -d XR &
+load test3
+flatten -nolabels xor_test
+xor -nolabels xor_test        (Select AND cell before run the command)
+load xor_test
+```
+  
+
+  
 
 
   
