@@ -1277,30 +1277,48 @@ move w 0.4um
   
 ![image](https://user-images.githubusercontent.com/118953917/221216035-4ab378fd-0d00-4b85-b47e-fc1eeeba6c9a.png)
 
-
+###  Lab For Minumum Area Rule And Minimum Hole Rule
   
-
-
-
-
+* Load in example3.mag. Here, we have a layer of metal with the following DRC error.
   
-  
+![image](https://user-images.githubusercontent.com/118953917/221226474-cd1ff7ff-c25c-44f9-840e-f1eaf29ffa3c.png)
 
+* To fix this, we can easily area select and stretch the layer to meet the requirement.
   
+![image](https://user-images.githubusercontent.com/118953917/221226819-be6d062d-6042-442e-a486-2c0ceabe0706.png)
+
+*Note: Wire routes always meet the minimum area rules when using the wiring tool. However, when jumping up by 2 or more layers, it is possible to violate this rule,  where there isn't enough metal 1 to fit the minimum area rule, along with other violations.*
+  
+![image](https://user-images.githubusercontent.com/118953917/221227089-f81e2134-14dd-40e9-ab55-7fa0ae0f8bf3.png)
+
+* Next, example 3b. Here we have a minimum hole area violation, though Magic does not show it as one. 
+  
+* To see this DRC error, we need to run Magic in the full DRC mode. We can do this by clicking on the menu button DRC > DRC complete. Next we must tell Magic to update the DRC count, and then run a DRC report.
+  
+![image](https://user-images.githubusercontent.com/118953917/221227428-3f0335e7-2b94-4b7e-bc76-7ecb94f235c9.png)
+
+### Lab For Wells And Deep N-Well
+  
+* Load exercise5.mag. These derived layers look like a transistor, and we can check to see what the overlapping layer is considered as by using the command what shown below.
+  
+![image](https://user-images.githubusercontent.com/118953917/221228252-a93cd3bc-7186-4ca7-8f18-e3b4c42af6c8.png)
+
+* It is a nmoslvt layer. We can try to recreate this by painting in a layer of ndiff and poly and see what the overlapping layer becomes.
+
+![image](https://user-images.githubusercontent.com/118953917/221228563-478e3cb3-4b2d-41d5-99c9-d0192e2aa2b4.png)
+  
+* As we can see, Magic considers this as an nmos, and not an nmoslvt as before. 
+  
+* This is based on the instructions specified in the tech file, so to get a layer of nmoslvt, we must specifically paint in a layer of nmoslvt. We have learnt earlier about Magic's implant layers and how they are used for autogeneration. Let us visualize these implant layers with the following commands.
+  
+![image](https://user-images.githubusercontent.com/118953917/221228842-0215fda8-ad9e-4c5f-ad66-2cd0280c456e.png)
+
+* Similarly, we can see the implant lvt layer on the nmoslvt using the command below. This is what differentiates the nmoslvt from the nmos we just created.
+  
+![image](https://user-images.githubusercontent.com/118953917/221229028-802987c7-5522-4eee-9ce9-f79325d5a1fd.png)
+
+* Here we can check the layers with the ```what``` command as before.
+  
+![image](https://user-images.githubusercontent.com/118953917/221229289-6b3926c3-7f59-4455-9ca9-2042d00443f2.png)
 
 </details>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-  
-
-  
