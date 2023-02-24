@@ -713,6 +713,46 @@ ngspice inverter_tb.spice
   
 * The netlist can be fed into a simulator such as Ngspice, along with a schematic captured netlist to compare the results of the two.
   
+* Eventhough magic can create a netlist for simulation, the tool don't know on how to actually simulate the netlist. 
+  
+* Thus, to simulate a netlist from a layout, we must provide all the missing information including the testbench netlist, along with the necessary stimuli for simulation. 
+  
+* As the layout editor knows nothing about the actual device models, we need to use include statements to add all device models used in the layout. 
+  
+* Subcircuit netlist is the generated netlist from the layout editor and must be included as well. 
+  
+* Finally, an analysis control block is needed to tell the simulator what kind of simulation to run as well as its simulation parameters.
+  
+* There are three extraction styles available in magic: 
+  1. ngspice()
+  2. ngspice(orig) 
+  3. ngspice(si)
+  
+* Those styles can be selected using the commands below.
+  
+```
+extract style ngspice()
+extract style ngspice(orig)
+extract style ngspice(si)
+```
+  
+* Some extraction options in magic are as follows.
+  
+```
+ext2spice lvs
+ext2spice cthresh value
+ext2spice scale on|off
+ext2spice hierarchy on|off
+ext2spice subcircuit top on|off
+ext2spice global on|off
+ext2spicemerge on|off
+```
+  
+*Note: Magic also stores layer heights/thicknesses, and a three dimensional view of the layout can be rendered by magic's 3D engine using the menu button Option -> 3D Display.* 
+  
+### GDS Reading and Writing in Magic
+  
+
 
   
 
