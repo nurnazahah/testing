@@ -1183,7 +1183,54 @@ load xor_test
   
 ### Lab For Width Rule And Spacing Rule
   
+```
+cd /home/nur.nazahah.mohd.amri/Desktop
+git clone https://github.com/RTimothyEdwards/vsd_drc_lab
+cd vsd_drc_lab
+./run_magic
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221197881-2b2a1d8d-fb8d-4251-bedd-919494ba814c.png)
 
+* In magic, click on File tab -> open -> select exercise1.mag
+  
+![image](https://user-images.githubusercontent.com/118953917/221198422-a5acc4b4-03ec-44db-a8f5-bfdd9dc9bb43.png)
+
+* Select any object -> go to Drc tab -> DRC Report.
+  
+![image](https://user-images.githubusercontent.com/118953917/221199251-ec13c74a-b402-4c43-9a56-44fc7d825f78.png)
+
+![image](https://user-images.githubusercontent.com/118953917/221199825-711c55bc-a487-4ac0-af79-3f40243fcc42.png)
+  
+```
+box width 0.14um
+paint m2
+```
+  
+![image](https://user-images.githubusercontent.com/118953917/221201646-130b38e3-a181-4832-9082-a650860cb4de.png)
+
+* DRC report.
+  
+* The white dots on each of the metal1 pieces indicate 1 error, meaning magic counts this spacing error as 2 DRC errors, and by moving either of the rectangles away, the DRC error can be fixed. 
+  
+* We can do this by selecting any of the rectangles, and using the numpad keys 4 and 6 to move them. Or using the command ```move e 0.14um``` which moves the selected layer to the east.
+  
+![image](https://user-images.githubusercontent.com/118953917/221202561-04791f35-a01c-454e-91ac-f61c49efc97c.png)
+
+![image](https://user-images.githubusercontent.com/118953917/221203541-87aaf02b-07b6-48f1-bce7-6a6382590365.png)
+
+### Lab For Wide Spacing Rule And Notch Rule
+  
+
+  
+
+
+
+
+  
+  
+
+  
 
 </details>
 
