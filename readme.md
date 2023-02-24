@@ -752,10 +752,56 @@ ext2spicemerge on|off
   
 ### GDS Reading and Writing in Magic
   
-
-
+* GDS files can be accessed in Magic with the ```gds``` command. 
   
+* To read a GDS file in magic, use ```gds read file_name```. 
+  
+* Some important read options for gds files in magic are listed below.
+  
+```
+gds readonly true|false  (Allows ceratin cells to be read-only, preventing magic from changing their gds descriptions in the final output gds file)
+gds flatglob expression  (Flattens cells in question to be merged up into the hierarchy above them, preventing unnecessary hierarchy in the layout)
+gds flatten true
+gds noduplicates true    (Tells magic to ignore cell definitions in gds files that it already has in memory)
+```
+  
+* GDS files can be written in magic using the command ```gds write file_name```, and some of its options are listed below.
+  
+```
+gds library true      (Used to create gds library files with subcells with no concept of a top level layout)
+gds addendum true     (Ignores read-only cell definitions when it generates an output)
+gds merge true|false  (Turns rectangles and triangles present in the design into merged polygons for easier viewing)
+```
 
+### DRC Rules in Magic
+  
+* Magic implements an interactive DRC, wherein it shows DRC errors when we make them. 
+  
+* As this process is computationally expensive, magic uses 3 styles for running DRC, namely:
+  1. drc(full) - complete checks (slow)
+  2. drc(fast) - typical checks (fast)
+  3. drc(routing) - metal checks (fastest)
+  
+### LVS Setup for Netgen
+  
+* Netgen is a tool used for running LVS checks. It knows nothing about layouts, and only knows about netlists and how to read and compare them.
+  
+* Netgen does not need to know anything about any components in the design, it juts needs to know wheter they match in the layout and schematic.
+  
+* LVS technology setup file tells the LVS tool what all the device names are, how they should or shouldn't be combined in series and parallel, whether any pins on the device are permutable (interchangeable), which properties are interesting to compare between netlists, which properties should be ignored, and whether any device must be ignored.
+  
+### XOR Verification
+  
+* This is a physical verification method used to compare 2 layouts. Here, an XOR operation is applied on the masks of the two layouts where both the masks either have nothing or share the same geometry, we see nothing, and only where one mask has something and the other mask has nothing, or vice versa, do we see something. This is useful in mask revisions.
+  
+* To run an XOR operation in Magic, we can use the following commands.
+  
+```
+load layout1_name
+flatten destination_name
+load layout2_name
+xor destination_name
+```
   
 </details>
 
@@ -1172,9 +1218,25 @@ load xor_test
 <details>
   <summary>Theory: Introduction to DRC rules</summary>
   
-### Introduction To Basic Silicon Manufacturing Process
+### Fundamentals of Design Rule Checking
   
-
+* Every silicon manufacturing process has its own tolerances on the designs being manufactured. 
+  
+* These tolerances are dependant on the conditions and machines used in the fabrication environment, and are based on probabilities of expected failure/defects found in a manufactured batch, in parts per million. 
+  
+* Thus, each process has its own set of rules that need to be adhered to, and these rules are given on the geometry of the layout to prevent chip failure. 
+  
+* These are known as design rules, and the process of adhering to these rules is done by design rule checking.
+  
+### Back-end Metal Layer Rules
+  
+* Width Rule
+* Spacing Rule
+* Wide-Spacing Rule
+* Notch Rule
+* Minimum and Maximum Area Rules
+* Minimum Hole Area Rule
+* Contact Cut Rules
 
 </details>
 
