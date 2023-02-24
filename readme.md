@@ -1146,7 +1146,7 @@ load altered
 ![image](https://user-images.githubusercontent.com/118953917/221151613-553eb80d-9e0e-40bf-9542-96ab2985dad9.png)
 
 ```
-erase li        (Select cell first then run command)
+erase li                           (Select cell first then run command)
 flatten -nolabels xor_test
 load sky130_fd_sc_hd__and2_1
 xor -nolabels xor_test
@@ -1164,6 +1164,7 @@ xor -nolabels xor_test        (Select AND cell before run the command)
 load xor_test
 ```
   
+![image](https://user-images.githubusercontent.com/118953917/221194185-2bf924f1-5123-4358-bb42-1a58afd3beae.png)
 
   
 
