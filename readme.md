@@ -322,8 +322,8 @@ check_timing
 ![image](https://user-images.githubusercontent.com/118953917/221361327-bc2f7e6d-18dc-4ef7-9ae9-5ec08c886360.png)
 
 ```
-report_si_bottleneck      (Report of the nets that have the largest crosstalk effects)
-report_bottleneck         (Report of multiple min/max delay violation)
+report_si_bottleneck              (Report of the nets that have the largest crosstalk effects)
+report_bottleneck                 (Report of multiple min/max delay violation)
 report_si_delay_analysis
 report_si_aggressor_exclusion
 report_si_noise_analysis
