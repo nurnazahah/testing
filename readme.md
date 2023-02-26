@@ -1561,8 +1561,8 @@ move w 0.4um
 
 * Run an antenna check as follows. The antenna check shows up as feedback on the layout, and we can use feedback why for some more information on it.
   
-![image](https://user-images.githubusercontent.com/118953917/221403487-99aeff51-15f6-49b8-9751-a0f23c23d1a1.png)
-
+![image](https://user-images.githubusercontent.com/118953917/221403655-773ed33a-ad36-4b36-b1ac-cff5c0d87b46.png)
+  
 * This gives us antenna ratios that triggered the error. 
   
 * The ratio of the area of the metal to the area of the gate is more than twice the permissible value of 400. 
@@ -1571,7 +1571,6 @@ move w 0.4um
   
 * In this example, the diode is already places on th left of the cell, and we just need to wire the input where the violation starts to the diode as shown below. The wire needs to be contacted down into the diode with the SHIFT+right MB.
   
-![image](https://user-images.githubusercontent.com/118953917/221403635-99321cbb-10a8-4c1c-b455-774d1f6d8d74.png)
 
 
 
