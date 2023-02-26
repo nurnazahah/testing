@@ -1571,8 +1571,12 @@ move w 0.4um
   
 * In this example, the diode is already places on th left of the cell, and we just need to wire the input where the violation starts to the diode as shown below. The wire needs to be contacted down into the diode with the SHIFT+right MB.
   
+![image](https://user-images.githubusercontent.com/118953917/221404086-c99a09a1-2e1b-4b67-a5c7-b99593bf5b29.png)
 
+* Now, if we extract and run an antenna check, we see no feedback and no error message. This means the antenna violation is cleared. Another way to fix an antenna violation is to manually check the route path and fix it.
 
+### Lab For Density Rules
+  
 
 
 
