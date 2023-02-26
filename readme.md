@@ -1404,5 +1404,65 @@ move w 0.4um
 * Here we can check the layers with the ```what``` command as before.
   
 ![image](https://user-images.githubusercontent.com/118953917/221229289-6b3926c3-7f59-4455-9ca9-2042d00443f2.png)
+  
+### Lab For Paramterized And PDK Devices
+  
+* Load exercise6.mag. Here, we have a parameterised device, which is a device create automatically using magic, and have fixed layouts in the PDKs. 
+  
+* It is a simple nmos (MOSFET) device created from the Devices 1 menu with default parameters. While this is a Magic generated device, it still shows up as having DRC errors as follows.
+  
+![image](https://user-images.githubusercontent.com/118953917/221396864-0068e3c2-77ca-41c7-9011-097a44cd1a95.png)
+
+* Th error is a metal minimum area rule error, and magic could avoid it by adding more metal to the layer, but it does not since these contacts will be routed to, and have metal connected to it anyway. We can go ahead and fix this by painting in some metal1 over the contacts, and we see no DRC errors.
+  
+![image](https://user-images.githubusercontent.com/118953917/221397378-167b5bca-bc17-4a63-b6ba-44f4da96d499.png)
+
+* Another example, we have an esdfet designed to survive high voltages, and it purposefully breaks design rules. For example, it has a transistor gate at an angle, which is not allowed.
+  
+![image](https://user-images.githubusercontent.com/118953917/221397508-e6e81b5d-eacd-429f-891b-ed6bb5562b3e.png)
+
+* The only way in Magic to ignore rule errors for a device that is known good, is to abstract it. Though abstract views are in a separate lef directory, but that is not what is needed here. 
+  
+* All library views are abstract in a way, because they contain pointers to gds files, and thus what is shown is no more than Magic's best attempt to represent the gds data. We can change the layout without changing what is written out to gds, which is dangerous and generally only used for read only files that do not get affected.
+  
+* However, we can use this to our advantage by making the layout look DRC clean and not flag false positives.
+
+* Select the cell with the I key, check its file path and change it to the current working directory. Next, we descend into the cell and save it to disk. Now, we can confirm that the cell still points to a valid gds file with the property command.
+  
+![image](https://user-images.githubusercontent.com/118953917/221398048-bade5bf8-8fd2-4c56-a1c2-223ec05dba1d.png)
+  
+* For exercise 6c, we first save it to the local disk as done earlier.
+  
+* Fix the DRC errors using the methods stated earlier.
+
+![image](https://user-images.githubusercontent.com/118953917/221398278-2859136b-91aa-4c9a-8431-1dd5e8531bfa.png)
+
+
+### Lab For Angle Error And Overlap Rule
+  
+* Magic has a grid set up that is based on the manufacturing grid provided. The manufacturing grid for this process is 0.005um x 0.005um. 
+  
+* Magic scales up the grid by a factor of 2, so the smallest box possible should be 0.01um by 0.01um. 
+  
+* To make the box any smaller, we can use snap internal then make the box to the size of the manufacturers grid. We could also scale down Magic's internal grid with scalegrid 1 2, but it is prohibited.
+
+* Similarly, if we create a tringle that is an odd number width, and overlap it with another odd width triangle, magic will try to legalise the overlap vertex as follows.
+  
+![image](https://user-images.githubusercontent.com/118953917/221398558-8c3d6d71-384f-4f62-ad58-414be74f0140.png)
+
+* Loading in exercise7.mag. 
+  
+* Here, the triangle based polygon was created into a subcell, then flipped and moved back to overlap. 
+  
+* This prevents Magic from compensating for the off-grid overlap by adding a rectangle at the vertex. The DRC error is as follows.
+  
+
+
+  
+
+
+
+  
+
 
 </details>
