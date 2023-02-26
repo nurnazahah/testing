@@ -1456,6 +1456,51 @@ move w 0.4um
   
 * This prevents Magic from compensating for the off-grid overlap by adding a rectangle at the vertex. The DRC error is as follows.
   
+![image](https://user-images.githubusercontent.com/118953917/221399347-6f2fb2b8-5cb5-456c-b68d-86f09848545f.png)
+  
+* Fix this easily by selecting one of the shapes and moving it horizontally by one position.
+  
+![image](https://user-images.githubusercontent.com/118953917/221399373-fa0cd439-f3ac-42bf-8f2a-9238cb1fd4c8.png)
+
+* For 7b, we have the following error.
+  
+![image](https://user-images.githubusercontent.com/118953917/221399599-4a8e556c-9265-4020-9751-42517f127c6c.png)
+  
+* The only ay to fix this, is to paint over the angled edge with some local interconnect.
+  
+![image](https://user-images.githubusercontent.com/118953917/221399623-6f463ccb-4ce2-4254-80ed-ddbcfaeef586.png)
+  
+* For 7c we have another angle error. 
+  
+![image](https://user-images.githubusercontent.com/118953917/221399812-e919d805-21a5-4a88-89dc-0ada71447e5a.png)
+  
+* The shape seems to be 45 degree angled, but by selecting it and querying the box, we see it is actual 201x200 units on the grid, leading to an angle just smaller than 45 degrees.
+  
+* We fix this with the following commands to erase and redraw the angled edge at 45 degrees.
+
+![image](https://user-images.githubusercontent.com/118953917/221399825-64b588ad-20de-4e68-8aca-d1bf35dfb8f9.png)
+
+* We can now add small amount of metal1 on top of the shape to compensate for the width error caused by the additional 1 unit growth, and we get a DRC error free shape.
+
+![image](https://user-images.githubusercontent.com/118953917/221399940-a3152174-f67f-4477-82ec-8db0337c7a46.png)
+
+* In 7d, we have an overlap error. This is because the poly and diff layers are in different cells, and then made to overlap. 
+  
+* While this should create a transistor in the overlap, because the two layers are in different cells, Magic does not allow this.
+  
+![image](https://user-images.githubusercontent.com/118953917/221400047-757423ba-9a19-4e9b-bf5a-bfa327fc8e2e.png)
+![image](https://user-images.githubusercontent.com/118953917/221400108-375b23cb-8146-494c-8b95-4f51eccc18be.png)
+
+* The easiest way to fix this is to just paint over the poly subcell again with a layer of poly, and preferably delete the old poly subcell layer. This creates a nmos as shown.
+  
+![image](https://user-images.githubusercontent.com/118953917/221400233-68f80ee6-e66a-4a1c-8816-ceeec1650669.png)
+
+* In 7e, we can see that overlaps in contacts have different rules. 
+  
+* If contacts overlap, they must overlap exactly, for the automatic generation rules. In this example, if we look at the contact cuts, we can see the following. 
+  
+* Here the overlapping contact cut has been pushed over to align properly.
+  
 
 
   
