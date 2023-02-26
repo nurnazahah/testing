@@ -1501,8 +1501,49 @@ move w 0.4um
   
 * Here the overlapping contact cut has been pushed over to align properly.
   
+![image](https://user-images.githubusercontent.com/118953917/221400532-a54ff4be-458f-4e9e-a818-d5dafe58251f.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/221400520-342815b1-6530-4f72-a80b-e6f71024e45b.png)
 
+* To fix this, we can flatten it. 
+  
+* This is shown below where the flattened copy now is DRC free, as both contacts are now in the same layer and there is no concern of overlap.
+  
+![image](https://user-images.githubusercontent.com/118953917/221400825-819e6945-0f9f-419f-bfbe-8e3dc04b0030.png)
 
+### Lab For Unimplemented Rules
+  
+* In exercise8.mag, we have a seal ring. 
+  
+* Seal rings are just layers that have no electrical meaning, and are just a physical barrier between the chip and the outside world. These seal ring layers break multiple design rules, and are not worth the effort to include in the tech file. 
+  
+* Thus, Magic shows these seal rings as a kind of abstract view which is designed to be DRC free, with no properties associated with it. If we try to paint diffusion layers over this, we will get overlap errors.
+  
+![image](https://user-images.githubusercontent.com/118953917/221401065-875bfa70-18cb-4863-b1c8-9c49369932b8.png)
+
+* So the SkyWater PDK actually has a seal ring generator that can generate gds correct seal rings, though these cannot be imported into Magic unless as abstract views.
+
+* To generate seal rings, we need to know the size of the outer edge of our pad frame. We can use the seal ring generator with the command below.
+
+```
+/usr/share/pdk/sky130A/libs.tech/magic/seal_ring_generator/sky130_gen_sealring.py <width> <height> <target_directory>
+```
+  
+* This should create a .mag and .gds file in the directory. 
+  
+* Next, open the magic console and use the command ```addpath <created_directory>```, and then open up the seal ring file with ```load <file_name>```. 
+  
+* If we push into this abstract, we can see the ```property``` command for this references are just created .gds file. 
+  
+* Now, we can run a script launch for magic that runs magic with the appropriate tech file to view the seal ring, with the command ```./gds_magic```. 
+  
+* Then, load the gds file with gds ```read seal_test/adv_6um_gen``` to see the seal ring.
+  
+![image](https://user-images.githubusercontent.com/118953917/221401474-0427541c-2d76-4fdb-b521-f24d5fa172db.png)
+
+![image](https://user-images.githubusercontent.com/118953917/221401642-decf3e8a-8559-4283-bc48-0909aabce5b4.png)
+
+### Latch-up And Antenna Rules
   
 
 
