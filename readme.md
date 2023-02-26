@@ -1545,6 +1545,35 @@ move w 0.4um
 
 ### Latch-up And Antenna Rules
   
+* In exercise9.mag, we have a layout with standard cells that violates some of the basic rules we saw earlier, as well as depicts latch-up violations.
+  
+* First, we must add taps to the diffusion layers. Since it is a standard cell, it should come with a tap cell that is part of the standard cell library. We can place down the tap cell as follows.
+  
+![image](https://user-images.githubusercontent.com/118953917/221402476-9122723e-368f-4575-8274-17dc11cbcafe.png)
+
+* Select and move the tap cell to align it properly with the other cells, thus fixing the error.
+  
+![image](https://user-images.githubusercontent.com/118953917/221403064-e9356907-568b-49d0-94fc-d1731212dff9.png)
+
+* In exercise10.mag, which has a few standard cell layout with very long route between them.
+  
+* To run an electrical rule check, some knowledge of the circuit is required to evaluate the rule. To get knowledge of the circuit, the circuit needs to be extracted. 
+
+* Run an antenna check as follows. The antenna check shows up as feedback on the layout, and we can use feedback why for some more information on it.
+  
+![image](https://user-images.githubusercontent.com/118953917/221403487-99aeff51-15f6-49b8-9751-a0f23c23d1a1.png)
+
+* This gives us antenna ratios that triggered the error. 
+  
+* The ratio of the area of the metal to the area of the gate is more than twice the permissible value of 400. 
+  
+* There are 2 ways to fix this. First, we can tie down the route to a piece of diffusion (which acts like a diode). The antenna check tells us the error is at metal2, so we can place a standard cell diffusion diode anywhere at metal2. 
+  
+* In this example, the diode is already places on th left of the cell, and we just need to wire the input where the violation starts to the diode as shown below. The wire needs to be contacted down into the diode with the SHIFT+right MB.
+  
+![image](https://user-images.githubusercontent.com/118953917/221403635-99321cbb-10a8-4c1c-b455-774d1f6d8d74.png)
+
+
 
 
 
