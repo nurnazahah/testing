@@ -1577,6 +1577,37 @@ move w 0.4um
 
 ### Lab For Density Rules
   
+* SkyWater uses a window size of 700 by 700 microns to run density checks. 
+  
+* exercise10.mag, has a large layout containing metal1 and metal2 layers.
+
+* Here, the metal1 layer is just a thin section going around the layout, which depicts under-density for that metal layer. 
+  
+* Similarly, metal2 covers pretty much the entire layout, leading to over-density for the metal2 layer. 
+  
+* To check for density coverage, we use the following commands as in figure below.
+
+* This agrees point that metal1 covers only 5.6% of the cell while metal2 covers 85.7%. 
+  
+* But foundries do not check for the average density across the whole layout, instead they do complicated calculations over fixed window sizes to find densities. Hence, we use a script to do this in Magic, using a script provided by the process PDK.
+
+* To do this, we first do ```gds write exercise_11``` in the Magic console, then open a new terminal to run the density check script as follows.
+
+![image](https://user-images.githubusercontent.com/118953917/221405298-c22df66b-f14c-4ccb-83e0-1cdee05c0132.png)
+  
+![image](https://user-images.githubusercontent.com/118953917/221405658-b4ab9240-b9e6-475a-ba2a-e2d1dd70d549.png)
+
+![image](https://user-images.githubusercontent.com/118953917/221405719-05cb914d-ae98-44e6-bf16-93428c012b81.png)
+
+* To fix this, we use a fill generator script provided by the PDK as follows.
+  
+![image](https://user-images.githubusercontent.com/118953917/221405829-fcf02d18-ecde-49c9-af9d-4202c2a32ec0.png)
+
+* Now we can go ahead and do a gds read of the generated file in magic with the command below.
+  
+
+
+  
 
 
 
