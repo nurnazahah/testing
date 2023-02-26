@@ -1605,13 +1605,23 @@ move w 0.4um
 
 * Now we can go ahead and do a gds read of the generated file in magic with the command below.
   
+![image](https://user-images.githubusercontent.com/118953917/221405971-3cd33f23-1146-431d-8d44-d0bdbdf473f4.png)
 
-
+* Here, we see the fill patterns generated for the entire layout. To see only a specific layer, for example metal2, we use the commands below. First we hide all layers, then show m2fill layer which is a special fill layer for metal2.
   
+![image](https://user-images.githubusercontent.com/118953917/221406067-2fb0f6d4-1329-4d0b-ba6b-f85eb4361299.png)
 
-
-
+* Next, we must merge the patterns with the original layout. To do this, we load the exercise_11.mag file again. We have to ensure that while merging, the position of both the layout and fill patterns align properly. To do this, we follow the steps below.
   
+![image](https://user-images.githubusercontent.com/118953917/221406988-96bfc09f-33dc-47bc-bccb-b98f79cff945.png)
+
+* Now, we can view just the metal2 layer in the layout to confirm that the fill patterns align perfectly after the merge.
+  
+* We can check for density coverage again by setting the cif output style to density. This is done so that the cover command checks for both the metal and fill layers instead of just the metal, and is done as follows.
+  
+* As we can see below, metal1 density is now within the permissible limits. However, metal2 is still way out of bounds, since not much can be done to fix over-density apart from physically removing metal layers from the design. The other layers like metal3 have now been filled as well, so they are all within the permissible density limits, instead of being empty with 0% density.
+  
+![image](https://user-images.githubusercontent.com/118953917/221407371-8ce11bbf-e9c4-419c-a65b-3f13ee2b554c.png)
 
 
 </details>
