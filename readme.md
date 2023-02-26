@@ -1383,6 +1383,30 @@ move w 0.4um
 
 ### Lab For Wells And Deep N-Well
   
+* exercise4.mag has wells and taps, so our DRC check needs to be set at full to check for these. 
+  
+* In example 4a, we have a basic well error, since the wells do not have taps. 
+  
+* The n-well shows an error as it is currently floating, though the "p-well" does not since this process doesn't actually consider p-wells unless they are in deep n-wells, and are instead counted as p-substrates.
+  
+![image](https://user-images.githubusercontent.com/118953917/221407708-041c63bb-3cf9-45bc-b766-397d62eaaf39.png)
+
+* To fix this, we first paint a layer of n type material into the n well. The layer is called nsubstratendiff. Though this does not fix the DRC error.
+  
+![image](https://user-images.githubusercontent.com/118953917/221407794-eeb95971-e19a-401c-a3d0-bf2eee636403.png)
+
+* n well must not be floating, so the tap should be connected to a layer of local interconnect. 
+  
+* Paint a layer of nsubstratencontact. While this gets rid of the n-well DRC error, it creates smaller errors like overlap and surround.
+  
+* Adjust the layers using what we have learnt till now by growing, stretching and adding in local interconnect, and we get no DRC errors.
+
+![image](https://user-images.githubusercontent.com/118953917/221407841-f0778a51-b758-4dfe-9bac-a813b5c0beed.png)
+
+![image](https://user-images.githubusercontent.com/118953917/221407900-8984bb2d-fc65-4752-b3ee-e0106c125b77.png)
+  
+###  Lab For Derived Layers
+  
 * Load exercise5.mag. These derived layers look like a transistor, and we can check to see what the overlapping layer is considered as by using the command what shown below.
   
 ![image](https://user-images.githubusercontent.com/118953917/221228252-a93cd3bc-7186-4ca7-8f18-e3b4c42af6c8.png)
